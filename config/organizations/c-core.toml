@@ -1,0 +1,43 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "c-core"
+name = "California Center for Outbreak Response"
+acronym = "C-CORE"
+summary = "C-CORE enhances outbreak analytics and forecasting using electronic health record data in an integrated healthcare system."
+website = "https://insightnet.us/centers/c-core/"
+location = "California"
+focus_areas = [ "outbreak analytics", "forecasting", "electronic health records", "nowcasting",]
+keywords = [ "data sharing", "dengue", "remnant blood samples",]
+enabled = true
+[[organization.researchers]]
+id = "sara-tartof"
+full_name = "Sara Tartof"
+role = "Co-Lead; Research Scientist, Department of Research & Evaluation, Kaiser Permanente Southern California"
+
+[[organization.researchers]]
+id = "joseph-lewnard"
+full_name = "Joseph Lewnard"
+role = "Co-Lead; Associate Professor of Epidemiology, UC Berkeley School of Public Health"
+website = "https://joelewnard.github.io/joelewnard/"
+expertise = [ "infectious diseases", "vaccines", "transmission dynamics", "disease control", "vaccine effectiveness",]
+
+[[organization.researchers]]
+id = "isabel-rodriguez-barraquer"
+full_name = "Isabel Rodriguez-Barraquer"
+role = "Co-Investigator; Associate Professor, Department of Medicine, University of California San Francisco"
+
+[[organization.researchers]]
+id = "parag-mahale"
+full_name = "Parag Mahale"
+role = "Team Member; Kaiser Permanente Southern California"
+
+[[organization.researchers]]
+id = "alan-hubbard"
+full_name = "Alan Hubbard"
+role = "Team Member; Professor and Chair, Division of Biostatistics, UC Berkeley School of Public Health"
+
+[[organization.researchers]]
+id = "alejandro-schuler"
+full_name = "Alejandro Schuler"
+role = "Team Member; Assistant Professor in Residence, Division of Biostatistics, UC Berkeley School of Public Health"

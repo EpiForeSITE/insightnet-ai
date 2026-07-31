@@ -1,0 +1,94 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "accidda"
+name = "Atlantic Coast Center for Infectious Disease Dynamics and Analytics"
+acronym = "ACCIDDA"
+summary = "ACCIDDA supports rapid, coordinated response to infectious disease threats through modeling, data integration, predictive analytics, and county-level forecasting."
+website = "https://accidda.org/"
+location = "North Carolina, Maryland"
+focus_areas = [ "infectious disease modeling", "data integration", "predictive analytics", "wastewater surveillance",]
+keywords = [ "county-level forecasting", "artificial intelligence", "septic systems",]
+enabled = true
+[[organization.researchers]]
+id = "justin-lessler"
+full_name = "Justin Lessler"
+role = "Co-Director; Professor, Department of Epidemiology, UNC Chapel Hill"
+bio = "Studies infectious disease dynamics and control, including SARS-CoV-2, influenza, cholera, and dengue."
+expertise = [ "infectious disease dynamics", "statistics", "dynamic models", "study design",]
+
+[[organization.researchers]]
+id = "kimberly-powers"
+full_name = "Kimberly Powers"
+role = "Co-Director; Associate Professor, Department of Epidemiology, UNC Chapel Hill"
+bio = "Uses epidemiological, statistical, and mathematical modeling to study infectious disease transmission and inform prevention, policy, and public health programs."
+expertise = [ "epidemiological modeling", "statistical modeling", "mathematical modeling", "HIV", "sexually transmitted infections",]
+
+[[organization.researchers]]
+id = "shaun-truelove"
+full_name = "Shaun Truelove"
+role = "Co-Director; Associate Research Professor, International Health and Epidemiology, Johns Hopkins University"
+bio = "Applies infectious disease dynamics and modeling to public health response, decision-making, and policy."
+expertise = [ "infectious disease dynamics", "modeling", "COVID-19", "influenza", "vaccine-preventable diseases",]
+
+[[organization.researchers]]
+id = "joseph-lemaitre"
+full_name = "Joseph Lemaitre"
+role = "Assistant Professor, UNC Chapel Hill"
+bio = "Develops models combining scientific knowledge and statistical methods to guide policy from incomplete or noisy data."
+expertise = [ "infectious disease dynamics", "statistical methods", "COVID-19", "influenza", "cholera",]
+
+[[organization.researchers]]
+id = "sara-loo"
+full_name = "Sara Loo"
+role = "Assistant Scientist, International Health and International Vaccine Access Center, Johns Hopkins University"
+bio = "Applied mathematician developing models of infectious disease evolutionary dynamics and cultural evolution of social behaviors."
+expertise = [ "applied mathematics", "evolutionary dynamics", "COVID-19", "influenza", "RSV",]
+
+[[organization.researchers]]
+id = "carl-pearson"
+full_name = "Carl Pearson"
+role = "Research Assistant Professor, Department of Epidemiology, UNC Chapel Hill"
+expertise = [ "agent-based models", "network modeling", "scenario modeling", "mechanistic modeling", "COVID-19", "mpox", "Ebola", "dengue",]
+
+[[organization.researchers]]
+id = "praachi-das"
+full_name = "Praachi Das"
+role = "Postdoctoral Researcher, UNC Gillings School of Global Public Health"
+expertise = [ "mathematical models", "statistical models", "infectious disease dynamics",]
+
+[[organization.researchers]]
+id = "cyril-geismar"
+full_name = "Cyril Geismar"
+role = "Postdoctoral Research Fellow, Johns Hopkins Bloomberg School of Public Health"
+expertise = [ "mathematical models", "epidemic forecasting", "software",]
+
+[[organization.researchers]]
+id = "joshua-macdonald"
+full_name = "Joshua Macdonald"
+role = "Postdoctoral Scholar, Johns Hopkins Bloomberg School of Public Health"
+expertise = [ "applied mathematics", "epidemiological modeling", "parameter identification", "uncertainty quantification", "multi-scale modeling",]
+
+[[organization.researchers]]
+id = "joseph-mathews"
+full_name = "Joseph Mathews"
+role = "Postdoctoral Research Associate, University of North Carolina at Chapel Hill"
+expertise = [ "statistical modeling", "algorithm design", "sequential Monte Carlo",]
+
+[[organization.researchers]]
+id = "kimberlyn-roosa"
+full_name = "Kimberlyn Roosa"
+role = "Postdoctoral Fellow, Johns Hopkins Bloomberg School of Public Health"
+expertise = [ "infectious disease modeling", "forecasting", "science communication",]
+
+[[organization.researchers]]
+id = "claire-smith"
+full_name = "Claire Smith"
+role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
+expertise = [ "infectious disease dynamics", "epidemiological modeling",]
+
+[[organization.researchers]]
+id = "abigail-sykes"
+full_name = "Abigail Sykes"
+role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
+expertise = [ "statistical modeling", "machine learning", "mechanistic modeling", "epidemic forecasting",]

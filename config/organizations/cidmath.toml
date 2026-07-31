@@ -1,0 +1,31 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "cidmath"
+name = "Emory Center for Infectious Disease Modeling & Analytics and Training Hub"
+acronym = "CIDMATH"
+summary = "CIDMATH advances infectious disease modeling and outbreak forecasting with technology that is accessible and usable by public health practitioners."
+website = "https://cidmath.org/"
+location = "Georgia"
+focus_areas = [ "infectious disease modeling", "outbreak forecasting", "wastewater epidemiology", "vaccine evaluation", "machine learning", "training",]
+keywords = [ "social contact patterns", "flu forecasting", "public health practitioners",]
+enabled = true
+[[organization.researchers]]
+id = "benjamin-lopman"
+full_name = "Benjamin Lopman"
+role = "Director and Co-Principal Investigator; Professor of Epidemiology and Environmental Health, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "natalie-dean"
+full_name = "Natalie Dean"
+role = "Co-Principal Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "katia-koelle"
+full_name = "Katia Koelle"
+role = "Co-Principal Investigator; Professor, Department of Biology, Emory University College of Arts and Sciences"
+
+[[organization.researchers]]
+id = "allison-chamberlain"
+full_name = "Allison Chamberlain"
+role = "Co-Principal Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"

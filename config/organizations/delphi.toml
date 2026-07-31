@@ -1,0 +1,47 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "delphi"
+name = "Delphi"
+acronym = "Delphi"
+summary = "Delphi develops epidemic detection, tracking, and forecasting methods and tools for decision-making in public and private settings."
+website = "https://delphi.cmu.edu/"
+location = "Pennsylvania"
+focus_areas = [ "epidemic detection", "infectious disease tracking", "nowcasting", "forecasting", "real-time epidemiological data",]
+keywords = [ "epidemic indicators", "infectious disease", "decision support",]
+enabled = true
+[[organization.researchers]]
+id = "peter-jhon"
+full_name = "Peter Jhon"
+role = "Executive Director"
+bio = "CMU/MLD and OVPR."
+
+[[organization.researchers]]
+id = "roni-rosenfeld"
+full_name = "Roni Rosenfeld"
+role = "Principal Investigator"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "ryan-tibshirani"
+full_name = "Ryan Tibshirani"
+role = "Principal Investigator"
+bio = "UC Berkeley/Stat and CMU/MLD."
+
+[[organization.researchers]]
+id = "daniel-mcdonald"
+full_name = "Daniel McDonald"
+role = "Co-Principal Investigator"
+bio = "University of British Columbia."
+
+[[organization.researchers]]
+id = "will-townes"
+full_name = "Will Townes"
+role = "Co-Principal Investigator"
+bio = "CMU/Stat."
+
+[[organization.researchers]]
+id = "bryan-wilder"
+full_name = "Bryan Wilder"
+role = "Co-Principal Investigator"
+bio = "CMU/MLD."

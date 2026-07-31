@@ -1,0 +1,56 @@
+name: Refresh scientific activity
+
+on:
+  schedule:
+    # Daily at 08:17 UTC. GitHub schedules use UTC and may start a few minutes late.
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: insightnet-daily-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: "0.11.32"
+          enable-cache: true
+
+      - name: Install Python
+        run: uv python install
+
+      - name: Restore locked environment
+        run: uv sync --locked --all-extras --dev
+
+      - name: Run tests
+        run: uv run --locked pytest
+
+      - name: Build dashboard snapshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: uv run --locked insightnet-update
+
+      - name: Commit changed data
+        run: |
+          git config user.name "insightnet-data-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/insightnet.json site/data/insightnet.json
+          if git diff --cached --quiet; then
+            echo "No snapshot changes to commit."
+          else
+            git commit -m "data: refresh scientific activity"
+            git push
+          fi

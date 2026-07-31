@@ -1,0 +1,51 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "epiengage"
+name = "EpiENGAGE"
+acronym = "EpiENGAGE"
+summary = "EpiENGAGE enhances analytic tools and partnerships to strengthen local and state public health agencies' readiness for future pathogen threats."
+website = "https://epiengage.org/"
+location = "Texas, Massachusetts"
+focus_areas = [ "outbreak preparedness", "outbreak detection", "forecasting", "public health response", "health equity",]
+keywords = [ "data analytics", "forecasting tools", "emergency operations",]
+enabled = true
+[[organization.researchers]]
+id = "lauren-ancel-meyers"
+full_name = "Lauren Ancel Meyers"
+role = "Principal Investigator; Professor, The University of Texas at Austin"
+
+[[organization.researchers]]
+id = "nicholas-reich"
+full_name = "Nicholas Reich"
+role = "Principal Investigator; Professor, University of Massachusetts Amherst"
+
+[[organization.researchers]]
+id = "sebastian-funk"
+full_name = "Sebastian Funk"
+role = "Co-Investigator"
+bio = "The London School of Hygiene & Tropical Medicine."
+
+[[organization.researchers]]
+id = "spencer-fox"
+full_name = "Spencer Fox"
+role = "Co-Investigator"
+bio = "Northern Arizona University."
+
+[[organization.researchers]]
+id = "david-morton"
+full_name = "David Morton"
+role = "Co-Investigator"
+bio = "Northwestern University."
+
+[[organization.researchers]]
+id = "daniel-larremore"
+full_name = "Daniel Larremore"
+role = "Co-Investigator"
+bio = "University of Colorado Boulder."
+
+[[organization.researchers]]
+id = "anass-bouchnita"
+full_name = "Anass Bouchnita"
+role = "Co-Investigator"
+bio = "The University of Texas at El Paso."

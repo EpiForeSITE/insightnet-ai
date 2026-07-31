@@ -1,0 +1,11 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "soar"
+name = "STLT Outbreak Analytics and Response"
+acronym = "SOAR"
+summary = "SOAR prepares surge capacity for modeling and analytical support during infectious disease outbreaks and works with partners to rapidly implement nowcasting and forecasting for decision support."
+website = "https://insightnet.us/centers/soar/"
+location = "Oregon"
+focus_areas = [ "outbreak analytics", "modeling support", "nowcasting", "forecasting", "decision support",]
+enabled = true

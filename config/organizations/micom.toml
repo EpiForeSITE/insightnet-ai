@@ -1,0 +1,90 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "micom"
+name = "Michigan Public Health Integrated Center for Outbreak Analytics and Modeling"
+acronym = "MICOM"
+summary = "MICOM brings together the University of Michigan and the Michigan Department of Health and Human Services to develop and integrate modeling and data analytics tools into public health practice."
+website = "https://www.micom-insight.net/"
+location = "Michigan"
+focus_areas = [ "outbreak analytics", "infectious disease modeling", "data analytics", "public health practice",]
+enabled = true
+[[organization.researchers]]
+id = "joseph-coyle"
+full_name = "Joseph Coyle"
+role = "MICOM Co-Director; Director, MDHHS Bureau of Infectious Disease Prevention"
+
+[[organization.researchers]]
+id = "marisa-eisenberg"
+full_name = "Marisa Eisenberg"
+role = "MICOM Co-Director; Professor of Epidemiology, Complex Systems, and Mathematics"
+
+[[organization.researchers]]
+id = "emily-toth-martin"
+full_name = "Emily Toth Martin"
+role = "MICOM Co-Director; Professor of Epidemiology"
+
+[[organization.researchers]]
+id = "natasha-bagdasarian"
+full_name = "Natasha Bagdasarian"
+role = "Chief Medical Executive, State of Michigan"
+
+[[organization.researchers]]
+id = "andrew-brouwer"
+full_name = "Andrew Brouwer"
+role = "MAMP Co-Lead; Assistant Professor of Epidemiology"
+
+[[organization.researchers]]
+id = "alexis-handal"
+full_name = "Alexis Handal"
+role = "Preparedness; Associate Professor of Epidemiology"
+
+[[organization.researchers]]
+id = "michael-hayashi"
+full_name = "Michael Akira Lee Hayashi"
+role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Epidemiology"
+
+[[organization.researchers]]
+id = "jennifer-head"
+full_name = "Jennifer Head"
+role = "Preparedness; Assistant Professor of Epidemiology"
+
+[[organization.researchers]]
+id = "michael-hess"
+full_name = "Michael Hess"
+role = "MI Lighthouse Co-Lead; Chief Information Officer, School of Information"
+
+[[organization.researchers]]
+id = "adam-lauring"
+full_name = "Adam Lauring"
+role = "Preparedness; Professor of Internal Medicine, Microbiology and Immunology"
+
+[[organization.researchers]]
+id = "alexander-rodriguez"
+full_name = "Alexander Rodriguez"
+role = "MAMP and Applied Artificial Intelligence Co-Lead; Assistant Professor of Electrical Engineering and Computer Science"
+
+[[organization.researchers]]
+id = "michael-rubyan"
+full_name = "Michael Rubyan"
+role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Health Management and Policy"
+
+[[organization.researchers]]
+id = "tom-schwarz"
+full_name = "Tom Schwarz"
+role = "MAMP and Applied Artificial Intelligence Co-Lead; Professor of Physics"
+
+[[organization.researchers]]
+id = "abram-wagner"
+full_name = "Abram Wagner"
+role = "Preparedness; Assistant Professor of Epidemiology and Global Public Health"
+
+[[organization.researchers]]
+id = "krista-wigginton"
+full_name = "Krista Wigginton"
+role = "Preparedness; Associate Chair and Professor of Civil and Environmental Engineering"
+
+[[organization.researchers]]
+id = "jon-zelner"
+full_name = "Jon Zelner"
+role = "Health Equity Lead; Associate Professor of Epidemiology"

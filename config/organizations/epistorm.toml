@@ -1,0 +1,113 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "epistorm"
+name = "EPISTORM"
+acronym = "EPISTORM"
+summary = "EPISTORM develops modeling and forecasting tools that integrate mobility, airline travel, genomic, and wastewater surveillance data with mechanistic, statistical, and deep-learning models to improve outbreak response."
+website = "https://www.epistorm.org/"
+location = "Massachusetts"
+focus_areas = [ "epidemic analytics", "predictive modeling", "forecasting", "multimodal data integration", "public health decision support",]
+keywords = [ "mobility data", "airline travel", "genomic surveillance", "wastewater surveillance", "deep learning",]
+enabled = true
+[[organization.researchers]]
+id = "alessandro-vespignani"
+full_name = "Alessandro Vespignani"
+role = "Project Lead; Director, Network Science Institute; Sternberg Family Distinguished Professor"
+bio = "Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "matteo-chinazzi"
+full_name = "Matteo Chinazzi"
+role = "Research Associate Professor"
+bio = "Roux Institute and Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "mauricio-santillana"
+full_name = "Mauricio Santillana"
+role = "Professor in Physics, Electrical and Computer Engineering"
+bio = "Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "samuel-v-scarpino"
+full_name = "Samuel V. Scarpino"
+role = "Director of Artificial Intelligence and Life Sciences"
+bio = "Institute for Experiential AI, Northeastern University."
+
+[[organization.researchers]]
+id = "david-lazer"
+full_name = "David Lazer"
+role = "University Distinguished Professor of Political Science and Computer Sciences"
+bio = "Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "jessica-davis"
+full_name = "Jessica Davis"
+role = "Research Assistant Professor"
+bio = "Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "kayoko-shioda"
+full_name = "Kayoko Shioda"
+role = "Assistant Professor of Global Health"
+bio = "Center for Emerging Infectious Diseases Policy & Research, Boston University."
+
+[[organization.researchers]]
+id = "m-elizabeth-halloran"
+full_name = "M. Elizabeth Halloran"
+role = "Professor and Head of Biostatistics, Bioinformatics and Epidemiology Program"
+bio = "Fred Hutchinson Cancer Center."
+
+[[organization.researchers]]
+id = "marco-ajelli"
+full_name = "Marco Ajelli"
+role = "Professor"
+bio = "Department of Epidemiology and Biostatistics, Indiana University."
+
+[[organization.researchers]]
+id = "maria-litvinova"
+full_name = "Maria Litvinova"
+role = "Assistant Professor"
+bio = "Department of Epidemiology and Biostatistics, Indiana University."
+
+[[organization.researchers]]
+id = "sara-del-valle"
+full_name = "Sara Del Valle"
+role = "Scientist/Project Leader"
+bio = "Los Alamos National Laboratory."
+
+[[organization.researchers]]
+id = "timothy-germann"
+full_name = "Timothy Germann"
+role = "Founder, EpiCast"
+bio = "Los Alamos National Laboratory."
+
+[[organization.researchers]]
+id = "rose-yu"
+full_name = "Rose Yu"
+role = "Assistant Professor"
+bio = "Halıcıoğlu Data Science Institute, University of California San Diego."
+
+[[organization.researchers]]
+id = "yian-ma"
+full_name = "Yian Ma"
+role = "Assistant Professor"
+bio = "Halıcıoğlu Data Science Institute, University of California San Diego."
+
+[[organization.researchers]]
+id = "ira-longini"
+full_name = "Ira Longini"
+role = "Professor of Biostatistics"
+bio = "Center for Statistics and Quantitative Infectious Diseases, University of Florida."
+
+[[organization.researchers]]
+id = "madhav-marathe"
+full_name = "Madhav Marathe"
+role = "Distinguished Professor"
+bio = "Biocomplexity Institute, University of Virginia."
+
+[[organization.researchers]]
+id = "bryan-lewis"
+full_name = "Bryan Lewis"
+role = "Associate Professor"
+bio = "Biocomplexity Institute, University of Virginia."

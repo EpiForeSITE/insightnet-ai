@@ -1,0 +1,70 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "cori"
+name = "Center for Outbreak Response Innovation"
+acronym = "CORI"
+summary = "CORI develops and implements outbreak analytic solutions for the CDC, public health departments, and other decision-makers."
+website = "https://cori.centerforhealthsecurity.org/"
+location = "Maryland"
+focus_areas = [ "outbreak analytics", "risk assessment", "disease forecasting", "education and training",]
+keywords = [ "public health preparedness", "real-time analytics", "research network", "innovation hub",]
+enabled = true
+[[organization.researchers]]
+id = "caitlin-rivers"
+full_name = "Caitlin Rivers"
+role = "Director, Epidemiology & Outbreak Response"
+bio = "Senior Scholar at the Johns Hopkins Center for Health Security and Associate Professor in Environmental Health and Engineering at the Johns Hopkins Bloomberg School of Public Health."
+expertise = [ "epidemiology", "outbreak science", "disease modeling",]
+
+[[organization.researchers]]
+id = "crystal-watson"
+full_name = "Crystal Watson"
+role = "Deputy Director, Research & Policy"
+bio = "Senior Scholar at the Johns Hopkins Center for Health Security and Associate Professor in Environmental Health and Engineering at the Johns Hopkins Bloomberg School of Public Health."
+expertise = [ "risk assessment", "public health preparedness", "healthcare preparedness", "biodefense funding",]
+
+[[organization.researchers]]
+id = "elizabeth-campbell"
+full_name = "Elizabeth Campbell"
+role = "Assistant Scientist"
+
+[[organization.researchers]]
+id = "denise-cardo"
+full_name = "Denise Cardo"
+role = "Contributing Scholar"
+
+[[organization.researchers]]
+id = "lucia-mullen"
+full_name = "Lucia Mullen"
+role = "Associate Scholar, Research Associate"
+
+[[organization.researchers]]
+id = "sutyajeet-soneja"
+full_name = "Sutyajeet Soneja"
+role = "Associate Scientist"
+
+[[organization.researchers]]
+id = "eric-toner"
+full_name = "Eric Toner"
+role = "Senior Scholar, Senior Scientist"
+
+[[organization.researchers]]
+id = "fatima-ameaka"
+full_name = "Fatima Ameaka"
+role = "Senior Analyst"
+
+[[organization.researchers]]
+id = "haley-farrie"
+full_name = "Haley Farrie"
+role = "Senior Analyst"
+
+[[organization.researchers]]
+id = "sarah-gillani"
+full_name = "Sarah Gillani"
+role = "Senior Analyst"
+
+[[organization.researchers]]
+id = "hannah-goodtree"
+full_name = "Hannah Goodtree"
+role = "Senior Analyst"

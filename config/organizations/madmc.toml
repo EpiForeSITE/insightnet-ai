@@ -1,0 +1,122 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "madmc"
+name = "Midwest Analytics and Disease Modeling Center"
+acronym = "MADMC"
+summary = "MADMC helps ensure decision-makers have the information and tools needed for informed policy decisions during public health emergencies."
+website = "https://www.sph.umn.edu/research/centers/midwest-analytics-and-disease-modeling/"
+location = "Minnesota"
+focus_areas = [ "public health emergency preparedness", "disease modeling", "analytics", "policy decision support",]
+enabled = true
+[[organization.researchers]]
+id = "eva-enns"
+full_name = "Eva A. Enns, PhD"
+role = "MADMC Co-Principal Investigator; Associate Professor, Division of Health Policy and Management, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-aenns"
+
+[[organization.researchers]]
+id = "kristin-sweet"
+full_name = "Kristin Sweet, PhD"
+role = "MADMC Co-Principal Investigator; Epidemiology Program Manager, Infectious Disease Cross-Cutting Epidemiology, Programs, and Partnerships, Minnesota Department of Health"
+
+[[organization.researchers]]
+id = "adams-dudley"
+full_name = "Adams Dudley, MD, MBA"
+role = "MADMC Co-Principal Investigator; Professor of Medicine, Informatics, and Public Health, University of Minnesota"
+
+[[organization.researchers]]
+id = "margo-wheatley"
+full_name = "Margo Wheatley, PhD"
+role = "Senior Research Associate and Manager, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "matthew-kaufmann"
+full_name = "Matthew Kaufmann"
+role = "Postdoctoral Fellow, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "michala-carlson"
+full_name = "Michala Carlson"
+role = "Research Scientist, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "sophie-wiitala"
+full_name = "Sophie Wiitala"
+role = "Research Scientist, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "ritesh-sivakumar"
+full_name = "Ritesh Sivakumar"
+role = "Research Associate, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "sayyeda-karim"
+full_name = "Sayyeda Karim, MPH"
+role = "Project Manager, Division of Health Policy and Management, University of Minnesota"
+
+[[organization.researchers]]
+id = "caitlin-ward"
+full_name = "Caitlin Ward, PhD"
+role = "Assistant Professor, Division of Biostatistics and Health Data Science, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-cward"
+
+[[organization.researchers]]
+id = "xiao-zang"
+full_name = "Xiao Zang, PhD"
+role = "Assistant Professor, Division of Health Policy and Management, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-xzang"
+
+[[organization.researchers]]
+id = "horacio-duarte"
+full_name = "Horacio Duarte, MD, MS"
+role = "Assistant Professor, Division of Epidemiology and Community Health, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-hduarte"
+
+[[organization.researchers]]
+id = "jesse-berman"
+full_name = "Jesse Berman, PhD"
+role = "Associate Professor, Division of Environmental Health Sciences, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-jberman"
+
+[[organization.researchers]]
+id = "kelly-searle"
+full_name = "Kelly Searle, PhD"
+role = "Associate Professor, Division of Epidemiology and Community Health, University of Minnesota"
+website = "https://directory.sph.umn.edu/bio/sph-ksearle"
+
+[[organization.researchers]]
+id = "audrey-dorelien"
+full_name = "Audrey Dorélien, PhD"
+role = "Associate Professor, Department of Sociology, University of Washington"
+
+[[organization.researchers]]
+id = "shalini-kulasingam"
+full_name = "Shalini Kulasingam, PhD"
+role = "Director, Center for Cancer Prevention and Control, Tulane University"
+
+[[organization.researchers]]
+id = "lindsey-erickson"
+full_name = "Lindsey Erickson, PhD"
+role = "Senior Epidemiologist, Minnesota Department of Health"
+
+[[organization.researchers]]
+id = "keeley-morris"
+full_name = "Keeley Morris"
+role = "Senior Epidemiologist, Emerging Infectious Disease Epidemiology and Response, Minnesota Department of Health"
+
+[[organization.researchers]]
+id = "danielle-kvasager"
+full_name = "Danielle Kvasager"
+role = "Project Planner, Minnesota Department of Health"
+
+[[organization.researchers]]
+id = "paul-drawz"
+full_name = "Paul Drawz, MD"
+role = "Associate Professor, Division of Nephrology and Hypertension, University of Minnesota"
+website = "https://med.umn.edu/bio/paul-drawz"
+
+[[organization.researchers]]
+id = "nayanjot-kaur-rai"
+full_name = "Nayanjot Kaur Rai, MPH, BDS"
+role = "Program Manager, Medical School, University of Minnesota"

@@ -1,0 +1,6 @@
+[network]
+name = "InsightNet Scientific Endeavors"
+description = "Discover centers, researchers, and the scientific work emerging across InsightNet."
+website = "https://insightnet.us/"
+retention_days = 730
+max_items_per_organization = 1000

@@ -1,0 +1,53 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "dma-prime"
+name = "Disease Modeling and Analytics to Inform Outbreak Preparedness, Response, Intervention, Mitigation, and Elimination"
+acronym = "DMA-PRIME"
+summary = "DMA-PRIME uses data-driven approaches for infectious disease forecasting, decision-support toolkits, and communication of analytic results to public health organizations and decision-makers."
+website = "https://www.clemson.edu/cbshs/phmr/"
+location = "South Carolina"
+focus_areas = [ "infectious disease forecasting", "outbreak analytics", "decision support", "data visualization", "public health response",]
+keywords = [ "electronic health records", "wastewater surveillance", "digital trace data", "mobile health clinics",]
+enabled = true
+[[organization.researchers]]
+id = "lior-rennert"
+full_name = "Lior Rennert"
+role = "Founding Director"
+bio = "Associate dean for health sciences, associate professor of biostatistics, and founding director of Clemson's Center for Public Health Modeling and Response. His work develops data-driven approaches for health-related decision-making and statewide real-time opioid and infectious-disease outbreak detection, forecasting, and emergency response."
+expertise = [ "biostatistics", "data-driven decision-making", "infectious disease forecasting", "outbreak detection",]
+
+[[organization.researchers]]
+id = "christopher-mcmahan"
+full_name = "Christopher McMahan"
+role = "Professor; Associate Director for Graduate Studies"
+bio = "Professor in Clemson's School of Mathematical and Statistical Sciences."
+expertise = [ "machine learning", "artificial intelligence", "disease mapping", "forecasting",]
+
+[[organization.researchers]]
+id = "federico-iuricich"
+full_name = "Federico Iuricich"
+role = "Assistant Professor"
+bio = "Assistant professor in Clemson's School of Computing who develops visual interfaces for mobile-health-clinic resource-allocation toolkits."
+expertise = [ "spatial data analysis", "data visualization", "3D visualization", "visual interfaces",]
+
+[[organization.researchers]]
+id = "md-sakhawat-hossain"
+full_name = "Md Sakhawat Hossain"
+role = "Research Assistant Professor"
+bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response; develops, optimizes, and calibrates predictive modeling frameworks for infectious diseases."
+expertise = [ "predictive modeling", "parameter identification", "numerical optimization", "infectious diseases",]
+
+[[organization.researchers]]
+id = "aakash-pandey"
+full_name = "Aakash Pandey"
+role = "Research Assistant Professor"
+bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response and former CDC modeling fellow. His work identifies intervention strategies and develops tools to assess potential-outbreak risk."
+expertise = [ "infectious disease modeling", "outbreak analytics", "disease ecology", "disease evolution",]
+
+[[organization.researchers]]
+id = "lu-zhong"
+full_name = "Lu Zhong"
+role = "Research Assistant Professor"
+bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response; works on computational epidemiology and healthcare resilience for crisis preparedness and response."
+expertise = [ "computational epidemiology", "network epidemiology", "machine learning", "complex systems",]

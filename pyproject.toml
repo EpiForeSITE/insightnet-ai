@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insightnet-dashboard"
+version = "0.1.0"
+description = "Daily-updated dashboard of scientific activity across InsightNet"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.12,<5",
+  "feedparser>=6.0,<7",
+  "python-dateutil>=2.9,<3",
+  "requests>=2.32,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.6,<1",
+]
+
+[project.scripts]
+insightnet-update = "insightnet.update:main"
+
+[tool.setuptools.packages.find]
+include = ["insightnet*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

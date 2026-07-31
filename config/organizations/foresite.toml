@@ -1,0 +1,265 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "foresite"
+name = "Forecasting and Surveillance of Infectious Threats and Epidemics"
+acronym = "ForeSITE"
+summary = "ForeSITE is an InsightNet Integration Center that collaborates with health departments and healthcare organizations to implement and evaluate outbreak analytics and infectious disease modeling tools."
+website = "https://epiforesite.github.io/ForeSITE_Website/"
+location = "Utah, Washington"
+focus_areas = [ "outbreak analytics", "infectious disease modeling", "forecasting and nowcasting", "public health decision support",]
+enabled = true
+[[organization.researchers]]
+id = "eric-lofgren"
+full_name = "Eric Lofgren"
+role = "Principal Investigator"
+bio = "Infectious disease epidemiologist whose research uses mathematical and computational models of disease transmission, including antimicrobial-resistant and emerging infections."
+expertise = [ "infectious disease epidemiology", "mathematical modeling", "computational modeling", "antimicrobial resistance",]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/eric-lofgren.html"
+
+[[organization.researchers]]
+id = "lindsay-keegan"
+full_name = "Lindsay Keegan"
+role = "Principal Investigator"
+bio = "Develops and applies mathematical and statistical methods to understand infectious disease dynamics and support outbreak decision making with public health and healthcare partners."
+expertise = [ "mathematical methods", "statistical methods", "infectious disease dynamics", "decision support",]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/lindsay-keegan.html"
+
+[[organization.researchers]]
+id = "makoto-jones"
+full_name = "Makoto Jones"
+role = "Principal Investigator"
+bio = "Infectious disease internist focused on diagnosing and treating nosocomial pathogens and evidence-based antimicrobial prescribing."
+expertise = [ "infectious diseases", "nosocomial pathogens", "antimicrobial prescribing",]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/makoto-jones.html"
+
+[[organization.researchers]]
+id = "matthew-samore"
+full_name = "Matthew Samore"
+role = "Principal Investigator"
+bio = "Professor of Medicine and Division Chief of Epidemiology at the University of Utah with expertise in epidemiologic methods, electronic surveillance, and decision-support systems."
+expertise = [ "epidemiology", "electronic surveillance", "decision-support systems", "health informatics",]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/matt-samore.html"
+
+[[organization.researchers]]
+id = "mike-rubin"
+full_name = "Mike Rubin"
+role = "Principal Investigator"
+bio = "Infectious disease and hospital epidemiology clinician focused on preventable healthcare-associated infections, including multidrug-resistant organisms."
+expertise = [ "infectious diseases", "hospital epidemiology", "healthcare-associated infections", "antimicrobial resistance",]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/michael-rubin.html"
+
+[[organization.researchers]]
+id = "andrew-redd"
+full_name = "Andrew Redd"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "assefaw-gebremedhin"
+full_name = "Assefaw Gebremedhin"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "damon-toth"
+full_name = "Damon Toth"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "elissa-schwartz"
+full_name = "Elissa Schwartz"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "erin-clancey"
+full_name = "Erin Clancey"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "jim-vanderslice"
+full_name = "Jim VanDerslice"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "karim-khader"
+full_name = "Karim Khader"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "sima-najafzadehkhoei"
+full_name = "Sima Najafzadehkhoei"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "yue-xhang"
+full_name = "Yue Xhang"
+role = "Analytical Modeling Team"
+
+[[organization.researchers]]
+id = "haeseon-lee"
+full_name = "Haeseon Lee"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "jeongyeon-cho"
+full_name = "Jeongyeon Cho"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "khanh-duong"
+full_name = "Khanh Duong"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "nathan-seegert"
+full_name = "Nathan Seegert"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "nathorn-nui-chaiyakunapruk"
+full_name = "Nathorn (Nui) Chaiyakunapruk"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "muhammed-rashid"
+full_name = "Muhammed Rashid"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "richard-nelson"
+full_name = "Richard Nelson"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "danielle-nguyen"
+full_name = "Danielle Nguyen"
+role = "Economic Impact Analysis Team"
+
+[[organization.researchers]]
+id = "joel-hartsell"
+full_name = "Joel Hartsell"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "julie-szymczak"
+full_name = "Julie Szymczak"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "katie-allen"
+full_name = "Katie Allen"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "kimberley-shoaf"
+full_name = "Kimberley Shoaf"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "skyler-crouch"
+full_name = "Skyler Crouch"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "elizabeth-weybright"
+full_name = "Elizabeth Weybright"
+role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
+
+[[organization.researchers]]
+id = "andy-pavia"
+full_name = "Andy Pavia"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "erin-landguth"
+full_name = "Erin Landguth"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "jeanmarie-mayer"
+full_name = "JeanMarie Mayer"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "leisha-nolen"
+full_name = "Leisha Nolen"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "per-gesteland"
+full_name = "Per Gesteland"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "stephanie-seifert"
+full_name = "Stephanie Seifert"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "pilar-fernandez"
+full_name = "Pilar Fernandez"
+role = "Subject Matter Expert Responding to Disease Emergencies"
+
+[[organization.researchers]]
+id = "delaney-thornton"
+full_name = "Delaney Thornton"
+role = "Project Management Team"
+
+[[organization.researchers]]
+id = "hannah-higgs"
+full_name = "Hannah Higgs"
+role = "Project Management Team"
+
+[[organization.researchers]]
+id = "hazel-guerrero"
+full_name = "Hazel Guerrero"
+role = "Project Management Team"
+
+[[organization.researchers]]
+id = "kristina-stratford"
+full_name = "Kristina Stratford"
+role = "Project Management Team"
+
+[[organization.researchers]]
+id = "nwoka-ajinwo"
+full_name = "Nwoka Ajinwo"
+role = "Project Management Team"
+
+[[organization.researchers]]
+id = "alexander-lex"
+full_name = "Alexander Lex"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "andrew-pulsipher"
+full_name = "Andrew Pulsipher"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "jake-wagoner"
+full_name = "Jake Wagoner"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "paul-rosen"
+full_name = "Paul Rosen"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "rahat-zaman"
+full_name = "Rahat Zaman"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "tingying-he"
+full_name = "Tingying He"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "willy-ray"
+full_name = "Willy Ray"
+role = "Computational & Visual Analytics Team"
+
+[[organization.researchers]]
+id = "george-g-vega-yon"
+full_name = "George G. Vega Yon"
+role = "Computational & Visual Analytics Team"

@@ -1,0 +1,22 @@
+# InsightNet organization profile. Update this file to change one center.
+
+[organization]
+id = "resilient-shield"
+name = "Resilient Shield"
+acronym = "RS"
+summary = "Resilient Shield is a public health intelligence and infectious disease modeling support center that integrates modeling tools into public health decision-making."
+website = "https://resilientshield.ucsd.edu/"
+location = "California"
+focus_areas = [ "public health intelligence", "infectious disease modeling", "outbreak forecasting", "public health decision-making",]
+enabled = true
+[[organization.researchers]]
+id = "eliah-aronoff-spencer"
+full_name = "Eliah Aronoff-Spencer, MD, PhD"
+role = "Director, Resilient Shield; Professor of Medicine and Design, UC San Diego"
+bio = "Physician-scientist whose work focuses on diagnostic, informatics, and health decision-support tools."
+
+[[organization.researchers]]
+id = "natasha-martin"
+full_name = "Natasha Martin, DPhil"
+role = "Co-Lead, Resilient Shield; Professor and Vice Chief of Global Public Health, UC San Diego"
+bio = "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments."

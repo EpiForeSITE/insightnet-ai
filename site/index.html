@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Discover scientific centers, researchers, and emerging work across InsightNet."
+      content="An unofficial explorer for discovering scientific centers, researchers, and emerging work across InsightNet."
     />
     <meta name="theme-color" content="#12343b" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="InsightNet Scientific Endeavors" />
+    <meta property="og:title" content="InsightNet Explorer" />
     <meta
       property="og:description"
-      content="A living map of scientific work, people, and expertise across InsightNet."
+      content="An unofficial explorer of scientific work, people, and expertise across InsightNet."
     />
     <meta property="og:url" content="__SITE_BASE_URL__/" />
     <meta property="og:image" content="__SITE_BASE_URL__/og.png" />
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="__SITE_BASE_URL__/og.png" />
     <link rel="canonical" href="__SITE_BASE_URL__/" />
-    <title>InsightNet · Scientific Endeavors</title>
+    <title>InsightNet Explorer</title>
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="./assets/app.js" defer></script>
   </head>
@@ -36,20 +36,25 @@
           <small>Scientific endeavors</small>
         </span>
       </a>
-      <nav aria-label="Primary navigation">
-        <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
-        <button class="nav-link" type="button" data-view="activity">Activity</button>
-        <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
-        <button class="nav-link" type="button" data-view="experts">Find experts</button>
-        <button class="nav-link" type="button" data-view="health">Data status</button>
-      </nav>
+      <div class="header-actions">
+        <nav aria-label="Primary navigation">
+          <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
+          <button class="nav-link" type="button" data-view="activity">Activity</button>
+          <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
+          <button class="nav-link" type="button" data-view="experts">Find experts</button>
+          <button class="nav-link" type="button" data-view="health">Data status</button>
+        </nav>
+        <a class="official-site-link" href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">
+          Visit insightnet.us <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </header>
 
     <main id="main-content">
       <section class="hero" aria-labelledby="network-title">
         <div class="hero-copy">
           <p class="kicker">Living map of scientific work</p>
-          <h1 id="network-title">InsightNet Scientific Endeavors</h1>
+          <h1 id="network-title">InsightNet Explorer</h1>
           <p id="network-description" class="hero-lede">
             Discover centers, researchers, and the scientific work emerging across InsightNet.
           </p>
@@ -212,7 +217,10 @@
     <footer>
       <div>
         <strong>InsightNet</strong>
-        <p>A versioned, public-interest view of scientific work across the network.</p>
+        <p>
+          This is an unofficial InsightNet website. For the official InsightNet website, visit
+          <a href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">insightnet.us</a>.
+        </p>
       </div>
       <div class="footer-meta">
         <span id="footer-generated">Awaiting data</span>

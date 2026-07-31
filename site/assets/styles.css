@@ -127,6 +127,12 @@ nav {
   gap: 0.2rem;
 }
 
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
 .nav-link,
 .text-action {
   background: transparent;
@@ -146,6 +152,22 @@ nav {
 .nav-link.is-active {
   background: var(--sage);
   color: var(--ink);
+}
+
+.official-site-link {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.48rem 0.75rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.official-site-link:hover {
+  background: var(--white);
+  border-color: var(--sage-deep);
 }
 
 main {
@@ -816,6 +838,10 @@ footer p,
   margin-bottom: 0;
 }
 
+footer p {
+  max-width: 540px;
+}
+
 .footer-meta {
   align-items: end;
   display: flex;
@@ -842,6 +868,10 @@ footer p,
     align-items: flex-start;
     flex-direction: column;
     gap: 0.9rem;
+  }
+
+  .header-actions {
+    max-width: 100%;
   }
 
   nav {
@@ -882,6 +912,12 @@ footer p,
   footer {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .header-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.55rem;
   }
 
   .hero {

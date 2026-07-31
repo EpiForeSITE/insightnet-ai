@@ -42,6 +42,17 @@ def test_static_site_uses_local_assets_and_snapshot() -> None:
     assert "regex" not in javascript.lower()
 
 
+def test_static_site_identifies_itself_as_unofficial_and_links_to_insightnet() -> None:
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    assert "InsightNet Explorer" in html
+    assert 'href="https://insightnet.us/"' in html
+    assert "This is an unofficial InsightNet website." in html
+    assert 'document.title = "InsightNet Explorer"' in javascript
+    assert 'byId("network-title").textContent = "InsightNet Explorer"' in javascript
+
+
 def test_static_snapshot_matches_canonical_snapshot() -> None:
     canonical = json.loads((ROOT / "data/insightnet.json").read_text(encoding="utf-8"))
     static = json.loads((ROOT / "site/data/insightnet.json").read_text(encoding="utf-8"))

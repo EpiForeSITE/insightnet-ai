@@ -353,8 +353,8 @@
   function setMetadata() {
     const network = snapshot.network || {};
     const stats = snapshot.stats || {};
-    document.title = `${network.name || "InsightNet"} · Scientific Endeavors`;
-    byId("network-title").textContent = network.name || "InsightNet Scientific Endeavors";
+    document.title = "InsightNet Explorer";
+    byId("network-title").textContent = "InsightNet Explorer";
     byId("network-description").textContent = network.description || "Scientific activity across the network.";
     byId("metric-centers").textContent = stats.organizations ?? snapshot.organizations?.length ?? 0;
     byId("metric-researchers").textContent = stats.researchers ?? 0;

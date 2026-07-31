@@ -34,6 +34,7 @@ def test_loads_network_settings_and_per_center_profiles(tmp_path: Path) -> None:
         [[organization.researchers]]
         full_name = "Grace Hopper"
         expertise = ["computer science"]
+        orcid = "https://orcid.org/0000-0002-1825-0097"
         """,
         encoding="utf-8",
     )
@@ -42,7 +43,10 @@ def test_loads_network_settings_and_per_center_profiles(tmp_path: Path) -> None:
 
     assert profiles["network"]["name"] == "Test network"
     assert [org["id"] for org in profiles["organizations"]] == ["alpha", "beta"]
-    assert profiles["organizations"][1]["researchers"][0]["id"] == "grace-hopper"
+    researcher = profiles["organizations"][1]["researchers"][0]
+    assert researcher["id"] == "grace-hopper"
+    assert researcher["orcid"] == "https://orcid.org/0000-0002-1825-0097"
+    assert researcher["google_scholar"] == ""
 
 
 def test_rejects_duplicate_center_ids(tmp_path: Path) -> None:

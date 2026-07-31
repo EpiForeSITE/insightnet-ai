@@ -15,33 +15,49 @@ id = "peter-jhon"
 full_name = "Peter Jhon"
 role = "Executive Director"
 bio = "CMU/MLD and OVPR."
+linkedin = "https://www.linkedin.com/in/peter-jhon-2899766"
 
 [[organization.researchers]]
 id = "roni-rosenfeld"
 full_name = "Roni Rosenfeld"
 role = "Principal Investigator"
 bio = "CMU/MLD."
+website = "https://www.cs.cmu.edu/~roni/"
+google_scholar = "https://scholar.google.com/citations?user=ct3WjtoAAAAJ&hl=en"
 
 [[organization.researchers]]
 id = "ryan-tibshirani"
 full_name = "Ryan Tibshirani"
 role = "Principal Investigator"
 bio = "UC Berkeley/Stat and CMU/MLD."
+website = "https://www.stat.berkeley.edu/~ryantibs/"
+google_scholar = "https://scholar.google.com/citations?user=cQ1P1qoAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-2158-8304"
 
 [[organization.researchers]]
 id = "daniel-mcdonald"
 full_name = "Daniel McDonald"
 role = "Co-Principal Investigator"
 bio = "University of British Columbia."
+website = "https://dajmcdon.github.io/"
+google_scholar = "https://scholar.google.com/citations?user=qRmkt6wAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-0443-4282"
 
 [[organization.researchers]]
 id = "will-townes"
 full_name = "Will Townes"
 role = "Co-Principal Investigator"
 bio = "CMU/Stat."
+website = "https://willtownes.github.io"
+linkedin = "https://www.linkedin.com/in/willtownes1/"
+bluesky = "https://bsky.app/profile/willtownes.bsky.social"
 
 [[organization.researchers]]
 id = "bryan-wilder"
 full_name = "Bryan Wilder"
 role = "Co-Principal Investigator"
 bio = "CMU/MLD."
+website = "https://bryanwilder.github.io/"
+google_scholar = "https://scholar.google.com/citations?user=dQ0dT2sAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-9410-020X"
+bluesky = "https://bsky.app/profile/brwilder.bsky.social"

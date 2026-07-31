@@ -14,18 +14,33 @@ enabled = true
 id = "benjamin-lopman"
 full_name = "Benjamin Lopman"
 role = "Director and Co-Principal Investigator; Professor of Epidemiology and Environmental Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/profile/faculty/benjamin-lopman"
+google_scholar = "https://scholar.google.com/citations?user=pryUlKsAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-9238-0068"
+linkedin = "https://www.linkedin.com/in/ben-lopman-b7284533/"
 
 [[organization.researchers]]
 id = "natalie-dean"
 full_name = "Natalie Dean"
 role = "Co-Principal Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+website = "https://www.nataliexdean.net/"
+google_scholar = "https://scholar.google.com/citations?user=H7nim_oAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-3884-0921"
+linkedin = "https://www.linkedin.com/in/nataliexdean/"
+twitter = "https://x.com/nataliexdean"
 
 [[organization.researchers]]
 id = "katia-koelle"
 full_name = "Katia Koelle"
 role = "Co-Principal Investigator; Professor, Department of Biology, Emory University College of Arts and Sciences"
+website = "https://scholarblogs.emory.edu/koellelab/"
+google_scholar = "https://scholar.google.com/citations?user=6uMrbtgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-0254-6141"
 
 [[organization.researchers]]
 id = "allison-chamberlain"
 full_name = "Allison Chamberlain"
 role = "Co-Principal Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/profile/faculty/allison-chamberlain"
+orcid = "https://orcid.org/0000-0001-6009-537X"
+linkedin = "https://www.linkedin.com/in/allison-chamberlain-5644a5132/"

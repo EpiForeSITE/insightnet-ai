@@ -10,6 +10,7 @@
     twitter: "X / Twitter",
     bluesky: "Bluesky",
     google_scholar: "Google Scholar",
+    orcid: "ORCID",
   };
 
   let snapshot = null;

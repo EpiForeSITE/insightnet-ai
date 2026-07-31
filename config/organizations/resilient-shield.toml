@@ -14,9 +14,13 @@ id = "eliah-aronoff-spencer"
 full_name = "Eliah Aronoff-Spencer, MD, PhD"
 role = "Director, Resilient Shield; Professor of Medicine and Design, UC San Diego"
 bio = "Physician-scientist whose work focuses on diagnostic, informatics, and health decision-support tools."
+website = "https://prepare.ucsd.edu/our-team/faculty/eliah-aronoff-spencer.html"
+google_scholar = "https://scholar.google.com/citations?user=YVk7vdEAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-6279-5027"
 
 [[organization.researchers]]
 id = "natasha-martin"
 full_name = "Natasha Martin, DPhil"
 role = "Co-Lead, Resilient Shield; Professor and Vice Chief of Global Public Health, UC San Diego"
 bio = "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments."
+website = "https://profiles.ucsd.edu/natasha.martin"

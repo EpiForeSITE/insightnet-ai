@@ -16,6 +16,10 @@ full_name = "Justin Lessler"
 role = "Co-Director; Professor, Department of Epidemiology, UNC Chapel Hill"
 bio = "Studies infectious disease dynamics and control, including SARS-CoV-2, influenza, cholera, and dengue."
 expertise = [ "infectious disease dynamics", "statistics", "dynamic models", "study design",]
+website = "https://sph.unc.edu/adv_profile/justin-lessler-phd/"
+google_scholar = "https://scholar.google.com/citations?user=d4bTy4kAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-9741-8109"
+bluesky = "https://bsky.app/profile/justinlessler.bsky.social"
 
 [[organization.researchers]]
 id = "kimberly-powers"
@@ -23,6 +27,9 @@ full_name = "Kimberly Powers"
 role = "Co-Director; Associate Professor, Department of Epidemiology, UNC Chapel Hill"
 bio = "Uses epidemiological, statistical, and mathematical modeling to study infectious disease transmission and inform prevention, policy, and public health programs."
 expertise = [ "epidemiological modeling", "statistical modeling", "mathematical modeling", "HIV", "sexually transmitted infections",]
+website = "https://sph.unc.edu/adv_profile/kimberly-powers-phd/"
+google_scholar = "https://scholar.google.com/citations?user=QxTInVcAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-7980-9846"
 
 [[organization.researchers]]
 id = "shaun-truelove"
@@ -30,6 +37,10 @@ full_name = "Shaun Truelove"
 role = "Co-Director; Associate Research Professor, International Health and Epidemiology, Johns Hopkins University"
 bio = "Applies infectious disease dynamics and modeling to public health response, decision-making, and policy."
 expertise = [ "infectious disease dynamics", "modeling", "COVID-19", "influenza", "vaccine-preventable diseases",]
+website = "https://publichealth.jhu.edu/faculty/3998/shaun-truelove"
+google_scholar = "https://scholar.google.com/citations?user=nnTMSpQAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-0538-0607"
+linkedin = "https://www.linkedin.com/in/shaun-truelove-ba9315a/"
 
 [[organization.researchers]]
 id = "joseph-lemaitre"
@@ -37,6 +48,10 @@ full_name = "Joseph Lemaitre"
 role = "Assistant Professor, UNC Chapel Hill"
 bio = "Develops models combining scientific knowledge and statistical methods to guide policy from incomplete or noisy data."
 expertise = [ "infectious disease dynamics", "statistical methods", "COVID-19", "influenza", "cholera",]
+website = "https://josephlemaitre.com/"
+google_scholar = "https://scholar.google.com/citations?user=6MY9J5IAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-2677-6574"
+bluesky = "https://bsky.app/profile/josephlemaitre.bsky.social"
 
 [[organization.researchers]]
 id = "sara-loo"
@@ -44,30 +59,43 @@ full_name = "Sara Loo"
 role = "Assistant Scientist, International Health and International Vaccine Access Center, Johns Hopkins University"
 bio = "Applied mathematician developing models of infectious disease evolutionary dynamics and cultural evolution of social behaviors."
 expertise = [ "applied mathematics", "evolutionary dynamics", "COVID-19", "influenza", "RSV",]
+website = "https://publichealth.jhu.edu/faculty/4752/sara-loo"
+orcid = "https://orcid.org/0000-0001-9763-5587"
+linkedin = "https://www.linkedin.com/in/saraloo93/"
+bluesky = "https://bsky.app/profile/loosaraliyen.bsky.social"
 
 [[organization.researchers]]
 id = "carl-pearson"
 full_name = "Carl Pearson"
 role = "Research Assistant Professor, Department of Epidemiology, UNC Chapel Hill"
 expertise = [ "agent-based models", "network modeling", "scenario modeling", "mechanistic modeling", "COVID-19", "mpox", "Ebola", "dengue",]
+website = "https://sph.unc.edu/adv_profile/carl-a-b-pearson/"
+google_scholar = "https://scholar.google.com/citations?user=EUMp5t4AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-0701-7860"
+github = "https://github.com/pearsonca"
 
 [[organization.researchers]]
 id = "praachi-das"
 full_name = "Praachi Das"
 role = "Postdoctoral Researcher, UNC Gillings School of Global Public Health"
 expertise = [ "mathematical models", "statistical models", "infectious disease dynamics",]
+orcid = "https://orcid.org/0000-0001-6485-728X"
+bluesky = "https://bsky.app/profile/praachidas.bsky.social"
 
 [[organization.researchers]]
 id = "cyril-geismar"
 full_name = "Cyril Geismar"
 role = "Postdoctoral Research Fellow, Johns Hopkins Bloomberg School of Public Health"
 expertise = [ "mathematical models", "epidemic forecasting", "software",]
+orcid = "https://orcid.org/0000-0002-8486-5890"
 
 [[organization.researchers]]
 id = "joshua-macdonald"
 full_name = "Joshua Macdonald"
 role = "Postdoctoral Scholar, Johns Hopkins Bloomberg School of Public Health"
 expertise = [ "applied mathematics", "epidemiological modeling", "parameter identification", "uncertainty quantification", "multi-scale modeling",]
+website = "https://jcmacdonald.dev"
+orcid = "https://orcid.org/0000-0002-3643-6266"
 
 [[organization.researchers]]
 id = "joseph-mathews"
@@ -80,12 +108,16 @@ id = "kimberlyn-roosa"
 full_name = "Kimberlyn Roosa"
 role = "Postdoctoral Fellow, Johns Hopkins Bloomberg School of Public Health"
 expertise = [ "infectious disease modeling", "forecasting", "science communication",]
+orcid = "https://orcid.org/0000-0003-1169-7125"
+linkedin = "https://www.linkedin.com/in/kimberlyn-roosa/"
 
 [[organization.researchers]]
 id = "claire-smith"
 full_name = "Claire Smith"
 role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
 expertise = [ "infectious disease dynamics", "epidemiological modeling",]
+google_scholar = "https://scholar.google.com/citations?user=OzDsVtEAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-1069-9460"
 
 [[organization.researchers]]
 id = "abigail-sykes"

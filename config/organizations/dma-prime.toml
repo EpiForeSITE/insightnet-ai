@@ -16,6 +16,8 @@ full_name = "Lior Rennert"
 role = "Founding Director"
 bio = "Associate dean for health sciences, associate professor of biostatistics, and founding director of Clemson's Center for Public Health Modeling and Response. His work develops data-driven approaches for health-related decision-making and statewide real-time opioid and infectious-disease outbreak detection, forecasting, and emergency response."
 expertise = [ "biostatistics", "data-driven decision-making", "infectious disease forecasting", "outbreak detection",]
+website = "https://www.clemson.edu/health-research/faculty/faculty-scholars/rennert.html"
+orcid = "https://orcid.org/0000-0001-5275-7273"
 
 [[organization.researchers]]
 id = "christopher-mcmahan"
@@ -23,6 +25,8 @@ full_name = "Christopher McMahan"
 role = "Professor; Associate Director for Graduate Studies"
 bio = "Professor in Clemson's School of Mathematical and Statistical Sciences."
 expertise = [ "machine learning", "artificial intelligence", "disease mapping", "forecasting",]
+website = "https://mcmaha2.people.clemson.edu/"
+orcid = "https://orcid.org/0000-0001-5056-9615"
 
 [[organization.researchers]]
 id = "federico-iuricich"
@@ -30,6 +34,10 @@ full_name = "Federico Iuricich"
 role = "Assistant Professor"
 bio = "Assistant professor in Clemson's School of Computing who develops visual interfaces for mobile-health-clinic resource-allocation toolkits."
 expertise = [ "spatial data analysis", "data visualization", "3D visualization", "visual interfaces",]
+website = "https://fiurici.people.clemson.edu"
+google_scholar = "https://scholar.google.com/citations?user=LSgwgNoAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-1782-9715"
+github = "https://github.com/IuricichF"
 
 [[organization.researchers]]
 id = "md-sakhawat-hossain"
@@ -37,6 +45,8 @@ full_name = "Md Sakhawat Hossain"
 role = "Research Assistant Professor"
 bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response; develops, optimizes, and calibrates predictive modeling frameworks for infectious diseases."
 expertise = [ "predictive modeling", "parameter identification", "numerical optimization", "infectious diseases",]
+google_scholar = "https://scholar.google.com/citations?user=DpGkJdcAAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/md-sakhawat/"
 
 [[organization.researchers]]
 id = "aakash-pandey"
@@ -44,6 +54,7 @@ full_name = "Aakash Pandey"
 role = "Research Assistant Professor"
 bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response and former CDC modeling fellow. His work identifies intervention strategies and develops tools to assess potential-outbreak risk."
 expertise = [ "infectious disease modeling", "outbreak analytics", "disease ecology", "disease evolution",]
+orcid = "https://orcid.org/0000-0001-7935-8192"
 
 [[organization.researchers]]
 id = "lu-zhong"
@@ -51,3 +62,7 @@ full_name = "Lu Zhong"
 role = "Research Assistant Professor"
 bio = "Research assistant professor at Clemson's Center for Public Health Modeling and Response; works on computational epidemiology and healthcare resilience for crisis preparedness and response."
 expertise = [ "computational epidemiology", "network epidemiology", "machine learning", "complex systems",]
+website = "https://www.lucinezhong.com/"
+google_scholar = "https://scholar.google.com/citations?user=WggT7aEAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-7934-7634"
+linkedin = "https://www.linkedin.com/in/lu-zhong-b54419bb/"

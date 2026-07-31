@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-01T09:00:53.991003Z",
+  "generated_at": "2026-08-01T16:38:45.965570Z",
   "network": {
     "name": "InsightNet Scientific Endeavors",
     "description": "Discover centers, researchers, and the scientific work emerging across InsightNet.",
@@ -64,6 +64,10 @@
             "dynamic models",
             "study design"
           ],
+          "website": "https://sph.unc.edu/adv_profile/justin-lessler-phd/",
+          "google_scholar": "https://scholar.google.com/citations?user=d4bTy4kAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-9741-8109",
+          "bluesky": "https://bsky.app/profile/justinlessler.bsky.social",
           "keywords": [
             "infectious",
             "disease",
@@ -81,12 +85,9 @@
             "study",
             "design"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -101,6 +102,9 @@
             "HIV",
             "sexually transmitted infections"
           ],
+          "website": "https://sph.unc.edu/adv_profile/kimberly-powers-phd/",
+          "google_scholar": "https://scholar.google.com/citations?user=QxTInVcAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-7980-9846",
           "keywords": [
             "modeling",
             "epidemiological",
@@ -122,12 +126,10 @@
             "transmitted",
             "infections"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -142,6 +144,10 @@
             "influenza",
             "vaccine-preventable diseases"
           ],
+          "website": "https://publichealth.jhu.edu/faculty/3998/shaun-truelove",
+          "google_scholar": "https://scholar.google.com/citations?user=nnTMSpQAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-0538-0607",
+          "linkedin": "https://www.linkedin.com/in/shaun-truelove-ba9315a/",
           "keywords": [
             "infectious",
             "disease",
@@ -158,12 +164,9 @@
             "vaccine-preventable",
             "diseases"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -178,6 +181,10 @@
             "influenza",
             "cholera"
           ],
+          "website": "https://josephlemaitre.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=6MY9J5IAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-2677-6574",
+          "bluesky": "https://bsky.app/profile/josephlemaitre.bsky.social",
           "keywords": [
             "statistical",
             "methods",
@@ -198,12 +205,9 @@
             "influenza",
             "cholera"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -218,6 +222,10 @@
             "influenza",
             "RSV"
           ],
+          "website": "https://publichealth.jhu.edu/faculty/4752/sara-loo",
+          "orcid": "https://orcid.org/0000-0001-9763-5587",
+          "linkedin": "https://www.linkedin.com/in/saraloo93/",
+          "bluesky": "https://bsky.app/profile/loosaraliyen.bsky.social",
           "keywords": [
             "applied",
             "evolutionary",
@@ -236,11 +244,8 @@
             "influenza",
             "rsv"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -258,6 +263,10 @@
             "Ebola",
             "dengue"
           ],
+          "website": "https://sph.unc.edu/adv_profile/carl-a-b-pearson/",
+          "google_scholar": "https://scholar.google.com/citations?user=EUMp5t4AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-0701-7860",
+          "github": "https://github.com/pearsonca",
           "bio": "",
           "keywords": [
             "modeling",
@@ -270,12 +279,9 @@
             "ebola",
             "dengue"
           ],
-          "website": "",
           "linkedin": "",
-          "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -287,6 +293,8 @@
             "statistical models",
             "infectious disease dynamics"
           ],
+          "orcid": "https://orcid.org/0000-0001-6485-728X",
+          "bluesky": "https://bsky.app/profile/praachidas.bsky.social",
           "bio": "",
           "keywords": [
             "models",
@@ -300,7 +308,6 @@
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -313,6 +320,7 @@
             "epidemic forecasting",
             "software"
           ],
+          "orcid": "https://orcid.org/0000-0002-8486-5890",
           "bio": "",
           "keywords": [
             "mathematical",
@@ -340,6 +348,8 @@
             "uncertainty quantification",
             "multi-scale modeling"
           ],
+          "website": "https://jcmacdonald.dev",
+          "orcid": "https://orcid.org/0000-0002-3643-6266",
           "bio": "",
           "keywords": [
             "modeling",
@@ -352,7 +362,6 @@
             "quantification",
             "multi-scale"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -385,6 +394,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -396,6 +406,8 @@
             "forecasting",
             "science communication"
           ],
+          "orcid": "https://orcid.org/0000-0003-1169-7125",
+          "linkedin": "https://www.linkedin.com/in/kimberlyn-roosa/",
           "bio": "",
           "keywords": [
             "infectious",
@@ -406,7 +418,6 @@
             "communication"
           ],
           "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
@@ -421,6 +432,8 @@
             "infectious disease dynamics",
             "epidemiological modeling"
           ],
+          "google_scholar": "https://scholar.google.com/citations?user=OzDsVtEAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-1069-9460",
           "bio": "",
           "keywords": [
             "infectious",
@@ -434,7 +447,6 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -463,6 +475,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         }
       ],
@@ -515,15 +528,16 @@
           "id": "sara-tartof",
           "full_name": "Sara Tartof",
           "role": "Co-Lead; Research Scientist, Department of Research & Evaluation, Kaiser Permanente Southern California",
+          "website": "https://www.kp-scalresearch.org/investigator/sara-y-tartof-phd-mph/",
+          "google_scholar": "https://scholar.google.com/citations?user=xHf0B00AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-2336-8476",
+          "linkedin": "https://www.linkedin.com/in/sara-tartof-70158791/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -538,6 +552,9 @@
             "disease control",
             "vaccine effectiveness"
           ],
+          "google_scholar": "https://scholar.google.com/citations?user=-G_851kAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-8505-8839",
+          "linkedin": "https://www.linkedin.com/in/joseph-lewnard-a7b9108a/",
           "bio": "",
           "keywords": [
             "infectious",
@@ -550,32 +567,32 @@
             "vaccine",
             "effectiveness"
           ],
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "isabel-rodriguez-barraquer",
           "full_name": "Isabel Rodriguez-Barraquer",
           "role": "Co-Investigator; Associate Professor, Department of Medicine, University of California San Francisco",
+          "website": "https://hividgm.ucsf.edu/people/isabel-rodriguez-barraquer",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "parag-mahale",
           "full_name": "Parag Mahale",
           "role": "Team Member; Kaiser Permanente Southern California",
+          "orcid": "https://orcid.org/0000-0003-1285-3310",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -591,30 +608,32 @@
           "id": "alan-hubbard",
           "full_name": "Alan Hubbard",
           "role": "Team Member; Professor and Chair, Division of Biostatistics, UC Berkeley School of Public Health",
+          "website": "https://ahubb40.github.io/",
+          "google_scholar": "https://scholar.google.com/citations?user=XIQ3sm0AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-3769-0127",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "alejandro-schuler",
           "full_name": "Alejandro Schuler",
           "role": "Team Member; Assistant Professor in Residence, Division of Biostatistics, UC Berkeley School of Public Health",
+          "website": "https://publichealth.berkeley.edu/people/alejandro-schuler",
+          "google_scholar": "https://scholar.google.com/citations?user=YbsggPYAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-4853-6130",
+          "linkedin": "https://www.linkedin.com/in/alejandro-schuler-43817b70/",
+          "bluesky": "https://bsky.app/profile/aschuler.bsky.social",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         }
       ],
@@ -672,56 +691,60 @@
           "id": "benjamin-lopman",
           "full_name": "Benjamin Lopman",
           "role": "Director and Co-Principal Investigator; Professor of Epidemiology and Environmental Health, Emory University Rollins School of Public Health",
+          "website": "https://sph.emory.edu/profile/faculty/benjamin-lopman",
+          "google_scholar": "https://scholar.google.com/citations?user=pryUlKsAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-9238-0068",
+          "linkedin": "https://www.linkedin.com/in/ben-lopman-b7284533/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "natalie-dean",
           "full_name": "Natalie Dean",
           "role": "Co-Principal Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health",
+          "website": "https://www.nataliexdean.net/",
+          "google_scholar": "https://scholar.google.com/citations?user=H7nim_oAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-3884-0921",
+          "linkedin": "https://www.linkedin.com/in/nataliexdean/",
+          "twitter": "https://x.com/nataliexdean",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
-          "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "katia-koelle",
           "full_name": "Katia Koelle",
           "role": "Co-Principal Investigator; Professor, Department of Biology, Emory University College of Arts and Sciences",
+          "website": "https://scholarblogs.emory.edu/koellelab/",
+          "google_scholar": "https://scholar.google.com/citations?user=6uMrbtgAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0254-6141",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "allison-chamberlain",
           "full_name": "Allison Chamberlain",
           "role": "Co-Principal Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health",
+          "website": "https://sph.emory.edu/profile/faculty/allison-chamberlain",
+          "orcid": "https://orcid.org/0000-0001-6009-537X",
+          "linkedin": "https://www.linkedin.com/in/allison-chamberlain-5644a5132/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
@@ -787,6 +810,9 @@
             "outbreak science",
             "disease modeling"
           ],
+          "website": "https://centerforhealthsecurity.org/who-we-are/our-people/caitlin-rivers",
+          "google_scholar": "https://scholar.google.com/citations?user=OSrbWZ0AAAAJ&hl=en",
+          "bluesky": "https://bsky.app/profile/cmyeaton.bsky.social",
           "keywords": [
             "health",
             "johns",
@@ -807,12 +833,10 @@
             "disease",
             "modeling"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -826,6 +850,10 @@
             "healthcare preparedness",
             "biodefense funding"
           ],
+          "website": "https://centerforhealthsecurity.org/who-we-are/our-people/crystal-watson",
+          "orcid": "https://orcid.org/0000-0002-3808-986X",
+          "linkedin": "https://www.linkedin.com/in/crystal-watson-b73b2924/",
+          "bluesky": "https://bsky.app/profile/crwatson.bsky.social",
           "keywords": [
             "health",
             "johns",
@@ -847,11 +875,8 @@
             "biodefense",
             "funding"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -868,6 +893,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -883,16 +909,18 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "lucia-mullen",
           "full_name": "Lucia Mullen",
           "role": "Associate Scholar, Research Associate",
+          "website": "https://centerforhealthsecurity.org/who-we-are/our-people/lucia-mullen",
+          "orcid": "https://orcid.org/0009-0004-6699-3313",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -904,11 +932,12 @@
           "id": "sutyajeet-soneja",
           "full_name": "Sutyajeet Soneja",
           "role": "Associate Scientist",
+          "website": "https://cori.centerforhealthsecurity.org/sutyajeet-sut-soneja-phd",
+          "orcid": "https://orcid.org/0000-0003-4914-2432",
+          "linkedin": "https://www.linkedin.com/in/sut-soneja/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
@@ -919,10 +948,11 @@
           "id": "eric-toner",
           "full_name": "Eric Toner",
           "role": "Senior Scholar, Senior Scientist",
+          "website": "https://centerforhealthsecurity.org/who-we-are/our-people/eric-toner",
+          "orcid": "https://orcid.org/0000-0001-5292-9450",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -934,6 +964,7 @@
           "id": "fatima-ameaka",
           "full_name": "Fatima Ameaka",
           "role": "Senior Analyst",
+          "orcid": "https://orcid.org/0009-0006-8060-274X",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -949,6 +980,7 @@
           "id": "haley-farrie",
           "full_name": "Haley Farrie",
           "role": "Senior Analyst",
+          "orcid": "https://orcid.org/0009-0001-8380-7410",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -973,12 +1005,14 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "hannah-goodtree",
           "full_name": "Hannah Goodtree",
           "role": "Senior Analyst",
+          "orcid": "https://orcid.org/0009-0006-9187-7597",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -1045,6 +1079,7 @@
           "full_name": "Peter Jhon",
           "role": "Executive Director",
           "bio": "CMU/MLD and OVPR.",
+          "linkedin": "https://www.linkedin.com/in/peter-jhon-2899766",
           "expertise": [],
           "keywords": [
             "cmu",
@@ -1052,11 +1087,11 @@
             "ovpr"
           ],
           "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1064,17 +1099,18 @@
           "full_name": "Roni Rosenfeld",
           "role": "Principal Investigator",
           "bio": "CMU/MLD.",
+          "website": "https://www.cs.cmu.edu/~roni/",
+          "google_scholar": "https://scholar.google.com/citations?user=ct3WjtoAAAAJ&hl=en",
           "expertise": [],
           "keywords": [
             "cmu",
             "mld"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1082,6 +1118,9 @@
           "full_name": "Ryan Tibshirani",
           "role": "Principal Investigator",
           "bio": "UC Berkeley/Stat and CMU/MLD.",
+          "website": "https://www.stat.berkeley.edu/~ryantibs/",
+          "google_scholar": "https://scholar.google.com/citations?user=cQ1P1qoAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-2158-8304",
           "expertise": [],
           "keywords": [
             "berkeley",
@@ -1089,12 +1128,10 @@
             "cmu",
             "mld"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1102,18 +1139,19 @@
           "full_name": "Daniel McDonald",
           "role": "Co-Principal Investigator",
           "bio": "University of British Columbia.",
+          "website": "https://dajmcdon.github.io/",
+          "google_scholar": "https://scholar.google.com/citations?user=qRmkt6wAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0443-4282",
           "expertise": [],
           "keywords": [
             "university",
             "british",
             "columbia"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1121,17 +1159,18 @@
           "full_name": "Will Townes",
           "role": "Co-Principal Investigator",
           "bio": "CMU/Stat.",
+          "website": "https://willtownes.github.io",
+          "linkedin": "https://www.linkedin.com/in/willtownes1/",
+          "bluesky": "https://bsky.app/profile/willtownes.bsky.social",
           "expertise": [],
           "keywords": [
             "cmu",
             "stat"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1139,17 +1178,18 @@
           "full_name": "Bryan Wilder",
           "role": "Co-Principal Investigator",
           "bio": "CMU/MLD.",
+          "website": "https://bryanwilder.github.io/",
+          "google_scholar": "https://scholar.google.com/citations?user=dQ0dT2sAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-9410-020X",
+          "bluesky": "https://bsky.app/profile/brwilder.bsky.social",
           "expertise": [],
           "keywords": [
             "cmu",
             "mld"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         }
       ],
@@ -1213,6 +1253,8 @@
             "infectious disease forecasting",
             "outbreak detection"
           ],
+          "website": "https://www.clemson.edu/health-research/faculty/faculty-scholars/rennert.html",
+          "orcid": "https://orcid.org/0000-0001-5275-7273",
           "keywords": [
             "associate",
             "health",
@@ -1235,7 +1277,6 @@
             "work",
             "develops"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -1254,6 +1295,8 @@
             "disease mapping",
             "forecasting"
           ],
+          "website": "https://mcmaha2.people.clemson.edu/",
+          "orcid": "https://orcid.org/0000-0001-5056-9615",
           "keywords": [
             "professor",
             "clemson",
@@ -1269,7 +1312,6 @@
             "mapping",
             "forecasting"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -1288,6 +1330,10 @@
             "3D visualization",
             "visual interfaces"
           ],
+          "website": "https://fiurici.people.clemson.edu",
+          "google_scholar": "https://scholar.google.com/citations?user=LSgwgNoAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-1782-9715",
+          "github": "https://github.com/IuricichF",
           "keywords": [
             "visual",
             "interfaces",
@@ -1306,12 +1352,9 @@
             "spatial",
             "analysis"
           ],
-          "website": "",
           "linkedin": "",
-          "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1325,6 +1368,8 @@
             "numerical optimization",
             "infectious diseases"
           ],
+          "google_scholar": "https://scholar.google.com/citations?user=DpGkJdcAAAAJ&hl=en",
+          "linkedin": "https://www.linkedin.com/in/md-sakhawat/",
           "keywords": [
             "modeling",
             "predictive",
@@ -1346,11 +1391,10 @@
             "optimization"
           ],
           "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1364,6 +1408,7 @@
             "disease ecology",
             "disease evolution"
           ],
+          "orcid": "https://orcid.org/0000-0001-7935-8192",
           "keywords": [
             "modeling",
             "disease",
@@ -1405,6 +1450,10 @@
             "machine learning",
             "complex systems"
           ],
+          "website": "https://www.lucinezhong.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=WggT7aEAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-7934-7634",
+          "linkedin": "https://www.linkedin.com/in/lu-zhong-b54419bb/",
           "keywords": [
             "epidemiology",
             "response",
@@ -1425,12 +1474,9 @@
             "complex",
             "systems"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         }
       ],
@@ -1487,30 +1533,32 @@
           "id": "lauren-ancel-meyers",
           "full_name": "Lauren Ancel Meyers",
           "role": "Principal Investigator; Professor, The University of Texas at Austin",
+          "website": "http://www.bio.utexas.edu/research/meyers/",
+          "google_scholar": "https://scholar.google.com/citations?user=KKiQaBoAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-5828-8874",
+          "linkedin": "https://www.linkedin.com/in/lauren-ancel-meyers-41949a179/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "nicholas-reich",
           "full_name": "Nicholas Reich",
           "role": "Principal Investigator; Professor, University of Massachusetts Amherst",
+          "website": "https://reichlab.io",
+          "google_scholar": "https://scholar.google.com/citations?user=AQUsdvkAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-3503-9899",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1518,6 +1566,10 @@
           "full_name": "Sebastian Funk",
           "role": "Co-Investigator",
           "bio": "The London School of Hygiene & Tropical Medicine.",
+          "website": "https://profiles.lshtm.ac.uk/2382-sebastian-funk",
+          "google_scholar": "https://scholar.google.com/citations?user=yOo8u2gAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-2842-3406",
+          "bluesky": "https://bsky.app/profile/sbfnk.bsky.social",
           "expertise": [],
           "keywords": [
             "london",
@@ -1526,12 +1578,9 @@
             "tropical",
             "medicine"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1539,17 +1588,18 @@
           "full_name": "Spencer Fox",
           "role": "Co-Investigator",
           "bio": "Northern Arizona University.",
+          "website": "https://spncrfx.wordpress.com/",
+          "orcid": "https://orcid.org/0000-0003-1969-3778",
+          "bluesky": "https://bsky.app/profile/foxandtheflu.bsky.social",
           "expertise": [],
           "keywords": [
             "northern",
             "arizona",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -1558,17 +1608,18 @@
           "full_name": "David Morton",
           "role": "Co-Investigator",
           "bio": "Northwestern University.",
+          "website": "https://sites.northwestern.edu/dmorton/",
+          "google_scholar": "https://scholar.google.com/citations?user=IH62KeIAAAAJ&hl=en",
           "expertise": [],
           "keywords": [
             "northwestern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1576,18 +1627,19 @@
           "full_name": "Daniel Larremore",
           "role": "Co-Investigator",
           "bio": "University of Colorado Boulder.",
+          "website": "https://danlarremore.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=BICiUrQAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-5273-5234",
           "expertise": [],
           "keywords": [
             "university",
             "colorado",
             "boulder"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1595,6 +1647,7 @@
           "full_name": "Anass Bouchnita",
           "role": "Co-Investigator",
           "bio": "The University of Texas at El Paso.",
+          "orcid": "https://orcid.org/0000-0002-2729-6484",
           "expertise": [],
           "keywords": [
             "university",
@@ -1664,6 +1717,10 @@
           "full_name": "Alessandro Vespignani",
           "role": "Project Lead; Director, Network Science Institute; Sternberg Family Distinguished Professor",
           "bio": "Network Science Institute, Northeastern University.",
+          "website": "https://www.networkscienceinstitute.org/people/alessandro-vespignani",
+          "google_scholar": "https://scholar.google.com/citations?user=U3CXAPsAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-3419-4205",
+          "bluesky": "https://bsky.app/profile/alexvespi.bsky.social",
           "expertise": [],
           "keywords": [
             "science",
@@ -1671,12 +1728,9 @@
             "northeastern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1684,6 +1738,10 @@
           "full_name": "Matteo Chinazzi",
           "role": "Research Associate Professor",
           "bio": "Roux Institute and Network Science Institute, Northeastern University.",
+          "website": "https://www.matteochinazzi.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=d1URvWUAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-5955-1929",
+          "bluesky": "https://bsky.app/profile/mattk7.bsky.social",
           "expertise": [],
           "keywords": [
             "institute",
@@ -1692,12 +1750,9 @@
             "northeastern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1705,6 +1760,9 @@
           "full_name": "Mauricio Santillana",
           "role": "Professor in Physics, Electrical and Computer Engineering",
           "bio": "Network Science Institute, Northeastern University.",
+          "website": "https://cos.northeastern.edu/people/mauricio-santillana/",
+          "google_scholar": "https://scholar.google.com/citations?user=3nOMJ44AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-4206-418X",
           "expertise": [],
           "keywords": [
             "science",
@@ -1712,12 +1770,10 @@
             "northeastern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1725,6 +1781,12 @@
           "full_name": "Samuel V. Scarpino",
           "role": "Director of Artificial Intelligence and Life Sciences",
           "bio": "Institute for Experiential AI, Northeastern University.",
+          "website": "https://scarpino.github.io/",
+          "google_scholar": "https://scholar.google.com/citations?user=B9FcowkAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-5716-2770",
+          "linkedin": "https://www.linkedin.com/in/svscarpino",
+          "bluesky": "https://bsky.app/profile/scarpino.bsky.social",
+          "github": "https://github.com/scarpino",
           "expertise": [],
           "keywords": [
             "institute",
@@ -1732,12 +1794,7 @@
             "northeastern",
             "university"
           ],
-          "website": "",
-          "linkedin": "",
-          "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1745,6 +1802,9 @@
           "full_name": "David Lazer",
           "role": "University Distinguished Professor of Political Science and Computer Sciences",
           "bio": "Network Science Institute, Northeastern University.",
+          "website": "https://davidlazer.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=gMndACUAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-7991-9110",
           "expertise": [],
           "keywords": [
             "science",
@@ -1752,12 +1812,10 @@
             "northeastern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1765,6 +1823,10 @@
           "full_name": "Jessica Davis",
           "role": "Research Assistant Professor",
           "bio": "Network Science Institute, Northeastern University.",
+          "website": "https://bouve.northeastern.edu/directory/jessica-davis/",
+          "google_scholar": "https://scholar.google.com/citations?user=9iyObOAAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-0726-1855",
+          "bluesky": "https://bsky.app/profile/jessica-davis.bsky.social",
           "expertise": [],
           "keywords": [
             "science",
@@ -1772,12 +1834,9 @@
             "northeastern",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1785,6 +1844,10 @@
           "full_name": "Kayoko Shioda",
           "role": "Assistant Professor of Global Health",
           "bio": "Center for Emerging Infectious Diseases Policy & Research, Boston University.",
+          "website": "https://www.bu.edu/sph/profile/kayoko-shioda/",
+          "google_scholar": "https://scholar.google.com/citations?user=BiawVxEAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-8057-8448",
+          "linkedin": "https://www.linkedin.com/in/kayoko-shioda-phd-dvm-mph-3ba75795/",
           "expertise": [],
           "keywords": [
             "emerging",
@@ -1794,12 +1857,9 @@
             "boston",
             "university"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1807,13 +1867,14 @@
           "full_name": "M. Elizabeth Halloran",
           "role": "Professor and Head of Biostatistics, Bioinformatics and Epidemiology Program",
           "bio": "Fred Hutchinson Cancer Center.",
+          "website": "https://faculty.washington.edu/betz/Welcome.html",
+          "orcid": "https://orcid.org/0000-0002-3127-1757",
           "expertise": [],
           "keywords": [
             "fred",
             "hutchinson",
             "cancer"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -1826,6 +1887,9 @@
           "full_name": "Marco Ajelli",
           "role": "Professor",
           "bio": "Department of Epidemiology and Biostatistics, Indiana University.",
+          "website": "https://ceph-lab.github.io/",
+          "google_scholar": "https://scholar.google.com/citations?user=igKX7EMAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-1753-4749",
           "expertise": [],
           "keywords": [
             "department",
@@ -1834,12 +1898,10 @@
             "indiana",
             "university"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1847,6 +1909,10 @@
           "full_name": "Maria Litvinova",
           "role": "Assistant Professor",
           "bio": "Department of Epidemiology and Biostatistics, Indiana University.",
+          "website": "https://publichealth.indiana.edu/about/directory/Maria-Litvinova-malitv.html",
+          "google_scholar": "https://scholar.google.com/citations?user=582zt4cAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-6393-1943",
+          "linkedin": "https://www.linkedin.com/in/maria-litvinova-33418041/",
           "expertise": [],
           "keywords": [
             "department",
@@ -1855,12 +1921,9 @@
             "indiana",
             "university"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1868,6 +1931,9 @@
           "full_name": "Sara Del Valle",
           "role": "Scientist/Project Leader",
           "bio": "Los Alamos National Laboratory.",
+          "google_scholar": "https://scholar.google.com/citations?user=BlSnKx0AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0159-1952",
+          "linkedin": "https://www.linkedin.com/in/sara-del-valle-11a33b4/",
           "expertise": [],
           "keywords": [
             "los",
@@ -1876,11 +1942,9 @@
             "laboratory"
           ],
           "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1888,6 +1952,8 @@
           "full_name": "Timothy Germann",
           "role": "Founder, EpiCast",
           "bio": "Los Alamos National Laboratory.",
+          "google_scholar": "https://scholar.google.com/citations?user=bjcBnjIAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-6813-238X",
           "expertise": [],
           "keywords": [
             "los",
@@ -1900,7 +1966,6 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1908,6 +1973,10 @@
           "full_name": "Rose Yu",
           "role": "Assistant Professor",
           "bio": "Halıcıoğlu Data Science Institute, University of California San Diego.",
+          "website": "https://roseyu.com",
+          "google_scholar": "https://scholar.google.com/citations?user=4HTITaMAAAAJ&hl=en",
+          "linkedin": "https://www.linkedin.com/in/yuqirose",
+          "bluesky": "https://bsky.app/profile/yuqirose.bsky.social",
           "expertise": [],
           "keywords": [
             "hal",
@@ -1919,12 +1988,9 @@
             "san",
             "diego"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1932,6 +1998,8 @@
           "full_name": "Yian Ma",
           "role": "Assistant Professor",
           "bio": "Halıcıoğlu Data Science Institute, University of California San Diego.",
+          "website": "https://sites.google.com/view/yianma/home",
+          "google_scholar": "https://scholar.google.com/citations?user=OkOGR_8AAAAJ&hl=en",
           "expertise": [],
           "keywords": [
             "hal",
@@ -1943,12 +2011,11 @@
             "san",
             "diego"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -1956,6 +2023,9 @@
           "full_name": "Ira Longini",
           "role": "Professor of Biostatistics",
           "bio": "Center for Statistics and Quantitative Infectious Diseases, University of Florida.",
+          "website": "https://csquid.epi.ufl.edu/profile/longini-ira/",
+          "google_scholar": "https://scholar.google.com/citations?user=DDfPqicAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-2780-9382",
           "expertise": [],
           "keywords": [
             "statistics",
@@ -1965,12 +2035,10 @@
             "university",
             "florida"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1978,6 +2046,9 @@
           "full_name": "Madhav Marathe",
           "role": "Distinguished Professor",
           "bio": "Biocomplexity Institute, University of Virginia.",
+          "website": "https://biocomplexity.virginia.edu/our-team/madhav-marathe",
+          "google_scholar": "https://scholar.google.com/citations?user=diIore8AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-1653-0658",
           "expertise": [],
           "keywords": [
             "biocomplexity",
@@ -1985,12 +2056,10 @@
             "university",
             "virginia"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -1998,6 +2067,8 @@
           "full_name": "Bryan Lewis",
           "role": "Associate Professor",
           "bio": "Biocomplexity Institute, University of Virginia.",
+          "website": "https://biocomplexity.virginia.edu/our-team/bryan-lewis",
+          "google_scholar": "https://scholar.google.com/citations?user=iBoF0nYAAAAJ&hl=en",
           "expertise": [],
           "keywords": [
             "biocomplexity",
@@ -2005,12 +2076,11 @@
             "university",
             "virginia"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         }
       ],
@@ -2052,6 +2122,10 @@
             "antimicrobial resistance"
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/eric-lofgren.html",
+          "google_scholar": "https://scholar.google.com/citations?user=DbBAq1MAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-2052-7240",
+          "linkedin": "https://www.linkedin.com/in/eric-lofgren-63458535/",
+          "bluesky": "https://bsky.app/profile/germsandnumbers.bsky.social",
           "keywords": [
             "disease",
             "infectious",
@@ -2071,11 +2145,8 @@
             "antimicrobial",
             "resistance"
           ],
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2090,6 +2161,9 @@
             "decision support"
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/lindsay-keegan.html",
+          "google_scholar": "https://scholar.google.com/citations?user=BVGEpuUAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-8526-3007",
+          "linkedin": "https://www.linkedin.com/in/lindsaytkeegan/",
           "keywords": [
             "methods",
             "mathematical",
@@ -2109,11 +2183,9 @@
             "healthcare",
             "partners"
           ],
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2127,6 +2199,7 @@
             "antimicrobial prescribing"
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/makoto-jones.html",
+          "orcid": "https://orcid.org/0000-0001-5580-6739",
           "keywords": [
             "infectious",
             "nosocomial",
@@ -2160,6 +2233,8 @@
             "health informatics"
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/matt-samore.html",
+          "google_scholar": "https://scholar.google.com/citations?user=QOM1UpUAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-4862-9196",
           "keywords": [
             "epidemiology",
             "electronic",
@@ -2182,7 +2257,6 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2197,6 +2271,7 @@
             "antimicrobial resistance"
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/michael-rubin.html",
+          "bluesky": "https://bsky.app/profile/slcrubes.bsky.social",
           "keywords": [
             "infectious",
             "hospital",
@@ -2217,8 +2292,8 @@
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2233,6 +2308,9 @@
             "network models",
             "high-performance computing"
           ],
+          "website": "https://medicine.utah.edu/faculty/andrew-redd",
+          "google_scholar": "https://scholar.google.com/citations?user=MWPpI-QAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-6149-2438",
           "keywords": [
             "models",
             "statistical",
@@ -2254,12 +2332,10 @@
             "includes",
             "reproducible"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2274,6 +2350,10 @@
             "graph algorithms",
             "computational epidemiology"
           ],
+          "website": "https://eecs.wsu.edu/~assefaw/home.html",
+          "google_scholar": "https://scholar.google.com/citations?user=iQs7spsAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-5383-8032",
+          "linkedin": "https://www.linkedin.com/in/assefaw-gebremedhin-06ba7915/",
           "keywords": [
             "algorithms",
             "data",
@@ -2296,12 +2376,9 @@
             "foresite",
             "artificial"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2316,6 +2393,9 @@
             "risk analysis",
             "outbreak prediction"
           ],
+          "website": "https://medicine.utah.edu/faculty/damon-toth",
+          "google_scholar": "https://scholar.google.com/citations?user=6XZi4fIAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-7393-4814",
           "keywords": [
             "modeling",
             "assistant",
@@ -2338,12 +2418,10 @@
             "outbreak",
             "prediction"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2358,6 +2436,9 @@
             "quantitative methods",
             "computer modeling"
           ],
+          "website": "https://math.wsu.edu/faculty/wsu-profile/ejs/",
+          "google_scholar": "https://scholar.google.com/citations?user=v94TbSYAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-3770-3047",
           "keywords": [
             "virology",
             "immunology",
@@ -2375,12 +2456,10 @@
             "theoretical",
             "approaches"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2395,6 +2474,8 @@
             "disease ecology",
             "disease spillover"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Erin_Clancey.html",
+          "orcid": "https://orcid.org/0000-0003-4728-4023",
           "keywords": [
             "disease",
             "mathematical",
@@ -2412,7 +2493,6 @@
             "host-pathogen",
             "coevolution"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2432,6 +2512,7 @@
             "spatial analysis",
             "public health"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Jim_Vanderslice.html",
           "keywords": [
             "health",
             "public",
@@ -2454,12 +2535,12 @@
             "geographic",
             "information"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2474,6 +2555,9 @@
             "complex systems",
             "antimicrobial resistance"
           ],
+          "website": "https://medicine.utah.edu/faculty/karim-khader",
+          "orcid": "https://orcid.org/0000-0002-7206-8077",
+          "linkedin": "https://www.linkedin.com/in/karim-khader-02150a1b6/",
           "keywords": [
             "statistical",
             "methodology",
@@ -2496,8 +2580,6 @@
             "antimicrobial",
             "resistance"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
@@ -2516,6 +2598,8 @@
             "epidemic calibration",
             "public health decision-making"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Sima.html",
+          "orcid": "https://orcid.org/0009-0002-6253-2910",
           "keywords": [
             "infectious",
             "disease",
@@ -2538,7 +2622,6 @@
             "machine",
             "learning"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2555,6 +2638,7 @@
             "biostatistics",
             "infectious disease modeling"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Yue_Xhang.html",
           "keywords": [
             "biostatistics",
             "modeling",
@@ -2568,12 +2652,12 @@
             "infectious",
             "disease"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2586,6 +2670,8 @@
             "pharmacoeconomics",
             "economic impact analysis"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Haeseon_Lee.html",
+          "orcid": "https://orcid.org/0000-0003-3956-9758",
           "keywords": [
             "economic",
             "impact",
@@ -2604,7 +2690,6 @@
             "studies",
             "analysis"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2624,6 +2709,7 @@
             "real-world evidence",
             "health equity"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Jeongyeon_Cho.html",
           "keywords": [
             "health",
             "technology",
@@ -2643,12 +2729,12 @@
             "economics",
             "equity"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2662,6 +2748,8 @@
             "infectious disease policy",
             "health technology assessment"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Khanh_Duong.html",
+          "orcid": "https://orcid.org/0000-0002-7152-9476",
           "keywords": [
             "health",
             "policy",
@@ -2682,7 +2770,6 @@
             "technology",
             "assessment"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2701,6 +2788,8 @@
             "business policy",
             "economic surveys"
           ],
+          "website": "https://nathanseegert.com",
+          "orcid": "https://orcid.org/0000-0002-0862-1181",
           "keywords": [
             "finance",
             "associate",
@@ -2723,7 +2812,6 @@
             "business",
             "policy"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2743,6 +2831,9 @@
             "evidence synthesis",
             "health equity"
           ],
+          "website": "https://nui-lab.net/",
+          "google_scholar": "https://scholar.google.com/citations?user=HcnuwjYAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-4572-8794",
           "keywords": [
             "health",
             "economics",
@@ -2765,12 +2856,10 @@
             "toolset",
             "technology"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2786,6 +2875,8 @@
             "pharmacoepidemiology"
           ],
           "google_scholar": "https://scholar.google.co.in/citations?hl=en&user=qqpa8zkAAAAJ",
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Rashid.html",
+          "orcid": "https://orcid.org/0000-0002-6390-7764",
           "keywords": [
             "evidence",
             "synthesis",
@@ -2802,7 +2893,6 @@
             "pharmacy",
             "interests"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2817,6 +2907,9 @@
           "expertise": [
             "economic impact analysis"
           ],
+          "website": "https://medicine.utah.edu/faculty/richard-e-nelson",
+          "google_scholar": "https://scholar.google.com/citations?user=GDEIDcgAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-4441-7460",
           "keywords": [
             "economic",
             "impact",
@@ -2825,12 +2918,10 @@
             "foresite",
             "team"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -2843,6 +2934,8 @@
             "infectious disease modeling",
             "health economics"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/danielle_nguyen.html",
+          "orcid": "https://orcid.org/0009-0001-9722-4275",
           "keywords": [
             "health",
             "modeling",
@@ -2863,7 +2956,6 @@
             "disease",
             "economics"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2881,6 +2973,8 @@
             "public health informatics",
             "infectious disease surveillance"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Joel_Hartsell.html",
+          "orcid": "https://orcid.org/0000-0002-5193-9013",
           "keywords": [
             "infectious",
             "disease",
@@ -2902,7 +2996,6 @@
             "informatics",
             "surveillance"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -2922,6 +3015,9 @@
             "healthcare quality",
             "health equity"
           ],
+          "website": "https://medicine.utah.edu/faculty/julia-e-szymczak",
+          "google_scholar": "https://scholar.google.com/citations?user=JEgCsm8AAAAJ&hl=en",
+          "linkedin": "https://www.linkedin.com/in/julie-szymczak-527a1919/",
           "keywords": [
             "medical",
             "implementation",
@@ -2944,12 +3040,10 @@
             "quality",
             "health"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2961,6 +3055,7 @@
             "public health consulting",
             "sociotechnical evaluation"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Katie_Allen.html",
           "keywords": [
             "consulting",
             "senior",
@@ -2975,12 +3070,12 @@
             "sociotechnical",
             "evaluation"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -2995,6 +3090,10 @@
             "program evaluation",
             "workforce development"
           ],
+          "website": "https://medicine.utah.edu/faculty/kimberley-shoaf",
+          "google_scholar": "https://scholar.google.com/citations?user=PEC0LDUAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-6754-2216",
+          "linkedin": "https://www.linkedin.com/in/kimberley-shoaf-28321017/",
           "keywords": [
             "public",
             "health",
@@ -3017,12 +3116,9 @@
             "planning",
             "evaluation"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -3037,6 +3133,8 @@
             "contact tracing",
             "vaccination coordination"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Skyler_Crouch.html",
+          "orcid": "https://orcid.org/0009-0009-2741-5445",
           "keywords": [
             "health",
             "public",
@@ -3056,7 +3154,6 @@
             "vaccination",
             "coordination"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3076,6 +3173,8 @@
             "substance use prevention",
             "health equity"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/elizabeth_weybright.html",
+          "orcid": "https://orcid.org/0000-0002-3995-7067",
           "keywords": [
             "adolescent",
             "health",
@@ -3098,7 +3197,6 @@
             "substance",
             "use"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3118,6 +3216,9 @@
             "antimicrobial stewardship",
             "public health policy"
           ],
+          "website": "https://healthcare.utah.edu/find-a-doctor/andrew-t-pavia",
+          "google_scholar": "https://scholar.google.com/citations?user=8BXaUAEAAAAJ&hl=en",
+          "linkedin": "https://www.linkedin.com/in/andrew-pavia-816b5229/",
           "keywords": [
             "infectious",
             "diseases",
@@ -3140,12 +3241,10 @@
             "focuses",
             "emerging"
           ],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3156,6 +3255,9 @@
           "expertise": [
             "disease ecology"
           ],
+          "website": "https://umimpact.umt.edu/en/persons/erin-landguth/",
+          "google_scholar": "https://scholar.google.com/citations?user=KnfL0x4AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-7044-346X",
           "keywords": [
             "disease",
             "ecology",
@@ -3163,12 +3265,10 @@
             "foresite",
             "team"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -3179,6 +3279,8 @@
           "expertise": [
             "infectious diseases"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Jeannie_Mayer.html",
+          "orcid": "https://orcid.org/0000-0002-7699-4414",
           "keywords": [
             "infectious",
             "disease",
@@ -3188,7 +3290,6 @@
             "program",
             "diseases"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3206,6 +3307,8 @@
             "state health trends",
             "public health practice"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Leisha.html",
+          "orcid": "https://orcid.org/0000-0002-7885-9347",
           "keywords": [
             "health",
             "utah",
@@ -3225,7 +3328,6 @@
             "trends",
             "practice"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3244,6 +3346,7 @@
             "healthcare systems",
             "forecasting"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Per_Gesteland.html",
           "keywords": [
             "associate",
             "professor",
@@ -3262,12 +3365,12 @@
             "healthcare",
             "systems"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3282,6 +3385,8 @@
             "molecular ecology",
             "computational biology"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Stephanie_Seifert.html",
+          "orcid": "https://orcid.org/0000-0002-4397-6156",
           "keywords": [
             "molecular",
             "ecology",
@@ -3302,7 +3407,6 @@
             "computational",
             "biology"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3322,6 +3426,9 @@
             "spatial modeling",
             "community-based research"
           ],
+          "website": "https://mpilarfernandez.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=dLx_A-MAAAAJ&hl=en",
+          "twitter": "https://x.com/piliffq",
           "keywords": [
             "zoonotic",
             "disease",
@@ -3344,12 +3451,10 @@
             "modeling",
             "community-based"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
-          "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3363,6 +3468,8 @@
             "disease prevention",
             "qualitative research"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Delaney_Thornton.html",
+          "orcid": "https://orcid.org/0009-0000-9802-493X",
           "keywords": [
             "project",
             "public",
@@ -3385,7 +3492,6 @@
             "management",
             "partnerships"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3404,6 +3510,7 @@
             "research project management",
             "data management"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Hannah_Higgs.html",
           "keywords": [
             "regulatory",
             "management",
@@ -3426,12 +3533,12 @@
             "boards",
             "project"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3446,6 +3553,7 @@
             "infectious disease epidemiology",
             "preparedness"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Hazel_Guerrero.html",
           "keywords": [
             "data",
             "project",
@@ -3466,12 +3574,12 @@
             "analysis",
             "preparedness"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3484,6 +3592,7 @@
             "research administration",
             "project management"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Kristina_Stratford.html",
           "keywords": [
             "program",
             "project",
@@ -3504,12 +3613,12 @@
             "projects",
             "administration"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3521,6 +3630,7 @@
             "information technology",
             "project management"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Nwoka_Ajinwo.html",
           "keywords": [
             "project",
             "manager",
@@ -3532,12 +3642,12 @@
             "technology",
             "management"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3551,6 +3661,10 @@
             "user interface design",
             "user experience design"
           ],
+          "website": "https://alexander-lex.net/",
+          "google_scholar": "https://scholar.google.com/citations?user=JFNLCUcAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-6930-5468",
+          "bluesky": "https://bsky.app/profile/alex-lex.bsky.social",
           "keywords": [
             "visualization",
             "design",
@@ -3573,12 +3687,9 @@
             "scientific",
             "interface"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -3592,6 +3703,7 @@
             "human-computer interaction",
             "computer engineering"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Andrew_Pulsipher.html",
           "keywords": [
             "software",
             "libraries",
@@ -3609,12 +3721,12 @@
             "interaction",
             "computer"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3629,6 +3741,8 @@
             "accessible science",
             "physical simulation"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Jake_Wagoner.html",
+          "orcid": "https://orcid.org/0009-0000-5053-2281",
           "keywords": [
             "software",
             "computer",
@@ -3651,7 +3765,6 @@
             "data",
             "accessible"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3671,6 +3784,9 @@
             "geometry",
             "topology"
           ],
+          "website": "https://cspaul.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=6iv6AEcAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0873-9518",
           "keywords": [
             "visualization",
             "scientific",
@@ -3693,12 +3809,10 @@
             "information",
             "geometry"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -3712,6 +3826,8 @@
             "visualization grammar",
             "computer science"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Rahat_Zaman.html",
+          "orcid": "https://orcid.org/0000-0001-6728-7569",
           "keywords": [
             "visualization",
             "data",
@@ -3733,7 +3849,6 @@
             "computer",
             "science"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3751,6 +3866,8 @@
             "accessible visualization",
             "data visualization"
           ],
+          "website": "https://tingying-he.github.io",
+          "orcid": "https://orcid.org/0000-0002-9670-5587",
           "keywords": [
             "visualization",
             "information",
@@ -3768,7 +3885,6 @@
             "design",
             "data"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -3784,6 +3900,7 @@
           "expertise": [
             "software engineering"
           ],
+          "website": "https://epiforesite.github.io/ForeSITE_Website/members/Willy_Ray.html",
           "keywords": [
             "software",
             "general",
@@ -3794,12 +3911,12 @@
             "epidemiology",
             "engineering"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3816,6 +3933,8 @@
             "network science"
           ],
           "website": "https://ggvy.cl",
+          "orcid": "https://orcid.org/0000-0002-3171-0844",
+          "bluesky": "https://bsky.app/profile/gvegayon.bsky.social",
           "keywords": [
             "computing",
             "complex",
@@ -3841,7 +3960,6 @@
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         }
@@ -3899,35 +4017,38 @@
           "full_name": "Eva A. Enns, PhD",
           "role": "MADMC Co-Principal Investigator; Associate Professor, Division of Health Policy and Management, University of Minnesota",
           "website": "https://directory.sph.umn.edu/bio/sph-aenns",
+          "google_scholar": "https://scholar.google.com/citations?user=CeVOo2QAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-0693-7358",
+          "linkedin": "https://www.linkedin.com/in/eva-enns-6a51bb36/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "kristin-sweet",
           "full_name": "Kristin Sweet, PhD",
           "role": "MADMC Co-Principal Investigator; Epidemiology Program Manager, Infectious Disease Cross-Cutting Epidemiology, Programs, and Partnerships, Minnesota Department of Health",
+          "linkedin": "https://www.linkedin.com/in/kristin-sweet-948926239/",
           "bio": "",
           "expertise": [],
           "keywords": [],
           "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "adams-dudley",
           "full_name": "Adams Dudley, MD, MBA",
           "role": "MADMC Co-Principal Investigator; Professor of Medicine, Informatics, and Public Health, University of Minnesota",
+          "orcid": "https://orcid.org/0000-0002-8532-8552",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -3943,6 +4064,7 @@
           "id": "margo-wheatley",
           "full_name": "Margo Wheatley, PhD",
           "role": "Senior Research Associate and Manager, Division of Health Policy and Management, University of Minnesota",
+          "orcid": "https://orcid.org/0000-0001-6981-2670",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -3958,6 +4080,7 @@
           "id": "matthew-kaufmann",
           "full_name": "Matthew Kaufmann",
           "role": "Postdoctoral Fellow, Division of Health Policy and Management, University of Minnesota",
+          "orcid": "https://orcid.org/0000-0002-9947-936X",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -3982,6 +4105,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -3997,12 +4121,14 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "ritesh-sivakumar",
           "full_name": "Ritesh Sivakumar",
           "role": "Research Associate, Division of Health Policy and Management, University of Minnesota",
+          "orcid": "https://orcid.org/0009-0002-1936-0156",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4018,6 +4144,7 @@
           "id": "sayyeda-karim",
           "full_name": "Sayyeda Karim, MPH",
           "role": "Project Manager, Division of Health Policy and Management, University of Minnesota",
+          "orcid": "https://orcid.org/0000-0002-3072-5120",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4034,6 +4161,8 @@
           "full_name": "Caitlin Ward, PhD",
           "role": "Assistant Professor, Division of Biostatistics and Health Data Science, University of Minnesota",
           "website": "https://directory.sph.umn.edu/bio/sph-cward",
+          "google_scholar": "https://scholar.google.com/citations?user=Ni3vTV0AAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0806-0222",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4041,7 +4170,6 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -4049,6 +4177,8 @@
           "full_name": "Xiao Zang, PhD",
           "role": "Assistant Professor, Division of Health Policy and Management, University of Minnesota",
           "website": "https://directory.sph.umn.edu/bio/sph-xzang",
+          "google_scholar": "https://scholar.google.com/citations?user=KVnCdbQAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-5722-8255",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4056,7 +4186,6 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -4072,6 +4201,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -4079,13 +4209,14 @@
           "full_name": "Jesse Berman, PhD",
           "role": "Associate Professor, Division of Environmental Health Sciences, University of Minnesota",
           "website": "https://directory.sph.umn.edu/bio/sph-jberman",
+          "orcid": "https://orcid.org/0000-0003-3037-556X",
+          "bluesky": "https://bsky.app/profile/jesseberman.bsky.social",
           "bio": "",
           "expertise": [],
           "keywords": [],
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -4094,12 +4225,13 @@
           "full_name": "Kelly Searle, PhD",
           "role": "Associate Professor, Division of Epidemiology and Community Health, University of Minnesota",
           "website": "https://directory.sph.umn.edu/bio/sph-ksearle",
+          "orcid": "https://orcid.org/0000-0003-1316-9342",
+          "twitter": "https://x.com/EpiMalaria",
           "bio": "",
           "expertise": [],
           "keywords": [],
           "linkedin": "",
           "github": "",
-          "twitter": "",
           "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
@@ -4108,25 +4240,27 @@
           "id": "audrey-dorelien",
           "full_name": "Audrey Dorélien, PhD",
           "role": "Associate Professor, Department of Sociology, University of Washington",
+          "website": "https://www.audreydorelien.com/",
+          "google_scholar": "https://scholar.google.com/citations?user=Tu8DUIMAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-0618-4782",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "shalini-kulasingam",
           "full_name": "Shalini Kulasingam, PhD",
           "role": "Director, Center for Cancer Prevention and Control, Tulane University",
+          "website": "https://sph.tulane.edu/epid/shalini-kulasingam",
+          "orcid": "https://orcid.org/0000-0002-0932-9166",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -4147,12 +4281,14 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "keeley-morris",
           "full_name": "Keeley Morris",
           "role": "Senior Epidemiologist, Emerging Infectious Disease Epidemiology and Response, Minnesota Department of Health",
+          "orcid": "https://orcid.org/0000-0001-7028-8095",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4177,6 +4313,7 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
@@ -4184,6 +4321,8 @@
           "full_name": "Paul Drawz, MD",
           "role": "Associate Professor, Division of Nephrology and Hypertension, University of Minnesota",
           "website": "https://med.umn.edu/bio/paul-drawz",
+          "google_scholar": "https://scholar.google.com/citations?user=sGvM4uQAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0001-7301-9253",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4191,13 +4330,13 @@
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "nayanjot-kaur-rai",
           "full_name": "Nayanjot Kaur Rai, MPH, BDS",
           "role": "Program Manager, Medical School, University of Minnesota",
+          "orcid": "https://orcid.org/0000-0001-9614-8234",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4271,42 +4410,46 @@
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "marisa-eisenberg",
           "full_name": "Marisa Eisenberg",
           "role": "MICOM Co-Director; Professor of Epidemiology, Complex Systems, and Mathematics",
+          "website": "https://epimath.org/",
+          "google_scholar": "https://scholar.google.com/citations?user=RhyNk3EAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-4221-830X",
+          "bluesky": "https://bsky.app/profile/marisa-eisenberg.bsky.social",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "emily-toth-martin",
           "full_name": "Emily Toth Martin",
           "role": "MICOM Co-Director; Professor of Epidemiology",
+          "website": "https://sph.umich.edu/faculty-profiles/martin-emily.html",
+          "google_scholar": "https://scholar.google.com/citations?user=V_l3ufkAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-5771-8895",
+          "bluesky": "https://bsky.app/profile/martinepi.bsky.social",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "natasha-bagdasarian",
           "full_name": "Natasha Bagdasarian",
           "role": "Chief Medical Executive, State of Michigan",
+          "orcid": "https://orcid.org/0000-0003-1133-8309",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4322,25 +4465,27 @@
           "id": "andrew-brouwer",
           "full_name": "Andrew Brouwer",
           "role": "MAMP Co-Lead; Assistant Professor of Epidemiology",
+          "website": "https://midas.umich.edu/directory/andrew-brouwer/",
+          "google_scholar": "https://scholar.google.com/citations?user=PJAQ7AQAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-3779-5287",
+          "linkedin": "https://www.linkedin.com/in/andrew-brouwer-0651a056/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "alexis-handal",
           "full_name": "Alexis Handal",
           "role": "Preparedness; Associate Professor of Epidemiology",
+          "website": "https://sph.umich.edu/faculty-profiles/handal_alexis.html",
+          "orcid": "https://orcid.org/0000-0001-8890-5813",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -4352,6 +4497,7 @@
           "id": "michael-hayashi",
           "full_name": "Michael Akira Lee Hayashi",
           "role": "Integration and Translation Co-Lead; Clinical Assistant Professor of Epidemiology",
+          "orcid": "https://orcid.org/0000-0003-3335-6196",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4367,14 +4513,15 @@
           "id": "jennifer-head",
           "full_name": "Jennifer Head",
           "role": "Preparedness; Assistant Professor of Epidemiology",
+          "website": "https://sph.umich.edu/faculty-profiles/head_jennifer.html",
+          "orcid": "https://orcid.org/0000-0003-1449-4171",
+          "linkedin": "https://www.linkedin.com/in/jrhead/",
+          "bluesky": "https://bsky.app/profile/jenniferrhead.bsky.social",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
-          "bluesky": "",
           "google_scholar": "",
           "scholar_author_id": ""
         },
@@ -4382,51 +4529,55 @@
           "id": "michael-hess",
           "full_name": "Michael Hess",
           "role": "MI Lighthouse Co-Lead; Chief Information Officer, School of Information",
+          "website": "https://www.si.umich.edu/people/michael-hess",
+          "linkedin": "https://www.linkedin.com/in/michaellhess/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "adam-lauring",
           "full_name": "Adam Lauring",
           "role": "Preparedness; Professor of Internal Medicine, Microbiology and Immunology",
+          "website": "https://medschool.umich.edu/profile/83/adam-lauring",
+          "google_scholar": "https://scholar.google.com/citations?user=IA9nXYgAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-2906-8335",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "alexander-rodriguez",
           "full_name": "Alexander Rodriguez",
           "role": "MAMP and Applied Artificial Intelligence Co-Lead; Assistant Professor of Electrical Engineering and Computer Science",
+          "website": "https://alrodri.engin.umich.edu/",
+          "google_scholar": "https://scholar.google.com/citations?user=ILkESaUAAAAJ&hl=en",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "michael-rubyan",
           "full_name": "Michael Rubyan",
           "role": "Integration and Translation Co-Lead; Clinical Assistant Professor of Health Management and Policy",
+          "orcid": "https://orcid.org/0000-0002-5549-4488",
           "bio": "",
           "expertise": [],
           "keywords": [],
@@ -4442,40 +4593,43 @@
           "id": "tom-schwarz",
           "full_name": "Tom Schwarz",
           "role": "MAMP and Applied Artificial Intelligence Co-Lead; Professor of Physics",
+          "website": "https://lsa.umich.edu/physics/people/faculty/schwarzt.html",
+          "linkedin": "https://www.linkedin.com/in/tom-schwarz-91aa3912/",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
-          "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         },
         {
           "id": "abram-wagner",
           "full_name": "Abram Wagner",
           "role": "Preparedness; Assistant Professor of Epidemiology and Global Public Health",
+          "website": "https://sph.umich.edu/faculty-profiles/wagner-abram.html",
+          "google_scholar": "https://scholar.google.com/citations?user=RNembkwAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0003-4691-7802",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
           "id": "krista-wigginton",
           "full_name": "Krista Wigginton",
           "role": "Preparedness; Associate Chair and Professor of Civil and Environmental Engineering",
+          "website": "https://www.wiggiumich.com/",
+          "orcid": "https://orcid.org/0000-0001-6665-5112",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
@@ -4487,15 +4641,16 @@
           "id": "jon-zelner",
           "full_name": "Jon Zelner",
           "role": "Health Equity Lead; Associate Professor of Epidemiology",
+          "website": "https://www.jonzelner.net/",
+          "google_scholar": "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en",
           "bio": "",
           "expertise": [],
           "keywords": [],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         }
       ],
@@ -4552,6 +4707,9 @@
           "full_name": "Eliah Aronoff-Spencer, MD, PhD",
           "role": "Director, Resilient Shield; Professor of Medicine and Design, UC San Diego",
           "bio": "Physician-scientist whose work focuses on diagnostic, informatics, and health decision-support tools.",
+          "website": "https://prepare.ucsd.edu/our-team/faculty/eliah-aronoff-spencer.html",
+          "google_scholar": "https://scholar.google.com/citations?user=YVk7vdEAAAAJ&hl=en",
+          "orcid": "https://orcid.org/0000-0002-6279-5027",
           "expertise": [],
           "keywords": [
             "physician-scientist",
@@ -4564,12 +4722,10 @@
             "decision-support",
             "tools"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
-          "google_scholar": "",
           "scholar_author_id": ""
         },
         {
@@ -4577,6 +4733,7 @@
           "full_name": "Natasha Martin, DPhil",
           "role": "Co-Lead, Resilient Shield; Professor and Vice Chief of Global Public Health, UC San Diego",
           "bio": "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments.",
+          "website": "https://profiles.ucsd.edu/natasha.martin",
           "expertise": [],
           "keywords": [
             "co-leads",
@@ -4589,12 +4746,12 @@
             "health",
             "departments"
           ],
-          "website": "",
           "linkedin": "",
           "github": "",
           "twitter": "",
           "bluesky": "",
           "google_scholar": "",
+          "orcid": "",
           "scholar_author_id": ""
         }
       ],

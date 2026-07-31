@@ -52,6 +52,7 @@ def _normalize_researcher(person: dict[str, Any], org_id: str) -> dict[str, Any]
         "twitter",
         "bluesky",
         "google_scholar",
+        "orcid",
     ):
         person[field] = _valid_url(str(person.get(field, "")), f"researcher.{field}")
     person.setdefault("scholar_author_id", "")

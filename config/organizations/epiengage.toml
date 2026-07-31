@@ -14,38 +14,58 @@ enabled = true
 id = "lauren-ancel-meyers"
 full_name = "Lauren Ancel Meyers"
 role = "Principal Investigator; Professor, The University of Texas at Austin"
+website = "http://www.bio.utexas.edu/research/meyers/"
+google_scholar = "https://scholar.google.com/citations?user=KKiQaBoAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-5828-8874"
+linkedin = "https://www.linkedin.com/in/lauren-ancel-meyers-41949a179/"
 
 [[organization.researchers]]
 id = "nicholas-reich"
 full_name = "Nicholas Reich"
 role = "Principal Investigator; Professor, University of Massachusetts Amherst"
+website = "https://reichlab.io"
+google_scholar = "https://scholar.google.com/citations?user=AQUsdvkAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-3503-9899"
 
 [[organization.researchers]]
 id = "sebastian-funk"
 full_name = "Sebastian Funk"
 role = "Co-Investigator"
 bio = "The London School of Hygiene & Tropical Medicine."
+website = "https://profiles.lshtm.ac.uk/2382-sebastian-funk"
+google_scholar = "https://scholar.google.com/citations?user=yOo8u2gAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-2842-3406"
+bluesky = "https://bsky.app/profile/sbfnk.bsky.social"
 
 [[organization.researchers]]
 id = "spencer-fox"
 full_name = "Spencer Fox"
 role = "Co-Investigator"
 bio = "Northern Arizona University."
+website = "https://spncrfx.wordpress.com/"
+orcid = "https://orcid.org/0000-0003-1969-3778"
+bluesky = "https://bsky.app/profile/foxandtheflu.bsky.social"
 
 [[organization.researchers]]
 id = "david-morton"
 full_name = "David Morton"
 role = "Co-Investigator"
 bio = "Northwestern University."
+website = "https://sites.northwestern.edu/dmorton/"
+google_scholar = "https://scholar.google.com/citations?user=IH62KeIAAAAJ&hl=en"
 
 [[organization.researchers]]
 id = "daniel-larremore"
 full_name = "Daniel Larremore"
 role = "Co-Investigator"
 bio = "University of Colorado Boulder."
+website = "https://danlarremore.com/"
+google_scholar = "https://scholar.google.com/citations?user=BICiUrQAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5273-5234"
 
 [[organization.researchers]]
 id = "anass-bouchnita"
 full_name = "Anass Bouchnita"
 role = "Co-Investigator"
 bio = "The University of Texas at El Paso."
+orcid = "https://orcid.org/0000-0002-2729-6484"

@@ -16,6 +16,10 @@ role = "Principal Investigator"
 bio = "Infectious disease epidemiologist whose research uses mathematical and computational models of disease transmission, including antimicrobial-resistant and emerging infections."
 expertise = [ "infectious disease epidemiology", "mathematical modeling", "computational modeling", "antimicrobial resistance",]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/eric-lofgren.html"
+google_scholar = "https://scholar.google.com/citations?user=DbBAq1MAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-2052-7240"
+linkedin = "https://www.linkedin.com/in/eric-lofgren-63458535/"
+bluesky = "https://bsky.app/profile/germsandnumbers.bsky.social"
 
 [[organization.researchers]]
 id = "lindsay-keegan"
@@ -24,6 +28,9 @@ role = "Principal Investigator"
 bio = "Develops and applies mathematical and statistical methods to understand infectious disease dynamics and support outbreak decision making with public health and healthcare partners."
 expertise = [ "mathematical methods", "statistical methods", "infectious disease dynamics", "decision support",]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/lindsay-keegan.html"
+google_scholar = "https://scholar.google.com/citations?user=BVGEpuUAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-8526-3007"
+linkedin = "https://www.linkedin.com/in/lindsaytkeegan/"
 
 [[organization.researchers]]
 id = "makoto-jones"
@@ -32,6 +39,7 @@ role = "Principal Investigator"
 bio = "Infectious disease internist focused on diagnosing and treating nosocomial pathogens and evidence-based antimicrobial prescribing."
 expertise = [ "infectious diseases", "nosocomial pathogens", "antimicrobial prescribing",]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/makoto-jones.html"
+orcid = "https://orcid.org/0000-0001-5580-6739"
 
 [[organization.researchers]]
 id = "matthew-samore"
@@ -40,6 +48,8 @@ role = "Principal Investigator"
 bio = "Professor of Medicine and Division Chief of Epidemiology at the University of Utah with expertise in epidemiologic methods, electronic surveillance, and decision-support systems."
 expertise = [ "epidemiology", "electronic surveillance", "decision-support systems", "health informatics",]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/matt-samore.html"
+google_scholar = "https://scholar.google.com/citations?user=QOM1UpUAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-4862-9196"
 
 [[organization.researchers]]
 id = "mike-rubin"
@@ -48,6 +58,7 @@ role = "Principal Investigator"
 bio = "Infectious disease and hospital epidemiology clinician focused on preventable healthcare-associated infections, including multidrug-resistant organisms."
 expertise = [ "infectious diseases", "hospital epidemiology", "healthcare-associated infections", "antimicrobial resistance",]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/michael-rubin.html"
+bluesky = "https://bsky.app/profile/slcrubes.bsky.social"
 
 [[organization.researchers]]
 id = "andrew-redd"
@@ -55,6 +66,9 @@ full_name = "Andrew Redd"
 role = "Analytical Modeling Team"
 bio = "Assistant Professor in the University of Utah Division of Epidemiology whose work includes statistical modeling for surveillance data, disease transmission and network models, high-performance computing, and reproducible research."
 expertise = ["statistical modeling", "surveillance data", "disease transmission models", "network models", "high-performance computing"]
+website = "https://medicine.utah.edu/faculty/andrew-redd"
+google_scholar = "https://scholar.google.com/citations?user=MWPpI-QAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-6149-2438"
 
 [[organization.researchers]]
 id = "assefaw-gebremedhin"
@@ -62,6 +76,10 @@ full_name = "Assefaw Gebremedhin"
 role = "Analytical Modeling Team"
 bio = "Associate Professor at Washington State University who leads the Scalable Algorithms for Data Science Lab; contributes computational epidemiology and forecasting and nowcasting toolsets to ForeSITE."
 expertise = ["data science", "artificial intelligence", "high-performance computing", "graph algorithms", "computational epidemiology"]
+website = "https://eecs.wsu.edu/~assefaw/home.html"
+google_scholar = "https://scholar.google.com/citations?user=iQs7spsAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5383-8032"
+linkedin = "https://www.linkedin.com/in/assefaw-gebremedhin-06ba7915/"
 
 [[organization.researchers]]
 id = "damon-toth"
@@ -69,6 +87,9 @@ full_name = "Damon Toth"
 role = "Analytical Modeling Team"
 bio = "Assistant Professor in Epidemiology and adjunct Assistant Professor of Mathematics at the University of Utah whose research uses mathematical modeling and simulation to study infectious disease transmission."
 expertise = ["mathematical modeling", "infectious disease transmission", "network modeling", "risk analysis", "outbreak prediction"]
+website = "https://medicine.utah.edu/faculty/damon-toth"
+google_scholar = "https://scholar.google.com/citations?user=6XZi4fIAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-7393-4814"
 
 [[organization.researchers]]
 id = "elissa-schwartz"
@@ -76,6 +97,9 @@ full_name = "Elissa Schwartz"
 role = "Analytical Modeling Team"
 bio = "Researcher who combines experimental and theoretical approaches in virology, immunology, and infectious disease epidemiology, using quantitative methods and computer modeling."
 expertise = ["virology", "immunology", "infectious disease epidemiology", "quantitative methods", "computer modeling"]
+website = "https://math.wsu.edu/faculty/wsu-profile/ejs/"
+google_scholar = "https://scholar.google.com/citations?user=v94TbSYAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-3770-3047"
 
 [[organization.researchers]]
 id = "erin-clancey"
@@ -83,6 +107,8 @@ full_name = "Erin Clancey"
 role = "Analytical Modeling Team"
 bio = "Quantitative biologist who uses mathematical and statistical models to study disease transmission, disease ecology, spillover, and host-pathogen coevolution."
 expertise = ["mathematical modeling", "statistical modeling", "disease transmission", "disease ecology", "disease spillover"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Erin_Clancey.html"
+orcid = "https://orcid.org/0000-0003-4728-4023"
 
 [[organization.researchers]]
 id = "jim-vanderslice"
@@ -90,6 +116,7 @@ full_name = "Jim VanDerslice"
 role = "Analytical Modeling Team"
 bio = "Professor in the University of Utah Division of Public Health whose research evaluates environmental chemical and microbiological exposures, including their effects on infants and children."
 expertise = ["environmental health", "exposure assessment", "geographic information systems", "spatial analysis", "public health"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Jim_Vanderslice.html"
 
 [[organization.researchers]]
 id = "karim-khader"
@@ -97,6 +124,9 @@ full_name = "Karim Khader"
 role = "Analytical Modeling Team"
 bio = "Researcher focused on statistical methodology and mathematical models and simulations of complex systems, with particular attention to antimicrobial-resistant infections in healthcare facilities."
 expertise = ["statistical methodology", "mathematical modeling", "computer simulation", "complex systems", "antimicrobial resistance"]
+website = "https://medicine.utah.edu/faculty/karim-khader"
+orcid = "https://orcid.org/0000-0002-7206-8077"
+linkedin = "https://www.linkedin.com/in/karim-khader-02150a1b6/"
 
 [[organization.researchers]]
 id = "sima-najafzadehkhoei"
@@ -104,6 +134,8 @@ full_name = "Sima Najafzadehkhoei"
 role = "Analytical Modeling Team"
 bio = "Biostatistics PhD student developing data-driven tools for infectious disease modeling and public health decision-making, including machine-learning calibration for agent-based epidemic models."
 expertise = ["infectious disease modeling", "machine learning", "agent-based models", "epidemic calibration", "public health decision-making"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Sima.html"
+orcid = "https://orcid.org/0009-0002-6253-2910"
 
 [[organization.researchers]]
 id = "yue-xhang"
@@ -111,6 +143,7 @@ full_name = "Yue Xhang"
 role = "Analytical Modeling Team"
 bio = "Professor of Biostatistics at the University of Utah who supports ForeSITE's modeling efforts."
 expertise = ["biostatistics", "infectious disease modeling"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Yue_Xhang.html"
 
 [[organization.researchers]]
 id = "haeseon-lee"
@@ -118,6 +151,8 @@ full_name = "Haeseon Lee"
 role = "Economic Impact Analysis Team"
 bio = "Research Fellow in Pharmacotherapy at the University of Utah who supports ForeSITE's economic impact team and studies health technology assessment and pharmacoeconomics."
 expertise = ["health technology assessment", "pharmacoeconomics", "economic impact analysis"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Haeseon_Lee.html"
+orcid = "https://orcid.org/0000-0003-3956-9758"
 
 [[organization.researchers]]
 id = "jeongyeon-cho"
@@ -125,6 +160,7 @@ full_name = "Jeongyeon Cho"
 role = "Economic Impact Analysis Team"
 bio = "Postdoctoral research fellow in Pharmacotherapy at the University of Utah College of Pharmacy with expertise in health technology assessment, cost-effectiveness modeling, and real-world evidence."
 expertise = ["health technology assessment", "health economics", "cost-effectiveness modeling", "real-world evidence", "health equity"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Jeongyeon_Cho.html"
 
 [[organization.researchers]]
 id = "khanh-duong"
@@ -132,6 +168,8 @@ full_name = "Khanh Duong"
 role = "Economic Impact Analysis Team"
 bio = "PhD candidate in Pharmacotherapy at the University of Utah College of Pharmacy whose research examines evidence-based health policies, health equity, and infectious disease policy."
 expertise = ["health policy", "health equity", "infectious disease policy", "health technology assessment"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Khanh_Duong.html"
+orcid = "https://orcid.org/0000-0002-7152-9476"
 
 [[organization.researchers]]
 id = "nathan-seegert"
@@ -139,6 +177,8 @@ full_name = "Nathan Seegert"
 role = "Economic Impact Analysis Team"
 bio = "Associate Professor of Finance at the University of Utah who collaborates with policymakers and businesses to study the economy and works with ForeSITE on its CDC-funded center activities."
 expertise = ["economics", "public finance", "business policy", "economic surveys"]
+website = "https://nathanseegert.com"
+orcid = "https://orcid.org/0000-0002-0862-1181"
 
 [[organization.researchers]]
 id = "nathorn-nui-chaiyakunapruk"
@@ -146,6 +186,9 @@ full_name = "Nathorn (Nui) Chaiyakunapruk"
 role = "Economic Impact Analysis Team"
 bio = "Professor in the University of Utah College of Pharmacy whose work applies health economics, real-world data analysis, and evidence synthesis to health policy; co-lead of ForeSITE Toolset 5."
 expertise = ["health technology assessment", "health policy", "health economics", "evidence synthesis", "health equity"]
+website = "https://nui-lab.net/"
+google_scholar = "https://scholar.google.com/citations?user=HcnuwjYAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4572-8794"
 
 [[organization.researchers]]
 id = "muhammed-rashid"
@@ -154,6 +197,8 @@ role = "Economic Impact Analysis Team"
 bio = "Postdoctoral Research Associate in the University of Utah College of Pharmacy with interests in evidence synthesis, systematic reviews, meta-analysis, pharmacoeconomics, and pharmacoepidemiology."
 expertise = ["evidence synthesis", "systematic reviews", "meta-analysis", "pharmacoeconomics", "pharmacoepidemiology"]
 google_scholar = "https://scholar.google.co.in/citations?hl=en&user=qqpa8zkAAAAJ"
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Rashid.html"
+orcid = "https://orcid.org/0000-0002-6390-7764"
 
 [[organization.researchers]]
 id = "richard-nelson"
@@ -161,6 +206,9 @@ full_name = "Richard Nelson"
 role = "Economic Impact Analysis Team"
 bio = "Leads ForeSITE's Economic Impact Analysis Team."
 expertise = ["economic impact analysis"]
+website = "https://medicine.utah.edu/faculty/richard-e-nelson"
+google_scholar = "https://scholar.google.com/citations?user=GDEIDcgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-4441-7460"
 
 [[organization.researchers]]
 id = "danielle-nguyen"
@@ -168,6 +216,8 @@ full_name = "Danielle Nguyen"
 role = "Economic Impact Analysis Team"
 bio = "PhD candidate in Pharmacotherapy at the University of Utah College of Pharmacy whose research involves modeling and health equity; assists ForeSITE Toolset 5."
 expertise = ["health equity", "infectious disease modeling", "health economics"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/danielle_nguyen.html"
+orcid = "https://orcid.org/0009-0001-9722-4275"
 
 [[organization.researchers]]
 id = "joel-hartsell"
@@ -175,6 +225,8 @@ full_name = "Joel Hartsell"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "President and Principal Consultant at Epi-Vant, infectious disease epidemiologist, and informatician with experience leading data-driven health initiatives in public and private sectors."
 expertise = ["infectious disease epidemiology", "public health informatics", "infectious disease surveillance"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Joel_Hartsell.html"
+orcid = "https://orcid.org/0000-0002-5193-9013"
 
 [[organization.researchers]]
 id = "julie-szymczak"
@@ -182,6 +234,9 @@ full_name = "Julie Szymczak"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "Associate Professor in the University of Utah Division of Epidemiology and medical sociologist whose research applies implementation science to safer, more equitable healthcare and antibiotic stewardship."
 expertise = ["medical sociology", "implementation science", "antibiotic stewardship", "healthcare quality", "health equity"]
+website = "https://medicine.utah.edu/faculty/julia-e-szymczak"
+google_scholar = "https://scholar.google.com/citations?user=JEgCsm8AAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/julie-szymczak-527a1919/"
 
 [[organization.researchers]]
 id = "katie-allen"
@@ -189,6 +244,7 @@ full_name = "Katie Allen"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "Senior Consultant at Epi-Vant Consulting who supports the STEDI team."
 expertise = ["public health consulting", "sociotechnical evaluation"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Katie_Allen.html"
 
 [[organization.researchers]]
 id = "kimberley-shoaf"
@@ -196,6 +252,10 @@ full_name = "Kimberley Shoaf"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "Professor in the Division of Public Health and Associate Chief for Community Engaged Scholarship with more than 30 years of experience in public health practice, emergency public health, and workforce development."
 expertise = ["public health practice", "emergency preparedness", "program planning", "program evaluation", "workforce development"]
+website = "https://medicine.utah.edu/faculty/kimberley-shoaf"
+google_scholar = "https://scholar.google.com/citations?user=PEC0LDUAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-6754-2216"
+linkedin = "https://www.linkedin.com/in/kimberley-shoaf-28321017/"
 
 [[organization.researchers]]
 id = "skyler-crouch"
@@ -203,6 +263,8 @@ full_name = "Skyler Crouch"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "University of Utah public health PhD student researching health equity in epidemiology; also a ForeSITE Center PhD student researcher and Public Health Nutrition instructor."
 expertise = ["health equity", "epidemiology", "public health nutrition", "contact tracing", "vaccination coordination"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Skyler_Crouch.html"
+orcid = "https://orcid.org/0009-0009-2741-5445"
 
 [[organization.researchers]]
 id = "elizabeth-weybright"
@@ -210,6 +272,8 @@ full_name = "Elizabeth Weybright"
 role = "Sociotechnical System Evaluation, Design & Implementation Team (STEDI)"
 bio = "Associate Professor and Adolescent Extension Specialist at Washington State University whose prevention-science and systems-theory research addresses adolescent health promotion and prevention."
 expertise = ["prevention science", "systems theory", "adolescent health", "substance use prevention", "health equity"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/elizabeth_weybright.html"
+orcid = "https://orcid.org/0000-0002-3995-7067"
 
 [[organization.researchers]]
 id = "andy-pavia"
@@ -217,6 +281,9 @@ full_name = "Andy Pavia"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "George and Esther Gross Presidential Professor and Chief of Pediatric Infectious Diseases at the University of Utah whose research, public health, and policy work focuses on emerging infectious diseases and pandemic preparedness."
 expertise = ["pediatric infectious diseases", "pandemic preparedness", "hospital epidemiology", "antimicrobial stewardship", "public health policy"]
+website = "https://healthcare.utah.edu/find-a-doctor/andrew-t-pavia"
+google_scholar = "https://scholar.google.com/citations?user=8BXaUAEAAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/andrew-pavia-816b5229/"
 
 [[organization.researchers]]
 id = "erin-landguth"
@@ -224,6 +291,9 @@ full_name = "Erin Landguth"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Supports ForeSITE's Disease Ecology team."
 expertise = ["disease ecology"]
+website = "https://umimpact.umt.edu/en/persons/erin-landguth/"
+google_scholar = "https://scholar.google.com/citations?user=KnfL0x4AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-7044-346X"
 
 [[organization.researchers]]
 id = "jeanmarie-mayer"
@@ -231,6 +301,8 @@ full_name = "JeanMarie Mayer"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Infectious disease specialist supporting the ForeSITE program."
 expertise = ["infectious diseases"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Jeannie_Mayer.html"
+orcid = "https://orcid.org/0000-0002-7699-4414"
 
 [[organization.researchers]]
 id = "leisha-nolen"
@@ -238,6 +310,8 @@ full_name = "Leisha Nolen"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Utah State Epidemiologist with the Utah Department of Health and Human Services and adjunct faculty member in the University of Utah School of Medicine."
 expertise = ["public health epidemiology", "state health trends", "public health practice"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Leisha.html"
+orcid = "https://orcid.org/0000-0002-7885-9347"
 
 [[organization.researchers]]
 id = "per-gesteland"
@@ -245,6 +319,7 @@ full_name = "Per Gesteland"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Associate Professor of Pediatrics and Adjunct Associate Professor of Biomedical Informatics at the University of Utah; serves as a healthcare-system and forecasting subject-matter expert for ForeSITE."
 expertise = ["pediatrics", "biomedical informatics", "healthcare systems", "forecasting"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Per_Gesteland.html"
 
 [[organization.researchers]]
 id = "stephanie-seifert"
@@ -252,6 +327,8 @@ full_name = "Stephanie Seifert"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Principal Investigator of the Molecular Ecology of Zoonotic and Animal Pathogens Lab, studying viral emergence and cross-species transmission at human-livestock-wildlife interfaces."
 expertise = ["viral emergence", "zoonotic diseases", "cross-species transmission", "molecular ecology", "computational biology"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Stephanie_Seifert.html"
+orcid = "https://orcid.org/0000-0002-4397-6156"
 
 [[organization.researchers]]
 id = "pilar-fernandez"
@@ -259,6 +336,9 @@ full_name = "Pilar Fernandez"
 role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Researcher who studies zoonotic disease transmission through a One Health framework, integrating ecology and epidemiology with mathematical, computational, and statistical models."
 expertise = ["zoonotic diseases", "One Health", "disease ecology", "spatial modeling", "community-based research"]
+website = "https://mpilarfernandez.com/"
+google_scholar = "https://scholar.google.com/citations?user=dLx_A-MAAAAJ&hl=en"
+twitter = "https://x.com/piliffq"
 
 [[organization.researchers]]
 id = "delaney-thornton"
@@ -266,6 +346,8 @@ full_name = "Delaney Thornton"
 role = "Project Management Team"
 bio = "Research project manager in the University of Utah Division of Epidemiology who collaborates with public health partners on disease prevention and education interventions and supports STEDI qualitative research."
 expertise = ["project management", "public health partnerships", "disease prevention", "qualitative research"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Delaney_Thornton.html"
+orcid = "https://orcid.org/0009-0000-9802-493X"
 
 [[organization.researchers]]
 id = "hannah-higgs"
@@ -273,6 +355,7 @@ full_name = "Hannah Higgs"
 role = "Project Management Team"
 bio = "Regulatory Coordinator who manages research-study components including IRB processes, reporting, documentation, scheduling, and project-management methodology."
 expertise = ["regulatory coordination", "institutional review boards", "research project management", "data management"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Hannah_Higgs.html"
 
 [[organization.researchers]]
 id = "hazel-guerrero"
@@ -280,6 +363,7 @@ full_name = "Hazel Guerrero"
 role = "Project Management Team"
 bio = "Data analyst supporting project management at the Lofgren Lab at Washington State University, with training in immunology, pathogenesis, and infectious disease epidemiology."
 expertise = ["data analysis", "project management", "immunology", "infectious disease epidemiology", "preparedness"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Hazel_Guerrero.html"
 
 [[organization.researchers]]
 id = "kristina-stratford"
@@ -287,6 +371,7 @@ full_name = "Kristina Stratford"
 role = "Project Management Team"
 bio = "Program Manager for ForeSITE in the University of Utah Division of Epidemiology who supervises project managers and oversees funding programs and more than 25 projects."
 expertise = ["program management", "research administration", "project management"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Kristina_Stratford.html"
 
 [[organization.researchers]]
 id = "nwoka-ajinwo"
@@ -294,6 +379,7 @@ full_name = "Nwoka Ajinwo"
 role = "Project Management Team"
 bio = "IT Project Manager in the University of Utah Division of Epidemiology."
 expertise = ["information technology", "project management"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Nwoka_Ajinwo.html"
 
 [[organization.researchers]]
 id = "alexander-lex"
@@ -301,6 +387,10 @@ full_name = "Alexander Lex"
 role = "Computational & Visual Analytics Team"
 bio = "Associate Professor of Computer Science at the University of Utah who directs the Visualization Design Lab and contributes data presentation, communication, and UI/UX expertise to ForeSITE."
 expertise = ["data visualization", "scientific visualization", "user interface design", "user experience design"]
+website = "https://alexander-lex.net/"
+google_scholar = "https://scholar.google.com/citations?user=JFNLCUcAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-6930-5468"
+bluesky = "https://bsky.app/profile/alex-lex.bsky.social"
 
 [[organization.researchers]]
 id = "andrew-pulsipher"
@@ -308,6 +398,7 @@ full_name = "Andrew Pulsipher"
 role = "Computational & Visual Analytics Team"
 bio = "Research Programmer in the University of Utah Division of Epidemiology who develops software libraries and tools for ForeSITE."
 expertise = ["research software engineering", "software libraries", "human-computer interaction", "computer engineering"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Andrew_Pulsipher.html"
 
 [[organization.researchers]]
 id = "jake-wagoner"
@@ -315,6 +406,8 @@ full_name = "Jake Wagoner"
 role = "Computational & Visual Analytics Team"
 bio = "Research software engineer at the University of Utah Scientific Computing and Imaging Institute and master's student in Computer Graphics and Visualization who supports ForeSITE's software team."
 expertise = ["research software engineering", "computer graphics", "data visualization", "accessible science", "physical simulation"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Jake_Wagoner.html"
+orcid = "https://orcid.org/0009-0000-5053-2281"
 
 [[organization.researchers]]
 id = "paul-rosen"
@@ -322,6 +415,9 @@ full_name = "Paul Rosen"
 role = "Computational & Visual Analytics Team"
 bio = "Associate Director of the University of Utah Scientific Computing and Imaging Institute whose work combines human-centered design with geometry- and topology-based approaches to visualization tools."
 expertise = ["scientific visualization", "information visualization", "human-centered design", "geometry", "topology"]
+website = "https://cspaul.com/"
+google_scholar = "https://scholar.google.com/citations?user=6iv6AEcAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-0873-9518"
 
 [[organization.researchers]]
 id = "rahat-zaman"
@@ -329,6 +425,8 @@ full_name = "Rahat Zaman"
 role = "Computational & Visual Analytics Team"
 bio = "PhD student in the University of Utah School of Computing whose research intersects data visualization and deep learning, including a declarative visualization grammar for deep-learning models."
 expertise = ["data visualization", "deep learning", "visualization grammar", "computer science"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Rahat_Zaman.html"
+orcid = "https://orcid.org/0000-0001-6728-7569"
 
 [[organization.researchers]]
 id = "tingying-he"
@@ -336,6 +434,8 @@ full_name = "Tingying He"
 role = "Computational & Visual Analytics Team"
 bio = "Research scientist at the University of Utah Scientific Computing and Imaging Institute whose work focuses on information visualization and accessible visualization design."
 expertise = ["information visualization", "accessible visualization", "data visualization"]
+website = "https://tingying-he.github.io"
+orcid = "https://orcid.org/0000-0002-9670-5587"
 
 [[organization.researchers]]
 id = "willy-ray"
@@ -343,6 +443,7 @@ full_name = "Willy Ray"
 role = "Computational & Visual Analytics Team"
 bio = "General software engineer in the University of Utah Division of Epidemiology."
 expertise = ["software engineering"]
+website = "https://epiforesite.github.io/ForeSITE_Website/members/Willy_Ray.html"
 
 [[organization.researchers]]
 id = "george-g-vega-yon"
@@ -351,3 +452,5 @@ role = "Computational & Visual Analytics Team"
 bio = "Assistant Professor of Research in the University of Utah Division of Epidemiology who studies complex systems using statistical computing and develops scientific software for high-performance computing, data visualization, and social network analysis."
 expertise = ["complex systems", "statistical computing", "high-performance computing", "data visualization", "social network analysis", "network science"]
 website = "https://ggvy.cl"
+orcid = "https://orcid.org/0000-0002-3171-0844"
+bluesky = "https://bsky.app/profile/gvegayon.bsky.social"

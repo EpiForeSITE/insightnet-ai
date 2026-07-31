@@ -16,6 +16,9 @@ full_name = "Caitlin Rivers"
 role = "Director, Epidemiology & Outbreak Response"
 bio = "Senior Scholar at the Johns Hopkins Center for Health Security and Associate Professor in Environmental Health and Engineering at the Johns Hopkins Bloomberg School of Public Health."
 expertise = [ "epidemiology", "outbreak science", "disease modeling",]
+website = "https://centerforhealthsecurity.org/who-we-are/our-people/caitlin-rivers"
+google_scholar = "https://scholar.google.com/citations?user=OSrbWZ0AAAAJ&hl=en"
+bluesky = "https://bsky.app/profile/cmyeaton.bsky.social"
 
 [[organization.researchers]]
 id = "crystal-watson"
@@ -23,6 +26,10 @@ full_name = "Crystal Watson"
 role = "Deputy Director, Research & Policy"
 bio = "Senior Scholar at the Johns Hopkins Center for Health Security and Associate Professor in Environmental Health and Engineering at the Johns Hopkins Bloomberg School of Public Health."
 expertise = [ "risk assessment", "public health preparedness", "healthcare preparedness", "biodefense funding",]
+website = "https://centerforhealthsecurity.org/who-we-are/our-people/crystal-watson"
+orcid = "https://orcid.org/0000-0002-3808-986X"
+linkedin = "https://www.linkedin.com/in/crystal-watson-b73b2924/"
+bluesky = "https://bsky.app/profile/crwatson.bsky.social"
 
 [[organization.researchers]]
 id = "elizabeth-campbell"
@@ -38,26 +45,35 @@ role = "Contributing Scholar"
 id = "lucia-mullen"
 full_name = "Lucia Mullen"
 role = "Associate Scholar, Research Associate"
+website = "https://centerforhealthsecurity.org/who-we-are/our-people/lucia-mullen"
+orcid = "https://orcid.org/0009-0004-6699-3313"
 
 [[organization.researchers]]
 id = "sutyajeet-soneja"
 full_name = "Sutyajeet Soneja"
 role = "Associate Scientist"
+website = "https://cori.centerforhealthsecurity.org/sutyajeet-sut-soneja-phd"
+orcid = "https://orcid.org/0000-0003-4914-2432"
+linkedin = "https://www.linkedin.com/in/sut-soneja/"
 
 [[organization.researchers]]
 id = "eric-toner"
 full_name = "Eric Toner"
 role = "Senior Scholar, Senior Scientist"
+website = "https://centerforhealthsecurity.org/who-we-are/our-people/eric-toner"
+orcid = "https://orcid.org/0000-0001-5292-9450"
 
 [[organization.researchers]]
 id = "fatima-ameaka"
 full_name = "Fatima Ameaka"
 role = "Senior Analyst"
+orcid = "https://orcid.org/0009-0006-8060-274X"
 
 [[organization.researchers]]
 id = "haley-farrie"
 full_name = "Haley Farrie"
 role = "Senior Analyst"
+orcid = "https://orcid.org/0009-0001-8380-7410"
 
 [[organization.researchers]]
 id = "sarah-gillani"
@@ -68,3 +84,4 @@ role = "Senior Analyst"
 id = "hannah-goodtree"
 full_name = "Hannah Goodtree"
 role = "Senior Analyst"
+orcid = "https://orcid.org/0009-0006-9187-7597"

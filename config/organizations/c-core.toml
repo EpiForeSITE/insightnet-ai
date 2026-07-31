@@ -14,6 +14,10 @@ enabled = true
 id = "sara-tartof"
 full_name = "Sara Tartof"
 role = "Co-Lead; Research Scientist, Department of Research & Evaluation, Kaiser Permanente Southern California"
+website = "https://www.kp-scalresearch.org/investigator/sara-y-tartof-phd-mph/"
+google_scholar = "https://scholar.google.com/citations?user=xHf0B00AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-2336-8476"
+linkedin = "https://www.linkedin.com/in/sara-tartof-70158791/"
 
 [[organization.researchers]]
 id = "joseph-lewnard"
@@ -21,23 +25,36 @@ full_name = "Joseph Lewnard"
 role = "Co-Lead; Associate Professor of Epidemiology, UC Berkeley School of Public Health"
 website = "https://joelewnard.github.io/joelewnard/"
 expertise = [ "infectious diseases", "vaccines", "transmission dynamics", "disease control", "vaccine effectiveness",]
+google_scholar = "https://scholar.google.com/citations?user=-G_851kAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-8505-8839"
+linkedin = "https://www.linkedin.com/in/joseph-lewnard-a7b9108a/"
 
 [[organization.researchers]]
 id = "isabel-rodriguez-barraquer"
 full_name = "Isabel Rodriguez-Barraquer"
 role = "Co-Investigator; Associate Professor, Department of Medicine, University of California San Francisco"
+website = "https://hividgm.ucsf.edu/people/isabel-rodriguez-barraquer"
 
 [[organization.researchers]]
 id = "parag-mahale"
 full_name = "Parag Mahale"
 role = "Team Member; Kaiser Permanente Southern California"
+orcid = "https://orcid.org/0000-0003-1285-3310"
 
 [[organization.researchers]]
 id = "alan-hubbard"
 full_name = "Alan Hubbard"
 role = "Team Member; Professor and Chair, Division of Biostatistics, UC Berkeley School of Public Health"
+website = "https://ahubb40.github.io/"
+google_scholar = "https://scholar.google.com/citations?user=XIQ3sm0AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-3769-0127"
 
 [[organization.researchers]]
 id = "alejandro-schuler"
 full_name = "Alejandro Schuler"
 role = "Team Member; Assistant Professor in Residence, Division of Biostatistics, UC Berkeley School of Public Health"
+website = "https://publichealth.berkeley.edu/people/alejandro-schuler"
+google_scholar = "https://scholar.google.com/citations?user=YbsggPYAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4853-6130"
+linkedin = "https://www.linkedin.com/in/alejandro-schuler-43817b70/"
+bluesky = "https://bsky.app/profile/aschuler.bsky.social"

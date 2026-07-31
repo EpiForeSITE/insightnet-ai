@@ -18,73 +18,110 @@ role = "MICOM Co-Director; Director, MDHHS Bureau of Infectious Disease Preventi
 id = "marisa-eisenberg"
 full_name = "Marisa Eisenberg"
 role = "MICOM Co-Director; Professor of Epidemiology, Complex Systems, and Mathematics"
+website = "https://epimath.org/"
+google_scholar = "https://scholar.google.com/citations?user=RhyNk3EAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4221-830X"
+bluesky = "https://bsky.app/profile/marisa-eisenberg.bsky.social"
 
 [[organization.researchers]]
 id = "emily-toth-martin"
 full_name = "Emily Toth Martin"
 role = "MICOM Co-Director; Professor of Epidemiology"
+website = "https://sph.umich.edu/faculty-profiles/martin-emily.html"
+google_scholar = "https://scholar.google.com/citations?user=V_l3ufkAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-5771-8895"
+bluesky = "https://bsky.app/profile/martinepi.bsky.social"
 
 [[organization.researchers]]
 id = "natasha-bagdasarian"
 full_name = "Natasha Bagdasarian"
 role = "Chief Medical Executive, State of Michigan"
+orcid = "https://orcid.org/0000-0003-1133-8309"
 
 [[organization.researchers]]
 id = "andrew-brouwer"
 full_name = "Andrew Brouwer"
 role = "MAMP Co-Lead; Assistant Professor of Epidemiology"
+website = "https://midas.umich.edu/directory/andrew-brouwer/"
+google_scholar = "https://scholar.google.com/citations?user=PJAQ7AQAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-3779-5287"
+linkedin = "https://www.linkedin.com/in/andrew-brouwer-0651a056/"
 
 [[organization.researchers]]
 id = "alexis-handal"
 full_name = "Alexis Handal"
 role = "Preparedness; Associate Professor of Epidemiology"
+website = "https://sph.umich.edu/faculty-profiles/handal_alexis.html"
+orcid = "https://orcid.org/0000-0001-8890-5813"
 
 [[organization.researchers]]
 id = "michael-hayashi"
 full_name = "Michael Akira Lee Hayashi"
 role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Epidemiology"
+orcid = "https://orcid.org/0000-0003-3335-6196"
 
 [[organization.researchers]]
 id = "jennifer-head"
 full_name = "Jennifer Head"
 role = "Preparedness; Assistant Professor of Epidemiology"
+website = "https://sph.umich.edu/faculty-profiles/head_jennifer.html"
+orcid = "https://orcid.org/0000-0003-1449-4171"
+linkedin = "https://www.linkedin.com/in/jrhead/"
+bluesky = "https://bsky.app/profile/jenniferrhead.bsky.social"
 
 [[organization.researchers]]
 id = "michael-hess"
 full_name = "Michael Hess"
 role = "MI Lighthouse Co-Lead; Chief Information Officer, School of Information"
+website = "https://www.si.umich.edu/people/michael-hess"
+linkedin = "https://www.linkedin.com/in/michaellhess/"
 
 [[organization.researchers]]
 id = "adam-lauring"
 full_name = "Adam Lauring"
 role = "Preparedness; Professor of Internal Medicine, Microbiology and Immunology"
+website = "https://medschool.umich.edu/profile/83/adam-lauring"
+google_scholar = "https://scholar.google.com/citations?user=IA9nXYgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-2906-8335"
 
 [[organization.researchers]]
 id = "alexander-rodriguez"
 full_name = "Alexander Rodriguez"
 role = "MAMP and Applied Artificial Intelligence Co-Lead; Assistant Professor of Electrical Engineering and Computer Science"
+website = "https://alrodri.engin.umich.edu/"
+google_scholar = "https://scholar.google.com/citations?user=ILkESaUAAAAJ&hl=en"
 
 [[organization.researchers]]
 id = "michael-rubyan"
 full_name = "Michael Rubyan"
 role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Health Management and Policy"
+orcid = "https://orcid.org/0000-0002-5549-4488"
 
 [[organization.researchers]]
 id = "tom-schwarz"
 full_name = "Tom Schwarz"
 role = "MAMP and Applied Artificial Intelligence Co-Lead; Professor of Physics"
+website = "https://lsa.umich.edu/physics/people/faculty/schwarzt.html"
+linkedin = "https://www.linkedin.com/in/tom-schwarz-91aa3912/"
 
 [[organization.researchers]]
 id = "abram-wagner"
 full_name = "Abram Wagner"
 role = "Preparedness; Assistant Professor of Epidemiology and Global Public Health"
+website = "https://sph.umich.edu/faculty-profiles/wagner-abram.html"
+google_scholar = "https://scholar.google.com/citations?user=RNembkwAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4691-7802"
 
 [[organization.researchers]]
 id = "krista-wigginton"
 full_name = "Krista Wigginton"
 role = "Preparedness; Associate Chair and Professor of Civil and Environmental Engineering"
+website = "https://www.wiggiumich.com/"
+orcid = "https://orcid.org/0000-0001-6665-5112"
 
 [[organization.researchers]]
 id = "jon-zelner"
 full_name = "Jon Zelner"
 role = "Health Equity Lead; Associate Professor of Epidemiology"
+website = "https://www.jonzelner.net/"
+google_scholar = "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en"

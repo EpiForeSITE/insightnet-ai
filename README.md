@@ -37,8 +37,12 @@ description, sources, members, or expertise—no shared organization list needs 
 merged. Shared InsightNet settings are in `config/network.toml`.
 
 Every researcher can have a name, role, biography, expertise tags, personal website,
-LinkedIn, GitHub, X/Twitter, Bluesky, and Google Scholar profile. IDs are generated
-from names when omitted, but explicit, stable IDs are recommended.
+LinkedIn, GitHub, X/Twitter, Bluesky, Google Scholar, and ORCID profile. IDs are
+generated from names when omitted, but explicit, stable IDs are recommended.
+
+Profiles are maintained by hand. `tools/profile-scaffold/` holds one-off helpers used to
+bootstrap researcher links in bulk; they are not part of the daily refresh and should
+not be re-run to keep profiles current.
 
 Validate a change and rebuild the snapshot with:
 

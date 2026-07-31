@@ -15,99 +15,155 @@ id = "alessandro-vespignani"
 full_name = "Alessandro Vespignani"
 role = "Project Lead; Director, Network Science Institute; Sternberg Family Distinguished Professor"
 bio = "Network Science Institute, Northeastern University."
+website = "https://www.networkscienceinstitute.org/people/alessandro-vespignani"
+google_scholar = "https://scholar.google.com/citations?user=U3CXAPsAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-3419-4205"
+bluesky = "https://bsky.app/profile/alexvespi.bsky.social"
 
 [[organization.researchers]]
 id = "matteo-chinazzi"
 full_name = "Matteo Chinazzi"
 role = "Research Associate Professor"
 bio = "Roux Institute and Network Science Institute, Northeastern University."
+website = "https://www.matteochinazzi.com/"
+google_scholar = "https://scholar.google.com/citations?user=d1URvWUAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-5955-1929"
+bluesky = "https://bsky.app/profile/mattk7.bsky.social"
 
 [[organization.researchers]]
 id = "mauricio-santillana"
 full_name = "Mauricio Santillana"
 role = "Professor in Physics, Electrical and Computer Engineering"
 bio = "Network Science Institute, Northeastern University."
+website = "https://cos.northeastern.edu/people/mauricio-santillana/"
+google_scholar = "https://scholar.google.com/citations?user=3nOMJ44AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-4206-418X"
 
 [[organization.researchers]]
 id = "samuel-v-scarpino"
 full_name = "Samuel V. Scarpino"
 role = "Director of Artificial Intelligence and Life Sciences"
 bio = "Institute for Experiential AI, Northeastern University."
+website = "https://scarpino.github.io/"
+google_scholar = "https://scholar.google.com/citations?user=B9FcowkAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5716-2770"
+linkedin = "https://www.linkedin.com/in/svscarpino"
+bluesky = "https://bsky.app/profile/scarpino.bsky.social"
+github = "https://github.com/scarpino"
 
 [[organization.researchers]]
 id = "david-lazer"
 full_name = "David Lazer"
 role = "University Distinguished Professor of Political Science and Computer Sciences"
 bio = "Network Science Institute, Northeastern University."
+website = "https://davidlazer.com/"
+google_scholar = "https://scholar.google.com/citations?user=gMndACUAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-7991-9110"
 
 [[organization.researchers]]
 id = "jessica-davis"
 full_name = "Jessica Davis"
 role = "Research Assistant Professor"
 bio = "Network Science Institute, Northeastern University."
+website = "https://bouve.northeastern.edu/directory/jessica-davis/"
+google_scholar = "https://scholar.google.com/citations?user=9iyObOAAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-0726-1855"
+bluesky = "https://bsky.app/profile/jessica-davis.bsky.social"
 
 [[organization.researchers]]
 id = "kayoko-shioda"
 full_name = "Kayoko Shioda"
 role = "Assistant Professor of Global Health"
 bio = "Center for Emerging Infectious Diseases Policy & Research, Boston University."
+website = "https://www.bu.edu/sph/profile/kayoko-shioda/"
+google_scholar = "https://scholar.google.com/citations?user=BiawVxEAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-8057-8448"
+linkedin = "https://www.linkedin.com/in/kayoko-shioda-phd-dvm-mph-3ba75795/"
 
 [[organization.researchers]]
 id = "m-elizabeth-halloran"
 full_name = "M. Elizabeth Halloran"
 role = "Professor and Head of Biostatistics, Bioinformatics and Epidemiology Program"
 bio = "Fred Hutchinson Cancer Center."
+website = "https://faculty.washington.edu/betz/Welcome.html"
+orcid = "https://orcid.org/0000-0002-3127-1757"
 
 [[organization.researchers]]
 id = "marco-ajelli"
 full_name = "Marco Ajelli"
 role = "Professor"
 bio = "Department of Epidemiology and Biostatistics, Indiana University."
+website = "https://ceph-lab.github.io/"
+google_scholar = "https://scholar.google.com/citations?user=igKX7EMAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-1753-4749"
 
 [[organization.researchers]]
 id = "maria-litvinova"
 full_name = "Maria Litvinova"
 role = "Assistant Professor"
 bio = "Department of Epidemiology and Biostatistics, Indiana University."
+website = "https://publichealth.indiana.edu/about/directory/Maria-Litvinova-malitv.html"
+google_scholar = "https://scholar.google.com/citations?user=582zt4cAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-6393-1943"
+linkedin = "https://www.linkedin.com/in/maria-litvinova-33418041/"
 
 [[organization.researchers]]
 id = "sara-del-valle"
 full_name = "Sara Del Valle"
 role = "Scientist/Project Leader"
 bio = "Los Alamos National Laboratory."
+google_scholar = "https://scholar.google.com/citations?user=BlSnKx0AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-0159-1952"
+linkedin = "https://www.linkedin.com/in/sara-del-valle-11a33b4/"
 
 [[organization.researchers]]
 id = "timothy-germann"
 full_name = "Timothy Germann"
 role = "Founder, EpiCast"
 bio = "Los Alamos National Laboratory."
+google_scholar = "https://scholar.google.com/citations?user=bjcBnjIAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-6813-238X"
 
 [[organization.researchers]]
 id = "rose-yu"
 full_name = "Rose Yu"
 role = "Assistant Professor"
 bio = "Halıcıoğlu Data Science Institute, University of California San Diego."
+website = "https://roseyu.com"
+google_scholar = "https://scholar.google.com/citations?user=4HTITaMAAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/yuqirose"
+bluesky = "https://bsky.app/profile/yuqirose.bsky.social"
 
 [[organization.researchers]]
 id = "yian-ma"
 full_name = "Yian Ma"
 role = "Assistant Professor"
 bio = "Halıcıoğlu Data Science Institute, University of California San Diego."
+website = "https://sites.google.com/view/yianma/home"
+google_scholar = "https://scholar.google.com/citations?user=OkOGR_8AAAAJ&hl=en"
 
 [[organization.researchers]]
 id = "ira-longini"
 full_name = "Ira Longini"
 role = "Professor of Biostatistics"
 bio = "Center for Statistics and Quantitative Infectious Diseases, University of Florida."
+website = "https://csquid.epi.ufl.edu/profile/longini-ira/"
+google_scholar = "https://scholar.google.com/citations?user=DDfPqicAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-2780-9382"
 
 [[organization.researchers]]
 id = "madhav-marathe"
 full_name = "Madhav Marathe"
 role = "Distinguished Professor"
 bio = "Biocomplexity Institute, University of Virginia."
+website = "https://biocomplexity.virginia.edu/our-team/madhav-marathe"
+google_scholar = "https://scholar.google.com/citations?user=diIore8AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-1653-0658"
 
 [[organization.researchers]]
 id = "bryan-lewis"
 full_name = "Bryan Lewis"
 role = "Associate Professor"
 bio = "Biocomplexity Institute, University of Virginia."
+website = "https://biocomplexity.virginia.edu/our-team/bryan-lewis"
+google_scholar = "https://scholar.google.com/citations?user=iBoF0nYAAAAJ&hl=en"

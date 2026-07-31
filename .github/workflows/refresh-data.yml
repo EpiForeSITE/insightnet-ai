@@ -1,6 +1,8 @@
 name: Refresh scientific activity
 
 on:
+  push:
+    branches: [main, master]
   schedule:
     # Daily at 08:17 UTC. GitHub schedules use UTC and may start a few minutes late.
     - cron: "17 8 * * *"

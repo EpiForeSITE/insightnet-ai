@@ -124,3 +124,114 @@ id = "abigail-sykes"
 full_name = "Abigail Sykes"
 role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
 expertise = [ "statistical modeling", "machine learning", "mechanistic modeling", "epidemic forecasting",]
+
+# Tools and products, transcribed from https://accidda.org/623-2/
+[[organization.tools]]
+name = "flepiMoP"
+summary = "Flexible epidemic modeling pipeline for infectious disease simulation, inference, and scenario projection."
+url = "https://github.com/ACCIDDA/flepimop2"
+repository = "https://github.com/ACCIDDA/flepimop2"
+category = "platform"
+keywords = ["epidemic modeling", "scenario projection", "inference"]
+
+[[organization.tools]]
+name = "RespiLens"
+summary = "Flexible dashboard for exploring respiratory disease trends and forecasts."
+url = "https://www.respilens.com/"
+category = "dashboard"
+keywords = ["respiratory disease", "forecasting", "visualization"]
+
+[[organization.tools]]
+name = "Forecastle"
+summary = "Forecasting skill-testing game integrated with the RespiLens dashboard."
+url = "https://www.respilens.com/"
+category = "application"
+keywords = ["forecasting", "training"]
+
+[[organization.tools]]
+name = "influpaint"
+summary = "Generates infectious disease trend forecasts using image inpainting techniques."
+url = "https://github.com/jcblemai/influpaint"
+repository = "https://github.com/jcblemai/influpaint"
+category = "model"
+keywords = ["influenza", "forecasting", "machine learning"]
+
+[[organization.tools]]
+name = "LEMMA-forecast"
+summary = "Produces forecasts by combining mechanistic model predictions with machine learning on past errors."
+url = "https://github.com/ACCIDDA/LEMMA-forecast"
+repository = "https://github.com/ACCIDDA/LEMMA-forecast"
+category = "model"
+keywords = ["forecasting", "machine learning", "mechanistic models"]
+
+[[organization.tools]]
+name = "Forecast-viz Creator"
+summary = "Rapidly generates public dashboards for visualizing forecast output."
+url = "https://github.com/ACCIDDA/forecast-viz-creator"
+repository = "https://github.com/ACCIDDA/forecast-viz-creator"
+category = "package"
+keywords = ["visualization", "dashboards", "forecasting"]
+
+[[organization.tools]]
+name = "imuGAP"
+summary = "Estimates vaccine protection and coverage from vaccination data across time, space, and age."
+url = "https://github.com/ACCIDDA/imuGAP"
+repository = "https://github.com/ACCIDDA/imuGAP"
+category = "package"
+keywords = ["vaccination", "immunity", "coverage"]
+
+[[organization.tools]]
+name = "tti"
+summary = "Calculator for evaluating the effectiveness of test-trace-isolate interventions."
+url = "https://github.com/HopkinsIDD/tti"
+repository = "https://github.com/HopkinsIDD/tti"
+category = "package"
+keywords = ["contact tracing", "intervention", "isolation"]
+
+[[organization.tools]]
+name = "tabularepimdl"
+summary = "Tabular epidemiological modeling framework for rapid prototyping of disease models."
+url = "https://github.com/UNCIDD/tabularepimdl"
+repository = "https://github.com/UNCIDD/tabularepimdl"
+category = "package"
+keywords = ["modeling framework", "prototyping"]
+
+[[organization.tools]]
+name = "paramix"
+summary = "Correctly scales parameters for compartmental infectious disease models."
+url = "https://github.com/CMMID/paramix"
+repository = "https://github.com/CMMID/paramix"
+category = "package"
+keywords = ["compartmental models", "parameters"]
+
+[[organization.tools]]
+name = "hashPRNG"
+summary = "Builds matched random-number environments so model scenarios can be compared fairly."
+url = "https://github.com/epinowcast/hashprng"
+repository = "https://github.com/epinowcast/hashprng"
+category = "package"
+keywords = ["simulation", "reproducibility", "scenario comparison"]
+
+[[organization.tools]]
+name = "op_system"
+summary = "General-purpose model builder framework designed to work with flepiMoP."
+url = "https://github.com/ACCIDDA/op_system"
+repository = "https://github.com/ACCIDDA/op_system"
+category = "package"
+keywords = ["model building", "framework"]
+
+[[organization.tools]]
+name = "op_engine"
+summary = "Model runner framework that operates as a module within flepiMoP."
+url = "https://github.com/ACCIDDA/op_engine"
+repository = "https://github.com/ACCIDDA/op_engine"
+category = "package"
+keywords = ["simulation engine", "framework"]
+
+[[organization.tools]]
+name = "hestia"
+summary = "Builds custom disease models for analyzing household study data."
+url = "https://github.com/ACCIDDA/hestia"
+repository = "https://github.com/ACCIDDA/hestia"
+category = "package"
+keywords = ["household transmission", "study design"]

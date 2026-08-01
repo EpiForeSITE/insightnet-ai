@@ -23,6 +23,7 @@ dev = [
 
 [project.scripts]
 insightnet-update = "insightnet.update:main"
+insightnet-works = "insightnet.update:works_main"
 
 [tool.setuptools.packages.find]
 include = ["insightnet*"]

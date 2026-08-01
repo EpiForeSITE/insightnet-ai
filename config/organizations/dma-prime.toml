@@ -66,3 +66,7 @@ website = "https://www.lucinezhong.com/"
 google_scholar = "https://scholar.google.com/citations?user=WggT7aEAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-7934-7634"
 linkedin = "https://www.linkedin.com/in/lu-zhong-b54419bb/"
+
+# No tools or products are named on this center's public pages yet; the site describes
+# planned activities rather than released deliverables. Add [[organization.tools]]
+# entries here as they are published.

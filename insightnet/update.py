@@ -1,4 +1,8 @@
-"""Command-line entry point for daily data collection."""
+"""Command-line entry points for scheduled data collection.
+
+``insightnet-update`` refreshes profiles and the activity stream daily.
+``insightnet-works`` refreshes scholarly works on its own, slower schedule.
+"""
 
 from __future__ import annotations
 
@@ -7,9 +11,11 @@ import json
 import os
 import tempfile
 from pathlib import Path
+from typing import Any
 
 from insightnet.config import load_profiles
-from insightnet.pipeline import build_snapshot
+from insightnet.pipeline import build_snapshot, split_snapshot
+from insightnet.works import build_works_snapshot
 
 
 def write_snapshot(snapshot: dict, output: str | Path) -> None:
@@ -28,15 +34,36 @@ def write_snapshot(snapshot: dict, output: str | Path) -> None:
             os.unlink(temporary_name)
 
 
+def read_snapshot(path: str | Path) -> dict[str, Any] | None:
+    """Read a previous snapshot, treating an unreadable file as absent."""
+
+    path = Path(path)
+    if not path.exists():
+        return None
+    try:
+        with path.open(encoding="utf-8") as handle:
+            return json.load(handle)
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"Ignoring unreadable previous snapshot at {path}: {exc}")
+        return None
+
+
+def _publish(snapshot: dict[str, Any], output: str | Path, site_output: str | Path) -> None:
+    write_snapshot(snapshot, output)
+    if site_output and Path(site_output).resolve() != Path(output).resolve():
+        write_snapshot(snapshot, site_output)
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Refresh the InsightNet dashboard data")
+    parser = argparse.ArgumentParser(description="Refresh InsightNet profiles and activity")
     parser.add_argument("--network-config", default="config/network.toml")
     parser.add_argument("--profiles-dir", default="config/organizations")
-    parser.add_argument("--output", default="data/insightnet.json")
+    parser.add_argument("--profiles-output", default="data/profiles.json")
+    parser.add_argument("--activity-output", default="data/activity.json")
     parser.add_argument(
-        "--site-output",
-        default="site/data/insightnet.json",
-        help="Copy the snapshot into the static GitHub Pages site (empty to disable)",
+        "--site-dir",
+        default="site/data",
+        help="Copy the snapshots into the static GitHub Pages site (empty to disable)",
     )
     parser.add_argument(
         "--replace",
@@ -54,27 +81,78 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     profiles = load_profiles(args.network_config, args.profiles_dir)
-    previous_snapshot = None
-    output = Path(args.output)
-    if output.exists() and not args.replace:
-        try:
-            with output.open(encoding="utf-8") as handle:
-                previous_snapshot = json.load(handle)
-        except (OSError, json.JSONDecodeError) as exc:
-            print(f"Ignoring unreadable previous snapshot: {exc}")
-    snapshot = build_snapshot(profiles, previous_snapshot=previous_snapshot)
-    write_snapshot(snapshot, args.output)
-    if args.site_output and Path(args.site_output).resolve() != output.resolve():
-        write_snapshot(snapshot, args.site_output)
+    previous = None if args.replace else read_snapshot(args.activity_output)
+    snapshot = build_snapshot(profiles, previous_snapshot=previous)
+    profile_document, activity_document = split_snapshot(snapshot)
+
+    site_dir = Path(args.site_dir) if args.site_dir else None
+    _publish(
+        profile_document,
+        args.profiles_output,
+        site_dir / Path(args.profiles_output).name if site_dir else "",
+    )
+    _publish(
+        activity_document,
+        args.activity_output,
+        site_dir / Path(args.activity_output).name if site_dir else "",
+    )
+
     stats = snapshot["stats"]
     print(
-        f"Wrote {args.output}: {stats['organizations']} centers, "
-        f"{stats['researchers']} researchers, {stats['items']} activity items"
+        f"Wrote {args.profiles_output}: {stats['organizations']} centers, "
+        f"{stats['researchers']} researchers"
     )
-    if args.site_output:
-        print(f"Synchronized static site data at {args.site_output}")
+    print(f"Wrote {args.activity_output}: {stats['items']} activity records")
+    if site_dir:
+        print(f"Synchronized static site data in {site_dir}")
     if args.strict and stats["sources_attention"]:
         print(f"{stats['sources_attention']} source(s) need attention")
+        return 1
+    return 0
+
+
+def parse_works_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Refresh the scholarly works collected for InsightNet researchers"
+    )
+    parser.add_argument("--network-config", default="config/network.toml")
+    parser.add_argument("--profiles-dir", default="config/organizations")
+    parser.add_argument("--output", default="data/works.json")
+    parser.add_argument(
+        "--site-dir",
+        default="site/data",
+        help="Copy the works snapshot into the static site (empty to disable)",
+    )
+    parser.add_argument(
+        "--replace",
+        action="store_true",
+        help="Discard previously retained works instead of merging them",
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Exit unsuccessfully if a works source is blocked or errors",
+    )
+    return parser.parse_args(argv)
+
+
+def works_main(argv: list[str] | None = None) -> int:
+    args = parse_works_args(argv)
+    profiles = load_profiles(args.network_config, args.profiles_dir)
+    previous = None if args.replace else read_snapshot(args.output)
+    snapshot = build_works_snapshot(profiles, previous_snapshot=previous)
+
+    site_dir = Path(args.site_dir) if args.site_dir else None
+    _publish(snapshot, args.output, site_dir / Path(args.output).name if site_dir else "")
+
+    stats = snapshot["stats"]
+    print(
+        f"Wrote {args.output}: {stats['works']} works "
+        f"({stats['preprints']} preprints, {stats['with_abstract']} with abstracts) "
+        f"for {stats['researchers_with_works']} researchers"
+    )
+    if args.strict and stats["sources_attention"]:
+        print(f"{stats['sources_attention']} works source(s) need attention")
         return 1
     return 0
 

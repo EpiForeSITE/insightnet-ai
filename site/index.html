@@ -39,6 +39,8 @@
       <div class="header-actions">
         <nav aria-label="Primary navigation">
           <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
+          <button class="nav-link" type="button" data-view="tools">Tools</button>
+          <button class="nav-link" type="button" data-view="works">Publications</button>
           <button class="nav-link" type="button" data-view="activity">Activity</button>
           <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
           <button class="nav-link" type="button" data-view="experts">Find experts</button>
@@ -81,6 +83,14 @@
           <span class="metric-label">Researchers</span>
         </article>
         <article class="metric">
+          <span class="metric-value" id="metric-tools">—</span>
+          <span class="metric-label">Tools</span>
+        </article>
+        <article class="metric">
+          <span class="metric-value" id="metric-works">—</span>
+          <span class="metric-label">Publications</span>
+        </article>
+        <article class="metric">
           <span class="metric-value" id="metric-items">—</span>
           <span class="metric-label">Activity records</span>
         </article>
@@ -117,6 +127,83 @@
           </div>
         </div>
         <div id="center-grid" class="center-grid"></div>
+      </section>
+
+      <section class="view" id="view-tools" data-view-panel="tools" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Built by the network</p>
+            <h2>Tools &amp; products</h2>
+            <p>
+              Dashboards, software packages, platforms, and datasets developed by
+              InsightNet centers, transcribed from each center's public pages.
+            </p>
+          </div>
+        </div>
+        <form id="tools-filters" class="filter-bar" aria-label="Tool filters">
+          <label>
+            <span>Search tools</span>
+            <input id="tools-query" type="search" placeholder="Forecasting, wastewater, R package…" />
+          </label>
+          <label>
+            <span>Center</span>
+            <select id="tools-center"><option value="">All centers</option></select>
+          </label>
+          <label>
+            <span>Category</span>
+            <select id="tools-category"><option value="">All categories</option></select>
+          </label>
+        </form>
+        <p id="tools-count" class="result-count" aria-live="polite"></p>
+        <div id="tools-list" class="tools-grid"></div>
+      </section>
+
+      <section class="view" id="view-works" data-view-panel="works" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Peer-reviewed &amp; preprints</p>
+            <h2>Publications</h2>
+            <p>
+              Papers and preprints collected from ORCID, PubMed, Europe PMC, arXiv, and
+              medRxiv/bioRxiv for the researchers in this network.
+            </p>
+          </div>
+        </div>
+        <form id="works-filters" class="filter-bar" aria-label="Publication filters">
+          <label>
+            <span>Search publications</span>
+            <input
+              id="works-query"
+              type="search"
+              placeholder="Network science, forecasting, wastewater…"
+            />
+          </label>
+          <label>
+            <span>Center</span>
+            <select id="works-center"><option value="">All centers</option></select>
+          </label>
+          <label>
+            <span>Researcher</span>
+            <select id="works-researcher"><option value="">All researchers</option></select>
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="works-type">
+              <option value="">All types</option>
+              <option value="article">Journal articles</option>
+              <option value="preprint">Preprints</option>
+            </select>
+          </label>
+          <label>
+            <span>Published since</span>
+            <select id="works-year"><option value="">Any year</option></select>
+          </label>
+        </form>
+        <p id="works-count" class="result-count" aria-live="polite">Loading publications…</p>
+        <div id="works-list" class="works-list"></div>
+        <div class="works-more">
+          <button id="works-more" type="button" hidden>Show more publications</button>
+        </div>
       </section>
 
       <section class="view" id="view-activity" data-view-panel="activity" hidden>
@@ -165,8 +252,9 @@
           <p class="kicker">Expertise finder</p>
           <h2>Who knows about <em>your question?</em></h2>
           <p>
-            Search names, biographies, expertise, center focus areas, and collected activity by
-            keyword. Your query stays in this browser.
+            Search names, biographies, expertise, center focus areas, tools and products,
+            publication titles and abstracts, and collected activity by keyword. Your query
+            stays in this browser.
           </p>
         </div>
         <form id="expert-form" class="expert-form">
@@ -224,7 +312,11 @@
       </div>
       <div class="footer-meta">
         <span id="footer-generated">Awaiting data</span>
-        <a href="./data/insightnet.json">View source data</a>
+        <span class="footer-data-links">
+          <a href="./data/profiles.json">Profiles</a>
+          <a href="./data/works.json">Publications</a>
+          <a href="./data/activity.json">Activity</a>
+        </span>
       </div>
     </footer>
   </body>

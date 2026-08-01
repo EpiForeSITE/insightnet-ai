@@ -85,3 +85,46 @@ id = "hannah-goodtree"
 full_name = "Hannah Goodtree"
 role = "Senior Analyst"
 orcid = "https://orcid.org/0009-0006-9187-7597"
+
+# Tools and products, transcribed from https://cori.centerforhealthsecurity.org/
+[[organization.tools]]
+name = "Measles Risk Assessment"
+summary = "Evaluates transmission dynamics and the effect of vaccination coverage on measles outbreak risk."
+url = "https://cori.centerforhealthsecurity.org/outbreak/measles-risk-assessment/"
+category = "application"
+keywords = ["measles", "risk assessment", "vaccination"]
+
+[[organization.tools]]
+name = "Mpox Risk Assessment"
+summary = "Analyzes mpox spread patterns and assesses intervention effectiveness."
+url = "https://cori.centerforhealthsecurity.org/outbreak/mpox-risk-assessment/"
+category = "application"
+keywords = ["mpox", "risk assessment", "interventions"]
+
+[[organization.tools]]
+name = "Dengue Fever Risk Assessment"
+summary = "Models the climate and environmental factors affecting dengue transmission risk."
+url = "https://cori.centerforhealthsecurity.org/outbreak/dengue-fever-risk-assessment/"
+category = "application"
+keywords = ["dengue", "climate", "vector-borne disease"]
+
+[[organization.tools]]
+name = "Avian Influenza Risk Assessment"
+summary = "Assesses zoonotic transmission risk and pandemic potential for H5N1 outbreaks."
+url = "https://cori.centerforhealthsecurity.org/outbreak/avian-influenza-risk-assessment/"
+category = "application"
+keywords = ["avian influenza", "h5n1", "zoonotic", "pandemic preparedness"]
+
+[[organization.tools]]
+name = "Respiratory Illness Risk Assessment"
+summary = "Assesses risk from circulating respiratory illnesses for public health decision makers."
+url = "https://cori.centerforhealthsecurity.org/outbreak/respiratory-illness-risk-assessment/"
+category = "application"
+keywords = ["respiratory illness", "risk assessment"]
+
+[[organization.tools]]
+name = "Measles Dashboard"
+summary = "Real-time monitoring and analysis of priority measles outbreaks with actionable intelligence."
+url = "https://gisanddata.maps.arcgis.com/apps/dashboards/dd314001921f4d2eac160f89ded0b49a"
+category = "dashboard"
+keywords = ["measles", "outbreak monitoring", "situational awareness"]

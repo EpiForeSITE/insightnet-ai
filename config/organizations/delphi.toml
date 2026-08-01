@@ -61,3 +61,65 @@ website = "https://bryanwilder.github.io/"
 google_scholar = "https://scholar.google.com/citations?user=dQ0dT2sAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-9410-020X"
 bluesky = "https://bsky.app/profile/brwilder.bsky.social"
+
+# Tools and products, transcribed from https://delphi.cmu.edu/
+[[organization.tools]]
+name = "Delphi Epidata API"
+summary = "Repository and API serving real-time, geographically detailed epidemic indicators across hundreds of signals."
+url = "https://cmu-delphi.github.io/delphi-epidata/"
+repository = "https://github.com/cmu-delphi/delphi-epidata"
+category = "platform"
+keywords = ["epidemic indicators", "api", "surveillance data"]
+
+[[organization.tools]]
+name = "Epidata Portal"
+summary = "Web portal for discovering and exploring real-time indicators of infectious disease activity."
+url = "https://delphi.cmu.edu/epiportal/"
+category = "dashboard"
+keywords = ["indicator discovery", "surveillance"]
+
+[[organization.tools]]
+name = "EpiVis"
+summary = "Interactive tool for visualizing and comparing epidemic indicator time series."
+url = "https://delphi.cmu.edu/epivis/"
+category = "application"
+keywords = ["visualization", "time series"]
+
+[[organization.tools]]
+name = "COVIDcast"
+summary = "Platform for browsing, exporting, and tracking the status of COVID-19 and respiratory indicators."
+url = "https://delphi.cmu.edu/covidcast/"
+category = "dashboard"
+keywords = ["covid-19", "indicators", "data export"]
+
+[[organization.tools]]
+name = "epidatr"
+summary = "R client for querying the Delphi Epidata API."
+url = "https://cmu-delphi.github.io/epidatr/"
+repository = "https://github.com/cmu-delphi/epidatr"
+category = "package"
+keywords = ["r package", "api client"]
+
+[[organization.tools]]
+name = "epidatpy"
+summary = "Python client for querying the Delphi Epidata API."
+url = "https://github.com/cmu-delphi/epidatpy"
+repository = "https://github.com/cmu-delphi/epidatpy"
+category = "package"
+keywords = ["python package", "api client"]
+
+[[organization.tools]]
+name = "epiprocess"
+summary = "R package for cleaning, versioning, and transforming epidemiological signal data."
+url = "https://cmu-delphi.github.io/epiprocess/"
+repository = "https://github.com/cmu-delphi/epiprocess"
+category = "package"
+keywords = ["r package", "data processing", "revisions"]
+
+[[organization.tools]]
+name = "epipredict"
+summary = "R framework for building and deploying epidemic forecasting models."
+url = "https://cmu-delphi.github.io/epipredict/"
+repository = "https://github.com/cmu-delphi/epipredict"
+category = "package"
+keywords = ["r package", "forecasting"]

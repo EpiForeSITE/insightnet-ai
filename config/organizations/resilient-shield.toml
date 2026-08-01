@@ -24,3 +24,11 @@ full_name = "Natasha Martin, DPhil"
 role = "Co-Lead, Resilient Shield; Professor and Vice Chief of Global Public Health, UC San Diego"
 bio = "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments."
 website = "https://profiles.ucsd.edu/natasha.martin"
+
+# Tools and products, transcribed from https://insightnet.us/resilient-shield-launches-tijuana-river-dashboard/
+[[organization.tools]]
+name = "Tijuana River Valley Environmental Dashboard"
+summary = "Combines water and air quality testing, sewage spill reports, and resident complaints into a single interactive map of environmental health risk."
+url = "https://southregion.resilienthub.org/"
+category = "dashboard"
+keywords = ["environmental health", "water quality", "air quality", "san diego"]

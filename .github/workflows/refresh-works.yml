@@ -1,0 +1,66 @@
+name: Refresh scholarly works
+
+# Publication metadata changes far more slowly than news and posts, and collecting it
+# touches five external APIs for every researcher. It therefore runs on its own weekly
+# schedule instead of inside the daily activity refresh.
+
+on:
+  schedule:
+    # Sundays at 06:23 UTC. GitHub schedules use UTC and may start a few minutes late.
+    - cron: "23 6 * * 0"
+  workflow_dispatch:
+    inputs:
+      replace:
+        description: "Discard retained works instead of merging them"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: insightnet-works-refresh
+  cancel-in-progress: false
+
+jobs:
+  works:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          version: "0.11.32"
+          enable-cache: true
+
+      - name: Install Python
+        run: uv python install
+
+      - name: Restore locked environment
+        run: uv sync --locked --all-extras --dev
+
+      - name: Collect scholarly works
+        env:
+          # Optional. Raises the NCBI rate limit from 3 to 10 requests per second.
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          INSIGHTNET_CONTACT_EMAIL: ${{ vars.INSIGHTNET_CONTACT_EMAIL }}
+        run: uv run --locked insightnet-works ${{ inputs.replace && '--replace' || '' }}
+
+      - name: Verify the snapshot still loads
+        run: uv run --locked pytest
+
+      - name: Commit changed data
+        run: |
+          git config user.name "insightnet-data-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/works.json site/data/works.json
+          if git diff --cached --quiet; then
+            echo "No publication changes to commit."
+          else
+            git commit -m "data: refresh scholarly works"
+            git push
+          fi

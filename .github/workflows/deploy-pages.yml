@@ -7,7 +7,7 @@ on:
       - "site/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_run:
-    workflows: ["Refresh scientific activity"]
+    workflows: ["Refresh scientific activity", "Refresh scholarly works"]
     types: [completed]
     branches: [main, master]
   workflow_dispatch:

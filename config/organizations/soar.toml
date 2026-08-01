@@ -9,3 +9,7 @@ website = "https://insightnet.us/centers/soar/"
 location = "Oregon"
 focus_areas = [ "outbreak analytics", "modeling support", "nowcasting", "forecasting", "decision support",]
 enabled = true
+
+# No tools or products are named on this center's public pages yet; the site describes
+# planned activities rather than released deliverables. Add [[organization.tools]]
+# entries here as they are published.

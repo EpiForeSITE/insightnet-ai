@@ -44,3 +44,50 @@ role = "Co-Principal Investigator; Associate Professor, Department of Epidemiolo
 website = "https://sph.emory.edu/profile/faculty/allison-chamberlain"
 orcid = "https://orcid.org/0000-0001-6009-537X"
 linkedin = "https://www.linkedin.com/in/allison-chamberlain-5644a5132/"
+
+# Tools and products, transcribed from https://cidmath.org/dataresources/
+[[organization.tools]]
+name = "Shedding Hub"
+summary = "Repository of curated biomarker shedding datasets with Bayesian models for pathogen shedding dynamics."
+url = "https://shedding-hub.github.io/"
+repository = "https://github.com/shedding-hub"
+category = "platform"
+keywords = ["wastewater", "biomarker shedding", "bayesian models"]
+
+[[organization.tools]]
+name = "VaxImpactMap"
+summary = "Interactive map projecting the disease and economic impacts of reduced vaccine coverage across US states."
+url = "https://vaximpactmap.org/"
+category = "dashboard"
+keywords = ["vaccination", "coverage", "economic impact"]
+
+[[organization.tools]]
+name = "CIDMATH Data Hub"
+summary = "Centralized platform giving researchers access to Merative MarketScan and Epic Cosmos data for modeling."
+url = "https://cidmath.org/dataresources/"
+category = "platform"
+keywords = ["health data", "electronic health records", "claims data"]
+
+[[organization.tools]]
+name = "nomatch"
+summary = "R package providing efficient matching methods for estimating intervention effectiveness from observational data."
+url = "https://github.com/ewu16/nomatch"
+repository = "https://github.com/ewu16/nomatch"
+category = "package"
+keywords = ["r package", "causal inference", "matching"]
+
+[[organization.tools]]
+name = "GlobalMix"
+summary = "Dataset and code characterizing social contact behavior relevant to transmission in low- and middle-income countries."
+url = "https://github.com/lopmanlab/GlobalMix"
+repository = "https://github.com/lopmanlab/GlobalMix"
+category = "dataset"
+keywords = ["social contact", "mixing patterns", "global health"]
+
+[[organization.tools]]
+name = "Deep Neural Networks for Endemic Measles Dynamics"
+summary = "Code and data comparing neural network models integrated with mechanistic measles models."
+url = "https://github.com/WyattGMadden/deep_measles_dynamics"
+repository = "https://github.com/WyattGMadden/deep_measles_dynamics"
+category = "dataset"
+keywords = ["measles", "deep learning", "mechanistic models"]

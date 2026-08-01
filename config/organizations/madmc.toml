@@ -146,3 +146,26 @@ id = "nayanjot-kaur-rai"
 full_name = "Nayanjot Kaur Rai, MPH, BDS"
 role = "Program Manager, Medical School, University of Minnesota"
 orcid = "https://orcid.org/0000-0001-9614-8234"
+
+# Tools in development, transcribed from
+# https://www.sph.umn.edu/research/centers/midwest-analytics-and-disease-modeling/
+[[organization.tools]]
+name = "Decision-Analytic Infectious Disease Modeling Platform"
+summary = "Modeling platform to help decision makers weigh policy options during public health emergencies."
+category = "platform"
+status = "in-development"
+keywords = ["decision analysis", "policy", "modeling"]
+
+[[organization.tools]]
+name = "Geospatial Health Service Disparity Identification Tool"
+summary = "Identifies geographic disparities in health service access across the region."
+category = "application"
+status = "in-development"
+keywords = ["geospatial", "health disparities", "access to care"]
+
+[[organization.tools]]
+name = "EHR-Based Syndromic Surveillance Tool"
+summary = "Syndromic surveillance built on deidentified electronic health records from Minnesota's largest health systems."
+category = "application"
+status = "in-development"
+keywords = ["electronic health records", "syndromic surveillance", "minnesota"]

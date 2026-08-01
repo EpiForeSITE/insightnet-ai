@@ -12,7 +12,24 @@ from dateutil import parser as date_parser
 from insightnet.collectors import SourceClient, collect_source
 from insightnet.text import extract_keywords
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
+
+# Profiles and the activity stream are written to separate files so the daily activity
+# refresh and the weekly works refresh can update independently, and so the dashboard
+# can defer the largest payloads until a visitor actually needs them.
+PROFILE_KEYS = ("schema_version", "generated_at", "network", "stats", "organizations", "health")
+
+
+def split_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Separate a built snapshot into its profile and activity documents."""
+
+    profiles = {key: snapshot[key] for key in PROFILE_KEYS if key in snapshot}
+    activity = {
+        "schema_version": snapshot.get("schema_version", SCHEMA_VERSION),
+        "generated_at": snapshot.get("generated_at", ""),
+        "items": snapshot.get("items", []),
+    }
+    return profiles, activity
 
 
 def _now() -> str:
@@ -119,6 +136,7 @@ def build_snapshot(
             organization.get("keywords", []),
             limit=20,
         )
+        organization["tool_count"] = len(organization.get("tools", []))
         for researcher in organization.get("researchers", []):
             researcher["keywords"] = extract_keywords(
                 [researcher.get("bio", ""), *researcher.get("expertise", [])],
@@ -188,6 +206,7 @@ def build_snapshot(
         "stats": {
             "organizations": len(organizations),
             "researchers": sum(len(org.get("researchers", [])) for org in organizations),
+            "tools": sum(len(org.get("tools", [])) for org in organizations),
             "items": len(all_items),
             "sources_ok": sum(row["status"] == "ok" for row in health),
             "sources_attention": sum(row["status"] in {"error", "blocked"} for row in health),

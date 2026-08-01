@@ -69,3 +69,54 @@ full_name = "Anass Bouchnita"
 role = "Co-Investigator"
 bio = "The University of Texas at El Paso."
 orcid = "https://orcid.org/0000-0002-2729-6484"
+
+# Tools and products, transcribed from https://epiengage.org/projects/
+[[organization.tools]]
+name = "VaxSim-Measles"
+summary = "Interactive dashboard simulating measles outbreaks in schools to show vaccination-related risk."
+url = "https://epiengage-measles.tacc.utexas.edu"
+category = "dashboard"
+keywords = ["measles", "schools", "vaccination", "simulation"]
+
+[[organization.tools]]
+name = "MetroCast Hub"
+summary = "National platform for collaborative city-level forecasting of influenza emergency visits and hospital admissions."
+url = "https://reichlab.io/metrocast-dashboard/"
+category = "platform"
+keywords = ["influenza", "forecasting", "collaborative hub", "cities"]
+
+[[organization.tools]]
+name = "Hubverse"
+summary = "Open-source ecosystem of software and data standards for collaborative modeling and outbreak forecasting."
+url = "https://hubverse.io/"
+repository = "https://github.com/hubverse-org"
+category = "platform"
+keywords = ["forecast hubs", "open source", "standards"]
+
+[[organization.tools]]
+name = "SARS-CoV-2 Variant Nowcast Hub"
+summary = "Public dashboard aggregating state-level COVID-19 variant forecasts alongside surveillance data."
+url = "https://reichlab.io/variant-nowcast-hub-dashboard/"
+category = "dashboard"
+keywords = ["sars-cov-2", "variants", "nowcasting"]
+
+[[organization.tools]]
+name = "TreeScan"
+summary = "Scans ICD-10 medical codes for abnormal increases, applied to surveillance for the 2026 FIFA World Cup."
+url = "https://epiengage.org/projects/treescan/"
+category = "application"
+keywords = ["syndromic surveillance", "icd-10", "anomaly detection"]
+
+[[organization.tools]]
+name = "MetroFluSim"
+summary = "City-specific models to track, predict, and manage influenza transmission in metropolitan communities."
+category = "model"
+status = "in-development"
+keywords = ["influenza", "cities", "transmission modeling"]
+
+[[organization.tools]]
+name = "How to Think Like a Modeler"
+summary = "Training course introducing public health professionals to infectious disease modeling."
+url = "https://hcts.uthealthcommtraining.org/courses/hcts15-how-to-think-like-a-modeler"
+category = "other"
+keywords = ["training", "workforce development", "modeling literacy"]

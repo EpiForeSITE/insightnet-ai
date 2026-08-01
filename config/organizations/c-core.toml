@@ -58,3 +58,7 @@ google_scholar = "https://scholar.google.com/citations?user=YbsggPYAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-4853-6130"
 linkedin = "https://www.linkedin.com/in/alejandro-schuler-43817b70/"
 bluesky = "https://bsky.app/profile/aschuler.bsky.social"
+
+# No tools or products are named on this center's public pages yet; the site describes
+# planned activities rather than released deliverables. Add [[organization.tools]]
+# entries here as they are published.

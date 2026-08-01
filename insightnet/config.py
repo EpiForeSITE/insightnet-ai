@@ -9,6 +9,8 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
+from insightnet.text import clean_text
+
 
 class ProfileError(ValueError):
     """Raised when an organization profile is incomplete or inconsistent."""
@@ -36,6 +38,30 @@ def _slug(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
 
 
+ORCID_PATTERN = re.compile(r"(\d{4}-\d{4}-\d{4}-\d{3}[\dX])", re.IGNORECASE)
+
+PROFILE_URL_FIELDS = (
+    "website",
+    "linkedin",
+    "github",
+    "twitter",
+    "bluesky",
+    "google_scholar",
+    "orcid",
+    "pubmed",
+    "arxiv",
+    "medrxiv",
+    "europepmc",
+)
+
+
+def orcid_id(value: str) -> str:
+    """Return the bare ORCID identifier contained in a profile URL or string."""
+
+    match = ORCID_PATTERN.search(str(value or ""))
+    return match.group(1).upper() if match else ""
+
+
 def _normalize_researcher(person: dict[str, Any], org_id: str) -> dict[str, Any]:
     person = deepcopy(person)
     if not person.get("full_name"):
@@ -45,18 +71,83 @@ def _normalize_researcher(person: dict[str, Any], org_id: str) -> dict[str, Any]
     person.setdefault("bio", "")
     person.setdefault("expertise", [])
     person.setdefault("keywords", [])
-    for field in (
-        "website",
-        "linkedin",
-        "github",
-        "twitter",
-        "bluesky",
-        "google_scholar",
-        "orcid",
-    ):
+    for field in PROFILE_URL_FIELDS:
         person[field] = _valid_url(str(person.get(field, "")), f"researcher.{field}")
     person.setdefault("scholar_author_id", "")
+
+    # Opt-in author queries. Works are only searched by name when a profile supplies an
+    # explicit query, so researchers who share a name never silently collect each
+    # other's papers.
+    for field in ("pubmed_query", "arxiv_query"):
+        person[field] = str(person.get(field, "")).strip()
+    person["collect_works"] = bool(person.get("collect_works", True))
+
+    person["orcid_id"] = orcid_id(person["orcid"])
+    if person["orcid"] and not person["orcid_id"]:
+        raise ProfileError(
+            f"researcher.orcid in {org_id!r} is not a recognizable ORCID: {person['orcid']!r}"
+        )
+    if person["orcid_id"]:
+        # Each of these is an exact identifier lookup rather than a name search, so it
+        # always resolves to this person and is safe to derive automatically. There is no
+        # ORCID-addressable medRxiv page; Europe PMC indexes medRxiv and bioRxiv
+        # preprints and covers that ground precisely.
+        if not person["pubmed"]:
+            person["pubmed"] = (
+                f"https://pubmed.ncbi.nlm.nih.gov/?term={person['orcid_id']}%5Bauid%5D"
+            )
+        if not person["europepmc"]:
+            person["europepmc"] = f"https://europepmc.org/authors/{person['orcid_id']}"
+        if not person["arxiv"]:
+            person["arxiv"] = (
+                f"https://arxiv.org/search/?searchtype=orcid&query={person['orcid_id']}"
+            )
     return person
+
+
+TOOL_CATEGORIES = {
+    "dashboard",
+    "package",
+    "platform",
+    "model",
+    "dataset",
+    "application",
+    "other",
+}
+TOOL_STATUSES = {"available", "in-development", "retired"}
+
+
+def _normalize_tool(tool: dict[str, Any], org_id: str) -> dict[str, Any]:
+    """Validate one tool or product a center has built."""
+
+    tool = deepcopy(tool)
+    name = clean_text(str(tool.get("name", "")))
+    if not name:
+        raise ProfileError(f"A tool in {org_id!r} is missing name")
+    tool["name"] = name
+    tool["id"] = str(tool.get("id") or _slug(name))
+    tool["summary"] = clean_text(str(tool.get("summary", "")))
+    for field in ("url", "repository"):
+        tool[field] = _valid_url(str(tool.get(field, "")), f"tool.{field}")
+
+    category = str(tool.get("category", "other")).strip().lower()
+    if category not in TOOL_CATEGORIES:
+        raise ProfileError(
+            f"tool.category in {org_id!r} must be one of {sorted(TOOL_CATEGORIES)}, got {category!r}"
+        )
+    tool["category"] = category
+
+    status = str(tool.get("status", "available")).strip().lower()
+    if status not in TOOL_STATUSES:
+        raise ProfileError(
+            f"tool.status in {org_id!r} must be one of {sorted(TOOL_STATUSES)}, got {status!r}"
+        )
+    tool["status"] = status
+
+    tool["keywords"] = [
+        clean_text(str(word)).lower() for word in tool.get("keywords", []) if clean_text(str(word))
+    ]
+    return tool
 
 
 def _normalize_source(source: dict[str, Any], org_id: str) -> dict[str, Any]:
@@ -100,6 +191,11 @@ def _normalize_organization(org: dict[str, Any]) -> dict[str, Any]:
     researcher_ids = [person["id"] for person in org["researchers"]]
     if len(researcher_ids) != len(set(researcher_ids)):
         raise ProfileError(f"Duplicate researcher id in organization {org['id']!r}")
+
+    org["tools"] = [_normalize_tool(item, org["id"]) for item in org.get("tools", [])]
+    tool_ids = [tool["id"] for tool in org["tools"]]
+    if len(tool_ids) != len(set(tool_ids)):
+        raise ProfileError(f"Duplicate tool id in organization {org['id']!r}")
     return org
 
 
@@ -135,9 +231,18 @@ def load_profiles(
     network.setdefault("website", "")
     network.setdefault("retention_days", 730)
     network.setdefault("max_items_per_organization", 1000)
+    network.setdefault("max_works_per_researcher", 100)
+    network.setdefault("works_retention_years", 15)
+    network.setdefault("abstract_max_chars", 1500)
     if network["website"]:
         network["website"] = _valid_url(str(network["website"]), "network.website")
-    for field in ("retention_days", "max_items_per_organization"):
+    for field in (
+        "retention_days",
+        "max_items_per_organization",
+        "max_works_per_researcher",
+        "works_retention_years",
+        "abstract_max_chars",
+    ):
         try:
             network[field] = int(network[field])
         except (TypeError, ValueError) as exc:

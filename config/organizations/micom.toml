@@ -125,3 +125,54 @@ full_name = "Jon Zelner"
 role = "Health Equity Lead; Associate Professor of Epidemiology"
 website = "https://www.jonzelner.net/"
 google_scholar = "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en"
+
+# Tools and products, transcribed from https://www.micom-insight.net/projects
+[[organization.tools]]
+name = "MICOM-Hub"
+summary = "Central hub sharing MICOM one-pagers, data, code, and other public resources."
+url = "https://micom-hub.org/"
+repository = "https://github.com/micom-hub"
+category = "platform"
+keywords = ["knowledge sharing", "open data", "resources"]
+
+[[organization.tools]]
+name = "MI Lighthouse Dashboard"
+summary = "Tracks vaccine uptake across Michigan's 82 counties for public health officials and community organizations."
+category = "dashboard"
+keywords = ["vaccination", "michigan", "uptake", "counties"]
+
+[[organization.tools]]
+name = "Wastewater Testing Results Dashboard"
+summary = "Reports testing results for nine public-health-relevant organisms across five southeast Michigan treatment plants."
+category = "dashboard"
+keywords = ["wastewater surveillance", "michigan", "pathogens"]
+
+[[organization.tools]]
+name = "Measles Risk Stratification Tool"
+summary = "Web application estimating measles outbreak risk at individual daycare and school facilities."
+category = "application"
+keywords = ["measles", "schools", "risk stratification"]
+
+[[organization.tools]]
+name = "Michigan Respiratory Forecasting"
+summary = "Predicts respiratory illness spread across Michigan counties using epidemiological and AI-driven models."
+category = "model"
+keywords = ["respiratory illness", "forecasting", "michigan"]
+
+[[organization.tools]]
+name = "Anomaly Detection Pipeline"
+summary = "Automated pipeline using spatial statistics and machine learning to flag outbreak indicators and data quality issues."
+category = "application"
+keywords = ["anomaly detection", "spatial statistics", "data quality"]
+
+[[organization.tools]]
+name = "Washtenaw County Firearms Dashboard"
+summary = "Analyzes firearm-related deaths and injuries in Washtenaw County to inform intervention efforts."
+category = "dashboard"
+keywords = ["firearm injury", "violence prevention", "michigan"]
+
+[[organization.tools]]
+name = "Automated STI Data Report"
+summary = "Automated reporting tool that cuts manual STI data processing from about an hour to ten minutes."
+category = "application"
+keywords = ["sexually transmitted infections", "automation", "reporting"]

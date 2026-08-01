@@ -167,3 +167,35 @@ role = "Associate Professor"
 bio = "Biocomplexity Institute, University of Virginia."
 website = "https://biocomplexity.virginia.edu/our-team/bryan-lewis"
 google_scholar = "https://scholar.google.com/citations?user=iBoF0nYAAAAJ&hl=en"
+
+# Tools and products, transcribed from https://www.epistorm.org/
+[[organization.tools]]
+name = "Epydemix"
+summary = "Open-source Python package for building and calibrating stochastic compartmental epidemic models with approximate Bayesian computation."
+url = "https://www.epydemix.org/"
+repository = "https://github.com/epistorm/epydemix"
+category = "package"
+keywords = ["python package", "compartmental models", "bayesian calibration"]
+
+[[organization.tools]]
+name = "US Mobility Dashboard"
+summary = "Tracks United States mobility patterns for public health applications."
+url = "https://mobility.epistorm.org/home"
+category = "dashboard"
+keywords = ["mobility", "human movement", "behavioral data"]
+
+[[organization.tools]]
+name = "Infectious Disease World Cup Dashboard"
+summary = "Helps public health agencies identify infectious disease importation risk around the 2026 FIFA World Cup."
+url = "https://epistorm.github.io/IDWC26-importation/"
+repository = "https://github.com/epistorm/IDWC26-importation"
+category = "dashboard"
+keywords = ["mass gatherings", "importation risk", "world cup"]
+
+[[organization.tools]]
+name = "Epydemix Data"
+summary = "Demographic structure and contact matrix data for over 400 locations worldwide, for use with Epydemix."
+url = "https://github.com/epistorm/epydemix-data"
+repository = "https://github.com/epistorm/epydemix-data"
+category = "dataset"
+keywords = ["contact matrices", "demography", "global"]

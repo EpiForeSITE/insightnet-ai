@@ -454,3 +454,60 @@ expertise = ["complex systems", "statistical computing", "high-performance compu
 website = "https://ggvy.cl"
 orcid = "https://orcid.org/0000-0002-3171-0844"
 bluesky = "https://bsky.app/profile/gvegayon.bsky.social"
+
+# Tools and products, transcribed from the ForeSITE projects page and github.com/EpiForeSITE
+[[organization.tools]]
+name = "epitraxr"
+summary = "R package that manipulates EpiTrax data and automates monthly disease incidence reports for local health departments."
+url = "https://epiforesite.github.io/epitraxr/"
+repository = "https://github.com/EpiForeSITE/epitraxr"
+category = "package"
+keywords = ["r package", "surveillance reporting", "automation", "epitrax"]
+
+[[organization.tools]]
+name = "epiworldRShiny"
+summary = "Interactive agent-based simulation app, applied to modeling measles interventions in Utah schools."
+url = "https://gvegayon.shinyapps.io/epiworldRShiny/"
+repository = "https://github.com/UofUEpiBio/epiworldRShiny"
+category = "application"
+keywords = ["agent-based models", "measles", "schools", "simulation"]
+
+[[organization.tools]]
+name = "EPICC"
+summary = "Epidemiological Cost Calculator for analyzing disease intervention expenses, applied to tuberculosis and measles."
+url = "https://github.com/EpiForeSITE/epicc"
+repository = "https://github.com/EpiForeSITE/epicc"
+category = "package"
+keywords = ["economic analysis", "cost calculator", "tuberculosis", "measles"]
+
+[[organization.tools]]
+name = "facilityepimath"
+summary = "R package for analyzing differential equation models of infectious disease in healthcare facilities."
+url = "https://github.com/EpiForeSITE/facilityepimath"
+repository = "https://github.com/EpiForeSITE/facilityepimath"
+category = "package"
+keywords = ["r package", "healthcare-associated infections", "differential equations"]
+
+[[organization.tools]]
+name = "linkeR"
+summary = "R package for building linked, interactive views in Shiny applications."
+url = "https://github.com/EpiForeSITE/linkeR"
+repository = "https://github.com/EpiForeSITE/linkeR"
+category = "package"
+keywords = ["r package", "shiny", "data visualization"]
+
+[[organization.tools]]
+name = "rbranding"
+summary = "R package for managing consistent branding and accessibility in Shiny applications."
+url = "https://github.com/EpiForeSITE/rbranding"
+repository = "https://github.com/EpiForeSITE/rbranding"
+category = "package"
+keywords = ["r package", "shiny", "accessibility", "design"]
+
+[[organization.tools]]
+name = "Time Series Statistical Alerting Application"
+summary = "Anomaly detection app that flags unusual patterns in surveillance time series for public health analysts."
+url = "https://github.com/EpiForeSITE"
+category = "application"
+status = "in-development"
+keywords = ["anomaly detection", "time series", "alerting", "surveillance"]

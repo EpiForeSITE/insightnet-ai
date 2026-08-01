@@ -11,7 +11,7 @@ import os
 import re
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
-from time import mktime
+from time import mktime, monotonic, sleep
 from typing import Any
 from urllib.parse import urljoin, urlparse
 from urllib.robotparser import RobotFileParser
@@ -26,6 +26,17 @@ from urllib3.util.retry import Retry
 from insightnet.text import clean_text, extract_keywords
 
 USER_AGENT = "InsightNet-Research-Monitor/0.1 (+public scientific metadata aggregator)"
+
+# Minimum seconds between consecutive requests to a host, honouring each provider's
+# published courtesy limits. NCBI allows three requests per second anonymously and ten
+# with an API key; arXiv asks for one request every three seconds.
+HOST_MIN_INTERVAL = {
+    "eutils.ncbi.nlm.nih.gov": 0.11 if os.getenv("NCBI_API_KEY", "").strip() else 0.34,
+    "export.arxiv.org": 3.0,
+    "www.ebi.ac.uk": 0.2,
+    "pub.orcid.org": 0.2,
+    "api.biorxiv.org": 0.5,
+}
 
 
 @dataclass
@@ -97,6 +108,18 @@ class SourceClient:
         self.session.mount("https://", HTTPAdapter(max_retries=retries))
         self.session.mount("http://", HTTPAdapter(max_retries=retries))
         self._robots: dict[str, RobotFileParser | None] = {}
+        self.min_intervals = dict(HOST_MIN_INTERVAL)
+        self._last_request: dict[str, float] = {}
+
+    def _throttle(self, url: str) -> None:
+        host = urlparse(url).netloc.lower()
+        interval = self.min_intervals.get(host, 0.0)
+        if interval <= 0:
+            return
+        waited = monotonic() - self._last_request.get(host, 0.0)
+        if waited < interval:
+            sleep(interval - waited)
+        self._last_request[host] = monotonic()
 
     def allowed(self, url: str) -> bool:
         parsed = urlparse(url)
@@ -125,6 +148,7 @@ class SourceClient:
     def get(self, url: str, *, respect_robots: bool = True, **kwargs: Any) -> requests.Response:
         if respect_robots and not self.allowed(url):
             raise PermissionError(f"robots.txt does not allow collection from {url}")
+        self._throttle(url)
         response = self.session.get(url, timeout=self.timeout, **kwargs)
         response.raise_for_status()
         return response

@@ -10,9 +10,18 @@ location = "Oregon"
 focus_areas = [ "outbreak analytics", "modeling support", "nowcasting", "forecasting", "decision support",]
 enabled = true
 
-# No tools or products are named on this center's public pages yet; the site describes
-# planned activities rather than released deliverables. Add [[organization.tools]]
-# entries here as they are published.
+# This center publishes no team roster of its own; https://insightnet.us/centers/soar/
+# names only its partner organizations, so there are no [[organization.researchers]]
+# entries to record yet rather than any having been skipped.
+
+# Tools and products, transcribed from
+# https://insightnet.us/innovative-new-features-added-to-soar-platform/
+[[organization.tools]]
+name = "SOAR Platform"
+summary = "Disease monitoring platform for state, tribal, local, and territorial health departments, built by International Responder Systems. Integrates the UCSC Genomics Institute's Cluster Tracker and UShER modules for viral transmission and outbreak investigation, alongside disease forecasting, dashboards, and lab result validation."
+url = "https://www.internationalrespondersystems.com/solutions/soar"
+category = "platform"
+keywords = ["outbreak investigation", "genomic surveillance", "forecasting", "health departments"]
 
 # Health partners, transcribed from https://insightnet.us/centers/soar/
 [[organization.partners]]

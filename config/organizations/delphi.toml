@@ -62,6 +62,165 @@ google_scholar = "https://scholar.google.com/citations?user=dQ0dT2sAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-9410-020X"
 bluesky = "https://bsky.app/profile/brwilder.bsky.social"
 
+# Core members and advisors, transcribed from https://delphi.cmu.edu/about/team/.
+# The team page also lists past members and other contributors; those are deliberately
+# not carried over. ORCIDs are recorded only where the record's own affiliations or
+# publication history confirm the identification.
+[[organization.researchers]]
+id = "logan-brooks"
+full_name = "Logan Brooks"
+role = "Core Member"
+bio = "UC Berkeley."
+
+[[organization.researchers]]
+id = "brian-clark"
+full_name = "Brian Clark"
+role = "Core Member"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "nat-defries"
+full_name = "Nat DeFries"
+role = "Core Member"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "erin-franke"
+full_name = "Erin Franke"
+role = "Core Member"
+bio = "CMU/Stat."
+website = "https://www.cmu.edu/dietrich/statistics-datascience/people/phd/erin-franke.html"
+orcid = "https://orcid.org/0009-0007-9598-2324"
+
+[[organization.researchers]]
+id = "nolan-gormley"
+full_name = "Nolan Gormley"
+role = "Core Member"
+bio = "CMU/MLD."
+orcid = "https://orcid.org/0000-0002-9336-4043"
+
+[[organization.researchers]]
+id = "jeremy-goldwasser"
+full_name = "Jeremy Goldwasser"
+role = "Core Member"
+bio = "UC Berkeley/Stat."
+orcid = "https://orcid.org/0009-0001-4263-2108"
+
+[[organization.researchers]]
+id = "oliver-hannaoui"
+full_name = "Oliver Hannaoui"
+role = "Core Member"
+bio = "CMU/Stat."
+website = "https://www.cmu.edu/dietrich/statistics-datascience/people/phd/oliver-hannaoui.html"
+
+[[organization.researchers]]
+id = "rachel-lobay"
+full_name = "Rachel Lobay"
+role = "Core Member"
+bio = "University of British Columbia."
+orcid = "https://orcid.org/0009-0003-6693-341X"
+
+[[organization.researchers]]
+id = "ruiqi-lyu"
+full_name = "Ruiqi Lyu"
+role = "Core Member"
+bio = "CMU/CompBio."
+
+[[organization.researchers]]
+id = "christy-melucci"
+full_name = "Christy Melucci"
+role = "Core Member"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "anna-rosengart"
+full_name = "Anna Rosengart"
+role = "Core Member"
+bio = "CMU/Stat."
+
+[[organization.researchers]]
+id = "dmitry-shemetov"
+full_name = "Dmitry Shemetov"
+role = "Core Member"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "xueda-shen"
+full_name = "Xueda Shen"
+role = "Core Member"
+bio = "UC Berkeley/Biostat."
+orcid = "https://orcid.org/0000-0003-1218-5068"
+
+[[organization.researchers]]
+id = "jingjing-tang"
+full_name = "Jingjing Tang"
+role = "Core Member"
+bio = "CMU/CompBio."
+
+[[organization.researchers]]
+id = "gabrielle-thivierge"
+full_name = "Gabrielle Thivierge"
+role = "Core Member"
+bio = "CMU/Stat."
+orcid = "https://orcid.org/0009-0001-4691-9181"
+
+[[organization.researchers]]
+id = "tina-townes"
+full_name = "Tina Townes"
+role = "Core Member"
+bio = "CMU."
+
+[[organization.researchers]]
+id = "dmytro-trotsko"
+full_name = "Dmytro Trotsko"
+role = "Core Member"
+bio = "Delphi and StartupSoft."
+
+[[organization.researchers]]
+id = "david-weber"
+full_name = "David Weber"
+role = "Core Member"
+bio = "CMU/MLD."
+
+[[organization.researchers]]
+id = "amesh-adalja"
+full_name = "Amesh Adalja"
+role = "Advisor"
+bio = "Johns Hopkins University and UPMC; infectious disease physician working on pandemic preparedness and biosecurity."
+orcid = "https://orcid.org/0000-0003-2054-4075"
+
+[[organization.researchers]]
+id = "michael-finke"
+full_name = "Michael Finke"
+role = "Advisor"
+bio = "M*Modal."
+
+[[organization.researchers]]
+id = "jignesh-patel"
+full_name = "Jignesh Patel"
+role = "Advisor"
+bio = "CMU/CSD."
+website = "https://csd.cmu.edu/people/faculty/jignesh-patel"
+
+[[organization.researchers]]
+id = "dawn-rucker"
+full_name = "Dawn Rucker"
+role = "Advisor"
+bio = "The Rucker Group."
+
+[[organization.researchers]]
+id = "nigam-shah"
+full_name = "Nigam Shah"
+role = "Advisor"
+bio = "Stanford University; biomedical informatics researcher working on learning health systems."
+orcid = "https://orcid.org/0000-0001-9385-7158"
+
+[[organization.researchers]]
+id = "chris-wiggins"
+full_name = "Chris Wiggins"
+role = "Advisor"
+bio = "Columbia University."
+
 # Tools and products, transcribed from https://delphi.cmu.edu/
 [[organization.tools]]
 name = "Delphi Epidata API"
@@ -123,6 +282,22 @@ url = "https://cmu-delphi.github.io/epipredict/"
 repository = "https://github.com/cmu-delphi/epipredict"
 category = "package"
 keywords = ["r package", "forecasting"]
+
+[[organization.tools]]
+name = "Delphi Forecasting Manual"
+summary = "Open manual for building epidemic forecasters with the Delphi tooling stack."
+url = "https://cmu-delphi.github.io/delphi-tooling-book/"
+repository = "https://github.com/cmu-delphi/delphi-tooling-book"
+category = "other"
+keywords = ["forecasting", "documentation", "training"]
+
+[[organization.tools]]
+name = "COVID-19 Trends and Impact Survey"
+summary = "Large-scale survey run with Facebook that produced daily indicators of symptoms, testing, and behavior; the dashboard and aggregate data remain available."
+url = "https://delphi.cmu.edu/covid19/ctis/"
+category = "dataset"
+status = "retired"
+keywords = ["survey", "covid-19", "symptoms", "behavior"]
 
 # Health partners, transcribed from https://insightnet.us/centers/delphi/
 [[organization.partners]]

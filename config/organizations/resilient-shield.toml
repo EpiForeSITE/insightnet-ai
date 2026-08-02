@@ -9,6 +9,11 @@ website = "https://resilientshield.ucsd.edu/"
 location = "California"
 focus_areas = [ "public health intelligence", "infectious disease modeling", "outbreak forecasting", "public health decision-making",]
 enabled = true
+
+# Members, transcribed from https://resilientshield.ucsd.edu/team/ (rendered client-side;
+# the roster is grouped there as center leadership, investigators and key personnel, key
+# staff, and consultants). Each ORCID below was confirmed against the person's own record
+# or publication history rather than taken from a name match alone.
 [[organization.researchers]]
 id = "eliah-aronoff-spencer"
 full_name = "Eliah Aronoff-Spencer, MD, PhD"
@@ -19,11 +24,226 @@ google_scholar = "https://scholar.google.com/citations?user=YVk7vdEAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-6279-5027"
 
 [[organization.researchers]]
+id = "seema-shah"
+full_name = "Seema Shah"
+role = "Co-Director, Resilient Shield; Medical Epidemiology, County of San Diego"
+bio = "Medical epidemiologist at the County of San Diego whose recent work covers foodborne outbreak investigation and health effects of the Tijuana River Valley sewage crisis."
+orcid = "https://orcid.org/0000-0002-3050-1979"
+
+[[organization.researchers]]
 id = "natasha-martin"
 full_name = "Natasha Martin, DPhil"
-role = "Co-Lead, Resilient Shield; Professor and Vice Chief of Global Public Health, UC San Diego"
-bio = "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments."
+role = "Co-Director, Resilient Shield; Epidemic Modeling and Analytics Incident Commander; Professor and Vice Chief of Global Public Health, UC San Diego"
+bio = "Co-leads the CDC-funded center providing outbreak analytics and modeling support to health departments; models hepatitis C and HIV transmission among people who inject drugs."
 website = "https://profiles.ucsd.edu/natasha.martin"
+orcid = "https://orcid.org/0000-0001-8344-1810"
+
+[[organization.researchers]]
+id = "camille-nebeker"
+full_name = "Camille Nebeker"
+role = "Co-Director, Resilient Shield; Digital Ethics, Health Technology and Design, UC San Diego"
+bio = "Researches the ethics of digital health research, including informed consent and responsible data sharing."
+orcid = "https://orcid.org/0000-0001-6819-1796"
+
+[[organization.researchers]]
+id = "ilya-zaslavsky"
+full_name = "Ilya Zaslavsky"
+role = "Co-Director, Resilient Shield; Spatial Information Systems, UC San Diego"
+bio = "Directs spatial information systems research at the San Diego Supercomputer Center, including geospatial data discovery and disaggregated simulation."
+orcid = "https://orcid.org/0000-0003-4191-8275"
+
+[[organization.researchers]]
+id = "mark-handcock"
+full_name = "Mark S. Handcock"
+role = "Co-Director, Resilient Shield; Statistical Modeling and Social Epidemiology, UCLA"
+bio = "Distinguished Professor of Statistics at UCLA working on statistical models for social and epidemic networks."
+orcid = "https://orcid.org/0000-0002-9985-2785"
+
+[[organization.researchers]]
+id = "ruy-ribeiro"
+full_name = "Ruy M. Ribeiro"
+role = "Co-Director, Resilient Shield; Infectious Disease Modeling, Los Alamos National Laboratory"
+bio = "Models within-host and population-level infectious disease dynamics at Los Alamos National Laboratory."
+orcid = "https://orcid.org/0000-0002-3988-8241"
+
+[[organization.researchers]]
+id = "mohsen-malekinejad"
+full_name = "Mohsen Malekinejad"
+role = "Co-Director, Resilient Shield; Public Health Agency Network and Monitoring & Evaluation, UC San Francisco"
+bio = "Works on evidence synthesis and translation between research and health policy, with a focus on HIV and tuberculosis."
+orcid = "https://orcid.org/0000-0002-5721-6764"
+
+[[organization.researchers]]
+id = "richard-carpiano"
+full_name = "Richard M. Carpiano"
+role = "Co-Director, Resilient Shield; Public Health Policy, UC Riverside"
+bio = "Medical sociologist and public health policy scholar studying vaccine hesitancy, social capital, and health inequities."
+orcid = "https://orcid.org/0000-0001-9880-9147"
+
+[[organization.researchers]]
+id = "bill-lober"
+full_name = "Bill Lober"
+role = "Co-Director, Resilient Shield; Health Informatics and Global Health, University of Washington"
+bio = "Health informatics researcher building public health information systems in the United States and globally."
+orcid = "https://orcid.org/0000-0002-1053-7501"
+
+[[organization.researchers]]
+id = "shamim-nemati"
+full_name = "Shamim Nemati"
+role = "Investigator; Predictive Analytics, UC San Diego"
+bio = "Develops machine learning methods for clinical prediction and early warning from physiological data."
+orcid = "https://orcid.org/0000-0002-0520-4948"
+
+[[organization.researchers]]
+id = "andy-bartko"
+full_name = "Andy Bartko"
+role = "Investigator; Environmental Surveillance, UC San Diego"
+bio = "Professor of Practice at UC San Diego working on environmental and microbiome-based surveillance."
+orcid = "https://orcid.org/0000-0002-1237-2747"
+
+[[organization.researchers]]
+id = "joel-wertheim"
+full_name = "Joel Wertheim"
+role = "Investigator; Epidemic Analytics, UC San Diego"
+bio = "Molecular epidemiologist using viral genomes to reconstruct transmission of HIV, SARS-CoV-2, and mpox."
+orcid = "https://orcid.org/0000-0003-4882-5856"
+
+[[organization.researchers]]
+id = "drew-hall"
+full_name = "Drew Hall"
+role = "Investigator; Novel Biosensing and Bioelectronics, UC San Diego"
+bio = "Electrical engineer developing biosensors and bioelectronic instrumentation for point-of-care diagnostics."
+orcid = "https://orcid.org/0000-0003-0674-074X"
+
+[[organization.researchers]]
+id = "george-rutherford"
+full_name = "George Rutherford"
+role = "Investigator; Monitoring and Evaluation Technical Advisor, UC San Francisco"
+bio = "Epidemiologist and infectious disease control specialist at UC San Francisco."
+orcid = "https://orcid.org/0000-0002-1789-734X"
+
+[[organization.researchers]]
+id = "nate-smith"
+full_name = "Nate Smith"
+role = "Investigator; Monitoring and Evaluation Technical Lead, UC San Francisco"
+bio = "Former Director and State Health Officer of the Arkansas Department of Health, now working on monitoring and evaluation at UC San Francisco."
+orcid = "https://orcid.org/0000-0002-6895-6880"
+
+[[organization.researchers]]
+id = "mike-hogarth"
+full_name = "Mike Hogarth"
+role = "Investigator; Biomedical Informatics, UC San Diego"
+bio = "Biomedical informatics researcher and physician working on clinical data infrastructure and interoperability."
+orcid = "https://orcid.org/0000-0002-4264-1258"
+
+[[organization.researchers]]
+id = "wilma-wooten"
+full_name = "Wilma Wooten"
+role = "Investigator; County of San Diego"
+bio = "Public Health Officer for the County of San Diego Health and Human Services Agency."
+orcid = "https://orcid.org/0000-0001-7342-8794"
+
+[[organization.researchers]]
+id = "eric-mcdonald"
+full_name = "Eric McDonald"
+role = "Investigator; County of San Diego"
+bio = "Chief Medical Officer of the County of San Diego Health and Human Services Agency, previously medical director of its Epidemiology and Immunization Services Branch. The center's team page spells the surname MacDonald."
+
+[[organization.researchers]]
+id = "karen-white-horn"
+full_name = "Karen White Horn"
+role = "Monitoring and Evaluation Manager, UC San Francisco"
+
+[[organization.researchers]]
+id = "chip-schooley"
+full_name = "Chip Schooley"
+role = "Investigator; Multidrug-Resistant Organisms and Outbreak Intelligence, UC San Diego"
+bio = "Infectious disease physician-scientist (Robert T. Schooley) working on bacteriophage therapy and antimicrobial resistance."
+orcid = "https://orcid.org/0000-0002-2498-8426"
+
+[[organization.researchers]]
+id = "ravi-goyal"
+full_name = "Ravi Goyal"
+role = "Investigator; Model Fitness and Agent-Based Modeling, UC San Diego"
+bio = "Statistician working on network models and agent-based simulation of infectious disease transmission."
+
+[[organization.researchers]]
+id = "steffanie-strathdee"
+full_name = "Steffanie Strathdee"
+role = "Investigator; Multidrug-Resistant Organisms and Phage, UC San Diego"
+bio = "Infectious disease epidemiologist known for work on HIV among people who inject drugs and on bacteriophage therapy."
+orcid = "https://orcid.org/0000-0002-7724-691X"
+
+[[organization.researchers]]
+id = "davey-smith"
+full_name = "Davey Smith"
+role = "Investigator; Vaccines and Therapeutics, UC San Diego"
+bio = "Infectious disease physician and virologist leading clinical trials of antivirals and vaccines."
+orcid = "https://orcid.org/0000-0003-3603-1733"
+
+[[organization.researchers]]
+id = "anita-raj"
+full_name = "Anita Raj"
+role = "Investigator; Engagement, Tulane University"
+bio = "Social epidemiologist working on gender equity, community engagement, and health."
+orcid = "https://orcid.org/0000-0002-8127-5123"
+
+[[organization.researchers]]
+id = "alexandra-hubenko"
+full_name = "Alexandra Hubenko"
+role = "Resilient Shield Program Manager, UC San Diego"
+
+[[organization.researchers]]
+id = "caitlin-bartlett"
+full_name = "Caitlin Bartlett"
+role = "Grants and Contracts, UC San Diego"
+
+[[organization.researchers]]
+id = "rishi-graham"
+full_name = "Rishi Graham"
+role = "Math and Computing, UC San Diego"
+bio = "Project scientist at UC San Diego Health supporting the center's mathematical and computational work."
+orcid = "https://orcid.org/0009-0009-1113-0058"
+
+[[organization.researchers]]
+id = "david-valentine"
+full_name = "David Valentine"
+role = "Modeling and Computing, UC San Diego"
+
+[[organization.researchers]]
+id = "anuujin-tsedenbal"
+full_name = "Anuujin Tsedenbal"
+role = "Project Manager, UC San Diego"
+
+[[organization.researchers]]
+id = "thomas-sharkey"
+full_name = "Thomas Sharkey"
+role = "Product Manager, UC San Diego"
+
+[[organization.researchers]]
+id = "sara-krugman"
+full_name = "Sara Krugman"
+role = "Consultant; Design Research and Ethnography"
+
+[[organization.researchers]]
+id = "kristian-poe"
+full_name = "Kristian Poe"
+role = "Consultant; Product Management and CTO, UC San Diego"
+
+[[organization.researchers]]
+id = "reed-berkowitz"
+full_name = "Reed Berkowitz"
+role = "Consultant; Game Design, Curiouser LLC"
+
+[[organization.researchers]]
+id = "evan-anderson-rs"
+full_name = "Evan Anderson"
+role = "Consultant; Strategic National Stockpile and FIRe tabletop exercise and game designer"
+
+[[organization.researchers]]
+id = "rafi-yahalom"
+full_name = "Rafi Yahalom"
+role = "Consultant; Incentives, Computation and Modeling, MIT"
 
 # Tools and products, transcribed from https://insightnet.us/resilient-shield-launches-tijuana-river-dashboard/
 [[organization.tools]]
@@ -33,10 +253,25 @@ url = "https://southregion.resilienthub.org/"
 category = "dashboard"
 keywords = ["environmental health", "water quality", "air quality", "san diego"]
 
-# Health partners, transcribed from https://insightnet.us/centers/resilient-shield/
+# Health partners, transcribed from https://insightnet.us/centers/resilient-shield/ and
+# the partner list on https://resilientshield.ucsd.edu/
 [[organization.partners]]
 name = "County of San Diego Health and Human Services Agency"
 acronym = "HHSA"
 type = "local"
 website = "https://www.sandiegocounty.gov/hhsa/"
 location = "San Diego County, California"
+
+[[organization.partners]]
+name = "California Department of Public Health"
+acronym = "CDPH"
+type = "state"
+website = "https://www.cdph.ca.gov/"
+location = "California"
+
+[[organization.partners]]
+name = "Nevada Department of Health and Human Services"
+acronym = "Nevada DHHS"
+type = "state"
+website = "https://dhhs.nv.gov/"
+location = "Nevada"

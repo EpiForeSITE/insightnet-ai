@@ -10,6 +10,14 @@ location = "Texas, Massachusetts"
 focus_areas = [ "outbreak preparedness", "outbreak detection", "forecasting", "public health response", "health equity",]
 keywords = [ "data analytics", "forecasting tools", "emergency operations",]
 enabled = true
+
+# Members, transcribed from https://epiengage.org/about/team/ (rendered client-side and
+# grouped there by home institution). Personal-site and LinkedIn links are the ones the
+# center publishes for each person. ORCIDs are recorded only where the record's own
+# affiliations or publication history confirm the identification; the roster's "Past
+# Collaborators" section is deliberately not carried over.
+
+# Principal investigators
 [[organization.researchers]]
 id = "lauren-ancel-meyers"
 full_name = "Lauren Ancel Meyers"
@@ -27,48 +35,609 @@ website = "https://reichlab.io"
 google_scholar = "https://scholar.google.com/citations?user=AQUsdvkAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-3503-9899"
 
+# Advisory board
+[[organization.researchers]]
+id = "rick-bright"
+full_name = "Rick Bright"
+role = "Advisory Board"
+orcid = "https://orcid.org/0000-0003-2879-2612"
+linkedin = "https://www.linkedin.com/in/rick-bright/"
+
+[[organization.researchers]]
+id = "matt-biggerstaff"
+full_name = "Matt Biggerstaff"
+role = "Advisory Board"
+bio = "Epidemiologist working on influenza and respiratory disease forecasting, including the FluSight collaborative challenge."
+orcid = "https://orcid.org/0000-0001-5108-8311"
+linkedin = "https://www.linkedin.com/in/matthew-biggerstaff-a6ab68a5/"
+
+[[organization.researchers]]
+id = "steve-adler"
+full_name = "Steve Adler"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/steve-adler-6809456/"
+
+[[organization.researchers]]
+id = "lourdes-zuniga"
+full_name = "Lourdes Zuniga"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/lourdes-g-zuniga-1229ab9/"
+
+[[organization.researchers]]
+id = "irene-eckstrand"
+full_name = "Irene Eckstrand"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/irene-eckstrand-753a1261/"
+
+[[organization.researchers]]
+id = "vp-nagraj"
+full_name = "V.P. Nagraj"
+role = "Advisory Board"
+website = "https://www.nagraj.net/"
+
+[[organization.researchers]]
+id = "andy-brown"
+full_name = "Andy Brown"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/andy-brown-41a1291/"
+
+[[organization.researchers]]
+id = "pritesh-gandhi"
+full_name = "Pritesh Gandhi"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/priteshgandhimd/"
+
+[[organization.researchers]]
+id = "aurimar-ayala"
+full_name = "Aurimar Ayala"
+role = "Advisory Board"
+linkedin = "https://www.linkedin.com/in/aurimar-ayala-571605194/"
+
+[[organization.researchers]]
+id = "larry-madoff"
+full_name = "Larry Madoff"
+role = "Advisory Board"
+bio = "Infectious disease physician and epidemiologist at the Massachusetts Department of Public Health."
+orcid = "https://orcid.org/0000-0003-2589-7777"
+
+[[organization.researchers]]
+id = "catherine-brown"
+full_name = "Catherine Brown"
+role = "Advisory Board"
+
+# Austin Public Health
+[[organization.researchers]]
+id = "desmar-walkes"
+full_name = "Desmar Walkes"
+role = "Co-Investigator, Austin Public Health"
+orcid = "https://orcid.org/0009-0004-6132-0187"
+linkedin = "https://www.linkedin.com/in/desmar-walkes-332470104/"
+
+# CAPTRS
+[[organization.researchers]]
+id = "francesca-de-rosa"
+full_name = "Francesca de Rosa"
+role = "Co-Investigator, Center for Advanced Preparedness and Threat Response Simulation"
+linkedin = "https://www.linkedin.com/in/francesca-de-rosa-b12482bb/"
+
+# CATRAC
+[[organization.researchers]]
+id = "douglas-havron"
+full_name = "Douglas Havron"
+role = "Co-Investigator, Capital Area Trauma Regional Advisory Council"
+linkedin = "https://www.linkedin.com/in/douglas-havron-96b853112/"
+
+[[organization.researchers]]
+id = "jasmine-castaneda-de-morales"
+full_name = "Jasmine Casteñeda de Morales"
+role = "Data Analyst, Capital Area Trauma Regional Advisory Council"
+linkedin = "https://www.linkedin.com/in/jcdemorales/"
+
+# City of Austin
+[[organization.researchers]]
+id = "mark-escott"
+full_name = "Mark Escott"
+role = "Co-Investigator, City of Austin"
+bio = "Emergency physician working on real-time pandemic surveillance from hospital admissions and mobility data."
+orcid = "https://orcid.org/0000-0002-7780-6251"
+linkedin = "https://www.linkedin.com/in/mark-escott-md-mph-facep-faems-nrp-3695b984/"
+
+# City of El Paso Department of Public Health
+[[organization.researchers]]
+id = "hector-ocaranza"
+full_name = "Hector Ocaranza"
+role = "Co-Investigator, City of El Paso Department of Public Health"
+linkedin = "https://www.linkedin.com/in/hector-ocaranza-505ba962/"
+
+# Council of State and Territorial Epidemiologists
+[[organization.researchers]]
+id = "beth-daly"
+full_name = "Beth Daly"
+role = "Co-Investigator, Council of State and Territorial Epidemiologists"
+linkedin = "https://www.linkedin.com/in/elizabeth-r-daly-drph-mph-42063260/"
+
+[[organization.researchers]]
+id = "rebekah-matthew"
+full_name = "Rebekah Matthew"
+role = "Program Analyst, Council of State and Territorial Epidemiologists"
+
+[[organization.researchers]]
+id = "jordan-peart"
+full_name = "Jordan Peart"
+role = "Infectious Disease Program Manager, Council of State and Territorial Epidemiologists"
+linkedin = "https://www.linkedin.com/in/jordanpeart/"
+
+# Dallas County Health & Human Services
+[[organization.researchers]]
+id = "philip-huang"
+full_name = "Philip Huang"
+role = "Co-Investigator, Dallas County Health & Human Services"
+orcid = "https://orcid.org/0009-0008-6249-7901"
+linkedin = "https://www.linkedin.com/in/phil-huang-31499913/"
+
+# Duke University
+[[organization.researchers]]
+id = "michael-pignone"
+full_name = "Michael Pignone"
+role = "Co-Investigator, Duke University"
+orcid = "https://orcid.org/0000-0002-6657-7342"
+linkedin = "https://www.linkedin.com/in/michael-pignone-1789a5b/"
+
+# Houston Health Department
+[[organization.researchers]]
+id = "loren-hopkins"
+full_name = "Loren Hopkins"
+role = "Co-Investigator, Houston Health Department; Professor in the Practice, Rice University"
+website = "https://profiles.rice.edu/faculty/loren-hopkins"
+orcid = "https://orcid.org/0000-0003-0626-9775"
+
+[[organization.researchers]]
+id = "kaavya-domakonda"
+full_name = "Kaavya Domakonda"
+role = "Senior Staff Analyst, Houston Health Department"
+orcid = "https://orcid.org/0009-0004-8656-7864"
+linkedin = "https://www.linkedin.com/in/kaavya-domakonda-285b7716/"
+
+[[organization.researchers]]
+id = "kelsey-caton"
+full_name = "Kelsey Caton"
+role = "Houston Health Department"
+
+# JMP
+[[organization.researchers]]
+id = "russ-wolfinger"
+full_name = "Russ Wolfinger"
+role = "Director of Scientific Discovery and Genomics, Distinguished Research Fellow, JMP"
+linkedin = "https://www.linkedin.com/in/russ-wolfinger-5ab7999/"
+
+# The London School of Hygiene & Tropical Medicine
 [[organization.researchers]]
 id = "sebastian-funk"
 full_name = "Sebastian Funk"
-role = "Co-Investigator"
-bio = "The London School of Hygiene & Tropical Medicine."
+role = "Co-Investigator, The London School of Hygiene & Tropical Medicine"
 website = "https://profiles.lshtm.ac.uk/2382-sebastian-funk"
 google_scholar = "https://scholar.google.com/citations?user=yOo8u2gAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-2842-3406"
 bluesky = "https://bsky.app/profile/sbfnk.bsky.social"
 
+# Massachusetts Department of Public Health
+[[organization.researchers]]
+id = "meagan-burns"
+full_name = "Meagan Burns"
+role = "Co-Investigator, Massachusetts Department of Public Health"
+orcid = "https://orcid.org/0000-0001-7802-4721"
+linkedin = "https://www.linkedin.com/in/meagan-burns-3a680673/"
+
+[[organization.researchers]]
+id = "andy-tibbs"
+full_name = "Andy Tibbs"
+role = "Senior Infectious Disease Epidemiologist, Massachusetts Department of Public Health"
+linkedin = "https://www.linkedin.com/in/andy-tibbs-647503b/"
+
+[[organization.researchers]]
+id = "rosa-ergas"
+full_name = "Rosa Ergas"
+role = "Syndromic Surveillance Coordinator, Massachusetts Department of Public Health"
+linkedin = "https://www.linkedin.com/in/rosa-ergas-5975a21/"
+
+# Montgomery County, Texas
+[[organization.researchers]]
+id = "meghna-bhatt"
+full_name = "Meghna Bhatt"
+role = "Epidemiology Division Manager, Montgomery County, Texas"
+linkedin = "https://www.linkedin.com/in/meghnambhatt/"
+
+# NET Health
+[[organization.researchers]]
+id = "ginger-points"
+full_name = "Ginger Points"
+role = "Co-Investigator, NET Health"
+linkedin = "https://www.linkedin.com/in/ginger-points-a202a473/"
+
+# Northern Arizona University
 [[organization.researchers]]
 id = "spencer-fox"
 full_name = "Spencer Fox"
-role = "Co-Investigator"
-bio = "Northern Arizona University."
+role = "Co-Investigator, Northern Arizona University"
 website = "https://spncrfx.wordpress.com/"
 orcid = "https://orcid.org/0000-0003-1969-3778"
 bluesky = "https://bsky.app/profile/foxandtheflu.bsky.social"
 
+# Northwestern University
 [[organization.researchers]]
 id = "david-morton"
 full_name = "David Morton"
-role = "Co-Investigator"
-bio = "Northwestern University."
+role = "Co-Investigator, Northwestern University"
 website = "https://sites.northwestern.edu/dmorton/"
 google_scholar = "https://scholar.google.com/citations?user=IH62KeIAAAAJ&hl=en"
 
 [[organization.researchers]]
+id = "guyi-chen"
+full_name = "Guyi Chen"
+role = "Graduate Student Researcher, Northwestern University"
+linkedin = "https://www.linkedin.com/in/guyi-chen-06268b12a/"
+
+[[organization.researchers]]
+id = "keyi-cheng"
+full_name = "Keyi Cheng"
+role = "Graduate Student Researcher, Northwestern University"
+linkedin = "https://www.linkedin.com/in/keyi-cheng-a3745317b/"
+
+[[organization.researchers]]
+id = "chenqi-jiang"
+full_name = "Chenqi Jiang"
+role = "Graduate Student Researcher, Northwestern University"
+linkedin = "https://www.linkedin.com/in/dan-chenqi-jiang-073213270/"
+
+# Tarleton State University
+[[organization.researchers]]
+id = "jose-luis-herrera-diestra"
+full_name = "Jose Luis Herrera Diestra"
+role = "Assistant Professor, Tarleton State University"
+orcid = "https://orcid.org/0000-0002-1688-3704"
+linkedin = "https://www.linkedin.com/in/jose-luis-herrera-diestra-b824536b/"
+
+# Texas Advanced Computing Center
+[[organization.researchers]]
+id = "kelly-gaither"
+full_name = "Kelly Gaither"
+role = "Co-Investigator, Texas Advanced Computing Center"
+website = "https://tacc.utexas.edu/about/staff-directory/kelly-gaither/"
+orcid = "https://orcid.org/0000-0002-4272-175X"
+
+[[organization.researchers]]
+id = "lisa-garbrecht"
+full_name = "Lisa Garbrecht"
+role = "Co-Investigator, Texas Advanced Computing Center"
+website = "https://tacc.utexas.edu/about/staff-directory/lisa-garbrecht/"
+orcid = "https://orcid.org/0000-0003-0399-4269"
+
+[[organization.researchers]]
+id = "joe-allen"
+full_name = "Joe Allen"
+role = "Research Associate, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/william-joseph-allen-a9a92682/"
+
+[[organization.researchers]]
+id = "stephanie-baker"
+full_name = "Stephanie Baker"
+role = "Senior Evaluation Researcher, Texas Advanced Computing Center"
+orcid = "https://orcid.org/0000-0001-5380-6719"
+linkedin = "https://www.linkedin.com/in/stephanie-nicole-baker/"
+
+[[organization.researchers]]
+id = "vera-belcher"
+full_name = "Vera Belcher"
+role = "Project Coordinator, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/vera-belcher-13675613a/"
+
+[[organization.researchers]]
+id = "gladys-chen"
+full_name = "Gladys Chen"
+role = "Advanced High-Performance Computer User Support, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/gladys-chen-6a3b32211/"
+
+[[organization.researchers]]
+id = "maytal-dahan"
+full_name = "Maytal Dahan"
+role = "Advanced Computing Interfaces Directorate, Texas Advanced Computing Center"
+orcid = "https://orcid.org/0000-0003-3432-5789"
+linkedin = "https://www.linkedin.com/in/maytaldahan/"
+
+[[organization.researchers]]
+id = "lena-duplechin-seymour"
+full_name = "Lena Duplechin Seymour"
+role = "Collaborative Support Specialist, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/lena-dupsey/"
+
+[[organization.researchers]]
+id = "vennela-gajjala"
+full_name = "Vennela Gajjala"
+role = "Project Coordinator, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/vennelagajjala/"
+
+[[organization.researchers]]
+id = "feng-liu"
+full_name = "Feng Liu"
+role = "Research Associate, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/feng-liu-001-phd/"
+
+[[organization.researchers]]
+id = "craig-jansen"
+full_name = "Craig Jansen"
+role = "UX Researcher and Visualization Researcher, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/csjansen/"
+
+[[organization.researchers]]
+id = "yiwen-yang"
+full_name = "Yiwen Yang"
+role = "Postdoctoral Fellow, Texas Advanced Computing Center"
+linkedin = "https://www.linkedin.com/in/yiwen-yang-56523192/"
+
+[[organization.researchers]]
+id = "emily-javan"
+full_name = "Emily Javan"
+role = "Intern, Texas Advanced Computing Center"
+bio = "Works on outbreak forecasting and estimating undetected disease emergence."
+orcid = "https://orcid.org/0000-0002-6008-0271"
+linkedin = "https://www.linkedin.com/in/emily-javan-8b685293/"
+
+# Texas Department of State Health Services
+[[organization.researchers]]
+id = "jennifer-shuford"
+full_name = "Jennifer Shuford"
+role = "Commissioner, Texas Department of State Health Services"
+orcid = "https://orcid.org/0000-0002-3943-5330"
+
+[[organization.researchers]]
+id = "saroj-rai"
+full_name = "Saroj Rai"
+role = "Texas Department of State Health Services"
+
+[[organization.researchers]]
+id = "varun-shetty"
+full_name = "Varun Shetty"
+role = "Texas Department of State Health Services"
+
+# The University of Texas at Austin
+[[organization.researchers]]
+id = "michael-mackert"
+full_name = "Michael Mackert"
+role = "Co-Investigator, Center for Health Communication, The University of Texas at Austin"
+website = "http://healthcommunicationresearch.com/index.html"
+orcid = "https://orcid.org/0000-0002-1758-5354"
+
+[[organization.researchers]]
+id = "jewel-mullen"
+full_name = "Jewel Mullen"
+role = "Co-Investigator, Dell Medical School, The University of Texas at Austin"
+website = "https://dellmed.utexas.edu/directory/jewel-mullen"
+
+[[organization.researchers]]
+id = "susan-ptak"
+full_name = "Susan Ptak"
+role = "Research Associate, The University of Texas at Austin"
+website = "https://susanptak.github.io/"
+orcid = "https://orcid.org/0009-0002-1206-4557"
+
+[[organization.researchers]]
+id = "farinaz-forouzannia"
+full_name = "Farinaz Forouzannia"
+role = "Research Fellow, The University of Texas at Austin"
+bio = "Mathematical modeler working on viral hepatitis epidemiology and elimination."
+orcid = "https://orcid.org/0000-0003-1833-823X"
+linkedin = "https://www.linkedin.com/in/farinaz-forouzannia-a6348996"
+
+[[organization.researchers]]
+id = "shraddha-bandekar"
+full_name = "Shraddha Bandekar"
+role = "Postdoctoral Fellow, The University of Texas at Austin"
+orcid = "https://orcid.org/0000-0001-5063-2290"
+linkedin = "https://www.linkedin.com/in/shraddha-bandekar-534a96238"
+
+[[organization.researchers]]
+id = "oluwasegun-ibrahim"
+full_name = "Oluwasegun Ibrahim"
+role = "Postdoctoral Fellow, The University of Texas at Austin"
+website = "https://oluwasegunibrahim.com/"
+orcid = "https://orcid.org/0000-0002-2971-4301"
+
+[[organization.researchers]]
+id = "nyall-jamieson"
+full_name = "Nyall Jamieson"
+role = "Postdoctoral Fellow, The University of Texas at Austin"
+bio = "Models within-host dynamics and environmental transmission of infectious disease."
+orcid = "https://orcid.org/0009-0004-1491-6885"
+linkedin = "https://www.linkedin.com/in/nyall-j-a1ba86197/"
+
+[[organization.researchers]]
+id = "dongah-kim"
+full_name = "Dongah Kim"
+role = "Postdoctoral Fellow, The University of Texas at Austin"
+orcid = "https://orcid.org/0000-0003-4638-7514"
+linkedin = "https://www.linkedin.com/in/dongah-kim-824a4462/"
+
+[[organization.researchers]]
+id = "bryce-holloway"
+full_name = "Bryce Holloway"
+role = "Graduate Research Assistant, The University of Texas at Austin"
+linkedin = "https://www.linkedin.com/in/bryce-holloway-7ba8bb25a"
+
+[[organization.researchers]]
+id = "haerin-kim"
+full_name = "Haerin Kim"
+role = "Graduate Research Assistant, The University of Texas at Austin"
+website = "https://stat.utexas.edu/directory/haerin-kim"
+
+[[organization.researchers]]
+id = "elizabeth-snyderman"
+full_name = "Elizabeth Snyderman"
+role = "Graduate Research Assistant, The University of Texas at Austin"
+linkedin = "https://www.linkedin.com/in/elizabeth-snyderman-2a4052127/"
+
+[[organization.researchers]]
+id = "laurie-alvarez"
+full_name = "Laurie Alvarez"
+role = "Administrative Manager, The University of Texas at Austin"
+
+[[organization.researchers]]
+id = "katie-clement"
+full_name = "Katie Clement"
+role = "Administrative Manager, The University of Texas at Austin"
+linkedin = "https://www.linkedin.com/in/katie-clement222/"
+
+[[organization.researchers]]
+id = "becky-wilson"
+full_name = "Becky Wilson"
+role = "Managing Director, The University of Texas at Austin"
+linkedin = "https://www.linkedin.com/in/becky-wilson-kester/"
+
+# The University of Texas at El Paso
+[[organization.researchers]]
+id = "anass-bouchnita"
+full_name = "Anass Bouchnita"
+role = "Co-Investigator, The University of Texas at El Paso"
+orcid = "https://orcid.org/0000-0002-2729-6484"
+linkedin = "https://www.linkedin.com/in/anass-bouchnita-4b500588/"
+
+[[organization.researchers]]
+id = "juan-garcia"
+full_name = "Juan A. Garcia"
+role = "PhD Student, The University of Texas at El Paso"
+
+# The University of Texas at Tyler
+[[organization.researchers]]
+id = "grace-dickey"
+full_name = "Grace Dickey"
+role = "Project Manager, The University of Texas at Tyler"
+linkedin = "https://www.linkedin.com/in/grace-dickey-public-health/"
+
+[[organization.researchers]]
+id = "michelle-crum"
+full_name = "Michelle Crum"
+role = "Division Chief, The University of Texas at Tyler"
+linkedin = "https://www.linkedin.com/in/visitmichellecrum/"
+
+# University of Colorado Boulder
+[[organization.researchers]]
 id = "daniel-larremore"
 full_name = "Daniel Larremore"
-role = "Co-Investigator"
-bio = "University of Colorado Boulder."
-website = "https://danlarremore.com/"
+role = "Co-Investigator, University of Colorado Boulder"
+website = "https://larremorelab.github.io/"
 google_scholar = "https://scholar.google.com/citations?user=BICiUrQAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0001-5273-5234"
 
 [[organization.researchers]]
-id = "anass-bouchnita"
-full_name = "Anass Bouchnita"
-role = "Co-Investigator"
-bio = "The University of Texas at El Paso."
-orcid = "https://orcid.org/0000-0002-2729-6484"
+id = "remy-pasco"
+full_name = "Remy Pasco"
+role = "CFA Associate Director, Modeling Core, University of Colorado Boulder"
+orcid = "https://orcid.org/0000-0002-9321-6876"
+linkedin = "https://www.linkedin.com/in/remypasco/"
+
+# University of Georgia
+[[organization.researchers]]
+id = "bren-case"
+full_name = "Bren Case"
+role = "Postdoctoral Associate, University of Georgia"
+bio = "Works on vector surveillance design and the statistics of summarizing outbreaks from epidemiological models."
+orcid = "https://orcid.org/0000-0002-5666-1161"
+
+[[organization.researchers]]
+id = "annalise-cramer"
+full_name = "Annalise Cramer"
+role = "Graduate Research Assistant, University of Georgia"
+orcid = "https://orcid.org/0009-0002-8718-3593"
+linkedin = "https://www.linkedin.com/in/annalisecramer/"
+
+[[organization.researchers]]
+id = "ehsan-suez"
+full_name = "Ehsan Suez"
+role = "Graduate Research Assistant, University of Georgia"
+orcid = "https://orcid.org/0000-0001-9620-7994"
+linkedin = "https://www.linkedin.com/in/ehsan-suez-942a07304/"
+
+[[organization.researchers]]
+id = "maya-salcedo"
+full_name = "Maya Salcedo"
+role = "Graduate Research Assistant, University of Georgia"
+linkedin = "https://www.linkedin.com/in/mariah-salcedo-56b003249/"
+
+# University of Massachusetts Amherst
+[[organization.researchers]]
+id = "melissa-kerr"
+full_name = "Melissa Kerr"
+role = "Project Manager, University of Massachusetts Amherst"
+website = "https://www.umass.edu/public-health-sciences/about/directory/melissa-kerr"
+
+[[organization.researchers]]
+id = "matt-cornell"
+full_name = "Matt Cornell"
+role = "Software Engineer, University of Massachusetts Amherst"
+
+[[organization.researchers]]
+id = "anna-krystalli"
+full_name = "Anna Krystalli"
+role = "Software Engineer, University of Massachusetts Amherst"
+bio = "Research software engineer working on reproducible research infrastructure and the Hubverse toolchain."
+orcid = "https://orcid.org/0000-0002-2378-4915"
+
+[[organization.researchers]]
+id = "li-shandross"
+full_name = "Li Shandross"
+role = "Data Analyst, University of Massachusetts Amherst"
+orcid = "https://orcid.org/0009-0008-1348-1954"
+linkedin = "https://www.linkedin.com/in/li-shandross/"
+
+[[organization.researchers]]
+id = "maryclare-griffin"
+full_name = "Maryclare Griffin"
+role = "Assistant Professor, University of Massachusetts Amherst"
+orcid = "https://orcid.org/0000-0003-0878-3225"
+
+[[organization.researchers]]
+id = "isaac-macarthur"
+full_name = "Isaac MacArthur"
+role = "Graduate Research Assistant, University of Massachusetts Amherst"
+
+[[organization.researchers]]
+id = "thomas-robacker"
+full_name = "Thomas Robacker"
+role = "Graduate Research Assistant, University of Massachusetts Amherst"
+
+[[organization.researchers]]
+id = "emily-tyszka"
+full_name = "Emily Tyszka"
+role = "Graduate Research Assistant, University of Massachusetts Amherst"
+orcid = "https://orcid.org/0009-0005-6088-4017"
+linkedin = "https://www.linkedin.com/in/emily-tyszka/"
+
+[[organization.researchers]]
+id = "alvaro-castro-rivadeneira"
+full_name = "Alvaro Castro Rivadeneira"
+role = "PhD Student, University of Massachusetts Amherst"
+orcid = "https://orcid.org/0000-0001-9102-7660"
+
+# UT Health Houston
+[[organization.researchers]]
+id = "kaiming-bi"
+full_name = "Kaiming Bi"
+role = "Assistant Professor, UT Health Houston"
+website = "https://bikaiming93.github.io/"
+orcid = "https://orcid.org/0000-0001-6234-6232"
+
+[[organization.researchers]]
+id = "boya-peng"
+full_name = "Boya Peng"
+role = "PhD Student, UT Health Houston"
+linkedin = "https://www.linkedin.com/in/boyapeng-analyst/"
+
+# Yale University
+[[organization.researchers]]
+id = "alison-galvani"
+full_name = "Alison Galvani"
+role = "Yale University"
+website = "https://ysph.yale.edu/profile/alison-galvani/"
+orcid = "https://orcid.org/0000-0002-2059-6716"
 
 # Tools and products, transcribed from https://epiengage.org/projects/
 [[organization.tools]]
@@ -113,6 +682,20 @@ summary = "City-specific models to track, predict, and manage influenza transmis
 category = "model"
 status = "in-development"
 keywords = ["influenza", "cities", "transmission modeling"]
+
+[[organization.tools]]
+name = "Outbreak Nowcasting"
+summary = "Statistical models giving real-time estimates of public health trends where surveillance data arrive with reporting delays."
+category = "model"
+status = "in-development"
+keywords = ["nowcasting", "reporting delay", "situational awareness"]
+
+[[organization.tools]]
+name = "Genomic Sequencing Rightsizing"
+summary = "Methods for choosing genomic sampling strategies that meet a given public health objective at the lowest sequencing volume."
+category = "model"
+status = "in-development"
+keywords = ["genomic surveillance", "sampling design", "sequencing"]
 
 [[organization.tools]]
 name = "How to Think Like a Modeler"
@@ -169,3 +752,26 @@ acronym = "ATCEMS"
 type = "local"
 website = "https://www.austintexas.gov/ems"
 location = "Austin, Texas"
+
+# Additional health agencies and health organizations named on the center's team page as
+# the home institutions of its co-investigators.
+[[organization.partners]]
+name = "Northeast Texas Public Health District"
+acronym = "NET Health"
+type = "local"
+website = "https://www.netphd.org/"
+location = "Tyler, Texas"
+
+[[organization.partners]]
+name = "Montgomery County Public Health District"
+type = "local"
+website = "https://mcphd-tx.org/"
+location = "Montgomery County, Texas"
+
+[[organization.partners]]
+name = "Council of State and Territorial Epidemiologists"
+acronym = "CSTE"
+type = "other"
+summary = "Membership organization of state and territorial epidemiologists that partners with the center on infectious disease programs."
+website = "https://www.cste.org/"
+location = "United States"

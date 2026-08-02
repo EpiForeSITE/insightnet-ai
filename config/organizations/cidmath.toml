@@ -10,10 +10,21 @@ location = "Georgia"
 focus_areas = [ "infectious disease modeling", "outbreak forecasting", "wastewater epidemiology", "vaccine evaluation", "machine learning", "training",]
 keywords = [ "social contact patterns", "flu forecasting", "public health practitioners",]
 enabled = true
+
+[organization.social]
+linkedin = "https://www.linkedin.com/company/emorycidmath/"
+twitter = "https://x.com/Emory_CIDMATH"
+bluesky = "https://bsky.app/profile/emorycidmath.bsky.social"
+
+# Members, transcribed from https://cidmath.org/about/people/ (rendered client-side).
+# Google Scholar and Emory profile links are the ones the center publishes for each
+# person. ORCIDs were confirmed against each record's own affiliations or publication
+# history; the center's "publication link" for Rustom Antia points at another member's
+# ORCID, so his was resolved from his own record instead.
 [[organization.researchers]]
 id = "benjamin-lopman"
 full_name = "Benjamin Lopman"
-role = "Director and Co-Principal Investigator; Professor of Epidemiology and Environmental Health, Emory University Rollins School of Public Health"
+role = "Director and Co-Principal Investigator; Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
 website = "https://sph.emory.edu/profile/faculty/benjamin-lopman"
 google_scholar = "https://scholar.google.com/citations?user=pryUlKsAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-9238-0068"
@@ -22,7 +33,7 @@ linkedin = "https://www.linkedin.com/in/ben-lopman-b7284533/"
 [[organization.researchers]]
 id = "natalie-dean"
 full_name = "Natalie Dean"
-role = "Co-Principal Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+role = "Deputy Director and Co-Principal Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
 website = "https://www.nataliexdean.net/"
 google_scholar = "https://scholar.google.com/citations?user=H7nim_oAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-3884-0921"
@@ -32,7 +43,7 @@ twitter = "https://x.com/nataliexdean"
 [[organization.researchers]]
 id = "katia-koelle"
 full_name = "Katia Koelle"
-role = "Co-Principal Investigator; Professor, Department of Biology, Emory University College of Arts and Sciences"
+role = "Director of Scientific Initiatives and Co-Principal Investigator; Professor, Department of Biology, Emory University College of Arts and Sciences"
 website = "https://scholarblogs.emory.edu/koellelab/"
 google_scholar = "https://scholar.google.com/citations?user=6uMrbtgAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-0254-6141"
@@ -40,10 +51,348 @@ orcid = "https://orcid.org/0000-0002-0254-6141"
 [[organization.researchers]]
 id = "allison-chamberlain"
 full_name = "Allison Chamberlain"
-role = "Co-Principal Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+role = "Director of Public Health Practice and Co-Principal Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
 website = "https://sph.emory.edu/profile/faculty/allison-chamberlain"
 orcid = "https://orcid.org/0000-0001-6009-537X"
 linkedin = "https://www.linkedin.com/in/allison-chamberlain-5644a5132/"
+
+[[organization.researchers]]
+id = "katy-seib"
+full_name = "Katy Seib"
+role = "Program Director, Department of Epidemiology, Emory University Rollins School of Public Health"
+orcid = "https://orcid.org/0000-0002-1428-7108"
+
+[[organization.researchers]]
+id = "aaron-siegler"
+full_name = "Aaron Siegler"
+role = "Co-Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=aaron-siegler-1186"
+google_scholar = "https://scholar.google.com/citations?user=Pct9jKcAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5553-7540"
+
+[[organization.researchers]]
+id = "andreas-zufle"
+full_name = "Andreas Züfle"
+role = "Co-Investigator; Associate Professor, Department of Computer Science, Emory University College of Arts and Sciences"
+website = "https://www.zuefle.org/"
+google_scholar = "https://scholar.google.com/citations?user=s-FDyf4AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-7001-4123"
+
+[[organization.researchers]]
+id = "anne-piantadosi"
+full_name = "Anne Piantadosi"
+role = "Co-Investigator; Assistant Professor, Department of Pathology and Laboratory Medicine, Emory University School of Medicine"
+website = "https://vaccines.emory.edu/faculty/primary-faculty/piantadosi-anne.html"
+google_scholar = "https://scholar.google.com/citations?user=AvIAMJYAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-5942-1534"
+
+[[organization.researchers]]
+id = "christine-moe"
+full_name = "Christine Moe"
+role = "Co-Investigator; Eugene J. Gangarosa Professor of Safe Water and Sanitation, Hubert Department of Global Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=christine-moe-842"
+google_scholar = "https://scholar.google.com/citations?user=RurIOckAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-3628-1783"
+
+[[organization.researchers]]
+id = "david-benkeser"
+full_name = "David Benkeser"
+role = "Co-Investigator; Associate Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=david-benkeser-8917"
+google_scholar = "https://scholar.google.com/citations?user=Yxp9VvkAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-1019-8343"
+
+[[organization.researchers]]
+id = "elizabeth-rogawski-mcquade"
+full_name = "Elizabeth Rogawski McQuade"
+role = "Co-Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+google_scholar = "https://scholar.google.com/citations?user=I8kyfvIAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-4942-3747"
+
+[[organization.researchers]]
+id = "felipe-lobelo"
+full_name = "Felipe Lobelo"
+role = "Co-Investigator; Associate Professor, Hubert Department of Global Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=felipe-lobelo-8648"
+google_scholar = "https://scholar.google.com/citations?user=POUTm0IAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4185-7193"
+
+[[organization.researchers]]
+id = "gonzalo-vazquez-prokopec"
+full_name = "Gonzalo Vazquez-Prokopec"
+role = "Co-Investigator; Winship Distinguished Associate Professor, Department of Environmental Sciences, Emory University College of Arts and Sciences"
+website = "https://envs.emory.edu/people/bios/vazquez-prokopec-gonzalo.html"
+google_scholar = "https://scholar.google.com/citations?user=EreyivoAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-0710-270X"
+
+[[organization.researchers]]
+id = "jodie-guest"
+full_name = "Jodie Guest"
+role = "Co-Investigator; Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=jodie-guest-276"
+google_scholar = "https://scholar.google.com/citations?user=UGbI634AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-3650-3975"
+
+[[organization.researchers]]
+id = "kristin-nelson"
+full_name = "Kristin Nelson"
+role = "Co-Investigator; Assistant Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=kristin-nelson-7401"
+google_scholar = "https://scholar.google.com/citations?user=n1wVOMgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-4728-2909"
+
+[[organization.researchers]]
+id = "lance-waller"
+full_name = "Lance Waller"
+role = "Co-Investigator; Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=lance-waller-345"
+google_scholar = "https://scholar.google.com/citations?user=-6GcgOgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5002-8886"
+
+[[organization.researchers]]
+id = "lavanya-vasudevan"
+full_name = "Lavanya Vasudevan"
+role = "Co-Investigator; Associate Professor, Hubert Department of Global Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=lavanya-vasudevan-13029"
+google_scholar = "https://scholar.google.com/citations?user=g8nwF4kAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-2900-6070"
+
+[[organization.researchers]]
+id = "li-xiong"
+full_name = "Li Xiong"
+role = "Co-Investigator; Samuel Candler Dobbs Professor, Department of Computer Science, Emory University College of Arts and Sciences"
+website = "https://www.cs.emory.edu/~lxiong/"
+google_scholar = "https://scholar.google.com/citations?user=jJ8BLgsAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-7354-0428"
+
+[[organization.researchers]]
+id = "marlene-wolfe"
+full_name = "Marlene Wolfe"
+role = "Co-Investigator; Assistant Professor, Gangarosa Department of Environmental Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=marlene-wolfe-12814"
+google_scholar = "https://scholar.google.com/citations?user=0xI461gAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-6476-0450"
+
+[[organization.researchers]]
+id = "max-lau"
+full_name = "Max Lau"
+role = "Co-Investigator; Assistant Professor, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=max-lau-10935"
+google_scholar = "https://scholar.google.com/citations?user=fpIn-ZgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-6590-0294"
+
+[[organization.researchers]]
+id = "robert-bednarczyk"
+full_name = "Robert Bednarczyk"
+role = "Co-Investigator; Associate Professor, Hubert Department of Global Health, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=robert-bednarczyk-1682"
+google_scholar = "https://scholar.google.com/citations?user=4cPf5kwAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-6812-0928"
+
+[[organization.researchers]]
+id = "rustom-antia"
+full_name = "Rustom Antia"
+role = "Co-Investigator; Samuel Candler Dobbs Professor, Department of Biology, Emory University College of Arts and Sciences"
+website = "https://biology.emory.edu/home/people/bios/faculty/antia-rustom.html"
+orcid = "https://orcid.org/0000-0001-7991-614X"
+
+[[organization.researchers]]
+id = "sam-jenness"
+full_name = "Sam Jenness"
+role = "Co-Investigator; Associate Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/faculty/profile/index.php?FID=samuel-jenness-8824"
+google_scholar = "https://scholar.google.com/citations?user=ikRi27kAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-8840-105X"
+
+[[organization.researchers]]
+id = "sharia-ahmed"
+full_name = "Sharia Ahmed"
+role = "Co-Investigator; Research Assistant Professor, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://www.shariamahmed.com/"
+google_scholar = "https://scholar.google.com/citations?user=BQsT4c0AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-4060-5712"
+
+[[organization.researchers]]
+id = "veronika-zarnitsyna"
+full_name = "Veronika Zarnitsyna"
+role = "Co-Investigator; Associate Professor, Department of Microbiology and Immunology, Emory University School of Medicine"
+website = "https://med.emory.edu/directory/profile/?u=VIZARNI"
+google_scholar = "https://scholar.google.com/citations?user=sVkaHRIAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0003-3096-3695"
+
+[[organization.researchers]]
+id = "yuke-wang"
+full_name = "Yuke Wang"
+role = "Co-Investigator; Research Assistant Professor, Hubert Department of Global Health, Emory University Rollins School of Public Health"
+bio = "Listed by the center as Yuke “Andrew” Wang; works on quantitative exposure assessment for enteric pathogens."
+website = "https://ywan446.github.io/"
+orcid = "https://orcid.org/0000-0002-9615-7859"
+
+[[organization.researchers]]
+id = "connor-van-meter"
+full_name = "Connor Van Meter"
+role = "Data Scientist, Department of Epidemiology, Emory University Rollins School of Public Health"
+bio = "Builds the CIDMATH Data Hub, the center's platform for centralized access to MarketScan and Epic Cosmos data."
+google_scholar = "https://scholar.google.com/citations?user=Dzi0El4AAAAJ&hl=en"
+
+[[organization.researchers]]
+id = "marina-bruck"
+full_name = "Marina Bruck"
+role = "Project Manager, Department of Epidemiology, Emory University Rollins School of Public Health"
+orcid = "https://orcid.org/0000-0002-0227-9768"
+
+[[organization.researchers]]
+id = "pia-valeriano"
+full_name = "Pia Valeriano"
+role = "Program Manager, Department of Epidemiology, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "said-rachida"
+full_name = "Saïd Rachida"
+role = "Research Scientist, Emory University School of Medicine; Co-Investigator"
+orcid = "https://orcid.org/0000-0002-5483-5121"
+
+[[organization.researchers]]
+id = "shelby-rentmeester"
+full_name = "Shelby Rentmeester"
+role = "Director, Rollins Epidemiology Fellowship, Department of Epidemiology, Emory University Rollins School of Public Health"
+orcid = "https://orcid.org/0000-0002-7297-0597"
+
+[[organization.researchers]]
+id = "shonna-farrell"
+full_name = "Shonna Farrell"
+role = "Program Coordinator, Department of Epidemiology, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "machi-shiiba"
+full_name = "Machi Shiiba"
+role = "Public Health Program Associate, Department of Epidemiology, Emory University Rollins School of Public Health"
+orcid = "https://orcid.org/0009-0008-7889-7651"
+
+[[organization.researchers]]
+id = "ty-scott"
+full_name = "Ty Scott"
+role = "Clinical Research Coordinator II, Department of Epidemiology, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "emilia-grill"
+full_name = "Emilia Grill"
+role = "Senior Program Coordinator, Department of Epidemiology, Emory University Rollins School of Public Health"
+
+[[organization.researchers]]
+id = "emily-wu"
+full_name = "Emily Wu"
+role = "PhD student, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/phd-students/profile/index.php?FID=emily-wu-12885"
+google_scholar = "https://scholar.google.com/citations?user=q0ulTj8AAAAJ&hl=en"
+orcid = "https://orcid.org/0009-0003-5487-6753"
+
+[[organization.researchers]]
+id = "pragati-prasad"
+full_name = "Pragati Prasad"
+role = "PhD student, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://pragatiprasad.com/"
+google_scholar = "https://scholar.google.com/citations?user=gzaA444AAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-5066-2852"
+
+[[organization.researchers]]
+id = "sara-kim"
+full_name = "Sara Kim"
+role = "PhD student, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/phd-students/profile/index.php?FID=sara-kim-13070"
+orcid = "https://orcid.org/0000-0002-1056-9896"
+
+[[organization.researchers]]
+id = "fiona-xiao"
+full_name = "Fiona Xiao"
+role = "PhD student, Graduate Division of Biological and Biomedical Sciences, Emory Laney Graduate School"
+
+[[organization.researchers]]
+id = "mahmud-sheku"
+full_name = "Mahmud Sheku"
+role = "PhD student, Department of Epidemiology, Emory University Rollins School of Public Health"
+website = "https://sph.emory.edu/profile/phd-student/mahmud-sheku"
+google_scholar = "https://scholar.google.com/citations?user=onT0siYAAAAJ&hl=en"
+orcid = "https://orcid.org/0009-0003-9114-253X"
+
+[[organization.researchers]]
+id = "haisu-zhang"
+full_name = "Haisu Zhang"
+role = "PhD student, Gangarosa Department of Environmental Health, Emory University Rollins School of Public Health"
+google_scholar = "https://scholar.google.com/citations?user=4q9hV9gAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0002-7171-6167"
+
+[[organization.researchers]]
+id = "leke-lyu"
+full_name = "Leke Lyu"
+role = "Postdoctoral Fellow, Department of Biostatistics and Bioinformatics, Emory University Rollins School of Public Health"
+bio = "Uses pathogen genomic data to trace transmission clusters at local scales."
+google_scholar = "https://scholar.google.com/citations?user=8BJcZSQAAAAJ&hl=en"
+orcid = "https://orcid.org/0009-0004-5657-8271"
+
+[[organization.researchers]]
+id = "devin-north"
+full_name = "Devin North"
+role = "Postdoctoral Fellow, Gangarosa Department of Environmental Health, Emory University Rollins School of Public Health"
+orcid = "https://orcid.org/0000-0002-0671-3381"
+
+[[organization.researchers]]
+id = "nikunj-goel"
+full_name = "Nikunj Goel"
+role = "Postdoctoral Researcher, Department of Biology, Emory University College of Arts and Sciences"
+orcid = "https://orcid.org/0000-0002-5720-7761"
+
+[[organization.researchers]]
+id = "cameron-goetgeluck"
+full_name = "Cameron Goetgeluck"
+role = "Outbreak Analytics Fellow, Georgia Department of Public Health"
+
+[[organization.researchers]]
+id = "brenna-bowlen"
+full_name = "Brenna Bowlen"
+role = "Outbreak Analytics Fellow, Georgia Department of Public Health"
+
+[[organization.researchers]]
+id = "brianna-thompson"
+full_name = "Brianna Thompson"
+role = "Outbreak Analytics Fellow, Georgia Department of Public Health"
+
+[[organization.researchers]]
+id = "kyle-openo"
+full_name = "Kyle P. Openo"
+role = "Lead Investigator, Viral Respiratory Surveillance (RESP-NET), Georgia Emerging Infections Program; Emory University School of Medicine, Division of Infectious Diseases"
+orcid = "https://orcid.org/0009-0005-8431-6508"
+
+[[organization.researchers]]
+id = "lucy-witt"
+full_name = "Lucy S. Witt"
+role = "Assistant Professor, Division of Infectious Diseases, Emory University School of Medicine; Co-Principal Investigator, Georgia Emerging Infections Program"
+website = "https://med.emory.edu/directory/profile/?u=LWITT"
+orcid = "https://orcid.org/0000-0003-1475-6952"
+
+[[organization.researchers]]
+id = "stepy-thomas"
+full_name = "Stepy Thomas"
+role = "Co-Director, Georgia Emerging Infections Program"
+orcid = "https://orcid.org/0009-0000-0238-3568"
+
+[[organization.researchers]]
+id = "jessica-howard-anderson"
+full_name = "Jessica Howard-Anderson"
+role = "Interim Hospital Epidemiologist, Emory University Hospital Midtown; Assistant Professor, Division of Infectious Diseases, Emory University School of Medicine"
+website = "https://med.emory.edu/departments/medicine/divisions/infectious-diseases/profile/?u=JRHOWA4"
+google_scholar = "https://scholar.google.com/citations?user=ySlvYZgAAAAJ&hl=en"
+orcid = "https://orcid.org/0000-0001-9924-0458"
+
+[[organization.researchers]]
+id = "suzanne-segler"
+full_name = "Suzanne Segler"
+role = "Co-Director, Georgia Emerging Infections Program"
+
+[[organization.researchers]]
+id = "musu-sesay"
+full_name = "Musu M. Sesay"
+role = "Research Project Manager II, Kaiser Permanente Georgia"
 
 # Tools and products, transcribed from https://cidmath.org/dataresources/
 [[organization.tools]]

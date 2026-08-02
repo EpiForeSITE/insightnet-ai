@@ -108,19 +108,41 @@ def test_works_snapshot_carries_the_fields_the_dashboard_renders() -> None:
     required = {
         "id",
         "title",
-        "abstract",
         "keywords",
         "published_at",
         "url",
         "doi",
         "pmid",
-        "authors",
+        "has_abstract",
         "researcher_ids",
         "organization_ids",
     }
     assert required <= set(works[0])
     # Every record must be openable by a reader.
     assert all(work["url"] for work in works)
+    # Abstracts and coauthor lists live in the detail document, not the index; keeping
+    # them out is the whole point of the split.
+    assert not {"abstract", "authors"} & set(works[0])
+
+
+def test_works_details_document_covers_every_abstract_in_the_index() -> None:
+    index_path = ROOT / "data/works.json"
+    details_path = ROOT / "data/works-details.json"
+    if not index_path.exists():
+        pytest.skip("works.json has not been built yet")
+    assert details_path.exists(), "works.json was published without its detail document"
+
+    works = json.loads(index_path.read_text(encoding="utf-8"))["works"]
+    details = json.loads(details_path.read_text(encoding="utf-8"))["details"]
+    if not works:
+        pytest.skip("works.json is empty")
+
+    # Every work the index says has an abstract must actually have one to fetch, or a
+    # card would sit on "Loading abstract…" forever.
+    for work in works:
+        if work["has_abstract"]:
+            assert details.get(work["id"], {}).get("abstract"), work["id"]
+    assert set(details) <= {work["id"] for work in works}
 
 
 def test_overview_features_the_centers_carousel_and_health_partners() -> None:

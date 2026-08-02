@@ -1071,3 +1071,64 @@ def build_works_snapshot(
         "works": works,
         "health": health,
     }
+
+
+# ----------------------------------------------------------------------------------------
+# Splitting the snapshot for the browser
+# ----------------------------------------------------------------------------------------
+#
+# Abstracts and full coauthor lists are three quarters of the corpus by size and are only
+# needed once a reader is actually looking at publications. Keeping them in a second
+# document lets the dashboard load the searchable index first and fetch the bulk lazily,
+# instead of blocking on one file that grows with every collection run.
+
+DETAIL_FIELDS = ("abstract", "authors")
+
+
+def split_works_snapshot(snapshot: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Separate a works snapshot into a searchable index and its heavy detail document."""
+
+    index_works = []
+    details: dict[str, Any] = {}
+    for work in snapshot.get("works", []):
+        record = {key: value for key, value in work.items() if key not in DETAIL_FIELDS}
+        # The index still has to say whether an abstract exists, so a card can tell "not
+        # loaded yet" apart from "this record has no abstract".
+        record["has_abstract"] = bool(work.get("abstract"))
+        index_works.append(record)
+        detail = {field: work[field] for field in DETAIL_FIELDS if work.get(field)}
+        if detail:
+            details[work["id"]] = detail
+
+    index = {key: value for key, value in snapshot.items() if key != "works"}
+    index["works"] = index_works
+    detail_document = {
+        "schema_version": snapshot.get("schema_version", SCHEMA_VERSION),
+        "generated_at": snapshot.get("generated_at", ""),
+        "details": details,
+    }
+    return index, detail_document
+
+
+def merge_works_snapshot(
+    index: dict[str, Any] | None, details: dict[str, Any] | None
+) -> dict[str, Any] | None:
+    """Rebuild a complete snapshot from the two published documents.
+
+    The next collection run merges into the previous snapshot, so it needs the abstracts
+    and author lists back. This is the exact inverse of :func:`split_works_snapshot`.
+    """
+
+    if index is None:
+        return None
+    by_id = (details or {}).get("details", {})
+    snapshot = {key: value for key, value in index.items() if key != "works"}
+    works = []
+    for record in index.get("works", []):
+        work = {key: value for key, value in record.items() if key != "has_abstract"}
+        work.update(by_id.get(record.get("id"), {}))
+        for field in DETAIL_FIELDS:
+            work.setdefault(field, "" if field == "abstract" else [])
+        works.append(work)
+    snapshot["works"] = works
+    return snapshot

@@ -126,6 +126,276 @@ role = "Health Equity Lead; Associate Professor of Epidemiology"
 website = "https://www.jonzelner.net/"
 google_scholar = "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en"
 
+# The rest of the roster, transcribed from https://www.micom-insight.net/our-team, whose
+# MDHHS, University of Michigan, and Alumni groups sit behind tabs that only render once
+# clicked. The Alumni tab is deliberately not carried over.
+[[organization.researchers]]
+id = "derick-chia"
+full_name = "Derick Chia"
+role = "Epidemiology Project Manager, Michigan Department of Health and Human Services"
+
+[[organization.researchers]]
+id = "abigail-cheney"
+full_name = "Abigail Cheney"
+role = "Director, Data Systems and Operations, Michigan Department of Health and Human Services"
+
+[[organization.researchers]]
+id = "jeremy-kuo"
+full_name = "Jeremy Kuo"
+role = "Epidemiology Specialist, Michigan Department of Health and Human Services"
+
+[[organization.researchers]]
+id = "sarah-lyon-callo"
+full_name = "Sarah Lyon-Callo"
+role = "Senior Deputy Director, Public Health Administration, Michigan Department of Health and Human Services"
+orcid = "https://orcid.org/0000-0002-0042-9857"
+
+[[organization.researchers]]
+id = "ryan-malosh"
+full_name = "Ryan Malosh"
+role = "Director, Immunizations, Michigan Department of Health and Human Services"
+bio = "Epidemiologist working on immunization data exchange and respiratory virus surveillance."
+orcid = "https://orcid.org/0000-0003-3546-5935"
+
+[[organization.researchers]]
+id = "taylor-olsabeck"
+full_name = "Taylor Olsabeck"
+role = "VPD Immunization Epidemiology Section Manager, Michigan Department of Health and Human Services"
+
+[[organization.researchers]]
+id = "mohammed-abouzahr"
+full_name = "Mohammed Abouzahr"
+role = "Senior Full-Stack Engineer, University of Michigan"
+
+[[organization.researchers]]
+id = "prajakta-bonde"
+full_name = "Prajakta Bonde"
+role = "UX Researcher and Designer, University of Michigan"
+
+[[organization.researchers]]
+id = "olivia-brooks"
+full_name = "Olivia Brooks"
+role = "Clinical Research Coordinator, University of Michigan"
+orcid = "https://orcid.org/0009-0000-7308-352X"
+
+[[organization.researchers]]
+id = "caitlin-burr"
+full_name = "Caitlin Burr"
+role = "Communications Specialist, University of Michigan"
+
+[[organization.researchers]]
+id = "krista-dunger"
+full_name = "Krista Dunger"
+role = "MICOM Center Lead, University of Michigan"
+
+[[organization.researchers]]
+id = "julie-gilbert"
+full_name = "Julie Gilbert"
+role = "Data Analyst, University of Michigan"
+bio = "Listed by the center as Julie (Jules) Gilbert."
+
+[[organization.researchers]]
+id = "trevor-harkness"
+full_name = "Trevor Harkness"
+role = "Full-Stack Engineer, University of Michigan"
+
+[[organization.researchers]]
+id = "stephanie-iorga"
+full_name = "Stephanie Iorga"
+role = "Research Computer Specialist, MI-Support, University of Michigan"
+
+[[organization.researchers]]
+id = "jack-jacobs"
+full_name = "Jack Jacobs"
+role = "Data Analyst, MI-Support, University of Michigan"
+
+[[organization.researchers]]
+id = "nataniel-jayaram"
+full_name = "Nataniel Jayaram"
+role = "Qualitative Researcher, University of Michigan"
+
+[[organization.researchers]]
+id = "veronica-ma"
+full_name = "Veronica Ma"
+role = "UX Researcher and Designer, University of Michigan"
+bio = "Listed by the center as Veronica (Weiyi) Ma."
+
+[[organization.researchers]]
+id = "reiden-magdaleno"
+full_name = "Reiden Magdaleno"
+role = "Research Computer Specialist, University of Michigan"
+
+[[organization.researchers]]
+id = "kit-mclean"
+full_name = "Kit McLean"
+role = "Postdoctoral Research Fellow, University of Michigan"
+
+[[organization.researchers]]
+id = "jocelyn-nitta"
+full_name = "Jocelyn Nitta"
+role = "Senior Administrative Assistant, University of Michigan"
+
+[[organization.researchers]]
+id = "skyler-rogers"
+full_name = "Skyler Rogers"
+role = "Data Analyst, University of Michigan"
+
+[[organization.researchers]]
+id = "krzysztof-sakrejda"
+full_name = "Krzysztof Sakrejda"
+role = "Epidemiological Statistician, University of Michigan"
+orcid = "https://orcid.org/0000-0001-7587-355X"
+
+[[organization.researchers]]
+id = "betsy-salzman"
+full_name = "Betsy Salzman"
+role = "Research Lab Specialist, Epidemiology, University of Michigan"
+
+[[organization.researchers]]
+id = "dhruvil-shah"
+full_name = "Dhruvil Shah"
+role = "Senior Data Architect, University of Michigan"
+
+[[organization.researchers]]
+id = "shad-soldano"
+full_name = "Shad Soldano"
+role = "Qualitative Researcher, University of Michigan"
+
+[[organization.researchers]]
+id = "jiming-song"
+full_name = "Jiming Song"
+role = "Study Coordinator and Qualitative Researcher, University of Michigan"
+
+[[organization.researchers]]
+id = "mislael-valentin-cortes"
+full_name = "Mislael Valentín Cortés"
+role = "Postdoctoral Research Fellow, University of Michigan"
+orcid = "https://orcid.org/0000-0003-3714-4326"
+
+[[organization.researchers]]
+id = "lauren-van-petten"
+full_name = "Lauren Van Petten"
+role = "Research Area Specialist, University of Michigan"
+
+[[organization.researchers]]
+id = "ann-vitous"
+full_name = "Ann Vitous"
+role = "Lead Research Specialist, University of Michigan"
+
+[[organization.researchers]]
+id = "sarah-bassiouni"
+full_name = "Sarah Bassiouni"
+role = "Doctoral Student, University of Michigan"
+orcid = "https://orcid.org/0000-0002-2810-7008"
+
+[[organization.researchers]]
+id = "jonathan-braithwaite"
+full_name = "Jonathan Braithwaite"
+role = "Masters Student, University of Michigan"
+
+[[organization.researchers]]
+id = "carson-dudley"
+full_name = "Carson Dudley"
+role = "Doctoral Student, University of Michigan"
+orcid = "https://orcid.org/0009-0009-1336-2979"
+
+[[organization.researchers]]
+id = "sarah-goldberg"
+full_name = "Sarah Goldberg"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "diana-gomez"
+full_name = "Diana Gomez"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "ruipu-li"
+full_name = "Ruipu Li"
+role = "Doctoral Student, University of Michigan"
+orcid = "https://orcid.org/0009-0007-2923-3405"
+
+[[organization.researchers]]
+id = "abigail-monahan"
+full_name = "Abigail Monahan"
+role = "Graduate Student, University of Michigan"
+
+[[organization.researchers]]
+id = "wenhao-mu"
+full_name = "Wenhao Mu"
+role = "Doctoral Student, University of Michigan"
+orcid = "https://orcid.org/0009-0004-3054-4102"
+
+[[organization.researchers]]
+id = "annie-niu"
+full_name = "Annie Niu"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "chethan-prakash"
+full_name = "Chethan Prakash"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "leah-stump"
+full_name = "Leah Stump"
+role = "Graduate Student, University of Michigan"
+
+[[organization.researchers]]
+id = "jade-yang"
+full_name = "Jade Yang"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "troy-zirui-zhou"
+full_name = "Troy Zirui Zhou"
+role = "Doctoral Student, University of Michigan"
+
+[[organization.researchers]]
+id = "wyatt-alpers"
+full_name = "Wyatt Alpers"
+role = "MI Lighthouse Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "meghna-ancha"
+full_name = "Meghna Ancha"
+role = "Integration and Policy Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "marissa-diggs"
+full_name = "Marissa Diggs"
+role = "MI-Support Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "jon-flores"
+full_name = "Jon Flores"
+role = "Integration and Policy Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "elise-fricklas"
+full_name = "Elise Fricklas"
+role = "Integration and Policy Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "cameron-hempton"
+full_name = "Cameron Hempton"
+role = "MI-Support Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "shirley-li"
+full_name = "Shirley Li"
+role = "MI Lighthouse Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "christian-ratcliff"
+full_name = "Christian Ratcliff"
+role = "MI Lighthouse Intern, University of Michigan"
+
+[[organization.researchers]]
+id = "elora-shakoor"
+full_name = "Elora Shakoor"
+role = "MI-Support Intern, University of Michigan"
+
 # Tools and products, transcribed from https://www.micom-insight.net/projects
 [[organization.tools]]
 name = "MICOM-Hub"

@@ -15,7 +15,7 @@ from typing import Any
 
 from insightnet.config import load_profiles
 from insightnet.pipeline import build_snapshot, split_snapshot
-from insightnet.works import build_works_snapshot
+from insightnet.works import build_works_snapshot, merge_works_snapshot, split_works_snapshot
 
 
 def write_snapshot(snapshot: dict, output: str | Path) -> None:
@@ -119,6 +119,14 @@ def parse_works_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--profiles-dir", default="config/organizations")
     parser.add_argument("--output", default="data/works.json")
     parser.add_argument(
+        "--details-output",
+        default="",
+        help=(
+            "Where to write abstracts and coauthor lists "
+            "(defaults to works-details.json beside --output)"
+        ),
+    )
+    parser.add_argument(
         "--site-dir",
         default="site/data",
         help="Copy the works snapshot into the static site (empty to disable)",
@@ -136,14 +144,32 @@ def parse_works_args(argv: list[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
+def works_details_path(output: str | Path, details_output: str = "") -> Path:
+    """Where the abstracts and coauthor lists live for a given works index."""
+
+    if details_output:
+        return Path(details_output)
+    output = Path(output)
+    return output.with_name(f"{output.stem}-details{output.suffix}")
+
+
 def works_main(argv: list[str] | None = None) -> int:
     args = parse_works_args(argv)
+    details_output = works_details_path(args.output, args.details_output)
     profiles = load_profiles(args.network_config, args.profiles_dir)
-    previous = None if args.replace else read_snapshot(args.output)
+    previous = (
+        None
+        if args.replace
+        # The published index has no abstracts or authors, so put them back before
+        # merging; otherwise every retained work would lose its text on each run.
+        else merge_works_snapshot(read_snapshot(args.output), read_snapshot(details_output))
+    )
     snapshot = build_works_snapshot(profiles, previous_snapshot=previous)
+    index, details = split_works_snapshot(snapshot)
 
     site_dir = Path(args.site_dir) if args.site_dir else None
-    _publish(snapshot, args.output, site_dir / Path(args.output).name if site_dir else "")
+    _publish(index, args.output, site_dir / Path(args.output).name if site_dir else "")
+    _publish(details, details_output, site_dir / details_output.name if site_dir else "")
 
     stats = snapshot["stats"]
     print(
@@ -151,6 +177,7 @@ def works_main(argv: list[str] | None = None) -> int:
         f"({stats['preprints']} preprints, {stats['with_abstract']} with abstracts) "
         f"for {stats['researchers_with_works']} researchers"
     )
+    print(f"Wrote {details_output}: abstracts and coauthor lists for {len(details['details'])} works")
     if args.strict and stats["sources_attention"]:
         print(f"{stats['sources_attention']} works source(s) need attention")
         return 1

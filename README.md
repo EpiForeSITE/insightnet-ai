@@ -202,7 +202,7 @@ filtering and keyword search run locally in the visitor's browser.
 
 ## Data contract
 
-Data is split across three versioned documents so each can refresh on its own schedule
+Data is split across four versioned documents so each can refresh on its own schedule
 and so the browser only downloads the large publication corpus when it is needed.
 
 `data/profiles.json` — the index the dashboard loads first:
@@ -216,23 +216,42 @@ and so the browser only downloads the large publication corpus when it is needed
 `data/activity.json` — `items`, the normalized activity records linked by
 `organization_id`.
 
-`data/works.json` — `works`, plus its own `health`, `stats`, and
+`data/works.json` — the publication index: `works`, plus its own `health`, `stats`, and
 `works_per_researcher` counts. Each work carries:
 
 | Field | Notes |
 |---|---|
-| `title`, `abstract`, `keywords` | Abstract truncated to `network.abstract_max_chars` |
+| `title`, `keywords` | |
 | `published_at`, `year` | ISO date; unknown month/day pad to the 1st |
 | `url`, `doi`, `pmid`, `pmcid`, `arxiv_id` | Every record has at least one identifier or a URL |
-| `authors` | Full ordered coauthor list as `{name, orcid}`, capped at 200, with `author_count` holding the true total — this is the basis for a coauthorship network |
+| `author_count` | The true number of coauthors, so a card can be rendered before the names arrive |
+| `has_abstract` | Whether `works-details.json` holds an abstract for this record |
 | `type`, `venue`, `preprint_server` | `article` or `preprint`; `venue` is a journal, never a preprint server |
 | `researcher_ids`, `organization_ids` | Every network member and center credited on the work |
 | `sources` | Which APIs contributed to the merged record |
 | `first_seen_at`, `last_seen_at` | Retention bookkeeping |
 
-The dashboard fetches `profiles.json` and `activity.json` before the first paint and
-`works.json` immediately afterward, so publications never delay the initial render while
-still being searchable by the time a query is submitted.
+`data/works-details.json` — `details`, keyed by work `id`:
+
+| Field | Notes |
+|---|---|
+| `abstract` | Truncated to `network.abstract_max_chars` |
+| `authors` | Full ordered coauthor list as `{name, orcid}`, capped at 200 — this is the basis for a coauthorship network |
+
+Abstracts and coauthor lists are roughly three quarters of the corpus by size, and they
+matter only once a reader is looking at publications, so they are published separately.
+The dashboard fetches `profiles.json` and `activity.json` before the first paint,
+`works.json` immediately afterward, and `works-details.json` once the browser is idle or
+as soon as the reader opens **Publications** or **Find experts** — whichever comes first.
+The expertise finder waits for it, so a search never returns a partial answer.
+
+Splitting by field rather than by center is deliberate: a work co-authored across centers
+carries several `organization_ids`, so per-center files would duplicate the heaviest
+records and a network-wide search would have to fetch all of them anyway.
+
+`insightnet-works` writes both documents and reads both back on the next run, so retained
+abstracts survive the merge. `split_works_snapshot` and `merge_works_snapshot` in
+`insightnet/works.py` are exact inverses and are tested as such.
 
 External text should be treated as informational, not authoritative. Configure only
 public sources you are permitted to process, keep profile details work-related, and

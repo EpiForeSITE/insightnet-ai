@@ -610,3 +610,16 @@ type = "healthcare"
 summary = "National clinical and anatomic pathology reference laboratory owned by the University of Utah."
 website = "https://www.aruplab.com/"
 location = "Utah"
+
+# Also named as healthcare system partners on https://epiforesite.github.io/ForeSITE_Website/team/
+[[organization.partners]]
+name = "University of Utah Health"
+type = "healthcare"
+website = "https://healthcare.utah.edu/"
+location = "Utah"
+
+[[organization.partners]]
+name = "Kootenai Health"
+type = "healthcare"
+website = "https://www.kh.org/"
+location = "Coeur d'Alene, Idaho"

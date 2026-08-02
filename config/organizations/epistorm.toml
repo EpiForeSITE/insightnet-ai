@@ -168,6 +168,54 @@ bio = "Biocomplexity Institute, University of Virginia."
 website = "https://biocomplexity.virginia.edu/our-team/bryan-lewis"
 google_scholar = "https://scholar.google.com/citations?user=iBoF0nYAAAAJ&hl=en"
 
+# The remaining consortium members listed under "The People" on
+# https://www.epistorm.org/team, grouped there by home institution.
+[[organization.researchers]]
+id = "jared-auclair"
+full_name = "Jared Auclair"
+role = "Vice Provost Research Economic Development and Director of Bioinnovation"
+bio = "Northeastern University."
+orcid = "https://orcid.org/0000-0002-3094-1544"
+
+[[organization.researchers]]
+id = "daria-alekseeva"
+full_name = "Daria Alekseeva"
+role = "Program Manager"
+bio = "Network Science Institute, Northeastern University."
+
+[[organization.researchers]]
+id = "shoba-nair"
+full_name = "Shoba Nair"
+role = "Director of Epidemiology and Evaluation"
+bio = "Boston Public Health Commission."
+
+[[organization.researchers]]
+id = "ella-douglas-durham"
+full_name = "Ella Douglas-Durham"
+role = "Public Health Scientist"
+bio = "Boston Public Health Commission."
+orcid = "https://orcid.org/0000-0001-6073-3167"
+
+[[organization.researchers]]
+id = "nicole-stephenson"
+full_name = "Nicole Stephenson"
+role = "Director, Data Science and Modeling"
+bio = "Ginkgo Biosecurity."
+
+[[organization.researchers]]
+id = "doug-sawyer"
+full_name = "Doug Sawyer"
+role = "Chief Academics Officer"
+bio = "MaineHealth."
+orcid = "https://orcid.org/0009-0006-7584-0700"
+
+[[organization.researchers]]
+id = "daniel-nigrin"
+full_name = "Daniel Nigrin"
+role = "Chief Information Officer"
+bio = "MaineHealth."
+orcid = "https://orcid.org/0000-0003-2847-6353"
+
 # Tools and products, transcribed from https://www.epistorm.org/
 [[organization.tools]]
 name = "Epydemix"

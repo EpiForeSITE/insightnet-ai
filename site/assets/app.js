@@ -4,6 +4,10 @@
   const PROFILES_URL = "./data/profiles.json";
   const ACTIVITY_URL = "./data/activity.json";
   const WORKS_URL = "./data/works.json";
+  // Abstracts and coauthor lists are most of the corpus by size and matter only once a
+  // reader is looking at publications, so they arrive in a second document that is
+  // fetched after the page is already usable.
+  const WORKS_DETAILS_URL = "./data/works-details.json";
   const VIEWS = ["overview", "tools", "works", "partners", "centers", "experts", "health"];
   const TOOL_CATEGORY_LABELS = {
     dashboard: "Dashboard",
@@ -42,6 +46,8 @@
   let activity = { items: [] };
   let works = null;
   let worksPromise = null;
+  let detailsPromise = null;
+  let detailsLoaded = false;
   let organizationsById = new Map();
   let researchersById = new Map();
   let researcherByOrcid = new Map();
@@ -298,7 +304,9 @@
           work.abstract
             ? `<p class="work-abstract">${escapeHtml(work.abstract)}</p>
                <button class="text-action work-toggle" type="button" data-toggle-abstract>Show full abstract</button>`
-            : '<p class="work-abstract is-missing">No abstract was published for this record.</p>'
+            : work.has_abstract && !detailsLoaded
+              ? '<p class="work-abstract is-missing">Loading abstract…</p>'
+              : '<p class="work-abstract is-missing">No abstract was published for this record.</p>'
         }
         ${tagList(work.keywords, 8)}
         ${identifierLinks(work)}
@@ -1110,6 +1118,9 @@
     } else {
       stopCarousel();
     }
+    // Anyone reading publications or hunting for experts wants abstracts, so start the
+    // second fetch the moment they head that way rather than making them wait for it.
+    if (selected === "works" || selected === "experts") loadWorkDetails();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -1237,6 +1248,7 @@
       // returns a partial answer.
       byId("expert-summary").textContent = "Searching…";
       await worksPromise;
+      await loadWorkDetails();
       renderExpertResults(searchExperts(query));
     });
   }
@@ -1245,6 +1257,32 @@
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) throw new Error(`${url} returned ${response.status}`);
     return response.json();
+  }
+
+  // Fold the abstracts and coauthor lists back onto the work records, so everything
+  // downstream keeps seeing one whole object. Runs at most once.
+  function loadWorkDetails() {
+    if (detailsPromise) return detailsPromise;
+    detailsPromise = worksPromise
+      .then(() => fetchJson(WORKS_DETAILS_URL))
+      .then((payload) => {
+        const byWorkId = payload.details || {};
+        for (const work of works?.works || []) {
+          const detail = byWorkId[work.id];
+          if (detail) Object.assign(work, detail);
+          // The cached search blob was built without the abstract; drop it so the next
+          // search rebuilds over the full text.
+          delete work._text;
+        }
+        detailsLoaded = true;
+        if (byId("view-works")?.classList.contains("is-active")) renderWorks();
+      })
+      .catch(() => {
+        // A missing detail document is not fatal: titles, keywords, and every filter
+        // still work, and the cards say so rather than pretending the abstract is absent.
+        detailsLoaded = false;
+      });
+    return detailsPromise;
   }
 
   function loadWorks() {
@@ -1295,8 +1333,17 @@
       renderCenter(snapshot.organizations?.[0]?.id || "");
       renderHealth();
       showView(window.location.hash.slice(1) || "overview", false);
-      // The publication corpus is the largest payload, so it loads after first paint.
+      // The publication corpus is the largest payload, so it loads after first paint:
+      // first the searchable index, then the abstracts and coauthor lists once the
+      // browser is idle. A reader who never opens Publications never pays for the latter
+      // until then, and one who does usually finds it already there.
       worksPromise = loadWorks();
+      const warmDetails = () => worksPromise.then(loadWorkDetails);
+      if (typeof window.requestIdleCallback === "function") {
+        window.requestIdleCallback(warmDetails, { timeout: 5000 });
+      } else {
+        window.setTimeout(warmDetails, 2000);
+      }
     } catch (error) {
       const message = byId("app-message");
       message.textContent = `The network snapshot could not be loaded. ${error.message}`;

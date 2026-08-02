@@ -5,7 +5,7 @@ id = "dma-prime"
 name = "Disease Modeling and Analytics to Inform Outbreak Preparedness, Response, Intervention, Mitigation, and Elimination"
 acronym = "DMA-PRIME"
 summary = "DMA-PRIME uses data-driven approaches for infectious disease forecasting, decision-support toolkits, and communication of analytic results to public health organizations and decision-makers."
-website = "https://www.clemson.edu/cbshs/phmr/"
+website = "https://dma-prime.org/"
 location = "South Carolina"
 focus_areas = [ "infectious disease forecasting", "outbreak analytics", "decision support", "data visualization", "public health response",]
 keywords = [ "electronic health records", "wastewater surveillance", "digital trace data", "mobile health clinics",]
@@ -66,6 +66,169 @@ website = "https://www.lucinezhong.com/"
 google_scholar = "https://scholar.google.com/citations?user=WggT7aEAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-7934-7634"
 linkedin = "https://www.linkedin.com/in/lu-zhong-b54419bb/"
+
+# The rest of the roster, transcribed from the team section of the center's own site,
+# https://dma-prime.org/, which carries a fuller listing than the Clemson department page
+# this profile pointed at before.
+[[organization.researchers]]
+id = "kerry-howard"
+full_name = "Kerry A. Howard"
+role = "Research Manager"
+bio = "Researches mobile-health-clinic care delivery and decision-making methodology for cognitive decline, opioid use disorder, hepatitis C, and community child safety."
+orcid = "https://orcid.org/0000-0002-0107-5202"
+
+[[organization.researchers]]
+id = "jiande-wu"
+full_name = "Jiande Wu"
+role = "Data Manager and Data Scientist"
+bio = "Oversees electronic health record extraction and applies machine learning to build early warning systems for infectious disease outbreaks."
+orcid = "https://orcid.org/0000-0002-9357-2977"
+
+[[organization.researchers]]
+id = "emily-serman"
+full_name = "Emily Serman"
+role = "Research Associate"
+bio = "Studies the intersection of climate and infectious disease dynamics using large-scale data and geospatial analysis."
+orcid = "https://orcid.org/0000-0002-1128-0154"
+
+[[organization.researchers]]
+id = "iromi-jayawardena"
+full_name = "Iromi Jayawardena"
+role = "Research Associate"
+bio = "Uses electronic health record data, causal inference, and target trial emulation to evaluate respiratory disease burden and vaccine effectiveness."
+orcid = "https://orcid.org/0009-0007-9905-9510"
+
+[[organization.researchers]]
+id = "gaurob-saha"
+full_name = "Gaurob Saha"
+role = "Research Engineer"
+bio = "Applies statistical and machine learning techniques to hospital and mobile health clinic data."
+
+[[organization.researchers]]
+id = "karen-atkinson"
+full_name = "Karen Atkinson"
+role = "Administrative Coordinator and Research Program Manager"
+
+[[organization.researchers]]
+id = "minjae-woo"
+full_name = "MinJae Woo"
+role = "Assistant Professor, Health Informatics"
+bio = "Works on artificial intelligence in healthcare, predictive analytics, and public health intelligence."
+orcid = "https://orcid.org/0000-0001-6015-2100"
+
+[[organization.researchers]]
+id = "brian-witrick"
+full_name = "Brian Witrick"
+role = "Assistant Professor; Embedded Scholar, South Carolina Department of Public Health"
+bio = "Works on spatial epidemiology, small area estimation, and spatio-temporal modeling."
+orcid = "https://orcid.org/0000-0002-3800-8695"
+
+[[organization.researchers]]
+id = "sarah-griffin"
+full_name = "Sarah F. Griffin"
+role = "Professor"
+bio = "Community-based health researcher working on implementation research and mixed-method evaluation of complex health interventions."
+orcid = "https://orcid.org/0000-0003-4820-3985"
+
+[[organization.researchers]]
+id = "brandon-boatwright"
+full_name = "Brandon Boatwright"
+role = "Affiliated Faculty; Assistant Professor and Director, Social Media Listening Center"
+bio = "Leads social and digital media monitoring for real-time outbreak communication insight."
+orcid = "https://orcid.org/0000-0003-1076-0217"
+
+[[organization.researchers]]
+id = "kathleen-cartmell"
+full_name = "Kathleen Cartmell"
+role = "Affiliated Faculty; Research Faculty, Department of Public Health Sciences"
+bio = "Health services researcher working on dissemination and implementation of evidence-based disease prevention and control."
+orcid = "https://orcid.org/0000-0001-9324-1636"
+
+[[organization.researchers]]
+id = "delphine-dean"
+full_name = "Delphine Dean"
+role = "Affiliated Faculty; Ron and Jane Lindsay Family Innovation Professor of Bioengineering"
+bio = "Directs the Clemson Center for Innovative Medical Devices and Sensors and the REDDI Lab; leads SARS-CoV-2 variant and saliva-based diagnostics research."
+orcid = "https://orcid.org/0000-0002-8631-2640"
+
+[[organization.researchers]]
+id = "david-freedman"
+full_name = "David Freedman"
+role = "Affiliated Faculty; Professor and Chair, Environmental Engineering"
+bio = "Leads the center's wastewater-based epidemiology work."
+
+[[organization.researchers]]
+id = "ronald-gimbel"
+full_name = "Ronald Gimbel"
+role = "Affiliated Faculty; Professor and Director, Clemson Rural Health"
+orcid = "https://orcid.org/0000-0001-8185-4013"
+
+[[organization.researchers]]
+id = "alain-litwin"
+full_name = "Alain Litwin"
+role = "Affiliated Faculty; Professor of Medicine and Executive Director, Addiction Medicine Center, Prisma Health"
+orcid = "https://orcid.org/0000-0002-6717-0288"
+
+[[organization.researchers]]
+id = "irene-pericot-valverde"
+full_name = "Irene Pericot-Valverde"
+role = "Affiliated Faculty, Department of Public Health Sciences"
+bio = "Researches hepatitis C, HIV, and opioid treatment outcomes among people who inject drugs."
+orcid = "https://orcid.org/0000-0001-5814-0397"
+
+[[organization.researchers]]
+id = "erin-ash"
+full_name = "Erin Ash"
+role = "Affiliated Faculty; Associate Professor of Communication; Embedded Scholar, South Carolina Department of Public Health"
+bio = "Studies the role of media in public perceptions of health behaviors and policies."
+orcid = "https://orcid.org/0000-0002-9718-9756"
+
+[[organization.researchers]]
+id = "amanda-bleichrodt"
+full_name = "Amanda Bleichrodt"
+role = "Postdoctoral Fellow, Disease Modeling and Forecasting"
+bio = "Refines statistical and mathematical forecasting toolkits and builds user-friendly forecasting tools."
+orcid = "https://orcid.org/0009-0007-2524-369X"
+
+[[organization.researchers]]
+id = "shakhawat-tanim"
+full_name = "Shakhawat H. Tanim"
+role = "Postdoctoral Fellow, GIS and Data Visualization"
+bio = "Develops GIS and visualization methods to detect disease hotspots and guide delivery of health resources."
+orcid = "https://orcid.org/0000-0002-0609-0233"
+
+[[organization.researchers]]
+id = "dongyun-han"
+full_name = "Dongyun Han"
+role = "Postdoctoral Fellow, Computer Science"
+bio = "Works on visual analytics, data visualization, virtual reality, and human-computer interaction."
+orcid = "https://orcid.org/0000-0002-9517-5326"
+
+[[organization.researchers]]
+id = "grace-austen"
+full_name = "Grace Austen"
+role = "Research Associate, Computing"
+bio = "Builds disease visualization tools for public health organizations and decision makers."
+
+[[organization.researchers]]
+id = "tanvir-ahammed"
+full_name = "Tanvir Ahammed"
+role = "Graduate Research Assistant"
+bio = "PhD student in Applied Health Research and Evaluation working on statistical methodology for infectious disease epidemiology."
+
+[[organization.researchers]]
+id = "aniqua-anjum"
+full_name = "Aniqua Anjum"
+role = "Graduate Research Assistant"
+bio = "PhD student in Applied Health Research and Evaluation applying statistical methods to public health challenges."
+orcid = "https://orcid.org/0000-0001-6074-363X"
+
+[[organization.researchers]]
+id = "carolina-liskey"
+full_name = "Carolina Liskey"
+role = "Graduate Research Assistant"
+bio = "PhD student in the Clemson-MUSC Biomedical Data Science and Informatics program working on disease modeling and analytics."
+orcid = "https://orcid.org/0009-0005-8267-6657"
 
 # No tools or products are named on this center's public pages yet; the site describes
 # planned activities rather than released deliverables. Add [[organization.tools]]

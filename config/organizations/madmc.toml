@@ -147,6 +147,24 @@ full_name = "Nayanjot Kaur Rai, MPH, BDS"
 role = "Program Manager, Medical School, University of Minnesota"
 orcid = "https://orcid.org/0000-0001-9614-8234"
 
+# The center's team page also lists trainee cohorts by year. Only the current cohort is
+# carried here; earlier cohorts have moved on, and one of them (Sophie Wiitala) is already
+# recorded above as staff.
+[[organization.researchers]]
+id = "isabel-eaton"
+full_name = "Isabel Eaton"
+role = "Trainee, 2026, University of Minnesota"
+
+[[organization.researchers]]
+id = "isabel-ricke"
+full_name = "Isabel Ricke"
+role = "Trainee, 2026, University of Minnesota"
+
+[[organization.researchers]]
+id = "nafeesa-rizwan"
+full_name = "Nafeesa Rizwan"
+role = "Trainee, 2026, University of Minnesota"
+
 # Tools in development, transcribed from
 # https://www.sph.umn.edu/research/centers/midwest-analytics-and-disease-modeling/
 [[organization.tools]]

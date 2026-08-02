@@ -125,6 +125,231 @@ full_name = "Abigail Sykes"
 role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
 expertise = [ "statistical modeling", "machine learning", "mechanistic modeling", "epidemic forecasting",]
 
+# The rest of the roster, transcribed from https://accidda.org/team/, which groups it as
+# subaward leads, core staff, graduate students, other faculty, and affiliated faculty.
+# The page publishes no per-person links, so each ORCID below was resolved separately and
+# kept only where the record's own affiliations or publication history confirm the person.
+[[organization.researchers]]
+id = "beth-daly-accidda"
+full_name = "Beth Daly"
+role = "Subaward Lead, Council of State and Territorial Epidemiologists"
+
+[[organization.researchers]]
+id = "matt-hitchings"
+full_name = "Matt Hitchings"
+role = "Subaward Lead, University of Florida"
+
+[[organization.researchers]]
+id = "harry-hochheiser"
+full_name = "Harry Hochheiser"
+role = "Subaward Lead, University of Pittsburgh"
+orcid = "https://orcid.org/0000-0001-8793-9982"
+
+[[organization.researchers]]
+id = "luke-mullany"
+full_name = "Luke Mullany"
+role = "Subaward Lead, Johns Hopkins University Applied Physics Laboratory"
+orcid = "https://orcid.org/0000-0003-4668-9803"
+
+[[organization.researchers]]
+id = "ajitesh-srivastava"
+full_name = "Ajitesh Srivastava"
+role = "Subaward Lead, University of Southern California"
+bio = "Works on epidemic forecasting from wastewater and ensemble machine learning for influenza. The team page spells the surname Srivasta."
+orcid = "https://orcid.org/0000-0002-8706-5717"
+
+[[organization.researchers]]
+id = "jennifer-anderson"
+full_name = "Jennifer Anderson"
+role = "Core Staff, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "erica-carcelen"
+full_name = "Erica Carcelen"
+role = "Core Staff, Johns Hopkins University"
+orcid = "https://orcid.org/0000-0002-7063-926X"
+
+[[organization.researchers]]
+id = "imane-hedadji"
+full_name = "Imane Hedadji"
+role = "Core Staff, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "miriam-johnson"
+full_name = "Miriam Johnson"
+role = "Core Staff, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "cammie-lam"
+full_name = "Cammie Lam"
+role = "Core Staff, Johns Hopkins University"
+
+[[organization.researchers]]
+id = "yue-liu"
+full_name = "Yue Liu"
+role = "Core Staff, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "emily-przykucki"
+full_name = "Emily Przykucki"
+role = "Core Staff, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "nhi-dinh"
+full_name = "Nhi Dinh"
+role = "Graduate Student, Johns Hopkins University"
+
+[[organization.researchers]]
+id = "kelly-geith"
+full_name = "Kelly Geith"
+role = "Graduate Student, University of North Carolina at Chapel Hill"
+orcid = "https://orcid.org/0000-0002-9762-7445"
+
+[[organization.researchers]]
+id = "alisa-hamilton"
+full_name = "Alisa Hamilton"
+role = "Graduate Student, Johns Hopkins University"
+orcid = "https://orcid.org/0000-0001-8783-9383"
+
+[[organization.researchers]]
+id = "katie-hogan"
+full_name = "Katie Hogan"
+role = "Graduate Student, Johns Hopkins University"
+
+[[organization.researchers]]
+id = "stephanie-kern-allely"
+full_name = "Stephanie Kern-Allely"
+role = "Graduate Student, University of North Carolina at Chapel Hill"
+bio = "Works on tuberculosis and vaccination programs in the US-affiliated Pacific Islands."
+orcid = "https://orcid.org/0000-0001-9186-5090"
+
+[[organization.researchers]]
+id = "kevin-johnson"
+full_name = "Kevin Johnson"
+role = "Graduate Student, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "conor-millard"
+full_name = "Conor Millard"
+role = "Graduate Student, Johns Hopkins University"
+
+[[organization.researchers]]
+id = "shahar-stern"
+full_name = "Shahar Stern"
+role = "Graduate Student, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "carson-tellford"
+full_name = "Carson Tellford"
+role = "Graduate Student, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "derek-cummings"
+full_name = "Derek Cummings"
+role = "Faculty, Johns Hopkins University"
+bio = "Infectious disease epidemiologist working on immunity, transmission dynamics, and the impact of nonpharmaceutical interventions."
+orcid = "https://orcid.org/0000-0002-9437-1907"
+
+[[organization.researchers]]
+id = "paul-delamater"
+full_name = "Paul Delamater"
+role = "Faculty, University of North Carolina at Chapel Hill"
+bio = "Health geographer working on spatial accessibility and vaccination coverage."
+orcid = "https://orcid.org/0000-0003-3627-9739"
+
+[[organization.researchers]]
+id = "bethany-diprete"
+full_name = "Bethany DiPrete"
+role = "Faculty, University of North Carolina at Chapel Hill"
+bio = "Epidemiologist working on cholera transmission and opioid overdose risk in North Carolina."
+orcid = "https://orcid.org/0000-0003-1298-4433"
+
+[[organization.researchers]]
+id = "jess-edwards"
+full_name = "Jess Edwards"
+role = "Faculty, University of North Carolina at Chapel Hill"
+bio = "Epidemiologic methodologist working on measurement error, misclassification, and causal inference."
+orcid = "https://orcid.org/0000-0002-1741-335X"
+
+[[organization.researchers]]
+id = "lauren-gardner"
+full_name = "Lauren Gardner"
+role = "Faculty, Johns Hopkins University"
+bio = "Built and led the Johns Hopkins COVID-19 dashboard; works on network models of epidemic risk."
+orcid = "https://orcid.org/0000-0003-1083-3850"
+
+[[organization.researchers]]
+id = "kate-grabowski"
+full_name = "Kate Grabowski"
+role = "Faculty, Johns Hopkins University"
+bio = "Infectious disease epidemiologist working on HIV transmission and prevention in East Africa."
+orcid = "https://orcid.org/0000-0002-4451-3436"
+
+[[organization.researchers]]
+id = "alison-hill"
+full_name = "Alison Hill"
+role = "Faculty, University of Toronto"
+bio = "Models within-host and population dynamics of infection and treatment."
+orcid = "https://orcid.org/0000-0002-6583-3623"
+
+[[organization.researchers]]
+id = "clifton-mckee"
+full_name = "Clifton McKee"
+role = "Faculty, Johns Hopkins University"
+bio = "Disease ecologist working on zoonotic spillover and cross-species transmission."
+orcid = "https://orcid.org/0000-0002-6149-0598"
+
+[[organization.researchers]]
+id = "saki-takahashi"
+full_name = "Saki Takahashi"
+role = "Faculty, Johns Hopkins University"
+bio = "Works on serological surveillance and immunity to infectious disease."
+orcid = "https://orcid.org/0000-0001-5413-5507"
+
+[[organization.researchers]]
+id = "amy-wesolowski"
+full_name = "Amy Wesolowski"
+role = "Faculty, Johns Hopkins University"
+bio = "Uses mobility data to study the spatial spread of infectious disease."
+orcid = "https://orcid.org/0000-0001-6320-3575"
+
+[[organization.researchers]]
+id = "ross-boyce"
+full_name = "Ross Boyce"
+role = "Affiliated Faculty, University of North Carolina at Chapel Hill"
+bio = "Infectious disease physician working on malaria diagnostics and vaccination in sub-Saharan Africa."
+orcid = "https://orcid.org/0000-0002-9489-6324"
+
+[[organization.researchers]]
+id = "emily-gurley"
+full_name = "Emily Gurley"
+role = "Affiliated Faculty, Johns Hopkins University"
+orcid = "https://orcid.org/0000-0002-8648-9403"
+
+[[organization.researchers]]
+id = "laura-hammitt"
+full_name = "Laura Hammit"
+role = "Affiliated Faculty, Johns Hopkins University"
+bio = "Vaccine researcher; publishes as Laura L. Hammitt."
+orcid = "https://orcid.org/0000-0001-6051-1484"
+
+[[organization.researchers]]
+id = "mark-holmes"
+full_name = "Mark Holmes"
+role = "Affiliated Faculty, University of North Carolina at Chapel Hill"
+
+[[organization.researchers]]
+id = "eili-klein"
+full_name = "Eili Klein"
+role = "Affiliated Faculty, Johns Hopkins University"
+bio = "Works on antimicrobial resistance and the economics of infectious disease."
+orcid = "https://orcid.org/0000-0002-1304-5289"
+
+[[organization.researchers]]
+id = "will-redman"
+full_name = "Will Redman"
+role = "Affiliated Faculty, Johns Hopkins University"
+
 # Tools and products, transcribed from https://accidda.org/623-2/
 [[organization.tools]]
 name = "flepiMoP"

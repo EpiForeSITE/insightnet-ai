@@ -1,5 +1,6 @@
 import pytest
 
+from insightnet import works
 from insightnet.works import (
     WorksResult,
     _finalize_type,
@@ -308,3 +309,57 @@ def test_source_failures_are_isolated_per_researcher(monkeypatch) -> None:
     assert statuses["works_orcid"] == "ok"
     assert [work["title"] for work in snapshot["works"]] == ["Kept"]
     assert snapshot["stats"]["sources_attention"] == 1
+
+
+def test_split_and_merge_round_trip_a_works_snapshot() -> None:
+    """The published pair must recombine into exactly what was collected.
+
+    The weekly run merges into the previous snapshot, so a lossy split would quietly
+    erase every retained abstract and coauthor list one run at a time.
+    """
+
+    snapshot = {
+        "schema_version": 3,
+        "generated_at": "2026-01-01T00:00:00Z",
+        "stats": {"works": 2},
+        "works": [
+            {
+                "id": "one",
+                "title": "A paper",
+                "abstract": "Something worth reading.",
+                "authors": [{"name": "Jane Q. Researcher", "orcid": ""}],
+                "researcher_ids": ["jane"],
+            },
+            {
+                "id": "two",
+                "title": "A record with no abstract",
+                "abstract": "",
+                "authors": [],
+                "researcher_ids": [],
+            },
+        ],
+    }
+
+    index, details = works.split_works_snapshot(snapshot)
+
+    assert [work["id"] for work in index["works"]] == ["one", "two"]
+    assert index["stats"] == snapshot["stats"]
+    assert all("abstract" not in work and "authors" not in work for work in index["works"])
+    assert [work["has_abstract"] for work in index["works"]] == [True, False]
+    assert set(details["details"]) == {"one"}
+
+    assert works.merge_works_snapshot(index, details) == snapshot
+
+
+def test_merging_without_a_detail_document_still_returns_whole_records() -> None:
+    """A missing or unreadable detail file must not produce half-formed works."""
+
+    index = {
+        "schema_version": 3,
+        "works": [{"id": "one", "title": "A paper", "has_abstract": True}],
+    }
+
+    merged = works.merge_works_snapshot(index, None)
+
+    assert merged["works"] == [{"id": "one", "title": "A paper", "abstract": "", "authors": []}]
+    assert works.merge_works_snapshot(None, None) is None

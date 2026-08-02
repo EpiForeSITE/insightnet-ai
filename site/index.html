@@ -41,7 +41,7 @@
           <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
           <button class="nav-link" type="button" data-view="tools">Tools</button>
           <button class="nav-link" type="button" data-view="works">Publications</button>
-          <button class="nav-link" type="button" data-view="activity">Activity</button>
+          <button class="nav-link" type="button" data-view="partners">Partners</button>
           <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
           <button class="nav-link" type="button" data-view="experts">Find experts</button>
           <button class="nav-link" type="button" data-view="health">Data status</button>
@@ -140,13 +140,6 @@
           <div class="carousel-dots" id="carousel-dots"></div>
         </div>
 
-        <div class="section-heading section-heading-spaced">
-          <div>
-            <p class="kicker">Across the network</p>
-            <h2>What is taking shape</h2>
-          </div>
-          <button class="text-action" type="button" data-go-to="activity">See all activity →</button>
-        </div>
         <div id="overview-empty" class="empty-state" hidden>
           <span class="empty-index">01</span>
           <h3>Your network is ready to map.</h3>
@@ -155,34 +148,19 @@
             automatically—no website edits needed.
           </p>
         </div>
-        <div id="latest-activity" class="latest-grid"></div>
 
         <div class="section-heading section-heading-spaced">
           <div>
             <p class="kicker">Public health in practice</p>
             <h2>Health partners</h2>
             <p>
-              The health departments, agencies, and health systems InsightNet centers build
-              with. Every center works with partners in its own region.
+              Every center works with the health departments, agencies, and health systems in
+              its own region. Pick a kind of partner to browse them.
             </p>
           </div>
+          <button class="text-action" type="button" data-go-to="partners">See all partners →</button>
         </div>
-        <form id="partners-filters" class="filter-bar" aria-label="Health partner filters">
-          <label>
-            <span>Search partners</span>
-            <input id="partners-query" type="search" placeholder="Utah, county health, Kaiser…" />
-          </label>
-          <label>
-            <span>Type</span>
-            <select id="partners-type"><option value="">All partner types</option></select>
-          </label>
-          <label>
-            <span>Center</span>
-            <select id="partners-center"><option value="">All centers</option></select>
-          </label>
-        </form>
-        <p id="partners-count" class="result-count" aria-live="polite"></p>
-        <div id="partners-list" class="partner-grid"></div>
+        <div id="partner-summary" class="partner-summary"></div>
       </section>
 
       <section class="view" id="view-tools" data-view-panel="tools" hidden>
@@ -262,30 +240,33 @@
         </div>
       </section>
 
-      <section class="view" id="view-activity" data-view-panel="activity" hidden>
+      <section class="view" id="view-partners" data-view-panel="partners" hidden>
         <div class="section-heading">
           <div>
-            <p class="kicker">Daily signal</p>
-            <h2>Scientific activity</h2>
-            <p>News, publications, public posts, and open-source work in one feed.</p>
+            <p class="kicker">Public health in practice</p>
+            <h2>Health partners</h2>
+            <p>
+              The health departments, agencies, and health systems InsightNet centers build
+              with, transcribed from each center's public pages.
+            </p>
           </div>
         </div>
-        <form id="activity-filters" class="filter-bar" aria-label="Activity filters">
+        <form id="partners-filters" class="filter-bar" aria-label="Health partner filters">
           <label>
-            <span>Search records</span>
-            <input id="activity-query" type="search" placeholder="Modeling, vaccines, climate…" />
+            <span>Search partners</span>
+            <input id="partners-query" type="search" placeholder="Utah, county health, Kaiser…" />
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="partners-type"><option value="">All partner types</option></select>
           </label>
           <label>
             <span>Center</span>
-            <select id="activity-center"><option value="">All centers</option></select>
-          </label>
-          <label>
-            <span>Source</span>
-            <select id="activity-source"><option value="">All sources</option></select>
+            <select id="partners-center"><option value="">All centers</option></select>
           </label>
         </form>
-        <p id="activity-count" class="result-count" aria-live="polite"></p>
-        <div id="activity-list" class="activity-list"></div>
+        <p id="partners-count" class="result-count" aria-live="polite"></p>
+        <div id="partners-list" class="partner-grid"></div>
       </section>
 
       <section class="view" id="view-centers" data-view-panel="centers" hidden>

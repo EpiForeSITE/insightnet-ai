@@ -26,7 +26,7 @@ def test_static_site_has_every_dashboard_view() -> None:
         "view-overview",
         "view-tools",
         "view-works",
-        "view-activity",
+        "view-partners",
         "view-centers",
         "view-experts",
         "view-health",
@@ -173,6 +173,51 @@ def test_health_partners_can_be_searched_and_filtered() -> None:
     # Partners are part of the expertise search too, not only their own section.
     assert "partnerText(partner)" in javascript
     assert "results.partners" in javascript
+
+
+def test_partners_replaced_activity_as_a_dashboard_view() -> None:
+    """Health partners earned a view of their own; the activity feed gave up its slot."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    assert 'data-view="partners"' in html
+    assert 'data-view-panel="partners"' in html
+    assert '"partners"' in javascript.split("const VIEWS =")[1].split("]")[0]
+
+    assert 'data-view="activity"' not in html
+    assert 'data-view-panel="activity"' not in html
+    for removed in ("activity-filters", "activity-list", "activity-count", "latest-activity"):
+        assert removed not in html
+    # The view and its feed are gone, but collected activity is still searchable from the
+    # expertise finder, where each record links straight out to its source.
+    assert "renderActivity" not in javascript
+    assert 'byId("activity-' not in javascript
+    assert "results.items" in javascript
+
+    # The overview sends readers into the new view instead of listing partners twice.
+    parser = IdCollector()
+    parser.feed(html)
+    assert "partner-summary" in parser.ids
+    assert 'data-go-to="partners"' in html
+
+
+def test_the_carousel_shows_its_countdown() -> None:
+    """A banner that moves on its own has to show the move coming."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    css = (ROOT / "site/assets/styles.css").read_text(encoding="utf-8")
+
+    # The fill is driven by one animation whose duration comes from the rotation delay,
+    # so the bar can never disagree with the timer that moves the slides.
+    assert "@keyframes carousel-countdown" in css
+    assert "var(--carousel-delay" in css
+    assert '"--carousel-delay", `${CAROUSEL_DELAY}ms`' in javascript
+    assert "setCarouselProgress" in javascript
+    # A held or paused banner freezes the bar rather than resetting it.
+    assert "animation-play-state: paused" in css
+    assert 'setCarouselProgress("paused")' in javascript
+    assert 'setCarouselProgress("running")' in javascript
 
 
 def test_overview_metrics_drop_activity_records_and_source_health() -> None:

@@ -16,7 +16,8 @@ dashboard in `site/` runs directly on GitHub Pages.
   Google Scholar through SerpAPI
 - Weekly collection of papers and preprints from ORCID, Europe PMC, PubMed, arXiv,
   medRxiv/bioRxiv, and Crossref, including abstracts, keywords, and full coauthor lists
-- A searchable activity stream with provenance and per-source health information
+- Collected activity records with provenance and per-source health information, searchable
+  from the expertise finder
 - Keyword search across names, biographies, expertise, focus areas, health partners,
   publication titles and abstracts, and collected records
 - A standalone, responsive GitHub Pages dashboard with no runtime server or frontend dependencies

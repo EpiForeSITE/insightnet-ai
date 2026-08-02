@@ -4,7 +4,7 @@
   const PROFILES_URL = "./data/profiles.json";
   const ACTIVITY_URL = "./data/activity.json";
   const WORKS_URL = "./data/works.json";
-  const VIEWS = ["overview", "tools", "works", "activity", "centers", "experts", "health"];
+  const VIEWS = ["overview", "tools", "works", "partners", "centers", "experts", "health"];
   const TOOL_CATEGORY_LABELS = {
     dashboard: "Dashboard",
     package: "Software package",
@@ -518,6 +518,10 @@
   // the toggle stops it for good. A reduced-motion preference opts out entirely.
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+  // One source of truth for the cadence: the stylesheet reads the countdown's duration
+  // from this variable, so the bar can never fill at a different rate than the timer.
+  document.documentElement.style.setProperty("--carousel-delay", `${CAROUSEL_DELAY}ms`);
+
   function carouselCanRun() {
     return (
       !carouselStopped &&
@@ -530,14 +534,34 @@
     );
   }
 
+  // Time passing is drawn on the active dot, which empties and refills over exactly one
+  // interval. Readers can see a move coming instead of being surprised by it, and a
+  // frozen bar is what "paused" looks like. The CSS animation is restarted from empty
+  // whenever a fresh interval starts, so the bar and the timer never disagree.
+  function setCarouselProgress(state) {
+    const dots = byId("carousel-dots");
+    dots.classList.toggle("is-paused", state === "paused");
+    if (state === "running") {
+      dots.classList.remove("is-rotating");
+      void dots.offsetWidth; // Forces the countdown to replay from empty.
+      dots.classList.add("is-rotating");
+    } else if (state === "off") {
+      dots.classList.remove("is-rotating");
+    }
+  }
+
   function stopCarousel() {
     window.clearInterval(carouselTimer);
     carouselTimer = 0;
+    setCarouselProgress("paused");
   }
 
   function startCarousel() {
     stopCarousel();
-    if (!carouselCanRun()) return;
+    if (!carouselCanRun()) {
+      setCarouselProgress("off");
+      return;
+    }
     carouselTimer = window.setInterval(() => {
       if (!carouselCanRun()) {
         stopCarousel();
@@ -546,6 +570,7 @@
       const { pageCount } = carouselMetrics();
       goToPage(carouselIndex + 1 >= pageCount ? 0 : carouselIndex + 1);
     }, CAROUSEL_DELAY);
+    setCarouselProgress("running");
   }
 
   // Holding is for transient reasons (a hover, a keyboard focus); the toggle is the
@@ -682,6 +707,37 @@
     );
   }
 
+  // The overview shows what kinds of partner the network works with rather than an
+  // arbitrary first handful, and each count is the way into the full directory.
+  function renderPartnerSummary() {
+    const counts = new Map();
+    for (const partner of allPartners()) {
+      counts.set(partner.type, (counts.get(partner.type) || 0) + 1);
+    }
+    const summary = byId("partner-summary");
+    summary.hidden = !counts.size;
+    summary.innerHTML = [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(
+        ([type, count]) =>
+          `<button class="partner-summary-chip" type="button" data-partner-type="${escapeHtml(type)}">
+             <span class="partner-summary-count">${count}</span>
+             <span class="partner-summary-label">${escapeHtml(
+               PARTNER_TYPE_LABELS[type] || PARTNER_TYPE_LABELS.other,
+             )}</span>
+           </button>`,
+      )
+      .join("");
+  }
+
+  function openPartners(type = "") {
+    byId("partners-query").value = "";
+    byId("partners-center").value = "";
+    byId("partners-type").value = type;
+    renderPartners();
+    showView("partners");
+  }
+
   function renderPartners() {
     const query = byId("partners-query").value.trim().toLowerCase();
     const type = byId("partners-type").value;
@@ -722,58 +778,17 @@
   }
 
   function populateOverview() {
-    const organizations = snapshot.organizations || [];
-    const items = activity.items || [];
-    byId("overview-empty").hidden = organizations.length > 0;
-    byId("latest-activity").innerHTML = items
-      .slice(0, 6)
-      .map((item) => activityCard(item, true))
-      .join("");
+    byId("overview-empty").hidden = (snapshot.organizations || []).length > 0;
     renderCarousel();
+    renderPartnerSummary();
   }
 
   function populateFilters() {
-    const organizations = snapshot.organizations || [];
-    const centerOptions = organizations
+    const centerOptions = (snapshot.organizations || [])
       .map((org) => `<option value="${escapeHtml(org.id)}">${escapeHtml(org.name)}</option>`)
       .join("");
-    byId("activity-center").insertAdjacentHTML("beforeend", centerOptions);
     byId("center-select").innerHTML =
       centerOptions || '<option value="">No centers configured</option>';
-
-    const sourceTypes = [
-      ...new Set((activity.items || []).map((item) => item.source_type).filter(Boolean)),
-    ].sort();
-    byId("activity-source").insertAdjacentHTML(
-      "beforeend",
-      sourceTypes
-        .map(
-          (source) =>
-            `<option value="${escapeHtml(source)}">${escapeHtml(source.replaceAll("_", " "))}</option>`,
-        )
-        .join(""),
-    );
-  }
-
-  function renderActivity() {
-    const query = byId("activity-query").value.trim().toLowerCase();
-    const organizationId = byId("activity-center").value;
-    const sourceType = byId("activity-source").value;
-    const filtered = (activity.items || []).filter((item) => {
-      const text = [item.title, item.summary, ...(item.keywords || [])].join(" ").toLowerCase();
-      return (
-        (!query || text.includes(query)) &&
-        (!organizationId || item.organization_id === organizationId) &&
-        (!sourceType || item.source_type === sourceType)
-      );
-    });
-    byId("activity-count").textContent = `${filtered.length} record${filtered.length === 1 ? "" : "s"}`;
-    byId("activity-list").innerHTML = filtered.length
-      ? filtered
-          .slice(0, 200)
-          .map((item) => activityCard(item))
-          .join("")
-      : '<div class="empty-state compact"><h3>No activity matches.</h3><p>Try a broader term or a different source.</p></div>';
   }
 
   function renderCenter(organizationId) {
@@ -1149,6 +1164,8 @@
       if (centerButton) openCenter(centerButton.dataset.openCenter);
       const worksButton = event.target.closest("[data-open-works]");
       if (worksButton) openResearcherWorks(worksButton.dataset.openWorks);
+      const partnerTypeButton = event.target.closest("[data-partner-type]");
+      if (partnerTypeButton) openPartners(partnerTypeButton.dataset.partnerType);
       const abstractToggle = event.target.closest("[data-toggle-abstract]");
       if (abstractToggle) {
         const record = abstractToggle.closest(".work-record");
@@ -1191,8 +1208,6 @@
     byId("partners-filters").addEventListener("input", renderPartners);
     byId("partners-filters").addEventListener("change", renderPartners);
     byId("partners-filters").addEventListener("submit", (event) => event.preventDefault());
-    byId("activity-filters").addEventListener("input", renderActivity);
-    byId("activity-filters").addEventListener("change", renderActivity);
     byId("tools-filters").addEventListener("input", renderTools);
     byId("tools-filters").addEventListener("change", renderTools);
     byId("tools-filters").addEventListener("submit", (event) => event.preventDefault());
@@ -1277,7 +1292,6 @@
       populatePartnerFilters();
       renderTools();
       renderPartners();
-      renderActivity();
       renderCenter(snapshot.organizations?.[0]?.id || "");
       renderHealth();
       showView(window.location.hash.slice(1) || "overview", false);

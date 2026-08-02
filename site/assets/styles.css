@@ -333,6 +333,16 @@ h4 {
   .carousel-dot {
     transition: none;
   }
+
+  /* Rotation never starts under this preference, so the active dot stays a plain
+     indicator rather than an empty countdown track. */
+  .carousel-dots.is-rotating .carousel-dot.is-active {
+    background: var(--teal);
+  }
+
+  .carousel-dots.is-rotating .carousel-dot.is-active::after {
+    animation: none;
+  }
 }
 
 .section-heading {
@@ -469,17 +479,87 @@ h4 {
   border-radius: 999px;
   cursor: pointer;
   height: 0.5rem;
+  overflow: hidden;
   padding: 0;
+  position: relative;
   transition: background 180ms ease, width 180ms ease;
   width: 0.5rem;
 }
 
 .carousel-dot.is-active {
   background: var(--teal);
-  width: 1.6rem;
+  width: 2.6rem;
+}
+
+/* The active dot doubles as a countdown. While the banner is rotating it drops back to a
+   pale track and refills over exactly one interval, so the next move is visible before it
+   happens; a bar frozen part-way is what a paused banner looks like. */
+.carousel-dots.is-rotating .carousel-dot.is-active {
+  background: var(--sage-deep);
+}
+
+.carousel-dots.is-rotating .carousel-dot.is-active::after {
+  animation: carousel-countdown var(--carousel-delay, 6000ms) linear forwards;
+  background: var(--teal);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform-origin: left center;
+}
+
+.carousel-dots.is-rotating.is-paused .carousel-dot.is-active::after {
+  animation-play-state: paused;
+}
+
+@keyframes carousel-countdown {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Health partners --------------------------------------------------------- */
+
+.partner-summary {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.partner-summary-chip {
+  align-items: baseline;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  gap: 0.6rem;
+  padding: 1.1rem 1.2rem;
+  text-align: left;
+}
+
+.partner-summary-chip:hover {
+  border-color: var(--sage-deep);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  transition: 180ms ease;
+}
+
+.partner-summary-count {
+  color: var(--ink);
+  font-size: 1.9rem;
+  font-weight: 730;
+  letter-spacing: -0.05em;
+}
+
+.partner-summary-label {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
 
 .partner-grid {
   display: grid;

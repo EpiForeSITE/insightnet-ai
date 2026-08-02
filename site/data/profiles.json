@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-01T23:50:37.730190Z",
+  "generated_at": "2026-08-02T01:09:13.295469Z",
   "network": {
     "name": "InsightNet Scientific Endeavors",
     "description": "Discover centers, researchers, and the scientific work emerging across InsightNet.",
@@ -15,10 +15,10 @@
     "organizations": 13,
     "researchers": 157,
     "tools": 64,
+    "partners": 62,
     "items": 0,
     "sources_ok": 0,
-    "sources_attention": 0,
-    "partners": 62
+    "sources_attention": 0
   },
   "organizations": [
     {
@@ -780,17 +780,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 14,
       "partners": [
         {
           "name": "North Carolina Department of Health and Human Services",
@@ -847,6 +836,17 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 14,
       "partner_count": 6
     },
     {
@@ -1044,6 +1044,17 @@
           "orcid_id": "0000-0003-4853-6130"
         }
       ],
+      "partners": [
+        {
+          "name": "Kaiser Permanente Southern California",
+          "acronym": "KPSC",
+          "type": "healthcare",
+          "summary": "Integrated healthcare system whose electronic health record data underpins C-CORE's outbreak analytics.",
+          "website": "https://healthy.kaiserpermanente.org/southern-california",
+          "location": "California",
+          "id": "kaiser-permanente-southern-california"
+        }
+      ],
       "logo_url": "",
       "social": {
         "linkedin": "",
@@ -1056,17 +1067,6 @@
       "collected_overview": "",
       "activity_count": 0,
       "tool_count": 0,
-      "partners": [
-        {
-          "name": "Kaiser Permanente Southern California",
-          "acronym": "KPSC",
-          "type": "healthcare",
-          "summary": "Integrated healthcare system whose electronic health record data underpins C-CORE's outbreak analytics.",
-          "website": "https://healthy.kaiserpermanente.org/southern-california",
-          "location": "California",
-          "id": "kaiser-permanente-southern-california"
-        }
-      ],
       "partner_count": 1
     },
     {
@@ -1291,17 +1291,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 6,
       "partners": [
         {
           "name": "Georgia Department of Public Health",
@@ -1340,6 +1329,17 @@
           "id": "georgia-emerging-infections-program"
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 6,
       "partner_count": 4
     },
     {
@@ -1778,17 +1778,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 6,
       "partners": [
         {
           "name": "Tennessee Department of Health",
@@ -1818,6 +1807,17 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 6,
       "partner_count": 3
     },
     {
@@ -2134,17 +2134,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 8,
       "partners": [
         {
           "name": "Allegheny County Health Department",
@@ -2156,6 +2145,17 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 8,
       "partner_count": 1
     },
     {
@@ -2482,18 +2482,6 @@
           "orcid_id": "0000-0002-7934-7634"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "tools": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 0,
       "partners": [
         {
           "name": "South Carolina Department of Public Health",
@@ -2532,6 +2520,18 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "tools": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 0,
       "partner_count": 4
     },
     {
@@ -2864,17 +2864,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 7,
       "partners": [
         {
           "name": "Texas Department of State Health Services",
@@ -2940,6 +2929,17 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 7,
       "partner_count": 7
     },
     {
@@ -3546,17 +3546,6 @@
           "status": "available"
         }
       ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 4,
       "partners": [
         {
           "name": "New Hampshire Department of Health and Human Services",
@@ -3604,6 +3593,17 @@
           "summary": ""
         }
       ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 4,
       "partner_count": 5
     },
     {
@@ -5964,39 +5964,6 @@
           "repository": ""
         }
       ],
-      "keywords": [
-        "health",
-        "outbreak",
-        "analytics",
-        "infectious",
-        "disease",
-        "modeling",
-        "foresite",
-        "insightnet",
-        "integration",
-        "collaborates",
-        "departments",
-        "healthcare",
-        "organizations",
-        "implement",
-        "evaluate",
-        "tools",
-        "forecasting",
-        "nowcasting",
-        "public",
-        "decision"
-      ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 7,
       "partners": [
         {
           "name": "Utah Department of Health and Human Services",
@@ -6134,6 +6101,39 @@
           "acronym": ""
         }
       ],
+      "keywords": [
+        "health",
+        "outbreak",
+        "analytics",
+        "infectious",
+        "disease",
+        "modeling",
+        "foresite",
+        "insightnet",
+        "integration",
+        "collaborates",
+        "departments",
+        "healthcare",
+        "organizations",
+        "implement",
+        "evaluate",
+        "tools",
+        "forecasting",
+        "nowcasting",
+        "public",
+        "decision"
+      ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 7,
       "partner_count": 15
     },
     {
@@ -6700,39 +6700,6 @@
           "repository": ""
         }
       ],
-      "keywords": [
-        "policy",
-        "public",
-        "health",
-        "madmc",
-        "helps",
-        "ensure",
-        "decision-makers",
-        "information",
-        "tools",
-        "needed",
-        "informed",
-        "decisions",
-        "during",
-        "emergencies",
-        "emergency",
-        "preparedness",
-        "disease",
-        "modeling",
-        "analytics",
-        "decision"
-      ],
-      "logo_url": "",
-      "social": {
-        "linkedin": "",
-        "github": "",
-        "twitter": "",
-        "bluesky": ""
-      },
-      "sources": [],
-      "collected_overview": "",
-      "activity_count": 0,
-      "tool_count": 3,
       "partners": [
         {
           "name": "Minnesota Department of Health",
@@ -6834,6 +6801,39 @@
           "summary": ""
         }
       ],
+      "keywords": [
+        "policy",
+        "public",
+        "health",
+        "madmc",
+        "helps",
+        "ensure",
+        "decision-makers",
+        "information",
+        "tools",
+        "needed",
+        "informed",
+        "decisions",
+        "during",
+        "emergencies",
+        "emergency",
+        "preparedness",
+        "disease",
+        "modeling",
+        "analytics",
+        "decision"
+      ],
+      "logo_url": "",
+      "social": {
+        "linkedin": "",
+        "github": "",
+        "twitter": "",
+        "bluesky": ""
+      },
+      "sources": [],
+      "collected_overview": "",
+      "activity_count": 0,
+      "tool_count": 3,
       "partner_count": 11
     },
     {
@@ -7351,6 +7351,17 @@
           "status": "available"
         }
       ],
+      "partners": [
+        {
+          "name": "Michigan Department of Health and Human Services",
+          "acronym": "MDHHS",
+          "type": "state",
+          "website": "https://www.michigan.gov/mdhhs",
+          "location": "Michigan",
+          "id": "michigan-department-of-health-and-human-services",
+          "summary": ""
+        }
+      ],
       "keywords": [
         "health",
         "analytics",
@@ -7384,17 +7395,6 @@
       "collected_overview": "",
       "activity_count": 0,
       "tool_count": 8,
-      "partners": [
-        {
-          "name": "Michigan Department of Health and Human Services",
-          "acronym": "MDHHS",
-          "type": "state",
-          "website": "https://www.michigan.gov/mdhhs",
-          "location": "Michigan",
-          "id": "michigan-department-of-health-and-human-services",
-          "summary": ""
-        }
-      ],
       "partner_count": 1
     },
     {
@@ -7498,6 +7498,17 @@
           "status": "available"
         }
       ],
+      "partners": [
+        {
+          "name": "County of San Diego Health and Human Services Agency",
+          "acronym": "HHSA",
+          "type": "local",
+          "website": "https://www.sandiegocounty.gov/hhsa/",
+          "location": "San Diego County, California",
+          "id": "county-of-san-diego-health-and-human-services-agency",
+          "summary": ""
+        }
+      ],
       "keywords": [
         "public",
         "health",
@@ -7525,17 +7536,6 @@
       "collected_overview": "",
       "activity_count": 0,
       "tool_count": 1,
-      "partners": [
-        {
-          "name": "County of San Diego Health and Human Services Agency",
-          "acronym": "HHSA",
-          "type": "local",
-          "website": "https://www.sandiegocounty.gov/hhsa/",
-          "location": "San Diego County, California",
-          "id": "county-of-san-diego-health-and-human-services-agency",
-          "summary": ""
-        }
-      ],
       "partner_count": 1
     },
     {
@@ -7553,6 +7553,35 @@
         "decision support"
       ],
       "enabled": true,
+      "partners": [
+        {
+          "name": "Oregon Health Authority Public Health Division",
+          "acronym": "OHA",
+          "type": "state",
+          "website": "https://www.oregon.gov/oha/ph/pages/index.aspx",
+          "location": "Oregon",
+          "id": "oregon-health-authority-public-health-division",
+          "summary": ""
+        },
+        {
+          "name": "Alabama Department of Public Health",
+          "acronym": "ADPH",
+          "type": "state",
+          "website": "https://www.alabamapublichealth.gov/",
+          "location": "Alabama",
+          "id": "alabama-department-of-public-health",
+          "summary": ""
+        },
+        {
+          "name": "Lane County Public Health",
+          "acronym": "LCPH",
+          "type": "local",
+          "website": "https://www.lanecounty.org/government/county_departments/health_and_human_services/public_health",
+          "location": "Lane County, Oregon",
+          "id": "lane-county-public-health",
+          "summary": ""
+        }
+      ],
       "keywords": [
         "support",
         "modeling",
@@ -7588,35 +7617,6 @@
       "collected_overview": "",
       "activity_count": 0,
       "tool_count": 0,
-      "partners": [
-        {
-          "name": "Oregon Health Authority Public Health Division",
-          "acronym": "OHA",
-          "type": "state",
-          "website": "https://www.oregon.gov/oha/ph/pages/index.aspx",
-          "location": "Oregon",
-          "id": "oregon-health-authority-public-health-division",
-          "summary": ""
-        },
-        {
-          "name": "Alabama Department of Public Health",
-          "acronym": "ADPH",
-          "type": "state",
-          "website": "https://www.alabamapublichealth.gov/",
-          "location": "Alabama",
-          "id": "alabama-department-of-public-health",
-          "summary": ""
-        },
-        {
-          "name": "Lane County Public Health",
-          "acronym": "LCPH",
-          "type": "local",
-          "website": "https://www.lanecounty.org/government/county_departments/health_and_human_services/public_health",
-          "location": "Lane County, Oregon",
-          "id": "lane-county-public-health",
-          "summary": ""
-        }
-      ],
       "partner_count": 3
     }
   ],

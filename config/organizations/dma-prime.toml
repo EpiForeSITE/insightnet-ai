@@ -70,3 +70,30 @@ linkedin = "https://www.linkedin.com/in/lu-zhong-b54419bb/"
 # No tools or products are named on this center's public pages yet; the site describes
 # planned activities rather than released deliverables. Add [[organization.tools]]
 # entries here as they are published.
+
+# Health partners, transcribed from https://insightnet.us/centers/dma-prime/
+[[organization.partners]]
+name = "South Carolina Department of Public Health"
+acronym = "SC DPH"
+type = "state"
+summary = "Listed by InsightNet as South Carolina DHEC, whose public health responsibilities moved to SC DPH in 2024."
+website = "https://dph.sc.gov/"
+location = "South Carolina"
+
+[[organization.partners]]
+name = "South Carolina Center for Rural and Primary Healthcare"
+type = "other"
+website = "https://www.scruralhealth.org/"
+location = "South Carolina"
+
+[[organization.partners]]
+name = "Prisma Health-Upstate"
+type = "healthcare"
+website = "https://prismahealth.org/"
+location = "Upstate South Carolina"
+
+[[organization.partners]]
+name = "Clemson Rural Health"
+type = "healthcare"
+website = "https://www.clemson.edu/cbshs/clemson-rural-health/"
+location = "South Carolina"

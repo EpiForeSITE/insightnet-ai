@@ -8,8 +8,10 @@ Every profile starts with `[organization]` and may include:
 
 - `[organization.social]` for organization links;
 - `[[organization.sources]]` for public collection sources;
-- `[[organization.researchers]]` for member profiles and expertise keywords; and
-- `[[organization.tools]]` for tools and products the center has built.
+- `[[organization.researchers]]` for member profiles and expertise keywords;
+- `[[organization.tools]]` for tools and products the center has built; and
+- `[[organization.partners]]` for the health departments and health systems the center
+  works with.
 
 Use the filename and the `organization.id` as the same stable, lowercase slug whenever
 possible. The daily workflow validates every profile before publishing new data.
@@ -56,3 +58,29 @@ A tool with no public URL is still worth recording — mark it `status = "in-dev
 so the dashboard labels it honestly. When a center publishes no tools, leave the section
 out and add a comment saying so, so the next person knows it was checked rather than
 skipped.
+
+## Partner fields
+
+Health partners are the health departments, health agencies, and health systems a center
+works with. Like tools, they are maintained by hand from what the center and InsightNet
+publish; every center's partners are transcribed from its page on `insightnet.us`.
+
+```toml
+[[organization.partners]]
+name = "Utah Department of Health and Human Services"  # required
+acronym = "UDHHS"
+type = "state"                       # see below; defaults to "other"
+summary = "Anything a reader needs to interpret the entry."
+website = "https://dhhs.utah.gov/"
+location = "Utah"                    # state, county, or region
+```
+
+`type` must be one of `state`, `local`, `tribal`, `federal`, `healthcare`, or `other`,
+recording what kind of health organization the partner is so the dashboard can group a
+state agency, a county health department, and a health system without guessing from the
+name. `id` is generated from the name when omitted and must be unique within the center.
+
+Use the partner's own official name rather than an abbreviation used in passing, and keep
+`website` pointed at the organization's own page. A partner with no public site — some
+tribal and interagency groups have none — is still worth recording; leave `website` out
+and say so in `summary`.

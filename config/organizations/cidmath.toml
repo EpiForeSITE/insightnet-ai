@@ -91,3 +91,31 @@ url = "https://github.com/WyattGMadden/deep_measles_dynamics"
 repository = "https://github.com/WyattGMadden/deep_measles_dynamics"
 category = "dataset"
 keywords = ["measles", "deep learning", "mechanistic models"]
+
+# Health partners, transcribed from https://insightnet.us/centers/cidmath/
+[[organization.partners]]
+name = "Georgia Department of Public Health"
+acronym = "Georgia DPH"
+type = "state"
+website = "https://dph.georgia.gov/"
+location = "Georgia"
+
+[[organization.partners]]
+name = "Kaiser Permanente Georgia"
+type = "healthcare"
+website = "https://healthy.kaiserpermanente.org/georgia"
+location = "Georgia"
+
+[[organization.partners]]
+name = "Grady Health System"
+type = "healthcare"
+website = "https://www.gradyhealth.org/"
+location = "Atlanta, Georgia"
+
+[[organization.partners]]
+name = "Georgia Emerging Infections Program"
+acronym = "Georgia EIP"
+type = "other"
+summary = "Surveillance collaboration of the Georgia Department of Public Health, Emory University, the Atlanta VA Medical Center, and the CDC."
+website = "https://dph.georgia.gov/EIP"
+location = "Georgia"

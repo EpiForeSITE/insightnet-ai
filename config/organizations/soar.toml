@@ -13,3 +13,25 @@ enabled = true
 # No tools or products are named on this center's public pages yet; the site describes
 # planned activities rather than released deliverables. Add [[organization.tools]]
 # entries here as they are published.
+
+# Health partners, transcribed from https://insightnet.us/centers/soar/
+[[organization.partners]]
+name = "Oregon Health Authority Public Health Division"
+acronym = "OHA"
+type = "state"
+website = "https://www.oregon.gov/oha/ph/pages/index.aspx"
+location = "Oregon"
+
+[[organization.partners]]
+name = "Alabama Department of Public Health"
+acronym = "ADPH"
+type = "state"
+website = "https://www.alabamapublichealth.gov/"
+location = "Alabama"
+
+[[organization.partners]]
+name = "Lane County Public Health"
+acronym = "LCPH"
+type = "local"
+website = "https://www.lanecounty.org/government/county_departments/health_and_human_services/public_health"
+location = "Lane County, Oregon"

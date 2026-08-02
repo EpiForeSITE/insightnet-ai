@@ -276,3 +276,89 @@ def test_rejects_multiple_organizations_in_one_profile_file(tmp_path: Path) -> N
 
     with pytest.raises(ProfileError, match="exactly one"):
         load_profiles(tmp_path / "network.toml", profiles)
+
+
+def test_loads_partners_with_defaults_and_generated_ids(tmp_path: Path) -> None:
+    profiles_dir = _tools_profile(
+        tmp_path,
+        """
+        [[organization.partners]]
+        name = "Utah Department of Health and Human Services"
+        acronym = "UDHHS"
+        type = "state"
+        website = "https://dhhs.utah.gov/"
+        location = "Utah"
+
+        [[organization.partners]]
+        name = "Tribal Health Directors"
+        """,
+    )
+
+    partners = load_profiles(tmp_path / "network.toml", profiles_dir)["organizations"][0][
+        "partners"
+    ]
+
+    assert [partner["id"] for partner in partners] == [
+        "utah-department-of-health-and-human-services",
+        "tribal-health-directors",
+    ]
+    assert partners[0]["type"] == "state"
+    assert partners[0]["location"] == "Utah"
+    # A partner with no public website is still a valid entry.
+    assert (partners[1]["type"], partners[1]["website"], partners[1]["acronym"]) == (
+        "other",
+        "",
+        "",
+    )
+
+
+def test_rejects_an_unknown_partner_type(tmp_path: Path) -> None:
+    profiles_dir = _tools_profile(
+        tmp_path,
+        '\n[[organization.partners]]\nname = "Somewhere"\ntype = "municipal"\n',
+    )
+
+    with pytest.raises(ProfileError, match="partner.type"):
+        load_profiles(tmp_path / "network.toml", profiles_dir)
+
+
+def test_rejects_a_nameless_partner(tmp_path: Path) -> None:
+    profiles_dir = _tools_profile(tmp_path, '\n[[organization.partners]]\ntype = "state"\n')
+
+    with pytest.raises(ProfileError, match="missing name"):
+        load_profiles(tmp_path / "network.toml", profiles_dir)
+
+
+def test_rejects_a_non_http_partner_website(tmp_path: Path) -> None:
+    profiles_dir = _tools_profile(
+        tmp_path,
+        '\n[[organization.partners]]\nname = "Somewhere"\nwebsite = "javascript:alert(1)"\n',
+    )
+
+    with pytest.raises(ProfileError, match="http"):
+        load_profiles(tmp_path / "network.toml", profiles_dir)
+
+
+def test_rejects_duplicate_partner_ids(tmp_path: Path) -> None:
+    profiles_dir = _tools_profile(
+        tmp_path,
+        """
+        [[organization.partners]]
+        name = "Same Agency"
+
+        [[organization.partners]]
+        name = "same agency"
+        """,
+    )
+
+    with pytest.raises(ProfileError, match="Duplicate partner id"):
+        load_profiles(tmp_path / "network.toml", profiles_dir)
+
+
+def test_every_configured_center_records_a_health_partner() -> None:
+    """Every InsightNet center works with health partners, so none should be empty."""
+
+    profiles = load_profiles()
+
+    missing = [org["id"] for org in profiles["organizations"] if not org["partners"]]
+    assert not missing, f"centers without health partners: {missing}"

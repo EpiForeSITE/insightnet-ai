@@ -10,13 +10,15 @@ dashboard in `site/` runs directly on GitHub Pages.
 - Center and researcher profiles managed in TOML
 - A catalog of the tools and products each center has built — dashboards, software
   packages, platforms, models, and datasets — with links to each one
+- A directory of the health partners behind the network — the state, local, tribal, and
+  federal health agencies and the health systems each center works with
 - Daily collection from public web pages, RSS/Atom, Bluesky, GitHub, and optionally
   Google Scholar through SerpAPI
 - Weekly collection of papers and preprints from ORCID, Europe PMC, PubMed, arXiv,
   medRxiv/bioRxiv, and Crossref, including abstracts, keywords, and full coauthor lists
 - A searchable activity stream with provenance and per-source health information
-- Keyword search across names, biographies, expertise, focus areas, publication titles
-  and abstracts, and collected records
+- Keyword search across names, biographies, expertise, focus areas, health partners,
+  publication titles and abstracts, and collected records
 - A standalone, responsive GitHub Pages dashboard with no runtime server or frontend dependencies
 - Tests and a frozen `uv` environment
 
@@ -42,8 +44,9 @@ provider's courtesy limits; the dashboard works without it, showing an empty
 
 Each center has exactly one TOML profile in `config/organizations/`; for example,
 `config/organizations/accidda.toml`. Edit that center's own file to update its
-description, sources, members, or expertise—no shared organization list needs to be
-merged. Shared InsightNet settings are in `config/network.toml`.
+description, sources, members, expertise, tools, or health partners—no shared
+organization list needs to be merged. Shared InsightNet settings are in
+`config/network.toml`.
 
 Every researcher can have a name, role, biography, expertise tags, personal website,
 LinkedIn, GitHub, X/Twitter, Bluesky, Google Scholar, ORCID, PubMed, Europe PMC, arXiv,

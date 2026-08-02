@@ -15,6 +15,15 @@
     other: "Resource",
   };
   const WORKS_PAGE_SIZE = 40;
+  const CAROUSEL_DELAY = 6000;
+  const PARTNER_TYPE_LABELS = {
+    state: "State health agency",
+    local: "Local health department",
+    tribal: "Tribal health agency",
+    federal: "Federal health agency",
+    healthcare: "Health system",
+    other: "Health partner",
+  };
   const PROFILE_LABELS = {
     website: "Website",
     linkedin: "LinkedIn",
@@ -38,6 +47,12 @@
   let researcherByOrcid = new Map();
   let worksVisible = WORKS_PAGE_SIZE;
   let worksFiltered = [];
+  let carouselIndex = 0;
+  let carouselScrollTimer = 0;
+  let partnerRoster = null;
+  let carouselTimer = 0;
+  let carouselStopped = false;
+  let carouselHeld = false;
 
   const byId = (id) => document.getElementById(id);
 
@@ -374,8 +389,17 @@
   // Directory rendering
   // ----------------------------------------------------------------------------------
 
+  function plural(count, noun) {
+    return `${count} ${noun}${count === 1 ? "" : "s"}`;
+  }
+
   function centerCard(org) {
     const label = org.acronym || org.location || "Network center";
+    const counts = [
+      plural(org.researchers?.length || 0, "researcher"),
+      plural(org.tools?.length || 0, "tool"),
+      plural(org.partners?.length || 0, "partner"),
+    ].join(" · ");
     return `
       <article class="card">
         <div class="card-meta">${escapeHtml(label)}</div>
@@ -383,10 +407,295 @@
         <p>${escapeHtml(org.summary || "Center profile")}</p>
         ${tagList(org.focus_areas, 5)}
         <div class="card-footer">
-          <span class="card-meta">${org.researchers?.length || 0} researchers · ${org.tools?.length || 0} tools</span>
+          <span class="card-meta">${counts}</span>
           <button type="button" data-open-center="${escapeHtml(org.id)}">Explore →</button>
         </div>
       </article>`;
+  }
+
+  // ----------------------------------------------------------------------------------
+  // Centers carousel
+  // ----------------------------------------------------------------------------------
+
+  // The track is a real scroller, so pointer, trackpad, and button navigation all move
+  // the same scrollLeft. How many cards fit changes with the viewport, so the controls
+  // work in pages of whatever is currently visible rather than in fixed card counts.
+  function carouselSlides() {
+    return [...byId("center-carousel").querySelectorAll(".carousel-slide")];
+  }
+
+  function carouselMetrics() {
+    const track = byId("center-carousel");
+    const slides = carouselSlides();
+    const stride =
+      slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : slides[0]?.offsetWidth || 0;
+    const perView = stride ? Math.max(1, Math.round(track.clientWidth / stride)) : 1;
+    return {
+      track,
+      pageStride: stride * perView,
+      pageCount: Math.max(1, Math.ceil(slides.length / perView)),
+      perView,
+    };
+  }
+
+  // The final page is usually a partial one, so its scroll position is the end of the
+  // track rather than a whole number of pages. Treating "scrolled to the end" as the
+  // last page keeps the final dot reachable.
+  function currentPage(metrics) {
+    const { track, pageStride, pageCount } = metrics;
+    if (!pageStride) return 0;
+    if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) return pageCount - 1;
+    return Math.min(pageCount - 1, Math.round(track.scrollLeft / pageStride));
+  }
+
+  function renderDots(pageCount, perView) {
+    const total = carouselSlides().length;
+    byId("carousel-dots").innerHTML = Array.from({ length: pageCount }, (_, page) => {
+      const first = page * perView + 1;
+      const last = Math.min((page + 1) * perView, total);
+      const label = first === last ? `center ${first}` : `centers ${first} to ${last}`;
+      return `<button class="carousel-dot" type="button" data-slide="${page}">
+                <span class="sr-only">Show ${label} of ${total}</span>
+              </button>`;
+    }).join("");
+  }
+
+  function updateIndicators(page, metrics) {
+    byId("carousel-dots")
+      .querySelectorAll("button")
+      .forEach((dot, position) => {
+        const active = position === page;
+        dot.classList.toggle("is-active", active);
+        dot.setAttribute("aria-current", active ? "true" : "false");
+      });
+    byId("carousel-previous").disabled = page <= 0;
+    byId("carousel-next").disabled = page >= metrics.pageCount - 1;
+  }
+
+  function syncCarousel() {
+    const metrics = carouselMetrics();
+    if (byId("carousel-dots").childElementCount !== metrics.pageCount) {
+      renderDots(metrics.pageCount, metrics.perView);
+    }
+    carouselIndex = currentPage(metrics);
+    updateIndicators(carouselIndex, metrics);
+  }
+
+  function goToPage(page) {
+    const metrics = carouselMetrics();
+    if (!carouselSlides().length) return;
+    const target = Math.max(0, Math.min(page, metrics.pageCount - 1));
+    // The indicators follow the request rather than the animation, so rapid clicks keep
+    // advancing instead of re-reading a scroll position that is still in flight.
+    carouselIndex = target;
+    updateIndicators(target, metrics);
+    metrics.track.scrollTo({ left: target * metrics.pageStride });
+    // Navigating by hand restarts the countdown, so the next automatic move is never
+    // half a beat behind the reader's own click.
+    if (carouselTimer) startCarousel();
+  }
+
+  function renderCarousel() {
+    const organizations = snapshot.organizations || [];
+    byId("center-carousel").innerHTML = organizations
+      .map(
+        (org) =>
+          `<div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="${escapeHtml(
+            org.name,
+          )}">${centerCard(org)}</div>`,
+      )
+      .join("");
+    byId("carousel-dots").innerHTML = "";
+    byId("center-carousel-region").hidden = !organizations.length;
+    syncCarousel();
+    startCarousel();
+  }
+
+  // Rotation ------------------------------------------------------------------------
+  //
+  // The banner advances on its own, but never while someone is reading or working with
+  // it: hovering, focusing, dragging the track, switching views or tabs all hold it, and
+  // the toggle stops it for good. A reduced-motion preference opts out entirely.
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function carouselCanRun() {
+    return (
+      !carouselStopped &&
+      !carouselHeld &&
+      !reducedMotion.matches &&
+      !document.hidden &&
+      !byId("center-carousel-region").hidden &&
+      !byId("view-overview").hidden &&
+      carouselMetrics().pageCount > 1
+    );
+  }
+
+  function stopCarousel() {
+    window.clearInterval(carouselTimer);
+    carouselTimer = 0;
+  }
+
+  function startCarousel() {
+    stopCarousel();
+    if (!carouselCanRun()) return;
+    carouselTimer = window.setInterval(() => {
+      if (!carouselCanRun()) {
+        stopCarousel();
+        return;
+      }
+      const { pageCount } = carouselMetrics();
+      goToPage(carouselIndex + 1 >= pageCount ? 0 : carouselIndex + 1);
+    }, CAROUSEL_DELAY);
+  }
+
+  // Holding is for transient reasons (a hover, a keyboard focus); the toggle is the
+  // reader's explicit choice and outlives them.
+  function holdCarousel(held) {
+    carouselHeld = held;
+    if (held) stopCarousel();
+    else startCarousel();
+  }
+
+  function carouselParts() {
+    return [byId("center-carousel-region"), byId("carousel-toggle").parentElement];
+  }
+
+  // Leaving one part of the carousel is not leaving the carousel: a reader can tab into
+  // the track and then move the mouse away, or hover the buttons while the track holds
+  // focus. Rotation only resumes once neither the pointer nor the keyboard is on it.
+  function releaseCarousel() {
+    holdCarousel(
+      carouselParts().some(
+        (part) => part.matches(":hover") || part.contains(document.activeElement),
+      ),
+    );
+  }
+
+  function setCarouselStopped(stopped) {
+    carouselStopped = stopped;
+    const toggle = byId("carousel-toggle");
+    toggle.setAttribute(
+      "aria-label",
+      stopped ? "Play the centers carousel" : "Pause the centers carousel",
+    );
+    byId("carousel-toggle-icon").textContent = stopped ? "▶" : "❙❙";
+    // A stopped banner is safe to announce; a moving one would interrupt constantly.
+    byId("center-carousel-region").setAttribute("aria-live", stopped ? "polite" : "off");
+    if (stopped) stopCarousel();
+    else startCarousel();
+  }
+
+  // ----------------------------------------------------------------------------------
+  // Health partners
+  // ----------------------------------------------------------------------------------
+
+  // A health department can partner with more than one center, so partners are merged by
+  // identity and every center that named them is listed on the card. The merged roster is
+  // built once, which also lets each entry keep its own search text.
+  function allPartners() {
+    if (partnerRoster) return partnerRoster;
+    const merged = new Map();
+    for (const org of snapshot?.organizations || []) {
+      for (const partner of org.partners || []) {
+        const key = (partner.website || partner.name).toLowerCase();
+        const existing = merged.get(key);
+        if (existing) {
+          existing.organization_ids.push(org.id);
+        } else {
+          merged.set(key, { ...partner, organization_ids: [org.id] });
+        }
+      }
+    }
+    partnerRoster = [...merged.values()].sort((a, b) => a.name.localeCompare(b.name));
+    return partnerRoster;
+  }
+
+  function partnerCard(partner, showCenters = true) {
+    const url = safeUrl(partner.website);
+    const name = escapeHtml(partner.name);
+    const linkedName = url
+      ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${name}</a>`
+      : name;
+    const place = [partner.acronym, partner.location].filter(Boolean).join(" · ");
+    return `
+      <article class="partner-card">
+        <span class="partner-type partner-type-${escapeHtml(partner.type || "other")}">${escapeHtml(
+          PARTNER_TYPE_LABELS[partner.type] || PARTNER_TYPE_LABELS.other,
+        )}</span>
+        <h3>${linkedName}</h3>
+        ${place ? `<p>${escapeHtml(place)}</p>` : ""}
+        ${partner.summary ? `<p>${escapeHtml(partner.summary)}</p>` : ""}
+        ${
+          showCenters
+            ? `<p class="partner-centers">Works with ${escapeHtml(
+                (partner.organization_ids || [])
+                  .map((id) => organizationsById.get(id)?.acronym || centerName(id))
+                  .join(", "),
+              )}</p>`
+            : ""
+        }
+      </article>`;
+  }
+
+  // Readers look for partners by place as often as by name — "Utah", "county health",
+  // "Kaiser" — so the searchable text carries the partner's own location, and the type is
+  // matched by its label rather than its stored keyword. Centers contribute their name
+  // but not their location: a center working across two states would otherwise make each
+  // of its partners answer to a state it has nothing to do with.
+  function partnerText(partner) {
+    if (!partner._text) {
+      partner._text = [
+        partner.name,
+        partner.acronym,
+        partner.location,
+        partner.summary,
+        PARTNER_TYPE_LABELS[partner.type] || "",
+        ...(partner.organization_ids || []).flatMap((id) => {
+          const org = organizationsById.get(id);
+          return [org?.name, org?.acronym];
+        }),
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+    }
+    return partner._text;
+  }
+
+  function populatePartnerFilters() {
+    const partners = allPartners();
+    const types = [...new Set(partners.map((partner) => partner.type))]
+      .map((type) => [type, PARTNER_TYPE_LABELS[type] || type])
+      .sort((a, b) => a[1].localeCompare(b[1]));
+    byId("partners-type").insertAdjacentHTML(
+      "beforeend",
+      types
+        .map(([type, label]) => `<option value="${escapeHtml(type)}">${escapeHtml(label)}</option>`)
+        .join(""),
+    );
+    byId("partners-center").insertAdjacentHTML(
+      "beforeend",
+      (snapshot.organizations || [])
+        .filter((org) => (org.partners || []).length)
+        .map((org) => `<option value="${escapeHtml(org.id)}">${escapeHtml(org.name)}</option>`)
+        .join(""),
+    );
+  }
+
+  function renderPartners() {
+    const query = byId("partners-query").value.trim().toLowerCase();
+    const type = byId("partners-type").value;
+    const organizationId = byId("partners-center").value;
+    const partners = allPartners().filter(
+      (partner) =>
+        (!type || partner.type === type) &&
+        (!organizationId || partner.organization_ids.includes(organizationId)) &&
+        (!query || partnerText(partner).includes(query)),
+    );
+    byId("partners-count").textContent = plural(partners.length, "partner");
+    byId("partners-list").innerHTML = partners.length
+      ? partners.map((partner) => partnerCard(partner)).join("")
+      : '<div class="empty-state compact"><h3>No partners match.</h3><p>Try a broader term, a different type, or clear the center filter.</p></div>';
   }
 
   function researcherCard(person, organizationName = "") {
@@ -420,7 +729,7 @@
       .slice(0, 6)
       .map((item) => activityCard(item, true))
       .join("");
-    byId("center-grid").innerHTML = organizations.map(centerCard).join("");
+    renderCarousel();
   }
 
   function populateFilters() {
@@ -494,6 +803,19 @@
               </div>
               <div class="tools-grid">${org.tools
                 .map((tool) => toolCard({ ...tool, organization_id: org.id }))
+                .join("")}</div>
+            </section>`
+          : ""
+      }
+      ${
+        (org.partners || []).length
+          ? `<section class="researcher-section">
+              <div class="section-heading">
+                <div><p class="kicker">Working together</p><h2>Health partners</h2></div>
+                <span class="result-count">${plural(org.partners.length, "partner")}</span>
+              </div>
+              <div class="partner-grid">${org.partners
+                .map((partner) => partnerCard(partner, false))
                 .join("")}</div>
             </section>`
           : ""
@@ -613,6 +935,17 @@
       }
     }
 
+    const partners = [];
+    for (const partner of allPartners()) {
+      const score = keywordScore(terms, partnerText(partner), [
+        [partner.name, 8],
+        [partner.location, 5],
+      ]);
+      if (score) {
+        partners.push({ ...partner, score });
+      }
+    }
+
     for (const item of activity.items || []) {
       const itemText = searchableText(item.title, item.summary, item.keywords, item.source_label);
       const itemScore = keywordScore(terms, itemText, [[item.title, 5]]);
@@ -628,6 +961,7 @@
       researchers: researchers.sort(sorter),
       organizations: organizations.sort(sorter),
       tools: tools.sort(sorter),
+      partners: partners.sort(sorter),
       works: matchedWorks.sort(sorter),
       items: items.sort(sorter),
     };
@@ -638,6 +972,7 @@
       results.researchers.length +
       results.organizations.length +
       results.tools.length +
+      results.partners.length +
       results.works.length +
       results.items.length;
     byId("expert-summary").textContent = `${total.toLocaleString()} total match${total === 1 ? "" : "es"}`;
@@ -674,6 +1009,17 @@
             : `<p class='result-count'>${
                 works ? "No publications match this topic." : "Publications are still loading…"
               }</p>`
+        }
+      </section>
+      <section class="expert-group">
+        <h3>Health partners <span class="count-pill">${results.partners.length}</span></h3>
+        ${
+          results.partners.length
+            ? `<div class="partner-grid">${results.partners
+                .slice(0, 12)
+                .map((partner) => partnerCard(partner))
+                .join("")}</div>`
+            : "<p class='result-count'>No health partners match this topic.</p>"
         }
       </section>
       <section class="expert-group">
@@ -741,6 +1087,14 @@
     if (updateHash && window.location.hash !== `#${selected}`) {
       window.history.pushState(null, "", `#${selected}`);
     }
+    // Slide widths are only measurable once the panel is on screen, so the carousel
+    // indicators are recalculated whenever the overview becomes visible.
+    if (selected === "overview" && snapshot) {
+      syncCarousel();
+      startCarousel();
+    } else {
+      stopCarousel();
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -770,9 +1124,9 @@
       network.description || "Scientific activity across the network.";
     byId("metric-centers").textContent = stats.organizations ?? snapshot.organizations?.length ?? 0;
     byId("metric-researchers").textContent = stats.researchers ?? 0;
+    // Counted after merging, so a department two centers both work with counts once.
+    byId("metric-partners").textContent = allPartners().length;
     byId("metric-tools").textContent = stats.tools ?? allTools().length;
-    byId("metric-items").textContent = (activity.items || []).length;
-    byId("metric-sources").textContent = stats.sources_ok ?? 0;
 
     const generated = new Date(snapshot.generated_at);
     const ageHours = (Date.now() - generated.getTime()) / 3_600_000;
@@ -803,6 +1157,40 @@
       }
     });
     window.addEventListener("hashchange", () => showView(window.location.hash.slice(1), false));
+    byId("carousel-previous").addEventListener("click", () => goToPage(carouselIndex - 1));
+    byId("carousel-next").addEventListener("click", () => goToPage(carouselIndex + 1));
+    byId("carousel-dots").addEventListener("click", (event) => {
+      const dot = event.target.closest("[data-slide]");
+      if (dot) goToPage(Number(dot.dataset.slide));
+    });
+    byId("center-carousel").addEventListener("scroll", () => {
+      window.clearTimeout(carouselScrollTimer);
+      carouselScrollTimer = window.setTimeout(syncCarousel, 90);
+    });
+    byId("center-carousel").addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+      event.preventDefault();
+      goToPage(carouselIndex + (event.key === "ArrowRight" ? 1 : -1));
+    });
+    byId("carousel-toggle").addEventListener("click", () => setCarouselStopped(!carouselStopped));
+    for (const element of carouselParts()) {
+      element.addEventListener("mouseenter", () => holdCarousel(true));
+      element.addEventListener("focusin", () => holdCarousel(true));
+      element.addEventListener("mouseleave", releaseCarousel);
+      // focusout runs before focus lands on the next element, so the check waits for it.
+      element.addEventListener("focusout", () => window.setTimeout(releaseCarousel, 0));
+    }
+    document.addEventListener("visibilitychange", () =>
+      document.hidden ? stopCarousel() : startCarousel(),
+    );
+    reducedMotion.addEventListener("change", startCarousel);
+    window.addEventListener("resize", () => {
+      syncCarousel();
+      startCarousel();
+    });
+    byId("partners-filters").addEventListener("input", renderPartners);
+    byId("partners-filters").addEventListener("change", renderPartners);
+    byId("partners-filters").addEventListener("submit", (event) => event.preventDefault());
     byId("activity-filters").addEventListener("input", renderActivity);
     byId("activity-filters").addEventListener("change", renderActivity);
     byId("tools-filters").addEventListener("input", renderTools);
@@ -886,7 +1274,9 @@
       populateOverview();
       populateFilters();
       populateToolFilters();
+      populatePartnerFilters();
       renderTools();
+      renderPartners();
       renderActivity();
       renderCenter(snapshot.organizations?.[0]?.id || "");
       renderHealth();

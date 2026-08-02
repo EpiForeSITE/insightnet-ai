@@ -123,3 +123,11 @@ url = "https://cmu-delphi.github.io/epipredict/"
 repository = "https://github.com/cmu-delphi/epipredict"
 category = "package"
 keywords = ["r package", "forecasting"]
+
+# Health partners, transcribed from https://insightnet.us/centers/delphi/
+[[organization.partners]]
+name = "Allegheny County Health Department"
+acronym = "ACHD"
+type = "local"
+website = "https://www.alleghenycounty.us/Services/Health-Department"
+location = "Allegheny County, Pennsylvania"

@@ -17,7 +17,8 @@
     "tools": 64,
     "items": 0,
     "sources_ok": 0,
-    "sources_attention": 0
+    "sources_attention": 0,
+    "partners": 62
   },
   "organizations": [
     {
@@ -789,7 +790,64 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 14
+      "tool_count": 14,
+      "partners": [
+        {
+          "name": "North Carolina Department of Health and Human Services",
+          "acronym": "NC DHHS",
+          "type": "state",
+          "website": "https://www.ncdhhs.gov/",
+          "location": "North Carolina",
+          "id": "north-carolina-department-of-health-and-human-services",
+          "summary": ""
+        },
+        {
+          "name": "Maryland Department of Health",
+          "acronym": "MDH",
+          "type": "state",
+          "website": "https://health.maryland.gov/",
+          "location": "Maryland",
+          "id": "maryland-department-of-health",
+          "summary": ""
+        },
+        {
+          "name": "Baltimore City Health Department",
+          "acronym": "BCHD",
+          "type": "local",
+          "website": "https://www.baltimorecity.gov/health",
+          "location": "Baltimore, Maryland",
+          "id": "baltimore-city-health-department",
+          "summary": ""
+        },
+        {
+          "name": "California Department of Public Health",
+          "acronym": "CDPH",
+          "type": "state",
+          "website": "https://www.cdph.ca.gov/",
+          "location": "California",
+          "id": "california-department-of-public-health",
+          "summary": ""
+        },
+        {
+          "name": "Navajo Epidemiology Center",
+          "acronym": "NEC",
+          "type": "tribal",
+          "website": "https://nec.navajo-nsn.gov/",
+          "location": "Navajo Nation (Arizona, New Mexico, Utah)",
+          "id": "navajo-epidemiology-center",
+          "summary": ""
+        },
+        {
+          "name": "Florida Department of Health",
+          "acronym": "FDOH",
+          "type": "state",
+          "website": "https://www.floridahealth.gov/",
+          "location": "Florida",
+          "id": "florida-department-of-health",
+          "summary": ""
+        }
+      ],
+      "partner_count": 6
     },
     {
       "id": "c-core",
@@ -997,7 +1055,19 @@
       "tools": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 0
+      "tool_count": 0,
+      "partners": [
+        {
+          "name": "Kaiser Permanente Southern California",
+          "acronym": "KPSC",
+          "type": "healthcare",
+          "summary": "Integrated healthcare system whose electronic health record data underpins C-CORE's outbreak analytics.",
+          "website": "https://healthy.kaiserpermanente.org/southern-california",
+          "location": "California",
+          "id": "kaiser-permanente-southern-california"
+        }
+      ],
+      "partner_count": 1
     },
     {
       "id": "cidmath",
@@ -1231,7 +1301,46 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 6
+      "tool_count": 6,
+      "partners": [
+        {
+          "name": "Georgia Department of Public Health",
+          "acronym": "Georgia DPH",
+          "type": "state",
+          "website": "https://dph.georgia.gov/",
+          "location": "Georgia",
+          "id": "georgia-department-of-public-health",
+          "summary": ""
+        },
+        {
+          "name": "Kaiser Permanente Georgia",
+          "type": "healthcare",
+          "website": "https://healthy.kaiserpermanente.org/georgia",
+          "location": "Georgia",
+          "id": "kaiser-permanente-georgia",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Grady Health System",
+          "type": "healthcare",
+          "website": "https://www.gradyhealth.org/",
+          "location": "Atlanta, Georgia",
+          "id": "grady-health-system",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Georgia Emerging Infections Program",
+          "acronym": "Georgia EIP",
+          "type": "other",
+          "summary": "Surveillance collaboration of the Georgia Department of Public Health, Emory University, the Atlanta VA Medical Center, and the CDC.",
+          "website": "https://dph.georgia.gov/EIP",
+          "location": "Georgia",
+          "id": "georgia-emerging-infections-program"
+        }
+      ],
+      "partner_count": 4
     },
     {
       "id": "cori",
@@ -1679,7 +1788,37 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 6
+      "tool_count": 6,
+      "partners": [
+        {
+          "name": "Tennessee Department of Health",
+          "acronym": "TDH",
+          "type": "state",
+          "website": "https://www.tn.gov/health.html",
+          "location": "Tennessee",
+          "id": "tennessee-department-of-health",
+          "summary": ""
+        },
+        {
+          "name": "Alaska Department of Health",
+          "acronym": "Alaska DOH",
+          "type": "state",
+          "website": "https://health.alaska.gov/",
+          "location": "Alaska",
+          "id": "alaska-department-of-health",
+          "summary": ""
+        },
+        {
+          "name": "North Carolina Department of Health and Human Services",
+          "acronym": "NC DHHS",
+          "type": "state",
+          "website": "https://www.ncdhhs.gov/",
+          "location": "North Carolina",
+          "id": "north-carolina-department-of-health-and-human-services",
+          "summary": ""
+        }
+      ],
+      "partner_count": 3
     },
     {
       "id": "delphi",
@@ -2005,7 +2144,19 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 8
+      "tool_count": 8,
+      "partners": [
+        {
+          "name": "Allegheny County Health Department",
+          "acronym": "ACHD",
+          "type": "local",
+          "website": "https://www.alleghenycounty.us/Services/Health-Department",
+          "location": "Allegheny County, Pennsylvania",
+          "id": "allegheny-county-health-department",
+          "summary": ""
+        }
+      ],
+      "partner_count": 1
     },
     {
       "id": "dma-prime",
@@ -2342,7 +2493,46 @@
       "tools": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 0
+      "tool_count": 0,
+      "partners": [
+        {
+          "name": "South Carolina Department of Public Health",
+          "acronym": "SC DPH",
+          "type": "state",
+          "summary": "Listed by InsightNet as South Carolina DHEC, whose public health responsibilities moved to SC DPH in 2024.",
+          "website": "https://dph.sc.gov/",
+          "location": "South Carolina",
+          "id": "south-carolina-department-of-public-health"
+        },
+        {
+          "name": "South Carolina Center for Rural and Primary Healthcare",
+          "type": "other",
+          "website": "https://www.scruralhealth.org/",
+          "location": "South Carolina",
+          "id": "south-carolina-center-for-rural-and-primary-healthcare",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Prisma Health-Upstate",
+          "type": "healthcare",
+          "website": "https://prismahealth.org/",
+          "location": "Upstate South Carolina",
+          "id": "prisma-health-upstate",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Clemson Rural Health",
+          "type": "healthcare",
+          "website": "https://www.clemson.edu/cbshs/clemson-rural-health/",
+          "location": "South Carolina",
+          "id": "clemson-rural-health",
+          "acronym": "",
+          "summary": ""
+        }
+      ],
+      "partner_count": 4
     },
     {
       "id": "epiengage",
@@ -2684,7 +2874,73 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 7
+      "tool_count": 7,
+      "partners": [
+        {
+          "name": "Texas Department of State Health Services",
+          "acronym": "Texas DSHS",
+          "type": "state",
+          "website": "https://www.dshs.texas.gov/",
+          "location": "Texas",
+          "id": "texas-department-of-state-health-services",
+          "summary": ""
+        },
+        {
+          "name": "Massachusetts Department of Public Health",
+          "acronym": "Massachusetts DPH",
+          "type": "state",
+          "website": "https://www.mass.gov/orgs/department-of-public-health",
+          "location": "Massachusetts",
+          "id": "massachusetts-department-of-public-health",
+          "summary": ""
+        },
+        {
+          "name": "Austin Public Health",
+          "acronym": "APH",
+          "type": "local",
+          "website": "https://www.austintexas.gov/health",
+          "location": "Austin, Texas",
+          "id": "austin-public-health",
+          "summary": ""
+        },
+        {
+          "name": "City of El Paso Department of Public Health",
+          "type": "local",
+          "website": "https://www.elpasotexas.gov/public-health/",
+          "location": "El Paso, Texas",
+          "id": "city-of-el-paso-department-of-public-health",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Houston Health Department",
+          "acronym": "HHD",
+          "type": "local",
+          "website": "https://www.houstontx.gov/health/",
+          "location": "Houston, Texas",
+          "id": "houston-health-department",
+          "summary": ""
+        },
+        {
+          "name": "Dallas County Health and Human Services",
+          "acronym": "DCHHS",
+          "type": "local",
+          "website": "https://www.dallascounty.org/departments/dchhs/",
+          "location": "Dallas County, Texas",
+          "id": "dallas-county-health-and-human-services",
+          "summary": ""
+        },
+        {
+          "name": "Austin-Travis County Emergency Medical Services",
+          "acronym": "ATCEMS",
+          "type": "local",
+          "website": "https://www.austintexas.gov/ems",
+          "location": "Austin, Texas",
+          "id": "austin-travis-county-emergency-medical-services",
+          "summary": ""
+        }
+      ],
+      "partner_count": 7
     },
     {
       "id": "epistorm",
@@ -3300,7 +3556,55 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 4
+      "tool_count": 4,
+      "partners": [
+        {
+          "name": "New Hampshire Department of Health and Human Services",
+          "acronym": "NH DHHS",
+          "type": "state",
+          "website": "https://www.dhhs.nh.gov/",
+          "location": "New Hampshire",
+          "id": "new-hampshire-department-of-health-and-human-services",
+          "summary": ""
+        },
+        {
+          "name": "Maine Department of Health and Human Services",
+          "acronym": "Maine DHHS",
+          "type": "state",
+          "summary": "Home of the Maine Center for Disease Control and Prevention.",
+          "website": "https://www.maine.gov/dhhs/mecdc",
+          "location": "Maine",
+          "id": "maine-department-of-health-and-human-services"
+        },
+        {
+          "name": "Boston Public Health Commission",
+          "acronym": "BPHC",
+          "type": "local",
+          "website": "https://www.boston.gov/departments/boston-public-health-commission",
+          "location": "Boston, Massachusetts",
+          "id": "boston-public-health-commission",
+          "summary": ""
+        },
+        {
+          "name": "MaineHealth",
+          "type": "healthcare",
+          "website": "https://www.mainehealth.org/",
+          "location": "Maine",
+          "id": "mainehealth",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Northern Light Health",
+          "type": "healthcare",
+          "website": "https://northernlighthealth.org/",
+          "location": "Maine",
+          "id": "northern-light-health",
+          "acronym": "",
+          "summary": ""
+        }
+      ],
+      "partner_count": 5
     },
     {
       "id": "foresite",
@@ -5692,7 +5996,145 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 7
+      "tool_count": 7,
+      "partners": [
+        {
+          "name": "Utah Department of Health and Human Services",
+          "acronym": "UDHHS",
+          "type": "state",
+          "website": "https://dhhs.utah.gov/",
+          "location": "Utah",
+          "id": "utah-department-of-health-and-human-services",
+          "summary": ""
+        },
+        {
+          "name": "Washington State Department of Health",
+          "acronym": "Washington DOH",
+          "type": "state",
+          "website": "https://doh.wa.gov/",
+          "location": "Washington",
+          "id": "washington-state-department-of-health",
+          "summary": ""
+        },
+        {
+          "name": "Idaho Department of Health and Welfare",
+          "acronym": "IDHW",
+          "type": "state",
+          "website": "https://healthandwelfare.idaho.gov/",
+          "location": "Idaho",
+          "id": "idaho-department-of-health-and-welfare",
+          "summary": ""
+        },
+        {
+          "name": "Montana Department of Public Health and Human Services",
+          "acronym": "Montana DPHHS",
+          "type": "state",
+          "website": "https://dphhs.mt.gov/",
+          "location": "Montana",
+          "id": "montana-department-of-public-health-and-human-services",
+          "summary": ""
+        },
+        {
+          "name": "Salt Lake County Health Department",
+          "acronym": "SLCoHD",
+          "type": "local",
+          "website": "https://www.saltlakecounty.gov/health/",
+          "location": "Salt Lake County, Utah",
+          "id": "salt-lake-county-health-department",
+          "summary": ""
+        },
+        {
+          "name": "Davis County Health Department",
+          "type": "local",
+          "website": "https://www.daviscountyutah.gov/health",
+          "location": "Davis County, Utah",
+          "id": "davis-county-health-department",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Weber-Morgan Health Department",
+          "type": "local",
+          "website": "https://www.webermorganhealth.org/",
+          "location": "Weber and Morgan Counties, Utah",
+          "id": "weber-morgan-health-department",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "TriCounty Health Department",
+          "type": "local",
+          "website": "https://www.tricountyhealthut.gov/",
+          "location": "Daggett, Duchesne, and Uintah Counties, Utah",
+          "id": "tricounty-health-department",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Tooele County Health Department",
+          "type": "local",
+          "website": "https://tooelehealth.org/",
+          "location": "Tooele County, Utah",
+          "id": "tooele-county-health-department",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Spokane Regional Health District",
+          "acronym": "SRHD",
+          "type": "local",
+          "website": "https://srhd.org/",
+          "location": "Spokane County, Washington",
+          "id": "spokane-regional-health-district",
+          "summary": ""
+        },
+        {
+          "name": "Whitman County Public Health",
+          "type": "local",
+          "website": "https://whitmancountypublichealth.org/",
+          "location": "Whitman County, Washington",
+          "id": "whitman-county-public-health",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "U.S. Department of Veterans Affairs",
+          "acronym": "VA",
+          "type": "federal",
+          "website": "https://www.va.gov/",
+          "location": "Nationwide",
+          "id": "u-s-department-of-veterans-affairs",
+          "summary": ""
+        },
+        {
+          "name": "Intermountain Health",
+          "type": "healthcare",
+          "website": "https://intermountainhealthcare.org/",
+          "location": "Utah",
+          "id": "intermountain-health",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Pullman Regional Hospital",
+          "type": "healthcare",
+          "website": "https://www.pullmanregional.org/",
+          "location": "Pullman, Washington",
+          "id": "pullman-regional-hospital",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "ARUP Laboratories",
+          "type": "healthcare",
+          "summary": "National clinical and anatomic pathology reference laboratory owned by the University of Utah.",
+          "website": "https://www.aruplab.com/",
+          "location": "Utah",
+          "id": "arup-laboratories",
+          "acronym": ""
+        }
+      ],
+      "partner_count": 15
     },
     {
       "id": "madmc",
@@ -6290,7 +6732,109 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 3
+      "tool_count": 3,
+      "partners": [
+        {
+          "name": "Minnesota Department of Health",
+          "acronym": "MDH",
+          "type": "state",
+          "website": "https://www.health.state.mn.us/",
+          "location": "Minnesota",
+          "id": "minnesota-department-of-health",
+          "summary": ""
+        },
+        {
+          "name": "Tribal Health Directors in Minnesota",
+          "type": "tribal",
+          "summary": "Health directors of the tribal nations in Minnesota. No single public website; contact runs through each nation's health department.",
+          "location": "Minnesota",
+          "id": "tribal-health-directors-in-minnesota",
+          "acronym": "",
+          "website": ""
+        },
+        {
+          "name": "Minnesota Electronic Health Records Consortium",
+          "acronym": "MNEHRC",
+          "type": "other",
+          "summary": "Consortium of Minnesota health systems that pools electronic health record data for public health analysis.",
+          "website": "https://mnehrconsortium.org/",
+          "location": "Minnesota",
+          "id": "minnesota-electronic-health-records-consortium"
+        },
+        {
+          "name": "Essentia Institute of Rural Health",
+          "type": "healthcare",
+          "summary": "Research arm of Essentia Health.",
+          "website": "https://www.essentiahealth.org/",
+          "location": "Minnesota",
+          "id": "essentia-institute-of-rural-health",
+          "acronym": ""
+        },
+        {
+          "name": "CentraCare",
+          "type": "healthcare",
+          "website": "https://www.centracare.com/",
+          "location": "Minnesota",
+          "id": "centracare",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "HealthPartners",
+          "type": "healthcare",
+          "website": "https://www.healthpartners.com/",
+          "location": "Minnesota",
+          "id": "healthpartners",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Mayo Clinic",
+          "type": "healthcare",
+          "website": "https://www.mayoclinic.org/",
+          "location": "Minnesota",
+          "id": "mayo-clinic",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Allina Health",
+          "type": "healthcare",
+          "website": "https://www.allinahealth.org/",
+          "location": "Minnesota",
+          "id": "allina-health",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Children's Minnesota",
+          "type": "healthcare",
+          "website": "https://www.childrensmn.org/",
+          "location": "Minnesota",
+          "id": "children-s-minnesota",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "Sanford Health",
+          "type": "healthcare",
+          "website": "https://www.sanfordhealth.org/",
+          "location": "Minnesota, South Dakota",
+          "id": "sanford-health",
+          "acronym": "",
+          "summary": ""
+        },
+        {
+          "name": "M Health Fairview",
+          "type": "healthcare",
+          "website": "https://www.mhealthfairview.org/",
+          "location": "Minnesota",
+          "id": "m-health-fairview",
+          "acronym": "",
+          "summary": ""
+        }
+      ],
+      "partner_count": 11
     },
     {
       "id": "micom",
@@ -6839,7 +7383,19 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 8
+      "tool_count": 8,
+      "partners": [
+        {
+          "name": "Michigan Department of Health and Human Services",
+          "acronym": "MDHHS",
+          "type": "state",
+          "website": "https://www.michigan.gov/mdhhs",
+          "location": "Michigan",
+          "id": "michigan-department-of-health-and-human-services",
+          "summary": ""
+        }
+      ],
+      "partner_count": 1
     },
     {
       "id": "resilient-shield",
@@ -6968,7 +7524,19 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 1
+      "tool_count": 1,
+      "partners": [
+        {
+          "name": "County of San Diego Health and Human Services Agency",
+          "acronym": "HHSA",
+          "type": "local",
+          "website": "https://www.sandiegocounty.gov/hhsa/",
+          "location": "San Diego County, California",
+          "id": "county-of-san-diego-health-and-human-services-agency",
+          "summary": ""
+        }
+      ],
+      "partner_count": 1
     },
     {
       "id": "soar",
@@ -7019,7 +7587,37 @@
       "tools": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 0
+      "tool_count": 0,
+      "partners": [
+        {
+          "name": "Oregon Health Authority Public Health Division",
+          "acronym": "OHA",
+          "type": "state",
+          "website": "https://www.oregon.gov/oha/ph/pages/index.aspx",
+          "location": "Oregon",
+          "id": "oregon-health-authority-public-health-division",
+          "summary": ""
+        },
+        {
+          "name": "Alabama Department of Public Health",
+          "acronym": "ADPH",
+          "type": "state",
+          "website": "https://www.alabamapublichealth.gov/",
+          "location": "Alabama",
+          "id": "alabama-department-of-public-health",
+          "summary": ""
+        },
+        {
+          "name": "Lane County Public Health",
+          "acronym": "LCPH",
+          "type": "local",
+          "website": "https://www.lanecounty.org/government/county_departments/health_and_human_services/public_health",
+          "location": "Lane County, Oregon",
+          "id": "lane-county-public-health",
+          "summary": ""
+        }
+      ],
+      "partner_count": 3
     }
   ],
   "health": []

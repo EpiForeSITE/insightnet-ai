@@ -169,3 +169,74 @@ summary = "Syndromic surveillance built on deidentified electronic health record
 category = "application"
 status = "in-development"
 keywords = ["electronic health records", "syndromic surveillance", "minnesota"]
+
+# Health partners, transcribed from https://insightnet.us/centers/madmc/
+[[organization.partners]]
+name = "Minnesota Department of Health"
+acronym = "MDH"
+type = "state"
+website = "https://www.health.state.mn.us/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Tribal Health Directors in Minnesota"
+type = "tribal"
+summary = "Health directors of the tribal nations in Minnesota. No single public website; contact runs through each nation's health department."
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Minnesota Electronic Health Records Consortium"
+acronym = "MNEHRC"
+type = "other"
+summary = "Consortium of Minnesota health systems that pools electronic health record data for public health analysis."
+website = "https://mnehrconsortium.org/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Essentia Institute of Rural Health"
+type = "healthcare"
+summary = "Research arm of Essentia Health."
+website = "https://www.essentiahealth.org/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "CentraCare"
+type = "healthcare"
+website = "https://www.centracare.com/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "HealthPartners"
+type = "healthcare"
+website = "https://www.healthpartners.com/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Mayo Clinic"
+type = "healthcare"
+website = "https://www.mayoclinic.org/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Allina Health"
+type = "healthcare"
+website = "https://www.allinahealth.org/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Children's Minnesota"
+type = "healthcare"
+website = "https://www.childrensmn.org/"
+location = "Minnesota"
+
+[[organization.partners]]
+name = "Sanford Health"
+type = "healthcare"
+website = "https://www.sanfordhealth.org/"
+location = "Minnesota, South Dakota"
+
+[[organization.partners]]
+name = "M Health Fairview"
+type = "healthcare"
+website = "https://www.mhealthfairview.org/"
+location = "Minnesota"

@@ -128,3 +128,25 @@ summary = "Real-time monitoring and analysis of priority measles outbreaks with 
 url = "https://gisanddata.maps.arcgis.com/apps/dashboards/dd314001921f4d2eac160f89ded0b49a"
 category = "dashboard"
 keywords = ["measles", "outbreak monitoring", "situational awareness"]
+
+# Health partners, transcribed from https://insightnet.us/centers/cori/
+[[organization.partners]]
+name = "Tennessee Department of Health"
+acronym = "TDH"
+type = "state"
+website = "https://www.tn.gov/health.html"
+location = "Tennessee"
+
+[[organization.partners]]
+name = "Alaska Department of Health"
+acronym = "Alaska DOH"
+type = "state"
+website = "https://health.alaska.gov/"
+location = "Alaska"
+
+[[organization.partners]]
+name = "North Carolina Department of Health and Human Services"
+acronym = "NC DHHS"
+type = "state"
+website = "https://www.ncdhhs.gov/"
+location = "North Carolina"

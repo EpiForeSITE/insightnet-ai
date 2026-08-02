@@ -32,3 +32,11 @@ summary = "Combines water and air quality testing, sewage spill reports, and res
 url = "https://southregion.resilienthub.org/"
 category = "dashboard"
 keywords = ["environmental health", "water quality", "air quality", "san diego"]
+
+# Health partners, transcribed from https://insightnet.us/centers/resilient-shield/
+[[organization.partners]]
+name = "County of San Diego Health and Human Services Agency"
+acronym = "HHSA"
+type = "local"
+website = "https://www.sandiegocounty.gov/hhsa/"
+location = "San Diego County, California"

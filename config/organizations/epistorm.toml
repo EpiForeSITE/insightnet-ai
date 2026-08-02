@@ -199,3 +199,38 @@ url = "https://github.com/epistorm/epydemix-data"
 repository = "https://github.com/epistorm/epydemix-data"
 category = "dataset"
 keywords = ["contact matrices", "demography", "global"]
+
+# Health partners, transcribed from https://insightnet.us/centers/epistorm/
+[[organization.partners]]
+name = "New Hampshire Department of Health and Human Services"
+acronym = "NH DHHS"
+type = "state"
+website = "https://www.dhhs.nh.gov/"
+location = "New Hampshire"
+
+[[organization.partners]]
+name = "Maine Department of Health and Human Services"
+acronym = "Maine DHHS"
+type = "state"
+summary = "Home of the Maine Center for Disease Control and Prevention."
+website = "https://www.maine.gov/dhhs/mecdc"
+location = "Maine"
+
+[[organization.partners]]
+name = "Boston Public Health Commission"
+acronym = "BPHC"
+type = "local"
+website = "https://www.boston.gov/departments/boston-public-health-commission"
+location = "Boston, Massachusetts"
+
+[[organization.partners]]
+name = "MaineHealth"
+type = "healthcare"
+website = "https://www.mainehealth.org/"
+location = "Maine"
+
+[[organization.partners]]
+name = "Northern Light Health"
+type = "healthcare"
+website = "https://northernlighthealth.org/"
+location = "Maine"

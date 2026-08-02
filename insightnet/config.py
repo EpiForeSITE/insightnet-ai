@@ -150,6 +150,39 @@ def _normalize_tool(tool: dict[str, Any], org_id: str) -> dict[str, Any]:
     return tool
 
 
+PARTNER_TYPES = {"state", "local", "tribal", "federal", "healthcare", "other"}
+
+
+def _normalize_partner(partner: dict[str, Any], org_id: str) -> dict[str, Any]:
+    """Validate one health partner a center works with.
+
+    Partners are maintained by hand for the same reason tools are: centers name them in
+    prose rather than in any machine-readable feed. `type` records what kind of health
+    organization the partner is, so the dashboard can group a state agency, a county
+    health department, and a health system without guessing from the name.
+    """
+
+    partner = deepcopy(partner)
+    name = clean_text(str(partner.get("name", "")))
+    if not name:
+        raise ProfileError(f"A partner in {org_id!r} is missing name")
+    partner["name"] = name
+    partner["id"] = str(partner.get("id") or _slug(name))
+    partner["acronym"] = clean_text(str(partner.get("acronym", "")))
+    partner["summary"] = clean_text(str(partner.get("summary", "")))
+    partner["location"] = clean_text(str(partner.get("location", "")))
+    partner["website"] = _valid_url(str(partner.get("website", "")), "partner.website")
+
+    partner_type = str(partner.get("type", "other")).strip().lower()
+    if partner_type not in PARTNER_TYPES:
+        raise ProfileError(
+            f"partner.type in {org_id!r} must be one of {sorted(PARTNER_TYPES)}, "
+            f"got {partner_type!r}"
+        )
+    partner["type"] = partner_type
+    return partner
+
+
 def _normalize_source(source: dict[str, Any], org_id: str) -> dict[str, Any]:
     source = deepcopy(source)
     source_type = str(source.get("type", "")).strip().lower()
@@ -196,6 +229,11 @@ def _normalize_organization(org: dict[str, Any]) -> dict[str, Any]:
     tool_ids = [tool["id"] for tool in org["tools"]]
     if len(tool_ids) != len(set(tool_ids)):
         raise ProfileError(f"Duplicate tool id in organization {org['id']!r}")
+
+    org["partners"] = [_normalize_partner(item, org["id"]) for item in org.get("partners", [])]
+    partner_ids = [partner["id"] for partner in org["partners"]]
+    if len(partner_ids) != len(set(partner_ids)):
+        raise ProfileError(f"Duplicate partner id in organization {org['id']!r}")
     return org
 
 

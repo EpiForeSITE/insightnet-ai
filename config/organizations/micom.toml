@@ -176,3 +176,11 @@ name = "Automated STI Data Report"
 summary = "Automated reporting tool that cuts manual STI data processing from about an hour to ten minutes."
 category = "application"
 keywords = ["sexually transmitted infections", "automation", "reporting"]
+
+# Health partners, transcribed from https://insightnet.us/centers/micom/
+[[organization.partners]]
+name = "Michigan Department of Health and Human Services"
+acronym = "MDHHS"
+type = "state"
+website = "https://www.michigan.gov/mdhhs"
+location = "Michigan"

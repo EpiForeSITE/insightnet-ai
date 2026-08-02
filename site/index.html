@@ -60,16 +60,10 @@
           <p id="network-description" class="hero-lede">
             Discover centers, researchers, and the scientific work emerging across InsightNet.
           </p>
-          <div class="freshness" id="freshness" role="status">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span>Loading the latest network snapshot…</span>
-          </div>
         </div>
-        <div class="hero-orbit" aria-hidden="true">
-          <span class="orbit orbit-one"></span>
-          <span class="orbit orbit-two"></span>
-          <span class="orbit orbit-three"></span>
-          <span class="orbit-core">INSIGHT</span>
+        <div class="freshness" id="freshness" role="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Loading the latest network snapshot…</span>
         </div>
       </section>
 
@@ -83,6 +77,10 @@
           <span class="metric-label">Researchers</span>
         </article>
         <article class="metric">
+          <span class="metric-value" id="metric-partners">—</span>
+          <span class="metric-label">Health partners</span>
+        </article>
+        <article class="metric">
           <span class="metric-value" id="metric-tools">—</span>
           <span class="metric-label">Tools</span>
         </article>
@@ -90,20 +88,59 @@
           <span class="metric-value" id="metric-works">—</span>
           <span class="metric-label">Publications</span>
         </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-items">—</span>
-          <span class="metric-label">Activity records</span>
-        </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-sources">—</span>
-          <span class="metric-label">Healthy sources</span>
-        </article>
       </section>
 
       <div id="app-message" class="app-message" role="alert" hidden></div>
 
       <section class="view is-active" id="view-overview" data-view-panel="overview">
         <div class="section-heading">
+          <div>
+            <p class="kicker">Directory</p>
+            <h2>Centers in InsightNet</h2>
+          </div>
+          <div class="carousel-controls">
+            <button
+              class="carousel-button"
+              type="button"
+              id="carousel-toggle"
+              aria-controls="center-carousel"
+              aria-label="Pause the centers carousel"
+            >
+              <span aria-hidden="true" id="carousel-toggle-icon">❙❙</span>
+            </button>
+            <button
+              class="carousel-button"
+              type="button"
+              id="carousel-previous"
+              aria-controls="center-carousel"
+              aria-label="Show previous centers"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <button
+              class="carousel-button"
+              type="button"
+              id="carousel-next"
+              aria-controls="center-carousel"
+              aria-label="Show next centers"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="carousel"
+          id="center-carousel-region"
+          role="group"
+          aria-roledescription="carousel"
+          aria-label="Centers in InsightNet"
+          aria-live="off"
+        >
+          <div class="carousel-track" id="center-carousel" tabindex="0"></div>
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+
+        <div class="section-heading section-heading-spaced">
           <div>
             <p class="kicker">Across the network</p>
             <h2>What is taking shape</h2>
@@ -122,11 +159,30 @@
 
         <div class="section-heading section-heading-spaced">
           <div>
-            <p class="kicker">Directory</p>
-            <h2>Centers in InsightNet</h2>
+            <p class="kicker">Public health in practice</p>
+            <h2>Health partners</h2>
+            <p>
+              The health departments, agencies, and health systems InsightNet centers build
+              with. Every center works with partners in its own region.
+            </p>
           </div>
         </div>
-        <div id="center-grid" class="center-grid"></div>
+        <form id="partners-filters" class="filter-bar" aria-label="Health partner filters">
+          <label>
+            <span>Search partners</span>
+            <input id="partners-query" type="search" placeholder="Utah, county health, Kaiser…" />
+          </label>
+          <label>
+            <span>Type</span>
+            <select id="partners-type"><option value="">All partner types</option></select>
+          </label>
+          <label>
+            <span>Center</span>
+            <select id="partners-center"><option value="">All centers</option></select>
+          </label>
+        </form>
+        <p id="partners-count" class="result-count" aria-live="polite"></p>
+        <div id="partners-list" class="partner-grid"></div>
       </section>
 
       <section class="view" id="view-tools" data-view-panel="tools" hidden>
@@ -253,8 +309,8 @@
           <h2>Who knows about <em>your question?</em></h2>
           <p>
             Search names, biographies, expertise, center focus areas, tools and products,
-            publication titles and abstracts, and collected activity by keyword. Your query
-            stays in this browser.
+            health partners, publication titles and abstracts, and collected activity by
+            keyword. Your query stays in this browser.
           </p>
         </div>
         <form id="expert-form" class="expert-form">

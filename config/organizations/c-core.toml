@@ -62,3 +62,12 @@ bluesky = "https://bsky.app/profile/aschuler.bsky.social"
 # No tools or products are named on this center's public pages yet; the site describes
 # planned activities rather than released deliverables. Add [[organization.tools]]
 # entries here as they are published.
+
+# Health partners, transcribed from https://insightnet.us/centers/c-core/
+[[organization.partners]]
+name = "Kaiser Permanente Southern California"
+acronym = "KPSC"
+type = "healthcare"
+summary = "Integrated healthcare system whose electronic health record data underpins C-CORE's outbreak analytics."
+website = "https://healthy.kaiserpermanente.org/southern-california"
+location = "California"

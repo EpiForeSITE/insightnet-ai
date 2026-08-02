@@ -121,3 +121,81 @@ def test_works_snapshot_carries_the_fields_the_dashboard_renders() -> None:
     assert required <= set(works[0])
     # Every record must be openable by a reader.
     assert all(work["url"] for work in works)
+
+
+def test_overview_features_the_centers_carousel_and_health_partners() -> None:
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    parser = IdCollector()
+    parser.feed(html)
+    assert {
+        "center-carousel",
+        "carousel-dots",
+        "carousel-previous",
+        "carousel-next",
+        "carousel-toggle",
+        "partners-list",
+        "partners-query",
+        "partners-type",
+        "partners-center",
+    } <= parser.ids
+    assert 'aria-roledescription="carousel"' in html
+    assert "renderCarousel();" in javascript
+    assert "renderPartners();" in javascript
+
+
+def test_the_carousel_rotates_but_can_always_be_stopped() -> None:
+    """An automatically moving banner needs an off switch and a reduced-motion opt-out."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    assert "CAROUSEL_DELAY" in javascript
+    assert "setInterval" in javascript
+    # Rotation stops for an explicit pause, a hover or focus, a hidden tab, another view,
+    # and for anyone who asked their system to reduce motion.
+    assert "setCarouselStopped" in javascript
+    assert "holdCarousel" in javascript
+    assert "document.hidden" in javascript
+    assert '"(prefers-reduced-motion: reduce)"' in javascript
+    assert 'id="carousel-toggle"' in html
+    assert 'aria-label="Pause the centers carousel"' in html
+
+
+def test_health_partners_can_be_searched_and_filtered() -> None:
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    assert 'id="partners-filters"' in html
+    assert 'byId("partners-query")' in javascript
+    assert 'byId("partners-center")' in javascript
+    # Partners are part of the expertise search too, not only their own section.
+    assert "partnerText(partner)" in javascript
+    assert "results.partners" in javascript
+
+
+def test_overview_metrics_drop_activity_records_and_source_health() -> None:
+    """Those two counts confused readers, so the summary row no longer carries them."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    for removed in ("metric-items", "metric-sources", "Activity records", "Healthy sources"):
+        assert removed not in html
+        assert removed not in javascript
+
+
+def test_profiles_snapshot_carries_center_health_partners() -> None:
+    path = ROOT / "data/profiles.json"
+    if not path.exists():
+        pytest.skip("profiles.json has not been built yet")
+    snapshot = json.loads(path.read_text(encoding="utf-8"))
+
+    organizations = snapshot["organizations"]
+    assert all(org.get("partners") for org in organizations), (
+        "every center works with health partners"
+    )
+    partners = [partner for org in organizations for partner in org["partners"]]
+    assert {"id", "name", "type", "website", "location", "acronym"} <= set(partners[0])
+    assert all(partner["name"] and partner["type"] for partner in partners)

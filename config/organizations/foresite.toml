@@ -511,3 +511,102 @@ url = "https://github.com/EpiForeSITE"
 category = "application"
 status = "in-development"
 keywords = ["anomaly detection", "time series", "alerting", "surveillance"]
+
+# Health partners, transcribed from https://insightnet.us/centers/foresite/
+[[organization.partners]]
+name = "Utah Department of Health and Human Services"
+acronym = "UDHHS"
+type = "state"
+website = "https://dhhs.utah.gov/"
+location = "Utah"
+
+[[organization.partners]]
+name = "Washington State Department of Health"
+acronym = "Washington DOH"
+type = "state"
+website = "https://doh.wa.gov/"
+location = "Washington"
+
+[[organization.partners]]
+name = "Idaho Department of Health and Welfare"
+acronym = "IDHW"
+type = "state"
+website = "https://healthandwelfare.idaho.gov/"
+location = "Idaho"
+
+[[organization.partners]]
+name = "Montana Department of Public Health and Human Services"
+acronym = "Montana DPHHS"
+type = "state"
+website = "https://dphhs.mt.gov/"
+location = "Montana"
+
+[[organization.partners]]
+name = "Salt Lake County Health Department"
+acronym = "SLCoHD"
+type = "local"
+website = "https://www.saltlakecounty.gov/health/"
+location = "Salt Lake County, Utah"
+
+[[organization.partners]]
+name = "Davis County Health Department"
+type = "local"
+website = "https://www.daviscountyutah.gov/health"
+location = "Davis County, Utah"
+
+[[organization.partners]]
+name = "Weber-Morgan Health Department"
+type = "local"
+website = "https://www.webermorganhealth.org/"
+location = "Weber and Morgan Counties, Utah"
+
+[[organization.partners]]
+name = "TriCounty Health Department"
+type = "local"
+website = "https://www.tricountyhealthut.gov/"
+location = "Daggett, Duchesne, and Uintah Counties, Utah"
+
+[[organization.partners]]
+name = "Tooele County Health Department"
+type = "local"
+website = "https://tooelehealth.org/"
+location = "Tooele County, Utah"
+
+[[organization.partners]]
+name = "Spokane Regional Health District"
+acronym = "SRHD"
+type = "local"
+website = "https://srhd.org/"
+location = "Spokane County, Washington"
+
+[[organization.partners]]
+name = "Whitman County Public Health"
+type = "local"
+website = "https://whitmancountypublichealth.org/"
+location = "Whitman County, Washington"
+
+[[organization.partners]]
+name = "U.S. Department of Veterans Affairs"
+acronym = "VA"
+type = "federal"
+website = "https://www.va.gov/"
+location = "Nationwide"
+
+[[organization.partners]]
+name = "Intermountain Health"
+type = "healthcare"
+website = "https://intermountainhealthcare.org/"
+location = "Utah"
+
+[[organization.partners]]
+name = "Pullman Regional Hospital"
+type = "healthcare"
+website = "https://www.pullmanregional.org/"
+location = "Pullman, Washington"
+
+[[organization.partners]]
+name = "ARUP Laboratories"
+type = "healthcare"
+summary = "National clinical and anatomic pathology reference laboratory owned by the University of Utah."
+website = "https://www.aruplab.com/"
+location = "Utah"

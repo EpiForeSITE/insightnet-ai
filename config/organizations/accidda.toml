@@ -235,3 +235,46 @@ url = "https://github.com/ACCIDDA/hestia"
 repository = "https://github.com/ACCIDDA/hestia"
 category = "package"
 keywords = ["household transmission", "study design"]
+
+# Health partners, transcribed from https://insightnet.us/centers/accidda/
+[[organization.partners]]
+name = "North Carolina Department of Health and Human Services"
+acronym = "NC DHHS"
+type = "state"
+website = "https://www.ncdhhs.gov/"
+location = "North Carolina"
+
+[[organization.partners]]
+name = "Maryland Department of Health"
+acronym = "MDH"
+type = "state"
+website = "https://health.maryland.gov/"
+location = "Maryland"
+
+[[organization.partners]]
+name = "Baltimore City Health Department"
+acronym = "BCHD"
+type = "local"
+website = "https://www.baltimorecity.gov/health"
+location = "Baltimore, Maryland"
+
+[[organization.partners]]
+name = "California Department of Public Health"
+acronym = "CDPH"
+type = "state"
+website = "https://www.cdph.ca.gov/"
+location = "California"
+
+[[organization.partners]]
+name = "Navajo Epidemiology Center"
+acronym = "NEC"
+type = "tribal"
+website = "https://nec.navajo-nsn.gov/"
+location = "Navajo Nation (Arizona, New Mexico, Utah)"
+
+[[organization.partners]]
+name = "Florida Department of Health"
+acronym = "FDOH"
+type = "state"
+website = "https://www.floridahealth.gov/"
+location = "Florida"

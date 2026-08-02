@@ -137,6 +137,7 @@ def build_snapshot(
             limit=20,
         )
         organization["tool_count"] = len(organization.get("tools", []))
+        organization["partner_count"] = len(organization.get("partners", []))
         for researcher in organization.get("researchers", []):
             researcher["keywords"] = extract_keywords(
                 [researcher.get("bio", ""), *researcher.get("expertise", [])],
@@ -207,6 +208,7 @@ def build_snapshot(
             "organizations": len(organizations),
             "researchers": sum(len(org.get("researchers", [])) for org in organizations),
             "tools": sum(len(org.get("tools", [])) for org in organizations),
+            "partners": sum(len(org.get("partners", [])) for org in organizations),
             "items": len(all_items),
             "sources_ok": sum(row["status"] == "ok" for row in health),
             "sources_attention": sum(row["status"] in {"error", "blocked"} for row in health),

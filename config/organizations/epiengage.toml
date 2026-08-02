@@ -120,3 +120,52 @@ summary = "Training course introducing public health professionals to infectious
 url = "https://hcts.uthealthcommtraining.org/courses/hcts15-how-to-think-like-a-modeler"
 category = "other"
 keywords = ["training", "workforce development", "modeling literacy"]
+
+# Health partners, transcribed from https://insightnet.us/centers/epiengage/
+[[organization.partners]]
+name = "Texas Department of State Health Services"
+acronym = "Texas DSHS"
+type = "state"
+website = "https://www.dshs.texas.gov/"
+location = "Texas"
+
+[[organization.partners]]
+name = "Massachusetts Department of Public Health"
+acronym = "Massachusetts DPH"
+type = "state"
+website = "https://www.mass.gov/orgs/department-of-public-health"
+location = "Massachusetts"
+
+[[organization.partners]]
+name = "Austin Public Health"
+acronym = "APH"
+type = "local"
+website = "https://www.austintexas.gov/health"
+location = "Austin, Texas"
+
+[[organization.partners]]
+name = "City of El Paso Department of Public Health"
+type = "local"
+website = "https://www.elpasotexas.gov/public-health/"
+location = "El Paso, Texas"
+
+[[organization.partners]]
+name = "Houston Health Department"
+acronym = "HHD"
+type = "local"
+website = "https://www.houstontx.gov/health/"
+location = "Houston, Texas"
+
+[[organization.partners]]
+name = "Dallas County Health and Human Services"
+acronym = "DCHHS"
+type = "local"
+website = "https://www.dallascounty.org/departments/dchhs/"
+location = "Dallas County, Texas"
+
+[[organization.partners]]
+name = "Austin-Travis County Emergency Medical Services"
+acronym = "ATCEMS"
+type = "local"
+website = "https://www.austintexas.gov/ems"
+location = "Austin, Texas"

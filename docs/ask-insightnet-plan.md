@@ -26,11 +26,17 @@ under $10/month, with no stealable API key.
 
 ### Two measurements that drive the design
 
-**1. Researcher profile text is almost empty.** All 471 `bio` fields combined are **19,587
-characters** — only 190 people have one, averaging 103 chars. All `expertise` arrays combined are
-5,581 chars. A researcher chunk built from `profiles.json` alone retrieves nothing useful. It must
-be **synthesized from that person's works**: their top keywords and recent titles. This is the
-single most important quality decision in the plan, and §D has a test that protects it.
+**1. Researcher profile text is generic.** *(Revised after the `Adding bios` commit: every
+researcher now has a bio, where previously only 190 did. The conclusion is unchanged.)* The 471 bios
+average 161 characters and draw on a vocabulary of just ~770 distinct words, describing domains
+rather than searchable topics. Across all of them "ERGM" appears **0** times, "Ebola" **1**,
+"Bayesian" **1** — against **3**, **54** and **49** occurrences in publication titles. Only 70 of
+471 list any expertise. So a researcher chunk built from `profiles.json` alone still retrieves
+nothing useful; it must be **synthesized from that person's works**. §D has a test that protects it.
+
+Related: 281 bios end with the identical string `Note: This Bio was AI-generated`. That boilerplate
+is stripped before indexing (`strip_bio_note`) — it dilutes every researcher embedding equally and
+spends prompt tokens on nothing. The site still displays it; only the index omits it.
 
 **2. Publication volume is wildly uneven.** 250 of 471 researchers have any works at all, and the
 top author has 103. A naive "sum the scores of all matching papers" roll-up hands every query to
@@ -183,8 +189,12 @@ reference behaviour rather than a second implementation that can drift.
 
 | File | Size |
 | --- | ---: |
-| `data/rag/chunks.jsonl` | ~6.4 MB |
+| `data/rag/chunks.jsonl` | **7.8 MB measured** (7,728 chunks) |
 | `data/rag/vectors.jsonl` | ~2.6 MB (7,728 × 256 int8, base64) |
+
+Chunks store their structured fields and `chunk_text()` composes the embedded text on load. Storing
+the rendered text *and* the snippet it contains cost 12.2 MB; composing brought it to 7.8 MB and
+left `chunks.jsonl` a set of readable records rather than a wall of prose.
 
 Do **not** mirror into `site/data/` — the browser never reads them, only the container does, and
 mirroring would double the weekly repo churn. `data/rag/` on the default branch is the shareable
@@ -274,12 +284,23 @@ surfaces as a user-correctable inline error.
    One 7,728×256 matmul, ~1 ms. Top 300.
 3. **Lexical**: BM25 (`k1=1.2, b=0.75`) over the in-memory term statistics. Top 300. This is what
    makes rare acronyms — ERGM, SEIR, MRSA — hit exactly, which dense embeddings routinely miss.
+   Two corrections found by running it on the real corpus: regular plurals are folded onto their
+   singular (otherwise "dashboards" misses every paper about a *dashboard*), and query terms above
+   `max(8, 15% of the corpus)` documents are dropped (otherwise "who can build dashboards?" ranks
+   on "who"). The absolute floor matters as much as the ratio — a ratio alone discards every term
+   in a small corpus.
 4. **Fuse** with Reciprocal Rank Fusion, `score = Σ 1/(60 + rank)`. RRF is right precisely because
    BM25 and cosine are on incomparable scales and the corpus is too small to tune a weighted blend.
-5. **Refusal gate**: if fewer than 3 chunks appear in *both* lists, or the top fused score is below
-   `MIN_FUSED_SCORE`, return `{"answer":null,"reason":"no_match"}` **without calling Gemini**. This
-   is simultaneously the hallucination guard and a real cost control — "who can fix my car?" costs
-   one embedding call.
+5. **Refusal gate**: return `{"answer":null,"reason":"no_match"}` **without calling Gemini** when
+   the best cosine is below `MIN_COSINE`, or when the two rankings fail to agree on at least
+   `min(3, len(lexical), len(semantic))` chunks. Simultaneously the hallucination guard and a real
+   cost control — "who can fix my car?" costs one embedding call.
+
+   The bar is **cosine, not the fused score**: RRF discards magnitudes, so its top score is
+   `1/(RRF_K+1)` whether the match is perfect or worthless and cannot express confidence. The
+   overlap requirement is capped by the number of available candidates — a fixed 3 refuses every
+   query against a small index. Both were found by the Stage 2 tests. **`MIN_COSINE = 0.25` is a
+   placeholder that must be tuned against real questions before Stage 7.**
 6. **Roll up to researchers.** Each of the top 60 fused chunks credits every id in its
    `researcher_ids` (538 works have more than one — co-authorship is genuine evidence, so credit
    each fully):
@@ -288,8 +309,10 @@ surfaces as a user-correctable inline error.
             + Σ over p's best 3 work chunks:  fused / sqrt(rank_within_person)
    ```
    The **best-3 cap** is what stops the 103-publication authors winning every query on volume.
-7. **Assemble**: top **5 researchers** × their **2 best evidence works**, plus up to 3 tools and
-   2 orgs if they scored. Hard cap `MAX_CONTEXT_CHARS = 14000`.
+7. **Roll up to centers** with `roll_up_organizations()`, so tool-shaped questions have an answer
+   (see below).
+8. **Assemble**: top **5 researchers** × their **2 best evidence works**, plus up to 3 tools and
+   3 centers if they scored. Hard cap `MAX_CONTEXT_CHARS = 14000`.
 
 ### B.3 Prompt
 
@@ -761,6 +784,28 @@ Each stage is independently verifiable and independently revertable.
 **Get answer quality right at Stage 2**, in Python, where iteration is fast — the researcher
 synthesis document and the roll-up formula are where the quality lives, and the server just imports
 them.
+
+## Tool-shaped questions resolve to a center, not a person
+
+`insightnet-rag --query "dashboard"` ranks the right software first, but **68 of 69 tools carry no
+researcher link**, so a perfect tool match credits nobody. Publications cannot cover it either:
+"dashboard" appears in 4 work titles out of 7,175, because dashboards are software, not papers.
+
+The resolution is that a tool's owner *is* its center, and every tool chunk already carries
+`organization_ids`. So `roll_up_organizations()` ranks centers the same way `roll_up()` ranks
+people — a center's own chunk counts directly, its tools and works contribute their best three
+matches with a `1/sqrt(rank)` decay — and a matched tool is reported with the center that builds
+it. A tool match is weighted `TOOL_WEIGHT = 2.0` against a paper: publication lists are broad and
+historical, shipping software is a specific, current capability.
+
+On the real corpus, "who can build dashboards?" now answers: **EpiENGAGE**, which builds
+VaxSim-Measles and the SARS-CoV-2 Variant Nowcast Hub — both `category = "dashboard"`. That is the
+honest answer, and it needs no data entry.
+
+The Stage 3 prompt should therefore be able to name a **center** as the answer, not only
+individuals, and should lead with the center whenever tools outrank works. Adding an optional
+`researchers = [...]` field to `[[organization.tools]]` in `config/organizations/*.toml` would still
+sharpen it from a team to a name, but it is now an enhancement rather than a prerequisite.
 
 ## Open items to confirm during implementation
 

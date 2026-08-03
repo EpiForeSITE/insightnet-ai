@@ -20,10 +20,17 @@ dev = [
   "pytest>=8,<9",
   "ruff>=0.6,<1",
 ]
+# Only the retrieval index needs these. The tests inject a stub embedder instead, so
+# the core collection pipeline stays installable without a cloud SDK.
+rag = [
+  "google-genai>=1.0,<2",
+  "numpy>=1.26,<3",
+]
 
 [project.scripts]
 insightnet-update = "insightnet.update:main"
 insightnet-works = "insightnet.update:works_main"
+insightnet-rag = "insightnet.update:rag_main"
 
 [tool.setuptools.packages.find]
 include = ["insightnet*"]

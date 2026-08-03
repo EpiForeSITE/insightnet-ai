@@ -454,6 +454,7 @@ expertise = ["complex systems", "statistical computing", "high-performance compu
 website = "https://ggvy.cl"
 orcid = "https://orcid.org/0000-0002-3171-0844"
 bluesky = "https://bsky.app/profile/gvegayon.bsky.social"
+google_scholar = "https://scholar.google.com/citations?user=34E1yTAAAAAJ&hl=EN"
 
 # Tools and products, transcribed from the ForeSITE projects page and github.com/EpiForeSITE
 [[organization.tools]]

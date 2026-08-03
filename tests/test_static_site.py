@@ -101,9 +101,19 @@ def test_the_advertised_cap_is_the_cap_collection_actually_applies() -> None:
 def test_the_site_credits_its_author_and_the_center_that_owns_it() -> None:
     html = (ROOT / "site/index.html").read_text(encoding="utf-8")
 
-    assert "Site created by George G. Vega Yon with the help of AI" in html
+    assert 'href="https://ggvy.cl"' in html
+    assert "George G. Vega Yon" in html
+    assert 'href="https://github.com/EpiForeSITE/insightnet-explorer"' in html
+    assert "source code on GitHub" in html
     assert "Codex, Copilot, and Claude" in html
     assert "Copyright &copy;" in html and "ForeSITE</a>" in html
+
+
+def test_static_site_loads_google_analytics() -> None:
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+
+    assert 'src="https://www.googletagmanager.com/gtag/js?id=G-Z3SR14RDZF"' in html
+    assert 'gtag("config", "G-Z3SR14RDZF");' in html
 
 
 def test_the_site_carries_foresite_branding() -> None:

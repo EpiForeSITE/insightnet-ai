@@ -10,9 +10,9 @@
   const WORKS_DETAILS_URL = "./data/works-details.json";
   const VIEWS = ["overview", "ask", "tools", "works", "partners", "centers", "experts", "health"];
   // Public by design: this endpoint appears in every visitor's browser and holds no
-  // secret. Left empty until the service is deployed, and an empty value simply routes
-  // the ask bar to the keyword search rather than offering a button that fails.
-  const ASK_URL = "";
+  // secret. Setting it to an empty string routes the ask bar to the keyword search
+  // instead, which is how the feature stays shippable while the service is down.
+  const ASK_URL = "https://insightnet-ask-ckn3l2i5pq-uc.a.run.app/ask";
   const ASK_MARKER = /\[\[[^\]\s]{1,64}\]\]/g;
   const ASK_FRAME_MS = 80;
   const TOOL_CATEGORY_LABELS = {

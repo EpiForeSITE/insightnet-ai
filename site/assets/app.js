@@ -8,7 +8,13 @@
   // reader is looking at publications, so they arrive in a second document that is
   // fetched after the page is already usable.
   const WORKS_DETAILS_URL = "./data/works-details.json";
-  const VIEWS = ["overview", "tools", "works", "partners", "centers", "experts", "health"];
+  const VIEWS = ["overview", "ask", "tools", "works", "partners", "centers", "experts", "health"];
+  // Public by design: this endpoint appears in every visitor's browser and holds no
+  // secret. Left empty until the service is deployed, and an empty value simply routes
+  // the ask bar to the keyword search rather than offering a button that fails.
+  const ASK_URL = "";
+  const ASK_MARKER = /\[\[[^\]\s]{1,64}\]\]/g;
+  const ASK_FRAME_MS = 80;
   const TOOL_CATEGORY_LABELS = {
     dashboard: "Dashboard",
     package: "Software package",
@@ -56,6 +62,9 @@
   let carouselIndex = 0;
   let carouselScrollTimer = 0;
   let partnerRoster = null;
+  let worksById = new Map();
+  let askController = null;
+  let askFrame = 0;
   let carouselTimer = 0;
   let carouselStopped = false;
   let carouselHeld = false;
@@ -990,7 +999,7 @@
     };
   }
 
-  function renderExpertResults(results) {
+  function renderExpertResults(results, summaryId = "expert-summary", resultsId = "expert-results") {
     const total =
       results.researchers.length +
       results.organizations.length +
@@ -998,8 +1007,11 @@
       results.partners.length +
       results.works.length +
       results.items.length;
-    byId("expert-summary").textContent = `${total.toLocaleString()} total match${total === 1 ? "" : "es"}`;
-    byId("expert-results").innerHTML = `
+    // The ask view shows the count in a pill instead of a sentence, so the summary slot
+    // is optional and the total comes back for the caller to place.
+    const summary = summaryId ? byId(summaryId) : null;
+    if (summary) summary.textContent = `${total.toLocaleString()} total match${total === 1 ? "" : "es"}`;
+    byId(resultsId).innerHTML = `
       <section class="expert-group">
         <h3>Researchers <span class="count-pill">${results.researchers.length}</span></h3>
         ${
@@ -1064,6 +1076,260 @@
             : "<p class='result-count'>No collected activity matches this topic.</p>"
         }
       </section>`;
+    return total;
+  }
+
+  // ----------------------------------------------------------------------------------
+  // Assisted answers
+  // ----------------------------------------------------------------------------------
+
+  function askEndpoint() {
+    // A local override keeps the deployed endpoint out of development, and is limited to
+    // https or localhost so a stray value cannot redirect questions somewhere hostile.
+    let override = "";
+    try {
+      override = window.localStorage.getItem("insightnet-ask-url") || "";
+    } catch (_error) {
+      override = "";
+    }
+    const candidate = override || ASK_URL;
+    if (!candidate) return "";
+    const url = safeUrl(candidate);
+    if (!url) return "";
+    return url.startsWith("https://") || url.startsWith("http://localhost") ? url : "";
+  }
+
+  function setAskStatus(text) {
+    byId("ask-status").textContent = text;
+  }
+
+  function showAskNotice(text) {
+    const notice = byId("ask-notice");
+    notice.textContent = text;
+    notice.hidden = !text;
+  }
+
+  // Every failure lands here: rate limited, over budget, offline, or not yet deployed.
+  // The visitor still gets an answer, just a keyword one, so the page is never a dead end.
+  async function askFallback(query, notice) {
+    showAskNotice(notice);
+    setAskStatus("Showing keyword matches instead.");
+    await worksPromise;
+    await loadWorkDetails();
+    const total = renderExpertResults(searchExperts(query), "", "ask-fallback-results");
+    byId("ask-fallback-count").textContent = total.toLocaleString();
+    byId("ask-fallback").hidden = false;
+  }
+
+  function citationCard(document_) {
+    const url = safeUrl(document_.url);
+    const title = escapeHtml(document_.title || "Untitled");
+    const heading = url
+      ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+      : title;
+    const detail = [document_.subtitle, document_.venue, document_.year]
+      .filter(Boolean)
+      .map((part) => escapeHtml(String(part)))
+      .join(" · ");
+    return `<article class="card ask-citation">
+        <h4>${heading}</h4>
+        ${detail ? `<p class="result-count">${detail}</p>` : ""}
+      </article>`;
+  }
+
+  function renderAskCitations(citations) {
+    // A cited publication is rendered by the same card the Publications view uses, so
+    // its DOI, PMID, and arXiv links are identical wherever a reader meets it.
+    const cards = citations
+      .map((entry) => {
+        const work = entry.work_id ? worksById.get(entry.work_id) : null;
+        return work ? workCard(work) : citationCard(entry);
+      })
+      .join("");
+    byId("ask-citations").innerHTML = cards
+      ? `<h3 class="ask-citations-heading">Sources</h3>${cards}`
+      : "";
+  }
+
+  // Retrieval offers the model far more documents than it ends up citing, so numbering
+  // by position in that list produces footnotes that start at 7 and jump around. These
+  // are numbered by order of first appearance, and only the cited ones are listed.
+  function citedInOrder(text, citations) {
+    return citations
+      .map((entry) => ({ entry, at: text.indexOf(`[[${entry.id}]]`) }))
+      .filter((item) => item.at !== -1)
+      .sort((a, b) => a.at - b.at)
+      .map((item) => item.entry);
+  }
+
+  function renderAskAnswer(text, citations) {
+    const cited = citedInOrder(text, citations);
+    let html = escapeHtml(text);
+    cited.forEach((entry, position) => {
+      const url = safeUrl(entry.url);
+      const number = position + 1;
+      const label = url
+        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${number}</a>`
+        : String(number);
+      // Literal substitution over the ids the service actually offered. Nothing is
+      // parsed out of the model's text, so a marker it invented cannot become a link.
+      html = html.replaceAll(`[[${entry.id}]]`, `<sup class="ask-cite">${label}</sup>`);
+    });
+    html = html.replace(ASK_MARKER, "");
+    renderAskCitations(cited);
+    byId("ask-answer").innerHTML = html
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .map((paragraph) => `<p>${paragraph}</p>`)
+      .join("");
+  }
+
+  async function readAskStream(response, onEvent) {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      let split = buffer.indexOf("\n\n");
+      while (split !== -1) {
+        const frame = buffer.slice(0, split);
+        buffer = buffer.slice(split + 2);
+        const name = frame.match(/^event: (.*)$/m)?.[1] || "";
+        const data = frame.match(/^data: (.*)$/m)?.[1] || "{}";
+        try {
+          onEvent(name, JSON.parse(data));
+        } catch (_error) {
+          // A frame that arrives malformed is skipped rather than ending the answer.
+        }
+        split = buffer.indexOf("\n\n");
+      }
+    }
+  }
+
+  async function askQuestion(query) {
+    const question = String(query || "").trim();
+    if (!question) return;
+    askController?.abort();
+    askController = new AbortController();
+
+    byId("ask-query").value = question;
+    byId("ask-query-view").value = question;
+    byId("ask-echo").textContent = `“${question}”`;
+    byId("ask-error").hidden = true;
+    byId("ask-answer").innerHTML = "";
+    byId("ask-answer-sr").textContent = "";
+    byId("ask-citations").innerHTML = "";
+    byId("ask-fallback").hidden = true;
+    showAskNotice("");
+    showView("ask");
+
+    if (question.length > 300) {
+      const error = byId("ask-error");
+      error.textContent = "Please shorten the question to 300 characters or fewer.";
+      error.hidden = false;
+      return;
+    }
+
+    const endpoint = askEndpoint();
+    if (!endpoint) {
+      await askFallback(question, "The assisted answer service is not configured yet.");
+      return;
+    }
+
+    setAskStatus("Thinking…");
+    byId("ask-answer").setAttribute("aria-busy", "true");
+    let citations = [];
+    let answer = "";
+    let refused = false;
+
+    const paint = () => {
+      askFrame = 0;
+      renderAskAnswer(answer, citations);
+    };
+    const schedule = () => {
+      if (askFrame) return;
+      askFrame = window.setTimeout(paint, ASK_FRAME_MS);
+    };
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question }),
+        signal: askController.signal,
+      });
+      if (!response.ok || !response.body) {
+        const detail = await response.json().catch(() => ({}));
+        if (response.status === 400 || response.status === 422) {
+          const error = byId("ask-error");
+          error.textContent = detail.detail || "That question could not be read.";
+          error.hidden = false;
+          setAskStatus("");
+          return;
+        }
+        // The service returns a no-answer as a normal 200, so anything else means the
+        // assistant is unavailable rather than merely unsure.
+        await askFallback(question, noticeFor(detail, response.status));
+        return;
+      }
+      await readAskStream(response, (name, payload) => {
+        if (name === "meta") {
+          // Sources arrive before the prose and stay client-side, so a citation never
+          // costs a second request; they appear as the answer cites them.
+          citations = payload.citations || [];
+          setAskStatus("Reading the network…");
+        } else if (name === "token") {
+          answer += payload.t || "";
+          schedule();
+        } else if (name === "no_match") {
+          refused = true;
+        } else if (name === "error") {
+          refused = true;
+        }
+      });
+    } catch (error) {
+      if (error.name === "AbortError") return;
+      await askFallback(question, "The assisted answer could not be reached.");
+      return;
+    } finally {
+      byId("ask-answer").setAttribute("aria-busy", "false");
+      window.clearTimeout(askFrame);
+      askFrame = 0;
+    }
+
+    if (refused || !answer.trim()) {
+      // A stream can fail after some prose has already painted — an upstream quota being
+      // exhausted mid-answer does exactly that. Half a sentence above "showing keyword
+      // matches instead" reads like a broken page, so it is cleared rather than left.
+      byId("ask-answer").innerHTML = "";
+      byId("ask-answer-sr").textContent = "";
+      byId("ask-citations").innerHTML = "";
+      await askFallback(
+        question,
+        "That question could not be answered from this network's publications and profiles.",
+      );
+      return;
+    }
+    paint();
+    // Count what the answer actually cites, not everything retrieval offered the model.
+    const cited = citedInOrder(answer, citations).length;
+    setAskStatus(`Answer ready${cited ? ` · ${cited} source${cited === 1 ? "" : "s"}` : ""}.`);
+    // Screen readers cannot follow a region that mutates on every frame, so the finished
+    // answer is announced once here instead.
+    byId("ask-answer-sr").textContent = answer.trim();
+  }
+
+  function noticeFor(detail, status) {
+    if (detail.error === "rate_limited") {
+      return "That is a lot of questions at once. Showing keyword matches instead.";
+    }
+    if (detail.error === "budget_exhausted") {
+      return "The assistant has reached its monthly budget. Showing keyword matches instead.";
+    }
+    return `The assistant is unavailable right now (${status}).`;
   }
 
   const HEALTH_ORDER = { error: 0, blocked: 1, ok: 2, skipped: 3 };
@@ -1120,7 +1386,7 @@
     }
     // Anyone reading publications or hunting for experts wants abstracts, so start the
     // second fetch the moment they head that way rather than making them wait for it.
-    if (selected === "works" || selected === "experts") loadWorkDetails();
+    if (selected === "works" || selected === "experts" || selected === "ask") loadWorkDetails();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -1167,8 +1433,10 @@
 
   function bindEvents() {
     document.addEventListener("click", (event) => {
+      const askButton = event.target.closest("[data-ask]");
+      if (askButton) askQuestion(askButton.dataset.ask);
       const viewButton = event.target.closest("[data-view]");
-      if (viewButton) showView(viewButton.dataset.view);
+      if (viewButton && !askButton) showView(viewButton.dataset.view);
       const goToButton = event.target.closest("[data-go-to]");
       if (goToButton) showView(goToButton.dataset.goTo);
       const centerButton = event.target.closest("[data-open-center]");
@@ -1230,6 +1498,14 @@
       renderWorks(false);
     });
     byId("center-select").addEventListener("change", (event) => renderCenter(event.target.value));
+    byId("ask-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      askQuestion(byId("ask-query").value);
+    });
+    byId("ask-form-view").addEventListener("submit", (event) => {
+      event.preventDefault();
+      askQuestion(byId("ask-query-view").value);
+    });
     byId("expert-form").addEventListener("submit", async (event) => {
       event.preventDefault();
       const errorBox = byId("expert-error");
@@ -1263,6 +1539,11 @@
   // downstream keeps seeing one whole object. Runs at most once.
   function loadWorkDetails() {
     if (detailsPromise) return detailsPromise;
+    // A reader can land straight on a view that wants abstracts — #ask, #works, #experts —
+    // before the works fetch has been started, so there may be nothing to chain onto yet.
+    // Initialisation warms the details itself once works is in flight, so returning early
+    // defers the work rather than skipping it.
+    if (!worksPromise) return Promise.resolve();
     detailsPromise = worksPromise
       .then(() => fetchJson(WORKS_DETAILS_URL))
       .then((payload) => {
@@ -1289,6 +1570,9 @@
     return fetchJson(WORKS_URL)
       .then((payload) => {
         works = payload;
+        // Citation markers arrive as work ids, so the ask view can render them with the
+        // same card the Publications view uses.
+        worksById = new Map((works.works || []).map((work) => [work.id, work]));
         byId("metric-works").textContent = (works.stats?.works ?? works.works?.length ?? 0).toLocaleString();
         populateWorksFilters();
         renderWorks();
@@ -1332,12 +1616,13 @@
       renderPartners();
       renderCenter(snapshot.organizations?.[0]?.id || "");
       renderHealth();
-      showView(window.location.hash.slice(1) || "overview", false);
       // The publication corpus is the largest payload, so it loads after first paint:
       // first the searchable index, then the abstracts and coauthor lists once the
       // browser is idle. A reader who never opens Publications never pays for the latter
-      // until then, and one who does usually finds it already there.
+      // until then, and one who does usually finds it already there. The fetch starts
+      // before routing because a view restored from the hash may ask for it immediately.
       worksPromise = loadWorks();
+      showView(window.location.hash.slice(1) || "overview", false);
       const warmDetails = () => worksPromise.then(loadWorkDetails);
       if (typeof window.requestIdleCallback === "function") {
         window.requestIdleCallback(warmDetails, { timeout: 5000 });

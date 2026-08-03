@@ -51,6 +51,7 @@
         <div class="header-actions">
           <nav aria-label="Primary navigation">
             <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
+            <button class="nav-link" type="button" data-view="ask">Ask</button>
             <button class="nav-link" type="button" data-view="tools">Tools</button>
             <button class="nav-link" type="button" data-view="works">Publications</button>
             <button class="nav-link" type="button" data-view="partners">Partners</button>
@@ -78,6 +79,28 @@
           <span class="status-dot" aria-hidden="true"></span>
           <span>Loading the latest network snapshot…</span>
         </div>
+        <form id="ask-form" class="ask-form" role="search" aria-label="Ask about InsightNet expertise">
+          <label class="search-shell ask-shell">
+            <span class="sr-only">Ask which researchers can help with a topic</span>
+            <input
+              id="ask-query"
+              type="search"
+              maxlength="300"
+              autocomplete="off"
+              placeholder="Which researchers can help me with ERGMs?"
+            />
+            <button type="submit">Ask</button>
+          </label>
+          <p class="ask-examples">
+            Try
+            <button class="text-action" type="button" data-ask="who can build dashboards?">
+              who can build dashboards?
+            </button>
+            <button class="text-action" type="button" data-ask="which researchers have worked with Ebola?">
+              …worked with Ebola?
+            </button>
+          </p>
+        </form>
       </section>
 
       <section class="metrics" aria-label="Network summary">
@@ -310,6 +333,44 @@
           </label>
         </div>
         <div id="center-detail"></div>
+      </section>
+
+      <section class="view" id="view-ask" data-view-panel="ask" hidden>
+        <div class="expert-intro">
+          <p class="kicker">Assisted answer</p>
+          <h2>Who can help with <em>this?</em></h2>
+          <p>
+            An AI model reads publication abstracts, profiles, and tools from this site's own
+            snapshot and names researchers or centers, citing the specific record behind each
+            suggestion. It can be wrong, and it only answers questions about finding expertise
+            in this network — every citation links to the real record so you can check.
+            Your question is sent to Google Cloud to be answered.
+          </p>
+        </div>
+        <form id="ask-form-view" class="expert-form">
+          <label class="search-shell">
+            <span class="sr-only">Ask which researchers can help with a topic</span>
+            <input id="ask-query-view" type="search" maxlength="300" autocomplete="off"
+              placeholder="Try “who can help with Bayesian forecasting?”" />
+            <button type="submit">Ask</button>
+          </label>
+        </form>
+        <p id="ask-echo" class="result-count"></p>
+        <p id="ask-status" class="result-count" role="status" aria-live="polite"></p>
+        <div id="ask-notice" class="inline-notice" hidden></div>
+        <div id="ask-error" class="inline-error" role="alert" hidden></div>
+        <div id="ask-answer" class="ask-answer" aria-live="off"></div>
+        <p id="ask-answer-sr" class="sr-only" aria-live="polite"></p>
+        <div id="ask-citations" class="ask-citations"></div>
+        <section class="expert-group" id="ask-fallback" hidden>
+          <h3>Keyword matches <span class="count-pill" id="ask-fallback-count">0</span></h3>
+          <div id="ask-fallback-results"></div>
+          <p class="result-count">
+            <button class="text-action" type="button" data-view="experts">
+              Open the full keyword search →
+            </button>
+          </p>
+        </section>
       </section>
 
       <section class="view" id="view-experts" data-view-panel="experts" hidden>

@@ -26,6 +26,7 @@ def test_static_site_has_every_dashboard_view() -> None:
 
     assert {
         "view-overview",
+        "view-ask",
         "view-tools",
         "view-works",
         "view-partners",
@@ -317,3 +318,111 @@ def test_profiles_snapshot_carries_center_health_partners() -> None:
     partners = [partner for org in organizations for partner in org["partners"]]
     assert {"id", "name", "type", "website", "location", "acronym"} <= set(partners[0])
     assert all(partner["name"] and partner["type"] for partner in partners)
+
+
+def test_the_ask_bar_lives_in_the_hero_and_routes_to_its_own_view() -> None:
+    """The assistant is the first thing on the page, per the brief."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    hero = html.split('<section class="hero"')[1].split("</section>")[0]
+    assert 'id="ask-form"' in hero
+    assert 'id="ask-query"' in hero
+    assert '"ask"' in javascript.split("const VIEWS =")[1].split("]")[0]
+    assert 'data-view="ask"' in html
+    assert 'data-view-panel="ask"' in html
+
+
+def test_the_ask_view_degrades_to_keyword_search() -> None:
+    """Every failure path ends in results rather than a dead end."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    fallback = javascript.split("async function askFallback")[1].split("\n  }")[0]
+
+    assert "searchExperts(" in fallback
+    assert "ask-fallback-results" in fallback
+    # Rate limiting, budget exhaustion, a network failure and an unconfigured endpoint
+    # all have to reach it, or the page can strand a visitor.
+    for trigger in ("rate_limited", "budget_exhausted", "not configured yet", "could not be reached"):
+        assert trigger in javascript
+
+
+def test_the_answer_stream_is_announced_without_spamming_the_screen_reader() -> None:
+    """A live region that mutates every frame is unusable; the finished text is announced once."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    answer = html.split('id="ask-answer"')[1].split(">")[0]
+    assert 'aria-live="off"' in answer
+    assert 'id="ask-status" class="result-count" role="status" aria-live="polite"' in html
+    assert 'id="ask-answer-sr"' in html
+    assert 'byId("ask-answer-sr").textContent' in javascript
+
+
+def test_the_ask_endpoint_is_public_and_carries_no_secret() -> None:
+    """The endpoint is a public URL, not a credential, and never a build-time placeholder."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    value = javascript.split("const ASK_URL =")[1].split(";")[0].strip().strip('"')
+
+    assert value == "" or value.startswith("https://")
+    assert "__SITE_BASE_URL__" not in value
+    assert "key" not in value.lower()
+
+
+def test_only_offered_citations_can_become_links() -> None:
+    """Markers are substituted literally, so an invented one cannot be turned into a link."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    renderer = javascript.split("function renderAskAnswer")[1].split("\n  }")[0]
+
+    assert "escapeHtml(text)" in renderer
+    # Numbered by order of appearance, so footnotes read 1, 2, 3 rather than by the
+    # position of the document in the far longer list retrieval offered the model.
+    assert "citedInOrder" in renderer
+    assert "replaceAll(`[[${entry.id}]]`" in renderer
+    assert "ASK_MARKER" in renderer  # anything left over is stripped, not rendered
+
+
+def test_the_ask_view_discloses_where_the_question_goes() -> None:
+    """The keyword view promises the query stays local; that must not silently become false."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    assert "Your query stays in this browser." in html
+    assert "Your question is sent to Google Cloud to be answered." in html
+
+
+def test_a_failed_stream_leaves_no_half_written_answer() -> None:
+    """An upstream quota can be exhausted after some prose has already painted.
+
+    Half a sentence sitting above "showing keyword matches instead" reads like a broken
+    page, so the partial answer is cleared before the fallback renders.
+    """
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    branch = javascript.split("if (refused || !answer.trim())")[1].split("askFallback(")[0]
+
+    assert 'byId("ask-answer").innerHTML = ""' in branch
+    assert 'byId("ask-answer-sr").textContent = ""' in branch
+    assert 'byId("ask-citations").innerHTML = ""' in branch
+
+
+def test_a_deep_link_to_a_view_that_wants_abstracts_does_not_crash() -> None:
+    """Opening #ask directly must not run routing before the works fetch exists.
+
+    `worksPromise` starts as null and `loadWorkDetails` chains onto it, so restoring a
+    view from the hash before the fetch was started threw inside initialize() and left
+    the page with no publications at all. Sharing a link to #ask is the normal case, so
+    both the ordering and the guard are pinned here.
+    """
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    initialize = javascript.split("async function initialize()")[1]
+
+    assert initialize.index("worksPromise = loadWorks();") < initialize.index(
+        "showView(window.location.hash"
+    )
+    loader = javascript.split("function loadWorkDetails()")[1].split("\n  }")[0]
+    assert "if (!worksPromise) return Promise.resolve();" in loader

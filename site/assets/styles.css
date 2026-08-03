@@ -353,6 +353,10 @@ h4 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .ask-answer[aria-busy="true"]::after {
+    animation: none;
+  }
+
   html,
   .carousel-track {
     scroll-behavior: auto;
@@ -1192,6 +1196,97 @@ select {
   color: var(--crimson-deep);
   margin: 1rem 0;
   padding: 0.8rem 1rem;
+}
+
+/* The ask bar spans the full hero width beneath the title and the freshness badge. */
+.ask-form {
+  flex: 1 1 100%;
+  margin-top: 1.2rem;
+}
+
+.ask-shell {
+  max-width: 760px;
+}
+
+.ask-examples {
+  color: var(--ink-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0;
+}
+
+/* A budget or rate-limit message is information, not failure, so it reads gold rather
+   than crimson while keeping the same box as .inline-error. */
+.inline-notice {
+  background: var(--gold-tint);
+  border: 1px solid var(--sand-deep);
+  border-radius: 12px;
+  color: var(--gold-deep);
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+}
+
+.ask-answer {
+  font-size: 1.06rem;
+  line-height: 1.65;
+  margin-top: 0.6rem;
+  max-width: 70ch;
+}
+
+.ask-answer p {
+  margin: 0 0 0.9rem;
+}
+
+.ask-answer[aria-busy="true"]::after {
+  animation: ask-caret 1s steps(2) infinite;
+  background: var(--crimson);
+  content: "";
+  display: inline-block;
+  height: 1.05em;
+  margin-left: 0.15rem;
+  vertical-align: text-bottom;
+  width: 2px;
+}
+
+@keyframes ask-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.ask-cite a,
+.ask-cite {
+  color: var(--crimson);
+  font-weight: 700;
+  padding-left: 0.1rem;
+  text-decoration: none;
+}
+
+.ask-cite a:hover {
+  text-decoration: underline;
+}
+
+.ask-citations {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.ask-citations-heading {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.ask-citation h4 {
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
 }
 
 .expert-group {

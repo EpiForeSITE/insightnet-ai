@@ -291,16 +291,29 @@ surfaces as a user-correctable inline error.
    in a small corpus.
 4. **Fuse** with Reciprocal Rank Fusion, `score = Σ 1/(60 + rank)`. RRF is right precisely because
    BM25 and cosine are on incomparable scales and the corpus is too small to tune a weighted blend.
-5. **Refusal gate**: return `{"answer":null,"reason":"no_match"}` **without calling Gemini** when
-   the best cosine is below `MIN_COSINE`, or when the two rankings fail to agree on at least
-   `min(3, len(lexical), len(semantic))` chunks. Simultaneously the hallucination guard and a real
-   cost control — "who can fix my car?" costs one embedding call.
+5. **No score threshold.** Five candidate signals were measured against the built index with
+   twelve on-topic and twelve off-topic questions. None separates them:
 
-   The bar is **cosine, not the fused score**: RRF discards magnitudes, so its top score is
-   `1/(RRF_K+1)` whether the match is perfect or worthless and cannot express confidence. The
-   overlap requirement is capped by the number of available candidates — a fixed 3 refuses every
-   query against a small index. Both were found by the Stage 2 tests. **`MIN_COSINE = 0.25` is a
-   placeholder that must be tuned against real questions before Stage 7.**
+   | signal | on-topic | off-topic | separates |
+   | --- | --- | --- | --- |
+   | top cosine | 0.68 – 0.79 | 0.66 – 0.69 | no |
+   | top − mean | 0.112 – 0.156 | 0.083 – 0.143 | no |
+   | z-score | 3.27 – 4.44 | 3.45 – 5.07 | no |
+   | score deviation | 0.0315 – 0.0397 | 0.0236 – 0.0282 | full sentences only |
+   | top BM25 | 10.4 – 15.1 | 4.4 – 20.1 | no |
+
+   Score deviation looked like the answer until bare keywords were tried: "dashboard" gives
+   0.019 and "ERGM" 0.031 — below most off-topic questions — yet both retrieve exactly the
+   right record, because deviation partly measures how specific the *phrasing* is rather than
+   how relevant the corpus is. "who won the world cup in 1998?" tops BM25 at 20.1 because a
+   7,738-document corpus contains "cup", "won" and "1998" somewhere.
+
+   Relevance is therefore left to the model, which sees the question and the records and
+   replies `NO_CONFIDENT_MATCH`. **This only works if the system instruction names the domain
+   and says that retrieved documents are not evidence of relevance** — without that, "who can
+   fix my car?" was answered with four cheerfully-cited epidemiologists. With it, every
+   off-topic probe refuses. The numbers above are specific to `gemini-embedding-001` at 256
+   dimensions; re-run the calibration before trusting them elsewhere.
 6. **Roll up to researchers.** Each of the top 60 fused chunks credits every id in its
    `researcher_ids` (538 works have more than one — co-authorship is genuine evidence, so credit
    each fully):
@@ -423,21 +436,18 @@ budget → **cache** → embed query → retrieve → **refusal gate** → Gemin
 trade at this traffic level; `--min-instances=1` bills CPU around the clock and would dominate the
 budget. Enable **startup CPU boost** to shorten it.
 
-One-time setup, documented in `server/README.md`:
+**Stage 1 is complete.** The account setup went further than this plan specified, in a good
+way: **two** service accounts rather than one.
 
-```bash
-gcloud services enable run.googleapis.com aiplatform.googleapis.com \
-  artifactregistry.googleapis.com cloudbuild.googleapis.com firestore.googleapis.com
-gcloud artifacts repositories create insightnet --repository-format=docker --location=us-central1
-gcloud firestore databases create --location=nam5
-gcloud iam service-accounts create insightnet-ask
-gcloud projects add-iam-policy-binding $PROJECT \
-  --member=serviceAccount:insightnet-ask@$PROJECT.iam.gserviceaccount.com \
-  --role=roles/aiplatform.user
-gcloud projects add-iam-policy-binding $PROJECT \
-  --member=serviceAccount:insightnet-ask@$PROJECT.iam.gserviceaccount.com \
-  --role=roles/datastore.user
-```
+| Account | Used by | Roles |
+| --- | --- | --- |
+| `insightnet-ask@` | Cloud Run runtime | `aiplatform.user`, `datastore.user` |
+| `insightnet-deploy@` | GitHub Actions | `run.admin`, `cloudbuild.builds.editor`, `artifactregistry.writer`, `iam.serviceAccountUser` on the runtime account, `aiplatform.user` for the index build |
+
+The deploy identity can therefore never be used by the running service, and a compromised
+workflow cannot read Firestore. The WIF provider is pinned with
+`--attribute-condition="assertion.repository == '<owner>/<repo>'"`, so only this repository can
+impersonate it. Full commands are in [`server/README.md`](../server/README.md).
 
 ---
 
@@ -711,27 +721,25 @@ convention you use consistent.
 > numbers in config. Gemini prices have changed several times; every figure below is an assumption
 > to check, not a fact. Prices live in env vars precisely so this is a config change, not a patch.
 
-Per-query token budget, from the actual context assembly in §B.2–B.3:
+**Measured** against the live service and the built index, not estimated:
 
 | Component | Tokens |
 | --- | ---: |
-| System instruction | 550 |
-| 5 researchers × (profile ~60 + 2 works × ~180) | 2,100 |
-| 3 tools + 2 orgs | 320 |
-| Question + tags | 60 |
-| **Input total** | **~3,030** |
-| Output (`max_output_tokens: 512`, typical ~300) | **~350** |
+| Input (system + 5 researchers + evidence + tools + centers) | **1,700 – 3,010**, median ~2,900 |
+| Output (`max_output_tokens: 512`) | **86 – 376**, median ~150 |
 
-What $10/month buys (`queries = 10 / cost_per_query`):
+At placeholder rates of $0.10/1M in and $0.40/1M out (**verify**), that is **$0.00035 per
+query**:
 
-| Model (assumed price — **verify**) | $/query | queries/mo | ≈/day | with 40% cache hit |
-| --- | ---: | ---: | ---: | ---: |
-| 2.5 Flash-Lite @ $0.10 in / $0.40 out per 1M | $0.00047 | 21,300 | **710** | 1,180 |
-| 2.5 Flash @ $0.30 in / $2.50 out per 1M | $0.00179 | 5,590 | **186** | 310 |
-| 2.5 Flash **with thinking left on** (~1,500 thought tokens) | $0.00554 | 1,805 | **60** | 100 |
+| Queries/month | Cost |
+| ---: | ---: |
+| 500 | $0.17 |
+| 2,000 | $0.70 |
+| 6,000 (`DAILY_QUERY_CAP` × 15) | $2.10 |
 
-Read the last row as the warning it is: **not setting `thinking_budget: 0` costs roughly 3× on
-Flash.**
+$10 buys roughly **28,000 queries a month** — far more than this site will see. The initial
+full embed of 7,738 chunks took 2m15s and cost well under a dollar; incremental weekly runs
+re-embed only what changed.
 
 Infrastructure, all effectively free at this scale:
 
@@ -770,15 +778,15 @@ Each stage is independently verifiable and independently revertable.
 
 | # | Stage | Verify by |
 | --- | --- | --- |
-| 0 | `works-details.json` git-add fix (§E.1) | Dispatch `refresh-works`; the commit now touches four files |
-| 1 | GCP setup: APIs, Artifact Registry, Firestore, service account, WIF | A test Action runs `gcloud` with no key |
-| 2 | `insightnet/rag.py`, `insightnet-rag`, `tests/test_rag.py` — **no server, no UI** | `pytest` green; `data/rag/` written; a re-run embeds 0; `insightnet-rag --query "which researcher can help me with ERGMs?"` prints a ranked list you recognise as correct |
-| 3 | `server/` + Dockerfile, run locally with `uvicorn` | The `curl` above streams a grounded answer; "who can fix my car?" returns `no_match` with **no** Gemini call |
-| 4 | Rate limits, budget, cache, CORS, `tests/test_server.py` | `DAILY_QUERY_CAP=0` → 503 with `fallback:"keyword"` |
+| 0 | ✅  `works-details.json` git-add fix (§E.1) | Dispatch `refresh-works`; the commit now touches four files |
+| 1 | ✅  GCP setup: APIs, Artifact Registry, Firestore, service account, WIF | A test Action runs `gcloud` with no key |
+| 2 | ✅  `insightnet/rag.py`, `insightnet-rag`, `tests/test_rag.py` — **no server, no UI** | `pytest` green; `data/rag/` written; a re-run embeds 0; `insightnet-rag --query "which researcher can help me with ERGMs?"` prints a ranked list you recognise as correct |
+| 3 | ✅  `server/` + Dockerfile, run locally with `uvicorn` | The `curl` above streams a grounded answer; "who can fix my car?" returns `no_match` with **no** Gemini call |
+| 4 | ✅  Rate limits, budget, cache, CORS, `tests/test_server.py` | `DAILY_QUERY_CAP=0` → 503 with `fallback:"keyword"` |
 | 5 | Deploy to Cloud Run via `deploy-ask.yml` | Same `curl` against the `*.run.app` URL; `/readyz` reports 7,728 chunks |
-| 6 | UI at `#ask` only — **no hero bar yet** | Streaming, citations link to real DOIs, forced-503 fallback renders, screen-reader pass, `pytest` green |
-| 7 | Hero bar + example buttons | This is the commit that exposes it to real traffic — the one to revert if anything goes wrong. Watch counters and Cloud Run logs for a day |
-| 8 | Wire `insightnet-rag` into `refresh-works.yml`; `git pull --rebase` in both | A dispatched run commits `data/rag/**` and redeploys |
+| 6 | ✅  UI at `#ask` only — **no hero bar yet** | Streaming, citations link to real DOIs, forced-503 fallback renders, screen-reader pass, `pytest` green |
+| 7 | ✅  Hero bar + example buttons | This is the commit that exposes it to real traffic — the one to revert if anything goes wrong. Watch counters and Cloud Run logs for a day |
+| 8 | ✅  Wire `insightnet-rag` into `refresh-works.yml`; `git pull --rebase` in both | A dispatched run commits `data/rag/**` and redeploys |
 | 9 | Vertex AI quota + billing budget; tighten caps from observed traffic | Quota visible in the console |
 
 **Get answer quality right at Stage 2**, in Python, where iteration is fast — the researcher

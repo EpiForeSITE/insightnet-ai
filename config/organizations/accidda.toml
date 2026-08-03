@@ -68,6 +68,7 @@ bluesky = "https://bsky.app/profile/loosaraliyen.bsky.social"
 id = "carl-pearson"
 full_name = "Carl Pearson"
 role = "Research Assistant Professor, Department of Epidemiology, UNC Chapel Hill"
+bio = "Research Assistant Professor at UNC Chapel Hill who develops agent-based, mechanistic, and scenario models for infectious disease preparedness, including work on COVID-19, mpox, Ebola, and dengue. Note: This Bio was AI-generated"
 expertise = [ "agent-based models", "network modeling", "scenario modeling", "mechanistic modeling", "COVID-19", "mpox", "Ebola", "dengue",]
 website = "https://sph.unc.edu/adv_profile/carl-a-b-pearson/"
 google_scholar = "https://scholar.google.com/citations?user=EUMp5t4AAAAJ&hl=en"
@@ -78,6 +79,7 @@ github = "https://github.com/pearsonca"
 id = "praachi-das"
 full_name = "Praachi Das"
 role = "Postdoctoral Researcher, UNC Gillings School of Global Public Health"
+bio = "Researcher in mathematical and statistical modeling of infectious disease dynamics and public health interventions. Note: This Bio was AI-generated"
 expertise = [ "mathematical models", "statistical models", "infectious disease dynamics",]
 orcid = "https://orcid.org/0000-0001-6485-728X"
 bluesky = "https://bsky.app/profile/praachidas.bsky.social"
@@ -86,6 +88,7 @@ bluesky = "https://bsky.app/profile/praachidas.bsky.social"
 id = "cyril-geismar"
 full_name = "Cyril Geismar"
 role = "Postdoctoral Research Fellow, Johns Hopkins Bloomberg School of Public Health"
+bio = "Serves as Postdoctoral Research Fellow, Johns Hopkins Bloomberg School of Public Health. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 expertise = [ "mathematical models", "epidemic forecasting", "software",]
 orcid = "https://orcid.org/0000-0002-8486-5890"
 
@@ -93,6 +96,7 @@ orcid = "https://orcid.org/0000-0002-8486-5890"
 id = "joshua-macdonald"
 full_name = "Joshua Macdonald"
 role = "Postdoctoral Scholar, Johns Hopkins Bloomberg School of Public Health"
+bio = "Computational scientist at Johns Hopkins who builds generative models, scientific machine-learning methods, inference algorithms, forecasting pipelines, and decision tools for infectious disease policy and wildlife disease surveillance. Note: This Bio was AI-generated"
 expertise = [ "applied mathematics", "epidemiological modeling", "parameter identification", "uncertainty quantification", "multi-scale modeling",]
 website = "https://jcmacdonald.dev"
 orcid = "https://orcid.org/0000-0002-3643-6266"
@@ -101,12 +105,14 @@ orcid = "https://orcid.org/0000-0002-3643-6266"
 id = "joseph-mathews"
 full_name = "Joseph Mathews"
 role = "Postdoctoral Research Associate, University of North Carolina at Chapel Hill"
+bio = "Serves as Postdoctoral Research Associate, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 expertise = [ "statistical modeling", "algorithm design", "sequential Monte Carlo",]
 
 [[organization.researchers]]
 id = "kimberlyn-roosa"
 full_name = "Kimberlyn Roosa"
 role = "Postdoctoral Fellow, Johns Hopkins Bloomberg School of Public Health"
+bio = "Serves as Postdoctoral Fellow, Johns Hopkins Bloomberg School of Public Health. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 expertise = [ "infectious disease modeling", "forecasting", "science communication",]
 orcid = "https://orcid.org/0000-0003-1169-7125"
 linkedin = "https://www.linkedin.com/in/kimberlyn-roosa/"
@@ -115,6 +121,7 @@ linkedin = "https://www.linkedin.com/in/kimberlyn-roosa/"
 id = "claire-smith"
 full_name = "Claire Smith"
 role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
+bio = "Serves as Postdoctoral Researcher, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 expertise = [ "infectious disease dynamics", "epidemiological modeling",]
 google_scholar = "https://scholar.google.com/citations?user=OzDsVtEAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-1069-9460"
@@ -123,6 +130,7 @@ orcid = "https://orcid.org/0000-0003-1069-9460"
 id = "abigail-sykes"
 full_name = "Abigail Sykes"
 role = "Postdoctoral Researcher, University of North Carolina at Chapel Hill"
+bio = "Serves as Postdoctoral Researcher, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 expertise = [ "statistical modeling", "machine learning", "mechanistic modeling", "epidemic forecasting",]
 
 # The rest of the roster, transcribed from https://accidda.org/team/, which groups it as
@@ -133,22 +141,26 @@ expertise = [ "statistical modeling", "machine learning", "mechanistic modeling"
 id = "beth-daly-accidda"
 full_name = "Beth Daly"
 role = "Subaward Lead, Council of State and Territorial Epidemiologists"
+bio = "Serves as Subaward Lead, Council of State and Territorial Epidemiologists. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "matt-hitchings"
 full_name = "Matt Hitchings"
 role = "Subaward Lead, University of Florida"
+bio = "Serves as Subaward Lead, University of Florida. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "harry-hochheiser"
 full_name = "Harry Hochheiser"
 role = "Subaward Lead, University of Pittsburgh"
+bio = "Serves as Subaward Lead, University of Pittsburgh. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-8793-9982"
 
 [[organization.researchers]]
 id = "luke-mullany"
 full_name = "Luke Mullany"
 role = "Subaward Lead, Johns Hopkins University Applied Physics Laboratory"
+bio = "Serves as Subaward Lead, Johns Hopkins University Applied Physics Laboratory. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-4668-9803"
 
 [[organization.researchers]]
@@ -162,59 +174,70 @@ orcid = "https://orcid.org/0000-0002-8706-5717"
 id = "jennifer-anderson"
 full_name = "Jennifer Anderson"
 role = "Core Staff, University of North Carolina at Chapel Hill"
+bio = "Serves as Core Staff, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "erica-carcelen"
 full_name = "Erica Carcelen"
 role = "Core Staff, Johns Hopkins University"
+bio = "Serves as Core Staff, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-7063-926X"
 
 [[organization.researchers]]
 id = "imane-hedadji"
 full_name = "Imane Hedadji"
 role = "Core Staff, University of North Carolina at Chapel Hill"
+bio = "Serves as Core Staff, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "miriam-johnson"
 full_name = "Miriam Johnson"
 role = "Core Staff, University of North Carolina at Chapel Hill"
+bio = "Serves as Core Staff, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "cammie-lam"
 full_name = "Cammie Lam"
 role = "Core Staff, Johns Hopkins University"
+bio = "Serves as Core Staff, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "yue-liu"
 full_name = "Yue Liu"
 role = "Core Staff, University of North Carolina at Chapel Hill"
+bio = "Serves as Core Staff, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "emily-przykucki"
 full_name = "Emily Przykucki"
 role = "Core Staff, University of North Carolina at Chapel Hill"
+bio = "Serves as Core Staff, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "nhi-dinh"
 full_name = "Nhi Dinh"
 role = "Graduate Student, Johns Hopkins University"
+bio = "Serves as Graduate Student, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "kelly-geith"
 full_name = "Kelly Geith"
 role = "Graduate Student, University of North Carolina at Chapel Hill"
+bio = "Serves as Graduate Student, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-9762-7445"
 
 [[organization.researchers]]
 id = "alisa-hamilton"
 full_name = "Alisa Hamilton"
 role = "Graduate Student, Johns Hopkins University"
+bio = "Serves as Graduate Student, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-8783-9383"
 
 [[organization.researchers]]
 id = "katie-hogan"
 full_name = "Katie Hogan"
 role = "Graduate Student, Johns Hopkins University"
+bio = "Serves as Graduate Student, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "stephanie-kern-allely"
@@ -227,21 +250,25 @@ orcid = "https://orcid.org/0000-0001-9186-5090"
 id = "kevin-johnson"
 full_name = "Kevin Johnson"
 role = "Graduate Student, University of North Carolina at Chapel Hill"
+bio = "Serves as Graduate Student, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "conor-millard"
 full_name = "Conor Millard"
 role = "Graduate Student, Johns Hopkins University"
+bio = "Serves as Graduate Student, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "shahar-stern"
 full_name = "Shahar Stern"
 role = "Graduate Student, University of North Carolina at Chapel Hill"
+bio = "Serves as Graduate Student, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "carson-tellford"
 full_name = "Carson Tellford"
 role = "Graduate Student, University of North Carolina at Chapel Hill"
+bio = "Serves as Graduate Student, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "derek-cummings"
@@ -324,6 +351,7 @@ orcid = "https://orcid.org/0000-0002-9489-6324"
 id = "emily-gurley"
 full_name = "Emily Gurley"
 role = "Affiliated Faculty, Johns Hopkins University"
+bio = "Serves as Affiliated Faculty, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-8648-9403"
 
 [[organization.researchers]]
@@ -337,6 +365,7 @@ orcid = "https://orcid.org/0000-0001-6051-1484"
 id = "mark-holmes"
 full_name = "Mark Holmes"
 role = "Affiliated Faculty, University of North Carolina at Chapel Hill"
+bio = "Serves as Affiliated Faculty, University of North Carolina at Chapel Hill. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "eili-klein"
@@ -349,6 +378,7 @@ orcid = "https://orcid.org/0000-0002-1304-5289"
 id = "will-redman"
 full_name = "Will Redman"
 role = "Affiliated Faculty, Johns Hopkins University"
+bio = "Serves as Affiliated Faculty, Johns Hopkins University. Their work contributes to infectious disease modeling, data integration, predictive analytics. Note: This Bio was AI-generated"
 
 # Tools and products, transcribed from https://accidda.org/623-2/
 [[organization.tools]]

@@ -108,6 +108,7 @@ bio = "Applies statistical and machine learning techniques to hospital and mobil
 id = "karen-atkinson"
 full_name = "Karen Atkinson"
 role = "Administrative Coordinator and Research Program Manager"
+bio = "Serves as Administrative Coordinator and Research Program Manager. Their work contributes to infectious disease forecasting, outbreak analytics, decision support. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "minjae-woo"
@@ -161,12 +162,14 @@ bio = "Leads the center's wastewater-based epidemiology work."
 id = "ronald-gimbel"
 full_name = "Ronald Gimbel"
 role = "Affiliated Faculty; Professor and Director, Clemson Rural Health"
+bio = "Serves as Affiliated Faculty; Professor and Director, Clemson Rural Health. Their work contributes to infectious disease forecasting, outbreak analytics, decision support. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-8185-4013"
 
 [[organization.researchers]]
 id = "alain-litwin"
 full_name = "Alain Litwin"
 role = "Affiliated Faculty; Professor of Medicine and Executive Director, Addiction Medicine Center, Prisma Health"
+bio = "Serves as Affiliated Faculty; Professor of Medicine and Executive Director, Addiction Medicine Center, Prisma Health. Their work contributes to infectious disease forecasting, outbreak analytics, decision support. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-6717-0288"
 
 [[organization.researchers]]

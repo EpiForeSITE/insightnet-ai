@@ -13,11 +13,13 @@ enabled = true
 id = "joseph-coyle"
 full_name = "Joseph Coyle"
 role = "MICOM Co-Director; Director, MDHHS Bureau of Infectious Disease Prevention"
+bio = "Serves as MICOM Co-Director; Director, MDHHS Bureau of Infectious Disease Prevention. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "marisa-eisenberg"
 full_name = "Marisa Eisenberg"
 role = "MICOM Co-Director; Professor of Epidemiology, Complex Systems, and Mathematics"
+bio = "Serves as MICOM Co-Director; Professor of Epidemiology, Complex Systems, and Mathematics. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://epimath.org/"
 google_scholar = "https://scholar.google.com/citations?user=RhyNk3EAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-4221-830X"
@@ -27,6 +29,7 @@ bluesky = "https://bsky.app/profile/marisa-eisenberg.bsky.social"
 id = "emily-toth-martin"
 full_name = "Emily Toth Martin"
 role = "MICOM Co-Director; Professor of Epidemiology"
+bio = "Serves as MICOM Co-Director; Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://sph.umich.edu/faculty-profiles/martin-emily.html"
 google_scholar = "https://scholar.google.com/citations?user=V_l3ufkAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-5771-8895"
@@ -36,12 +39,14 @@ bluesky = "https://bsky.app/profile/martinepi.bsky.social"
 id = "natasha-bagdasarian"
 full_name = "Natasha Bagdasarian"
 role = "Chief Medical Executive, State of Michigan"
+bio = "Serves as Chief Medical Executive, State of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-1133-8309"
 
 [[organization.researchers]]
 id = "andrew-brouwer"
 full_name = "Andrew Brouwer"
 role = "MAMP Co-Lead; Assistant Professor of Epidemiology"
+bio = "Serves as MAMP Co-Lead; Assistant Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://midas.umich.edu/directory/andrew-brouwer/"
 google_scholar = "https://scholar.google.com/citations?user=PJAQ7AQAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-3779-5287"
@@ -51,6 +56,7 @@ linkedin = "https://www.linkedin.com/in/andrew-brouwer-0651a056/"
 id = "alexis-handal"
 full_name = "Alexis Handal"
 role = "Preparedness; Associate Professor of Epidemiology"
+bio = "Serves as Preparedness; Associate Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://sph.umich.edu/faculty-profiles/handal_alexis.html"
 orcid = "https://orcid.org/0000-0001-8890-5813"
 
@@ -58,12 +64,14 @@ orcid = "https://orcid.org/0000-0001-8890-5813"
 id = "michael-hayashi"
 full_name = "Michael Akira Lee Hayashi"
 role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Epidemiology"
+bio = "Serves as Integration and Translation Co-Lead; Clinical Assistant Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-3335-6196"
 
 [[organization.researchers]]
 id = "jennifer-head"
 full_name = "Jennifer Head"
 role = "Preparedness; Assistant Professor of Epidemiology"
+bio = "Serves as Preparedness; Assistant Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://sph.umich.edu/faculty-profiles/head_jennifer.html"
 orcid = "https://orcid.org/0000-0003-1449-4171"
 linkedin = "https://www.linkedin.com/in/jrhead/"
@@ -73,6 +81,7 @@ bluesky = "https://bsky.app/profile/jenniferrhead.bsky.social"
 id = "michael-hess"
 full_name = "Michael Hess"
 role = "MI Lighthouse Co-Lead; Chief Information Officer, School of Information"
+bio = "Serves as MI Lighthouse Co-Lead; Chief Information Officer, School of Information. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://www.si.umich.edu/people/michael-hess"
 linkedin = "https://www.linkedin.com/in/michaellhess/"
 
@@ -80,6 +89,7 @@ linkedin = "https://www.linkedin.com/in/michaellhess/"
 id = "adam-lauring"
 full_name = "Adam Lauring"
 role = "Preparedness; Professor of Internal Medicine, Microbiology and Immunology"
+bio = "Serves as Preparedness; Professor of Internal Medicine, Microbiology and Immunology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://medschool.umich.edu/profile/83/adam-lauring"
 google_scholar = "https://scholar.google.com/citations?user=IA9nXYgAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-2906-8335"
@@ -88,6 +98,7 @@ orcid = "https://orcid.org/0000-0003-2906-8335"
 id = "alexander-rodriguez"
 full_name = "Alexander Rodriguez"
 role = "MAMP and Applied Artificial Intelligence Co-Lead; Assistant Professor of Electrical Engineering and Computer Science"
+bio = "Serves as MAMP and Applied Artificial Intelligence Co-Lead; Assistant Professor of Electrical Engineering and Computer Science. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://alrodri.engin.umich.edu/"
 google_scholar = "https://scholar.google.com/citations?user=ILkESaUAAAAJ&hl=en"
 
@@ -95,12 +106,14 @@ google_scholar = "https://scholar.google.com/citations?user=ILkESaUAAAAJ&hl=en"
 id = "michael-rubyan"
 full_name = "Michael Rubyan"
 role = "Integration and Translation Co-Lead; Clinical Assistant Professor of Health Management and Policy"
+bio = "Serves as Integration and Translation Co-Lead; Clinical Assistant Professor of Health Management and Policy. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-5549-4488"
 
 [[organization.researchers]]
 id = "tom-schwarz"
 full_name = "Tom Schwarz"
 role = "MAMP and Applied Artificial Intelligence Co-Lead; Professor of Physics"
+bio = "Serves as MAMP and Applied Artificial Intelligence Co-Lead; Professor of Physics. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://lsa.umich.edu/physics/people/faculty/schwarzt.html"
 linkedin = "https://www.linkedin.com/in/tom-schwarz-91aa3912/"
 
@@ -108,6 +121,7 @@ linkedin = "https://www.linkedin.com/in/tom-schwarz-91aa3912/"
 id = "abram-wagner"
 full_name = "Abram Wagner"
 role = "Preparedness; Assistant Professor of Epidemiology and Global Public Health"
+bio = "Serves as Preparedness; Assistant Professor of Epidemiology and Global Public Health. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://sph.umich.edu/faculty-profiles/wagner-abram.html"
 google_scholar = "https://scholar.google.com/citations?user=RNembkwAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-4691-7802"
@@ -116,6 +130,7 @@ orcid = "https://orcid.org/0000-0003-4691-7802"
 id = "krista-wigginton"
 full_name = "Krista Wigginton"
 role = "Preparedness; Associate Chair and Professor of Civil and Environmental Engineering"
+bio = "Serves as Preparedness; Associate Chair and Professor of Civil and Environmental Engineering. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://www.wiggiumich.com/"
 orcid = "https://orcid.org/0000-0001-6665-5112"
 
@@ -123,6 +138,7 @@ orcid = "https://orcid.org/0000-0001-6665-5112"
 id = "jon-zelner"
 full_name = "Jon Zelner"
 role = "Health Equity Lead; Associate Professor of Epidemiology"
+bio = "Serves as Health Equity Lead; Associate Professor of Epidemiology. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 website = "https://www.jonzelner.net/"
 google_scholar = "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en"
 
@@ -133,21 +149,25 @@ google_scholar = "https://scholar.google.com/citations?user=8v9CnvcAAAAJ&hl=en"
 id = "derick-chia"
 full_name = "Derick Chia"
 role = "Epidemiology Project Manager, Michigan Department of Health and Human Services"
+bio = "Serves as Epidemiology Project Manager, Michigan Department of Health and Human Services. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "abigail-cheney"
 full_name = "Abigail Cheney"
 role = "Director, Data Systems and Operations, Michigan Department of Health and Human Services"
+bio = "Serves as Director, Data Systems and Operations, Michigan Department of Health and Human Services. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jeremy-kuo"
 full_name = "Jeremy Kuo"
 role = "Epidemiology Specialist, Michigan Department of Health and Human Services"
+bio = "Serves as Epidemiology Specialist, Michigan Department of Health and Human Services. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "sarah-lyon-callo"
 full_name = "Sarah Lyon-Callo"
 role = "Senior Deputy Director, Public Health Administration, Michigan Department of Health and Human Services"
+bio = "Serves as Senior Deputy Director, Public Health Administration, Michigan Department of Health and Human Services. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-0042-9857"
 
 [[organization.researchers]]
@@ -161,32 +181,38 @@ orcid = "https://orcid.org/0000-0003-3546-5935"
 id = "taylor-olsabeck"
 full_name = "Taylor Olsabeck"
 role = "VPD Immunization Epidemiology Section Manager, Michigan Department of Health and Human Services"
+bio = "Serves as VPD Immunization Epidemiology Section Manager, Michigan Department of Health and Human Services. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "mohammed-abouzahr"
 full_name = "Mohammed Abouzahr"
 role = "Senior Full-Stack Engineer, University of Michigan"
+bio = "Serves as Senior Full-Stack Engineer, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "prajakta-bonde"
 full_name = "Prajakta Bonde"
 role = "UX Researcher and Designer, University of Michigan"
+bio = "Serves as UX Researcher and Designer, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "olivia-brooks"
 full_name = "Olivia Brooks"
 role = "Clinical Research Coordinator, University of Michigan"
+bio = "Serves as Clinical Research Coordinator, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0000-7308-352X"
 
 [[organization.researchers]]
 id = "caitlin-burr"
 full_name = "Caitlin Burr"
 role = "Communications Specialist, University of Michigan"
+bio = "Serves as Communications Specialist, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "krista-dunger"
 full_name = "Krista Dunger"
 role = "MICOM Center Lead, University of Michigan"
+bio = "Serves as MICOM Center Lead, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "julie-gilbert"
@@ -198,21 +224,25 @@ bio = "Listed by the center as Julie (Jules) Gilbert."
 id = "trevor-harkness"
 full_name = "Trevor Harkness"
 role = "Full-Stack Engineer, University of Michigan"
+bio = "Serves as Full-Stack Engineer, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "stephanie-iorga"
 full_name = "Stephanie Iorga"
 role = "Research Computer Specialist, MI-Support, University of Michigan"
+bio = "Serves as Research Computer Specialist, MI-Support, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jack-jacobs"
 full_name = "Jack Jacobs"
 role = "Data Analyst, MI-Support, University of Michigan"
+bio = "Serves as Data Analyst, MI-Support, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "nataniel-jayaram"
 full_name = "Nataniel Jayaram"
 role = "Qualitative Researcher, University of Michigan"
+bio = "Serves as Qualitative Researcher, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "veronica-ma"
@@ -224,177 +254,211 @@ bio = "Listed by the center as Veronica (Weiyi) Ma."
 id = "reiden-magdaleno"
 full_name = "Reiden Magdaleno"
 role = "Research Computer Specialist, University of Michigan"
+bio = "Serves as Research Computer Specialist, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "kit-mclean"
 full_name = "Kit McLean"
 role = "Postdoctoral Research Fellow, University of Michigan"
+bio = "Serves as Postdoctoral Research Fellow, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jocelyn-nitta"
 full_name = "Jocelyn Nitta"
 role = "Senior Administrative Assistant, University of Michigan"
+bio = "Serves as Senior Administrative Assistant, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "skyler-rogers"
 full_name = "Skyler Rogers"
 role = "Data Analyst, University of Michigan"
+bio = "Serves as Data Analyst, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "krzysztof-sakrejda"
 full_name = "Krzysztof Sakrejda"
 role = "Epidemiological Statistician, University of Michigan"
+bio = "Serves as Epidemiological Statistician, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-7587-355X"
 
 [[organization.researchers]]
 id = "betsy-salzman"
 full_name = "Betsy Salzman"
 role = "Research Lab Specialist, Epidemiology, University of Michigan"
+bio = "Serves as Research Lab Specialist, Epidemiology, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "dhruvil-shah"
 full_name = "Dhruvil Shah"
 role = "Senior Data Architect, University of Michigan"
+bio = "Serves as Senior Data Architect, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "shad-soldano"
 full_name = "Shad Soldano"
 role = "Qualitative Researcher, University of Michigan"
+bio = "Serves as Qualitative Researcher, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jiming-song"
 full_name = "Jiming Song"
 role = "Study Coordinator and Qualitative Researcher, University of Michigan"
+bio = "Serves as Study Coordinator and Qualitative Researcher, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "mislael-valentin-cortes"
 full_name = "Mislael Valentín Cortés"
 role = "Postdoctoral Research Fellow, University of Michigan"
+bio = "Serves as Postdoctoral Research Fellow, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-3714-4326"
 
 [[organization.researchers]]
 id = "lauren-van-petten"
 full_name = "Lauren Van Petten"
 role = "Research Area Specialist, University of Michigan"
+bio = "Serves as Research Area Specialist, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "ann-vitous"
 full_name = "Ann Vitous"
 role = "Lead Research Specialist, University of Michigan"
+bio = "Serves as Lead Research Specialist, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "sarah-bassiouni"
 full_name = "Sarah Bassiouni"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-2810-7008"
 
 [[organization.researchers]]
 id = "jonathan-braithwaite"
 full_name = "Jonathan Braithwaite"
 role = "Masters Student, University of Michigan"
+bio = "Serves as Masters Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "carson-dudley"
 full_name = "Carson Dudley"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0009-1336-2979"
 
 [[organization.researchers]]
 id = "sarah-goldberg"
 full_name = "Sarah Goldberg"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "diana-gomez"
 full_name = "Diana Gomez"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "ruipu-li"
 full_name = "Ruipu Li"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0007-2923-3405"
 
 [[organization.researchers]]
 id = "abigail-monahan"
 full_name = "Abigail Monahan"
 role = "Graduate Student, University of Michigan"
+bio = "Serves as Graduate Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "wenhao-mu"
 full_name = "Wenhao Mu"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0004-3054-4102"
 
 [[organization.researchers]]
 id = "annie-niu"
 full_name = "Annie Niu"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "chethan-prakash"
 full_name = "Chethan Prakash"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "leah-stump"
 full_name = "Leah Stump"
 role = "Graduate Student, University of Michigan"
+bio = "Serves as Graduate Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jade-yang"
 full_name = "Jade Yang"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "troy-zirui-zhou"
 full_name = "Troy Zirui Zhou"
 role = "Doctoral Student, University of Michigan"
+bio = "Serves as Doctoral Student, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "wyatt-alpers"
 full_name = "Wyatt Alpers"
 role = "MI Lighthouse Intern, University of Michigan"
+bio = "Serves as MI Lighthouse Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "meghna-ancha"
 full_name = "Meghna Ancha"
 role = "Integration and Policy Intern, University of Michigan"
+bio = "Serves as Integration and Policy Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "marissa-diggs"
 full_name = "Marissa Diggs"
 role = "MI-Support Intern, University of Michigan"
+bio = "Serves as MI-Support Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jon-flores"
 full_name = "Jon Flores"
 role = "Integration and Policy Intern, University of Michigan"
+bio = "Serves as Integration and Policy Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "elise-fricklas"
 full_name = "Elise Fricklas"
 role = "Integration and Policy Intern, University of Michigan"
+bio = "Serves as Integration and Policy Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "cameron-hempton"
 full_name = "Cameron Hempton"
 role = "MI-Support Intern, University of Michigan"
+bio = "Serves as MI-Support Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "shirley-li"
 full_name = "Shirley Li"
 role = "MI Lighthouse Intern, University of Michigan"
+bio = "Serves as MI Lighthouse Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "christian-ratcliff"
 full_name = "Christian Ratcliff"
 role = "MI Lighthouse Intern, University of Michigan"
+bio = "Serves as MI Lighthouse Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "elora-shakoor"
 full_name = "Elora Shakoor"
 role = "MI-Support Intern, University of Michigan"
+bio = "Serves as MI-Support Intern, University of Michigan. Their work contributes to outbreak analytics, infectious disease modeling, data analytics. Note: This Bio was AI-generated"
 
 # Tools and products, transcribed from https://www.micom-insight.net/projects
 [[organization.tools]]

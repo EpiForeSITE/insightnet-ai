@@ -13,6 +13,7 @@ enabled = true
 id = "eva-enns"
 full_name = "Eva A. Enns, PhD"
 role = "MADMC Co-Principal Investigator; Associate Professor, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as MADMC Co-Principal Investigator; Associate Professor, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-aenns"
 google_scholar = "https://scholar.google.com/citations?user=CeVOo2QAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-0693-7358"
@@ -22,52 +23,61 @@ linkedin = "https://www.linkedin.com/in/eva-enns-6a51bb36/"
 id = "kristin-sweet"
 full_name = "Kristin Sweet, PhD"
 role = "MADMC Co-Principal Investigator; Epidemiology Program Manager, Infectious Disease Cross-Cutting Epidemiology, Programs, and Partnerships, Minnesota Department of Health"
+bio = "Serves as MADMC Co-Principal Investigator; Epidemiology Program Manager, Infectious Disease Cross-Cutting Epidemiology, Programs, and Partnerships, Minnesota Department of Health. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/kristin-sweet-948926239/"
 
 [[organization.researchers]]
 id = "adams-dudley"
 full_name = "Adams Dudley, MD, MBA"
 role = "MADMC Co-Principal Investigator; Professor of Medicine, Informatics, and Public Health, University of Minnesota"
+bio = "Serves as MADMC Co-Principal Investigator; Professor of Medicine, Informatics, and Public Health, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-8532-8552"
 
 [[organization.researchers]]
 id = "margo-wheatley"
 full_name = "Margo Wheatley, PhD"
 role = "Senior Research Associate and Manager, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Senior Research Associate and Manager, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-6981-2670"
 
 [[organization.researchers]]
 id = "matthew-kaufmann"
 full_name = "Matthew Kaufmann"
 role = "Postdoctoral Fellow, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Postdoctoral Fellow, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-9947-936X"
 
 [[organization.researchers]]
 id = "michala-carlson"
 full_name = "Michala Carlson"
 role = "Research Scientist, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Research Scientist, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "sophie-wiitala"
 full_name = "Sophie Wiitala"
 role = "Research Scientist, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Research Scientist, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "ritesh-sivakumar"
 full_name = "Ritesh Sivakumar"
 role = "Research Associate, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Research Associate, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0002-1936-0156"
 
 [[organization.researchers]]
 id = "sayyeda-karim"
 full_name = "Sayyeda Karim, MPH"
 role = "Project Manager, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Project Manager, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-3072-5120"
 
 [[organization.researchers]]
 id = "caitlin-ward"
 full_name = "Caitlin Ward, PhD"
 role = "Assistant Professor, Division of Biostatistics and Health Data Science, University of Minnesota"
+bio = "Serves as Assistant Professor, Division of Biostatistics and Health Data Science, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-cward"
 google_scholar = "https://scholar.google.com/citations?user=Ni3vTV0AAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-0806-0222"
@@ -76,6 +86,7 @@ orcid = "https://orcid.org/0000-0002-0806-0222"
 id = "xiao-zang"
 full_name = "Xiao Zang, PhD"
 role = "Assistant Professor, Division of Health Policy and Management, University of Minnesota"
+bio = "Serves as Assistant Professor, Division of Health Policy and Management, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-xzang"
 google_scholar = "https://scholar.google.com/citations?user=KVnCdbQAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-5722-8255"
@@ -84,12 +95,14 @@ orcid = "https://orcid.org/0000-0002-5722-8255"
 id = "horacio-duarte"
 full_name = "Horacio Duarte, MD, MS"
 role = "Assistant Professor, Division of Epidemiology and Community Health, University of Minnesota"
+bio = "Serves as Assistant Professor, Division of Epidemiology and Community Health, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-hduarte"
 
 [[organization.researchers]]
 id = "jesse-berman"
 full_name = "Jesse Berman, PhD"
 role = "Associate Professor, Division of Environmental Health Sciences, University of Minnesota"
+bio = "Serves as Associate Professor, Division of Environmental Health Sciences, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-jberman"
 orcid = "https://orcid.org/0000-0003-3037-556X"
 bluesky = "https://bsky.app/profile/jesseberman.bsky.social"
@@ -98,6 +111,7 @@ bluesky = "https://bsky.app/profile/jesseberman.bsky.social"
 id = "kelly-searle"
 full_name = "Kelly Searle, PhD"
 role = "Associate Professor, Division of Epidemiology and Community Health, University of Minnesota"
+bio = "Serves as Associate Professor, Division of Epidemiology and Community Health, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://directory.sph.umn.edu/bio/sph-ksearle"
 orcid = "https://orcid.org/0000-0003-1316-9342"
 twitter = "https://x.com/EpiMalaria"
@@ -106,6 +120,7 @@ twitter = "https://x.com/EpiMalaria"
 id = "audrey-dorelien"
 full_name = "Audrey Dorélien, PhD"
 role = "Associate Professor, Department of Sociology, University of Washington"
+bio = "Serves as Associate Professor, Department of Sociology, University of Washington. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://www.audreydorelien.com/"
 google_scholar = "https://scholar.google.com/citations?user=Tu8DUIMAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-0618-4782"
@@ -114,6 +129,7 @@ orcid = "https://orcid.org/0000-0002-0618-4782"
 id = "shalini-kulasingam"
 full_name = "Shalini Kulasingam, PhD"
 role = "Director, Center for Cancer Prevention and Control, Tulane University"
+bio = "Serves as Director, Center for Cancer Prevention and Control, Tulane University. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://sph.tulane.edu/epid/shalini-kulasingam"
 orcid = "https://orcid.org/0000-0002-0932-9166"
 
@@ -121,22 +137,26 @@ orcid = "https://orcid.org/0000-0002-0932-9166"
 id = "lindsey-erickson"
 full_name = "Lindsey Erickson, PhD"
 role = "Senior Epidemiologist, Minnesota Department of Health"
+bio = "Serves as Senior Epidemiologist, Minnesota Department of Health. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "keeley-morris"
 full_name = "Keeley Morris"
 role = "Senior Epidemiologist, Emerging Infectious Disease Epidemiology and Response, Minnesota Department of Health"
+bio = "Serves as Senior Epidemiologist, Emerging Infectious Disease Epidemiology and Response, Minnesota Department of Health. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-7028-8095"
 
 [[organization.researchers]]
 id = "danielle-kvasager"
 full_name = "Danielle Kvasager"
 role = "Project Planner, Minnesota Department of Health"
+bio = "Serves as Project Planner, Minnesota Department of Health. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "paul-drawz"
 full_name = "Paul Drawz, MD"
 role = "Associate Professor, Division of Nephrology and Hypertension, University of Minnesota"
+bio = "Serves as Associate Professor, Division of Nephrology and Hypertension, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 website = "https://med.umn.edu/bio/paul-drawz"
 google_scholar = "https://scholar.google.com/citations?user=sGvM4uQAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0001-7301-9253"
@@ -145,6 +165,7 @@ orcid = "https://orcid.org/0000-0001-7301-9253"
 id = "nayanjot-kaur-rai"
 full_name = "Nayanjot Kaur Rai, MPH, BDS"
 role = "Program Manager, Medical School, University of Minnesota"
+bio = "Serves as Program Manager, Medical School, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-9614-8234"
 
 # The center's team page also lists trainee cohorts by year. Only the current cohort is
@@ -154,16 +175,19 @@ orcid = "https://orcid.org/0000-0001-9614-8234"
 id = "isabel-eaton"
 full_name = "Isabel Eaton"
 role = "Trainee, 2026, University of Minnesota"
+bio = "Serves as Trainee, 2026, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "isabel-ricke"
 full_name = "Isabel Ricke"
 role = "Trainee, 2026, University of Minnesota"
+bio = "Serves as Trainee, 2026, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "nafeesa-rizwan"
 full_name = "Nafeesa Rizwan"
 role = "Trainee, 2026, University of Minnesota"
+bio = "Serves as Trainee, 2026, University of Minnesota. Their work contributes to public health emergency preparedness, disease modeling, analytics. Note: This Bio was AI-generated"
 
 # Tools in development, transcribed from
 # https://www.sph.umn.edu/research/centers/midwest-analytics-and-disease-modeling/

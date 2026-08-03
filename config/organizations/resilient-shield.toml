@@ -153,6 +153,7 @@ bio = "Chief Medical Officer of the County of San Diego Health and Human Service
 id = "karen-white-horn"
 full_name = "Karen White Horn"
 role = "Monitoring and Evaluation Manager, UC San Francisco"
+bio = "Serves as Monitoring and Evaluation Manager, UC San Francisco. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "chip-schooley"
@@ -192,11 +193,13 @@ orcid = "https://orcid.org/0000-0002-8127-5123"
 id = "alexandra-hubenko"
 full_name = "Alexandra Hubenko"
 role = "Resilient Shield Program Manager, UC San Diego"
+bio = "Serves as Resilient Shield Program Manager, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "caitlin-bartlett"
 full_name = "Caitlin Bartlett"
 role = "Grants and Contracts, UC San Diego"
+bio = "Serves as Grants and Contracts, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "rishi-graham"
@@ -209,41 +212,49 @@ orcid = "https://orcid.org/0009-0009-1113-0058"
 id = "david-valentine"
 full_name = "David Valentine"
 role = "Modeling and Computing, UC San Diego"
+bio = "Serves as Modeling and Computing, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "anuujin-tsedenbal"
 full_name = "Anuujin Tsedenbal"
 role = "Project Manager, UC San Diego"
+bio = "Serves as Project Manager, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "thomas-sharkey"
 full_name = "Thomas Sharkey"
 role = "Product Manager, UC San Diego"
+bio = "Serves as Product Manager, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "sara-krugman"
 full_name = "Sara Krugman"
 role = "Consultant; Design Research and Ethnography"
+bio = "Serves as Consultant; Design Research and Ethnography. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "kristian-poe"
 full_name = "Kristian Poe"
 role = "Consultant; Product Management and CTO, UC San Diego"
+bio = "Serves as Consultant; Product Management and CTO, UC San Diego. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "reed-berkowitz"
 full_name = "Reed Berkowitz"
 role = "Consultant; Game Design, Curiouser LLC"
+bio = "Serves as Consultant; Game Design, Curiouser LLC. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "evan-anderson-rs"
 full_name = "Evan Anderson"
 role = "Consultant; Strategic National Stockpile and FIRe tabletop exercise and game designer"
+bio = "Serves as Consultant; Strategic National Stockpile and FIRe tabletop exercise and game designer. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "rafi-yahalom"
 full_name = "Rafi Yahalom"
 role = "Consultant; Incentives, Computation and Modeling, MIT"
+bio = "Serves as Consultant; Incentives, Computation and Modeling, MIT. Their work contributes to public health intelligence, infectious disease modeling, outbreak forecasting. Note: This Bio was AI-generated"
 
 # Tools and products, transcribed from https://insightnet.us/resilient-shield-launches-tijuana-river-dashboard/
 [[organization.tools]]

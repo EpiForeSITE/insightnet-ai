@@ -35,16 +35,19 @@ bluesky = "https://bsky.app/profile/crwatson.bsky.social"
 id = "elizabeth-campbell"
 full_name = "Elizabeth Campbell"
 role = "Assistant Scientist"
+bio = "Serves as Assistant Scientist. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "denise-cardo"
 full_name = "Denise Cardo"
 role = "Contributing Scholar"
+bio = "Serves as Contributing Scholar. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "lucia-mullen"
 full_name = "Lucia Mullen"
 role = "Associate Scholar, Research Associate"
+bio = "Serves as Associate Scholar, Research Associate. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 website = "https://centerforhealthsecurity.org/who-we-are/our-people/lucia-mullen"
 orcid = "https://orcid.org/0009-0004-6699-3313"
 
@@ -52,6 +55,7 @@ orcid = "https://orcid.org/0009-0004-6699-3313"
 id = "sutyajeet-soneja"
 full_name = "Sutyajeet Soneja"
 role = "Associate Scientist"
+bio = "Serves as Associate Scientist. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 website = "https://cori.centerforhealthsecurity.org/sutyajeet-sut-soneja-phd"
 orcid = "https://orcid.org/0000-0003-4914-2432"
 linkedin = "https://www.linkedin.com/in/sut-soneja/"
@@ -60,6 +64,7 @@ linkedin = "https://www.linkedin.com/in/sut-soneja/"
 id = "eric-toner"
 full_name = "Eric Toner"
 role = "Senior Scholar, Senior Scientist"
+bio = "Serves as Senior Scholar, Senior Scientist. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 website = "https://centerforhealthsecurity.org/who-we-are/our-people/eric-toner"
 orcid = "https://orcid.org/0000-0001-5292-9450"
 
@@ -67,23 +72,27 @@ orcid = "https://orcid.org/0000-0001-5292-9450"
 id = "fatima-ameaka"
 full_name = "Fatima Ameaka"
 role = "Senior Analyst"
+bio = "Serves as Senior Analyst. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0006-8060-274X"
 
 [[organization.researchers]]
 id = "haley-farrie"
 full_name = "Haley Farrie"
 role = "Senior Analyst"
+bio = "Serves as Senior Analyst. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0001-8380-7410"
 
 [[organization.researchers]]
 id = "sarah-gillani"
 full_name = "Sarah Gillani"
 role = "Senior Analyst"
+bio = "Serves as Senior Analyst. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "hannah-goodtree"
 full_name = "Hannah Goodtree"
 role = "Senior Analyst"
+bio = "Serves as Senior Analyst. Their work contributes to outbreak analytics, risk assessment, disease forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0006-9187-7597"
 
 # Tools and products, transcribed from https://cori.centerforhealthsecurity.org/

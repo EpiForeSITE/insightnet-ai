@@ -22,6 +22,7 @@ enabled = true
 id = "lauren-ancel-meyers"
 full_name = "Lauren Ancel Meyers"
 role = "Principal Investigator; Professor, The University of Texas at Austin"
+bio = "Serves as Principal Investigator; Professor, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "http://www.bio.utexas.edu/research/meyers/"
 google_scholar = "https://scholar.google.com/citations?user=KKiQaBoAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-5828-8874"
@@ -31,6 +32,7 @@ linkedin = "https://www.linkedin.com/in/lauren-ancel-meyers-41949a179/"
 id = "nicholas-reich"
 full_name = "Nicholas Reich"
 role = "Principal Investigator; Professor, University of Massachusetts Amherst"
+bio = "Serves as Principal Investigator; Professor, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://reichlab.io"
 google_scholar = "https://scholar.google.com/citations?user=AQUsdvkAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0003-3503-9899"
@@ -40,6 +42,7 @@ orcid = "https://orcid.org/0000-0003-3503-9899"
 id = "rick-bright"
 full_name = "Rick Bright"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-2879-2612"
 linkedin = "https://www.linkedin.com/in/rick-bright/"
 
@@ -55,42 +58,49 @@ linkedin = "https://www.linkedin.com/in/matthew-biggerstaff-a6ab68a5/"
 id = "steve-adler"
 full_name = "Steve Adler"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/steve-adler-6809456/"
 
 [[organization.researchers]]
 id = "lourdes-zuniga"
 full_name = "Lourdes Zuniga"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/lourdes-g-zuniga-1229ab9/"
 
 [[organization.researchers]]
 id = "irene-eckstrand"
 full_name = "Irene Eckstrand"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/irene-eckstrand-753a1261/"
 
 [[organization.researchers]]
 id = "vp-nagraj"
 full_name = "V.P. Nagraj"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://www.nagraj.net/"
 
 [[organization.researchers]]
 id = "andy-brown"
 full_name = "Andy Brown"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/andy-brown-41a1291/"
 
 [[organization.researchers]]
 id = "pritesh-gandhi"
 full_name = "Pritesh Gandhi"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/priteshgandhimd/"
 
 [[organization.researchers]]
 id = "aurimar-ayala"
 full_name = "Aurimar Ayala"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/aurimar-ayala-571605194/"
 
 [[organization.researchers]]
@@ -104,12 +114,14 @@ orcid = "https://orcid.org/0000-0003-2589-7777"
 id = "catherine-brown"
 full_name = "Catherine Brown"
 role = "Advisory Board"
+bio = "Serves as Advisory Board. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 # Austin Public Health
 [[organization.researchers]]
 id = "desmar-walkes"
 full_name = "Desmar Walkes"
 role = "Co-Investigator, Austin Public Health"
+bio = "Serves as Co-Investigator, Austin Public Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0004-6132-0187"
 linkedin = "https://www.linkedin.com/in/desmar-walkes-332470104/"
 
@@ -118,6 +130,7 @@ linkedin = "https://www.linkedin.com/in/desmar-walkes-332470104/"
 id = "francesca-de-rosa"
 full_name = "Francesca de Rosa"
 role = "Co-Investigator, Center for Advanced Preparedness and Threat Response Simulation"
+bio = "Serves as Co-Investigator, Center for Advanced Preparedness and Threat Response Simulation. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/francesca-de-rosa-b12482bb/"
 
 # CATRAC
@@ -125,12 +138,14 @@ linkedin = "https://www.linkedin.com/in/francesca-de-rosa-b12482bb/"
 id = "douglas-havron"
 full_name = "Douglas Havron"
 role = "Co-Investigator, Capital Area Trauma Regional Advisory Council"
+bio = "Serves as Co-Investigator, Capital Area Trauma Regional Advisory Council. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/douglas-havron-96b853112/"
 
 [[organization.researchers]]
 id = "jasmine-castaneda-de-morales"
 full_name = "Jasmine Casteñeda de Morales"
 role = "Data Analyst, Capital Area Trauma Regional Advisory Council"
+bio = "Serves as Data Analyst, Capital Area Trauma Regional Advisory Council. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/jcdemorales/"
 
 # City of Austin
@@ -147,6 +162,7 @@ linkedin = "https://www.linkedin.com/in/mark-escott-md-mph-facep-faems-nrp-3695b
 id = "hector-ocaranza"
 full_name = "Hector Ocaranza"
 role = "Co-Investigator, City of El Paso Department of Public Health"
+bio = "Serves as Co-Investigator, City of El Paso Department of Public Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/hector-ocaranza-505ba962/"
 
 # Council of State and Territorial Epidemiologists
@@ -154,17 +170,20 @@ linkedin = "https://www.linkedin.com/in/hector-ocaranza-505ba962/"
 id = "beth-daly"
 full_name = "Beth Daly"
 role = "Co-Investigator, Council of State and Territorial Epidemiologists"
+bio = "Serves as Co-Investigator, Council of State and Territorial Epidemiologists. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/elizabeth-r-daly-drph-mph-42063260/"
 
 [[organization.researchers]]
 id = "rebekah-matthew"
 full_name = "Rebekah Matthew"
 role = "Program Analyst, Council of State and Territorial Epidemiologists"
+bio = "Serves as Program Analyst, Council of State and Territorial Epidemiologists. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "jordan-peart"
 full_name = "Jordan Peart"
 role = "Infectious Disease Program Manager, Council of State and Territorial Epidemiologists"
+bio = "Serves as Infectious Disease Program Manager, Council of State and Territorial Epidemiologists. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/jordanpeart/"
 
 # Dallas County Health & Human Services
@@ -172,6 +191,7 @@ linkedin = "https://www.linkedin.com/in/jordanpeart/"
 id = "philip-huang"
 full_name = "Philip Huang"
 role = "Co-Investigator, Dallas County Health & Human Services"
+bio = "Serves as Co-Investigator, Dallas County Health & Human Services. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0008-6249-7901"
 linkedin = "https://www.linkedin.com/in/phil-huang-31499913/"
 
@@ -180,6 +200,7 @@ linkedin = "https://www.linkedin.com/in/phil-huang-31499913/"
 id = "michael-pignone"
 full_name = "Michael Pignone"
 role = "Co-Investigator, Duke University"
+bio = "Serves as Co-Investigator, Duke University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-6657-7342"
 linkedin = "https://www.linkedin.com/in/michael-pignone-1789a5b/"
 
@@ -188,6 +209,7 @@ linkedin = "https://www.linkedin.com/in/michael-pignone-1789a5b/"
 id = "loren-hopkins"
 full_name = "Loren Hopkins"
 role = "Co-Investigator, Houston Health Department; Professor in the Practice, Rice University"
+bio = "Serves as Co-Investigator, Houston Health Department; Professor in the Practice, Rice University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://profiles.rice.edu/faculty/loren-hopkins"
 orcid = "https://orcid.org/0000-0003-0626-9775"
 
@@ -195,6 +217,7 @@ orcid = "https://orcid.org/0000-0003-0626-9775"
 id = "kaavya-domakonda"
 full_name = "Kaavya Domakonda"
 role = "Senior Staff Analyst, Houston Health Department"
+bio = "Serves as Senior Staff Analyst, Houston Health Department. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0004-8656-7864"
 linkedin = "https://www.linkedin.com/in/kaavya-domakonda-285b7716/"
 
@@ -202,12 +225,14 @@ linkedin = "https://www.linkedin.com/in/kaavya-domakonda-285b7716/"
 id = "kelsey-caton"
 full_name = "Kelsey Caton"
 role = "Houston Health Department"
+bio = "Serves as Houston Health Department. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 # JMP
 [[organization.researchers]]
 id = "russ-wolfinger"
 full_name = "Russ Wolfinger"
 role = "Director of Scientific Discovery and Genomics, Distinguished Research Fellow, JMP"
+bio = "Serves as Director of Scientific Discovery and Genomics, Distinguished Research Fellow, JMP. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/russ-wolfinger-5ab7999/"
 
 # The London School of Hygiene & Tropical Medicine
@@ -215,6 +240,7 @@ linkedin = "https://www.linkedin.com/in/russ-wolfinger-5ab7999/"
 id = "sebastian-funk"
 full_name = "Sebastian Funk"
 role = "Co-Investigator, The London School of Hygiene & Tropical Medicine"
+bio = "Serves as Co-Investigator, The London School of Hygiene & Tropical Medicine. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://profiles.lshtm.ac.uk/2382-sebastian-funk"
 google_scholar = "https://scholar.google.com/citations?user=yOo8u2gAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0002-2842-3406"
@@ -225,6 +251,7 @@ bluesky = "https://bsky.app/profile/sbfnk.bsky.social"
 id = "meagan-burns"
 full_name = "Meagan Burns"
 role = "Co-Investigator, Massachusetts Department of Public Health"
+bio = "Serves as Co-Investigator, Massachusetts Department of Public Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-7802-4721"
 linkedin = "https://www.linkedin.com/in/meagan-burns-3a680673/"
 
@@ -232,12 +259,14 @@ linkedin = "https://www.linkedin.com/in/meagan-burns-3a680673/"
 id = "andy-tibbs"
 full_name = "Andy Tibbs"
 role = "Senior Infectious Disease Epidemiologist, Massachusetts Department of Public Health"
+bio = "Serves as Senior Infectious Disease Epidemiologist, Massachusetts Department of Public Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/andy-tibbs-647503b/"
 
 [[organization.researchers]]
 id = "rosa-ergas"
 full_name = "Rosa Ergas"
 role = "Syndromic Surveillance Coordinator, Massachusetts Department of Public Health"
+bio = "Serves as Syndromic Surveillance Coordinator, Massachusetts Department of Public Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/rosa-ergas-5975a21/"
 
 # Montgomery County, Texas
@@ -245,6 +274,7 @@ linkedin = "https://www.linkedin.com/in/rosa-ergas-5975a21/"
 id = "meghna-bhatt"
 full_name = "Meghna Bhatt"
 role = "Epidemiology Division Manager, Montgomery County, Texas"
+bio = "Serves as Epidemiology Division Manager, Montgomery County, Texas. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/meghnambhatt/"
 
 # NET Health
@@ -252,6 +282,7 @@ linkedin = "https://www.linkedin.com/in/meghnambhatt/"
 id = "ginger-points"
 full_name = "Ginger Points"
 role = "Co-Investigator, NET Health"
+bio = "Serves as Co-Investigator, NET Health. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/ginger-points-a202a473/"
 
 # Northern Arizona University
@@ -259,6 +290,7 @@ linkedin = "https://www.linkedin.com/in/ginger-points-a202a473/"
 id = "spencer-fox"
 full_name = "Spencer Fox"
 role = "Co-Investigator, Northern Arizona University"
+bio = "Serves as Co-Investigator, Northern Arizona University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://spncrfx.wordpress.com/"
 orcid = "https://orcid.org/0000-0003-1969-3778"
 bluesky = "https://bsky.app/profile/foxandtheflu.bsky.social"
@@ -268,6 +300,7 @@ bluesky = "https://bsky.app/profile/foxandtheflu.bsky.social"
 id = "david-morton"
 full_name = "David Morton"
 role = "Co-Investigator, Northwestern University"
+bio = "Serves as Co-Investigator, Northwestern University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://sites.northwestern.edu/dmorton/"
 google_scholar = "https://scholar.google.com/citations?user=IH62KeIAAAAJ&hl=en"
 
@@ -275,18 +308,21 @@ google_scholar = "https://scholar.google.com/citations?user=IH62KeIAAAAJ&hl=en"
 id = "guyi-chen"
 full_name = "Guyi Chen"
 role = "Graduate Student Researcher, Northwestern University"
+bio = "Serves as Graduate Student Researcher, Northwestern University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/guyi-chen-06268b12a/"
 
 [[organization.researchers]]
 id = "keyi-cheng"
 full_name = "Keyi Cheng"
 role = "Graduate Student Researcher, Northwestern University"
+bio = "Serves as Graduate Student Researcher, Northwestern University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/keyi-cheng-a3745317b/"
 
 [[organization.researchers]]
 id = "chenqi-jiang"
 full_name = "Chenqi Jiang"
 role = "Graduate Student Researcher, Northwestern University"
+bio = "Serves as Graduate Student Researcher, Northwestern University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/dan-chenqi-jiang-073213270/"
 
 # Tarleton State University
@@ -294,6 +330,7 @@ linkedin = "https://www.linkedin.com/in/dan-chenqi-jiang-073213270/"
 id = "jose-luis-herrera-diestra"
 full_name = "Jose Luis Herrera Diestra"
 role = "Assistant Professor, Tarleton State University"
+bio = "Serves as Assistant Professor, Tarleton State University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-1688-3704"
 linkedin = "https://www.linkedin.com/in/jose-luis-herrera-diestra-b824536b/"
 
@@ -302,6 +339,7 @@ linkedin = "https://www.linkedin.com/in/jose-luis-herrera-diestra-b824536b/"
 id = "kelly-gaither"
 full_name = "Kelly Gaither"
 role = "Co-Investigator, Texas Advanced Computing Center"
+bio = "Serves as Co-Investigator, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://tacc.utexas.edu/about/staff-directory/kelly-gaither/"
 orcid = "https://orcid.org/0000-0002-4272-175X"
 
@@ -309,6 +347,7 @@ orcid = "https://orcid.org/0000-0002-4272-175X"
 id = "lisa-garbrecht"
 full_name = "Lisa Garbrecht"
 role = "Co-Investigator, Texas Advanced Computing Center"
+bio = "Serves as Co-Investigator, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://tacc.utexas.edu/about/staff-directory/lisa-garbrecht/"
 orcid = "https://orcid.org/0000-0003-0399-4269"
 
@@ -316,12 +355,14 @@ orcid = "https://orcid.org/0000-0003-0399-4269"
 id = "joe-allen"
 full_name = "Joe Allen"
 role = "Research Associate, Texas Advanced Computing Center"
+bio = "Serves as Research Associate, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/william-joseph-allen-a9a92682/"
 
 [[organization.researchers]]
 id = "stephanie-baker"
 full_name = "Stephanie Baker"
 role = "Senior Evaluation Researcher, Texas Advanced Computing Center"
+bio = "Serves as Senior Evaluation Researcher, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-5380-6719"
 linkedin = "https://www.linkedin.com/in/stephanie-nicole-baker/"
 
@@ -329,18 +370,21 @@ linkedin = "https://www.linkedin.com/in/stephanie-nicole-baker/"
 id = "vera-belcher"
 full_name = "Vera Belcher"
 role = "Project Coordinator, Texas Advanced Computing Center"
+bio = "Serves as Project Coordinator, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/vera-belcher-13675613a/"
 
 [[organization.researchers]]
 id = "gladys-chen"
 full_name = "Gladys Chen"
 role = "Advanced High-Performance Computer User Support, Texas Advanced Computing Center"
+bio = "Serves as Advanced High-Performance Computer User Support, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/gladys-chen-6a3b32211/"
 
 [[organization.researchers]]
 id = "maytal-dahan"
 full_name = "Maytal Dahan"
 role = "Advanced Computing Interfaces Directorate, Texas Advanced Computing Center"
+bio = "Serves as Advanced Computing Interfaces Directorate, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-3432-5789"
 linkedin = "https://www.linkedin.com/in/maytaldahan/"
 
@@ -348,30 +392,35 @@ linkedin = "https://www.linkedin.com/in/maytaldahan/"
 id = "lena-duplechin-seymour"
 full_name = "Lena Duplechin Seymour"
 role = "Collaborative Support Specialist, Texas Advanced Computing Center"
+bio = "Serves as Collaborative Support Specialist, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/lena-dupsey/"
 
 [[organization.researchers]]
 id = "vennela-gajjala"
 full_name = "Vennela Gajjala"
 role = "Project Coordinator, Texas Advanced Computing Center"
+bio = "Serves as Project Coordinator, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/vennelagajjala/"
 
 [[organization.researchers]]
 id = "feng-liu"
 full_name = "Feng Liu"
 role = "Research Associate, Texas Advanced Computing Center"
+bio = "Serves as Research Associate, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/feng-liu-001-phd/"
 
 [[organization.researchers]]
 id = "craig-jansen"
 full_name = "Craig Jansen"
 role = "UX Researcher and Visualization Researcher, Texas Advanced Computing Center"
+bio = "Serves as UX Researcher and Visualization Researcher, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/csjansen/"
 
 [[organization.researchers]]
 id = "yiwen-yang"
 full_name = "Yiwen Yang"
 role = "Postdoctoral Fellow, Texas Advanced Computing Center"
+bio = "Serves as Postdoctoral Fellow, Texas Advanced Computing Center. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/yiwen-yang-56523192/"
 
 [[organization.researchers]]
@@ -387,23 +436,27 @@ linkedin = "https://www.linkedin.com/in/emily-javan-8b685293/"
 id = "jennifer-shuford"
 full_name = "Jennifer Shuford"
 role = "Commissioner, Texas Department of State Health Services"
+bio = "Serves as Commissioner, Texas Department of State Health Services. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-3943-5330"
 
 [[organization.researchers]]
 id = "saroj-rai"
 full_name = "Saroj Rai"
 role = "Texas Department of State Health Services"
+bio = "Serves as Texas Department of State Health Services. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "varun-shetty"
 full_name = "Varun Shetty"
 role = "Texas Department of State Health Services"
+bio = "Serves as Texas Department of State Health Services. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 # The University of Texas at Austin
 [[organization.researchers]]
 id = "michael-mackert"
 full_name = "Michael Mackert"
 role = "Co-Investigator, Center for Health Communication, The University of Texas at Austin"
+bio = "Serves as Co-Investigator, Center for Health Communication, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "http://healthcommunicationresearch.com/index.html"
 orcid = "https://orcid.org/0000-0002-1758-5354"
 
@@ -411,12 +464,14 @@ orcid = "https://orcid.org/0000-0002-1758-5354"
 id = "jewel-mullen"
 full_name = "Jewel Mullen"
 role = "Co-Investigator, Dell Medical School, The University of Texas at Austin"
+bio = "Serves as Co-Investigator, Dell Medical School, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://dellmed.utexas.edu/directory/jewel-mullen"
 
 [[organization.researchers]]
 id = "susan-ptak"
 full_name = "Susan Ptak"
 role = "Research Associate, The University of Texas at Austin"
+bio = "Serves as Research Associate, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://susanptak.github.io/"
 orcid = "https://orcid.org/0009-0002-1206-4557"
 
@@ -432,6 +487,7 @@ linkedin = "https://www.linkedin.com/in/farinaz-forouzannia-a6348996"
 id = "shraddha-bandekar"
 full_name = "Shraddha Bandekar"
 role = "Postdoctoral Fellow, The University of Texas at Austin"
+bio = "Serves as Postdoctoral Fellow, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-5063-2290"
 linkedin = "https://www.linkedin.com/in/shraddha-bandekar-534a96238"
 
@@ -439,6 +495,7 @@ linkedin = "https://www.linkedin.com/in/shraddha-bandekar-534a96238"
 id = "oluwasegun-ibrahim"
 full_name = "Oluwasegun Ibrahim"
 role = "Postdoctoral Fellow, The University of Texas at Austin"
+bio = "Serves as Postdoctoral Fellow, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://oluwasegunibrahim.com/"
 orcid = "https://orcid.org/0000-0002-2971-4301"
 
@@ -454,6 +511,7 @@ linkedin = "https://www.linkedin.com/in/nyall-j-a1ba86197/"
 id = "dongah-kim"
 full_name = "Dongah Kim"
 role = "Postdoctoral Fellow, The University of Texas at Austin"
+bio = "Serves as Postdoctoral Fellow, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-4638-7514"
 linkedin = "https://www.linkedin.com/in/dongah-kim-824a4462/"
 
@@ -461,35 +519,41 @@ linkedin = "https://www.linkedin.com/in/dongah-kim-824a4462/"
 id = "bryce-holloway"
 full_name = "Bryce Holloway"
 role = "Graduate Research Assistant, The University of Texas at Austin"
+bio = "Serves as Graduate Research Assistant, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/bryce-holloway-7ba8bb25a"
 
 [[organization.researchers]]
 id = "haerin-kim"
 full_name = "Haerin Kim"
 role = "Graduate Research Assistant, The University of Texas at Austin"
+bio = "Serves as Graduate Research Assistant, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://stat.utexas.edu/directory/haerin-kim"
 
 [[organization.researchers]]
 id = "elizabeth-snyderman"
 full_name = "Elizabeth Snyderman"
 role = "Graduate Research Assistant, The University of Texas at Austin"
+bio = "Serves as Graduate Research Assistant, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/elizabeth-snyderman-2a4052127/"
 
 [[organization.researchers]]
 id = "laurie-alvarez"
 full_name = "Laurie Alvarez"
 role = "Administrative Manager, The University of Texas at Austin"
+bio = "Serves as Administrative Manager, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "katie-clement"
 full_name = "Katie Clement"
 role = "Administrative Manager, The University of Texas at Austin"
+bio = "Serves as Administrative Manager, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/katie-clement222/"
 
 [[organization.researchers]]
 id = "becky-wilson"
 full_name = "Becky Wilson"
 role = "Managing Director, The University of Texas at Austin"
+bio = "Serves as Managing Director, The University of Texas at Austin. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/becky-wilson-kester/"
 
 # The University of Texas at El Paso
@@ -497,6 +561,7 @@ linkedin = "https://www.linkedin.com/in/becky-wilson-kester/"
 id = "anass-bouchnita"
 full_name = "Anass Bouchnita"
 role = "Co-Investigator, The University of Texas at El Paso"
+bio = "Serves as Co-Investigator, The University of Texas at El Paso. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-2729-6484"
 linkedin = "https://www.linkedin.com/in/anass-bouchnita-4b500588/"
 
@@ -504,18 +569,21 @@ linkedin = "https://www.linkedin.com/in/anass-bouchnita-4b500588/"
 id = "juan-garcia"
 full_name = "Juan A. Garcia"
 role = "PhD Student, The University of Texas at El Paso"
+bio = "Serves as PhD Student, The University of Texas at El Paso. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 # The University of Texas at Tyler
 [[organization.researchers]]
 id = "grace-dickey"
 full_name = "Grace Dickey"
 role = "Project Manager, The University of Texas at Tyler"
+bio = "Serves as Project Manager, The University of Texas at Tyler. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/grace-dickey-public-health/"
 
 [[organization.researchers]]
 id = "michelle-crum"
 full_name = "Michelle Crum"
 role = "Division Chief, The University of Texas at Tyler"
+bio = "Serves as Division Chief, The University of Texas at Tyler. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/visitmichellecrum/"
 
 # University of Colorado Boulder
@@ -523,6 +591,7 @@ linkedin = "https://www.linkedin.com/in/visitmichellecrum/"
 id = "daniel-larremore"
 full_name = "Daniel Larremore"
 role = "Co-Investigator, University of Colorado Boulder"
+bio = "Serves as Co-Investigator, University of Colorado Boulder. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://larremorelab.github.io/"
 google_scholar = "https://scholar.google.com/citations?user=BICiUrQAAAAJ&hl=en"
 orcid = "https://orcid.org/0000-0001-5273-5234"
@@ -531,6 +600,7 @@ orcid = "https://orcid.org/0000-0001-5273-5234"
 id = "remy-pasco"
 full_name = "Remy Pasco"
 role = "CFA Associate Director, Modeling Core, University of Colorado Boulder"
+bio = "Serves as CFA Associate Director, Modeling Core, University of Colorado Boulder. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0002-9321-6876"
 linkedin = "https://www.linkedin.com/in/remypasco/"
 
@@ -546,6 +616,7 @@ orcid = "https://orcid.org/0000-0002-5666-1161"
 id = "annalise-cramer"
 full_name = "Annalise Cramer"
 role = "Graduate Research Assistant, University of Georgia"
+bio = "Serves as Graduate Research Assistant, University of Georgia. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0002-8718-3593"
 linkedin = "https://www.linkedin.com/in/annalisecramer/"
 
@@ -553,6 +624,7 @@ linkedin = "https://www.linkedin.com/in/annalisecramer/"
 id = "ehsan-suez"
 full_name = "Ehsan Suez"
 role = "Graduate Research Assistant, University of Georgia"
+bio = "Serves as Graduate Research Assistant, University of Georgia. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-9620-7994"
 linkedin = "https://www.linkedin.com/in/ehsan-suez-942a07304/"
 
@@ -560,6 +632,7 @@ linkedin = "https://www.linkedin.com/in/ehsan-suez-942a07304/"
 id = "maya-salcedo"
 full_name = "Maya Salcedo"
 role = "Graduate Research Assistant, University of Georgia"
+bio = "Serves as Graduate Research Assistant, University of Georgia. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/mariah-salcedo-56b003249/"
 
 # University of Massachusetts Amherst
@@ -567,12 +640,14 @@ linkedin = "https://www.linkedin.com/in/mariah-salcedo-56b003249/"
 id = "melissa-kerr"
 full_name = "Melissa Kerr"
 role = "Project Manager, University of Massachusetts Amherst"
+bio = "Serves as Project Manager, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://www.umass.edu/public-health-sciences/about/directory/melissa-kerr"
 
 [[organization.researchers]]
 id = "matt-cornell"
 full_name = "Matt Cornell"
 role = "Software Engineer, University of Massachusetts Amherst"
+bio = "Serves as Software Engineer, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "anna-krystalli"
@@ -585,6 +660,7 @@ orcid = "https://orcid.org/0000-0002-2378-4915"
 id = "li-shandross"
 full_name = "Li Shandross"
 role = "Data Analyst, University of Massachusetts Amherst"
+bio = "Serves as Data Analyst, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0008-1348-1954"
 linkedin = "https://www.linkedin.com/in/li-shandross/"
 
@@ -592,22 +668,26 @@ linkedin = "https://www.linkedin.com/in/li-shandross/"
 id = "maryclare-griffin"
 full_name = "Maryclare Griffin"
 role = "Assistant Professor, University of Massachusetts Amherst"
+bio = "Serves as Assistant Professor, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0003-0878-3225"
 
 [[organization.researchers]]
 id = "isaac-macarthur"
 full_name = "Isaac MacArthur"
 role = "Graduate Research Assistant, University of Massachusetts Amherst"
+bio = "Serves as Graduate Research Assistant, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "thomas-robacker"
 full_name = "Thomas Robacker"
 role = "Graduate Research Assistant, University of Massachusetts Amherst"
+bio = "Serves as Graduate Research Assistant, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 
 [[organization.researchers]]
 id = "emily-tyszka"
 full_name = "Emily Tyszka"
 role = "Graduate Research Assistant, University of Massachusetts Amherst"
+bio = "Serves as Graduate Research Assistant, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0009-0005-6088-4017"
 linkedin = "https://www.linkedin.com/in/emily-tyszka/"
 
@@ -615,6 +695,7 @@ linkedin = "https://www.linkedin.com/in/emily-tyszka/"
 id = "alvaro-castro-rivadeneira"
 full_name = "Alvaro Castro Rivadeneira"
 role = "PhD Student, University of Massachusetts Amherst"
+bio = "Serves as PhD Student, University of Massachusetts Amherst. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 orcid = "https://orcid.org/0000-0001-9102-7660"
 
 # UT Health Houston
@@ -622,6 +703,7 @@ orcid = "https://orcid.org/0000-0001-9102-7660"
 id = "kaiming-bi"
 full_name = "Kaiming Bi"
 role = "Assistant Professor, UT Health Houston"
+bio = "Serves as Assistant Professor, UT Health Houston. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://bikaiming93.github.io/"
 orcid = "https://orcid.org/0000-0001-6234-6232"
 
@@ -629,6 +711,7 @@ orcid = "https://orcid.org/0000-0001-6234-6232"
 id = "boya-peng"
 full_name = "Boya Peng"
 role = "PhD Student, UT Health Houston"
+bio = "Serves as PhD Student, UT Health Houston. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 linkedin = "https://www.linkedin.com/in/boyapeng-analyst/"
 
 # Yale University
@@ -636,6 +719,7 @@ linkedin = "https://www.linkedin.com/in/boyapeng-analyst/"
 id = "alison-galvani"
 full_name = "Alison Galvani"
 role = "Yale University"
+bio = "Serves as Yale University. Their work contributes to outbreak preparedness, outbreak detection, forecasting. Note: This Bio was AI-generated"
 website = "https://ysph.yale.edu/profile/alison-galvani/"
 orcid = "https://orcid.org/0000-0002-2059-6716"
 

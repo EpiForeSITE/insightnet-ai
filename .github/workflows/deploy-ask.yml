@@ -1,0 +1,82 @@
+name: Deploy Ask InsightNet
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "server/**"
+      - "insightnet/rag.py"
+      - "data/rag/**"
+      - "Dockerfile"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/deploy-ask.yml"
+  workflow_dispatch:
+
+# id-token is what lets GitHub mint the OIDC assertion that Workload Identity
+# Federation exchanges for short-lived Google credentials. No service-account key exists.
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: insightnet-ask-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refuse to deploy without a retrieval index
+        run: |
+          # The index is baked into the image. Shipping without it would produce a
+          # container that starts, passes its health check, and answers nothing.
+          test -s data/rag/chunks.jsonl || { echo "data/rag/chunks.jsonl is missing or empty; run insightnet-rag first"; exit 1; }
+          test -s data/rag/vectors.jsonl || { echo "data/rag/vectors.jsonl is missing or empty; the index was built with --no-embed"; exit 1; }
+
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: Build and push the image
+        env:
+          IMAGE: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT }}/insightnet/ask:${{ github.sha }}
+        run: |
+          gcloud builds submit --tag "$IMAGE" --project "${{ vars.GCP_PROJECT }}"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy insightnet-ask \
+            --image "$IMAGE" \
+            --project "${{ vars.GCP_PROJECT }}" \
+            --region "${{ vars.GCP_REGION }}" \
+            --service-account "insightnet-ask@${{ vars.GCP_PROJECT }}.iam.gserviceaccount.com" \
+            --allow-unauthenticated \
+            --max-instances=3 \
+            --min-instances=0 \
+            --concurrency=8 \
+            --cpu=1 \
+            --memory=1Gi \
+            --timeout=60 \
+            --cpu-boost \
+            --set-env-vars "^@^GOOGLE_CLOUD_PROJECT=${{ vars.GCP_PROJECT }}@GOOGLE_CLOUD_LOCATION=${{ vars.GCP_REGION }}@ALLOWED_ORIGINS=${{ vars.ALLOWED_ORIGINS }}@DAILY_QUERY_CAP=${{ vars.DAILY_QUERY_CAP }}@MONTHLY_BUDGET_MICROS=${{ vars.MONTHLY_BUDGET_MICROS }}@IP_SALT=${{ secrets.IP_SALT }}"
+          # The ^@^ prefix switches gcloud's list delimiter from comma to @. ALLOWED_ORIGINS
+          # is itself comma-separated, so with the default delimiter a second origin would
+          # silently split into a separate, meaningless environment variable.
+
+      - name: Verify the deployed service is ready
+        run: |
+          URL="$(gcloud run services describe insightnet-ask \
+            --project "${{ vars.GCP_PROJECT }}" \
+            --region "${{ vars.GCP_REGION }}" \
+            --format='value(status.url)')"
+          echo "Deployed to $URL"
+          curl --fail --silent --show-error --max-time 60 "$URL/readyz"

@@ -54,5 +54,7 @@ jobs:
             echo "No snapshot changes to commit."
           else
             git commit -m "data: refresh scientific activity"
+            # Both refresh workflows push to main and can overlap; rebase first.
+            git pull --rebase origin main
             git push
           fi

@@ -14,9 +14,20 @@ on:
         description: "Discard retained works instead of merging them"
         type: boolean
         default: false
+      rebuild_index:
+        description: "Re-embed every retrieval chunk instead of reusing unchanged vectors"
+        type: boolean
+        default: false
+      skip_collection:
+        description: "Skip the works collectors and only rebuild the retrieval index"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+  # Required for Workload Identity Federation: GitHub mints the OIDC assertion that
+  # Google exchanges for a short-lived credential. No service-account key exists.
+  id-token: write
 
 concurrency:
   group: insightnet-works-refresh
@@ -25,7 +36,7 @@ concurrency:
 jobs:
   works:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 105
 
     steps:
       - name: Check out repository
@@ -48,7 +59,27 @@ jobs:
           # Optional. Raises the NCBI rate limit from 3 to 10 requests per second.
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           INSIGHTNET_CONTACT_EMAIL: ${{ vars.INSIGHTNET_CONTACT_EMAIL }}
+        # Skipped when only the retrieval index needs rebuilding — a chunking change
+        # does not justify re-scraping five external APIs for 471 researchers.
+        if: ${{ !inputs.skip_collection }}
         run: uv run --locked insightnet-works ${{ inputs.replace && '--replace' || '' }}
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: Rebuild the retrieval index
+        # Runs after the works collector so it indexes what was just collected, and
+        # before the tests so they validate exactly what is about to be committed.
+        # Only chunks whose text changed are re-embedded, so a typical week is dozens of
+        # calls rather than thousands.
+        env:
+          GOOGLE_CLOUD_PROJECT: ${{ vars.GCP_PROJECT }}
+          GOOGLE_CLOUD_LOCATION: ${{ vars.GCP_REGION }}
+        run: uv run --locked insightnet-rag ${{ inputs.rebuild_index && '--replace' || '' }}
 
       - name: Verify the snapshot still loads
         run: uv run --locked pytest
@@ -58,10 +89,13 @@ jobs:
           git config user.name "insightnet-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/works.json data/works-details.json \
-                  site/data/works.json site/data/works-details.json
+                  site/data/works.json site/data/works-details.json \
+                  data/rag
           if git diff --cached --quiet; then
             echo "No publication changes to commit."
           else
             git commit -m "data: refresh scholarly works"
+            # Both refresh workflows push to main and can overlap; rebase first.
+            git pull --rebase origin main
             git push
           fi

@@ -74,8 +74,11 @@ Thinking tokens are still charged against the budget if the model reports any.
 
 ## Deploying
 
-[`deploy-ask.yml`](../.github/workflows/deploy-ask.yml) builds with Cloud Build and deploys
-with `gcloud run deploy`, authenticating through Workload Identity Federation. It refuses
+[`deploy-ask.yml`](../.github/workflows/deploy-ask.yml) builds the image on the runner,
+pushes it straight to Artifact Registry, and deploys with `gcloud run deploy`,
+authenticating through Workload Identity Federation. Cloud Build is deliberately not
+used: `gcloud builds submit` stages the source in a bucket and needs storage and
+serviceusage permissions on top, which defeats a least-privilege deploy identity. It refuses
 to deploy when `data/rag/` is missing or was built with `--no-embed`, because the index is
 baked into the image and a vector-free index produces a container that starts, passes its
 health check, and answers nothing.
@@ -85,7 +88,7 @@ Two identities, least privilege:
 | Account | Used by | Roles |
 | --- | --- | --- |
 | `insightnet-ask@` | Cloud Run runtime | `aiplatform.user`, `datastore.user` |
-| `insightnet-deploy@` | GitHub Actions | `run.admin`, `cloudbuild.builds.editor`, `artifactregistry.writer` on the repo, `iam.serviceAccountUser` on the runtime account, `aiplatform.user` for the index build |
+| `insightnet-deploy@` | GitHub Actions | `run.admin`, `artifactregistry.writer` on the repo, `iam.serviceAccountUser` on the runtime account, `aiplatform.user` for the index build |
 
 Required GitHub configuration:
 

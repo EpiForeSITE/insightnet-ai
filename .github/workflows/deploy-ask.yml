@@ -45,11 +45,20 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v2
 
+      # Built on the runner rather than with Cloud Build. `gcloud builds submit` uploads
+      # the source to a staging bucket and needs storage and serviceusage permissions on
+      # top of everything else; pushing straight to Artifact Registry needs only
+      # artifactregistry.writer, which is the whole point of a least-privilege deploy
+      # identity. It is also faster, because the source never leaves the runner.
+      - name: Authorize Docker for Artifact Registry
+        run: gcloud auth configure-docker "${{ vars.GCP_REGION }}-docker.pkg.dev" --quiet
+
       - name: Build and push the image
         env:
           IMAGE: ${{ vars.GCP_REGION }}-docker.pkg.dev/${{ vars.GCP_PROJECT }}/insightnet/ask:${{ github.sha }}
         run: |
-          gcloud builds submit --tag "$IMAGE" --project "${{ vars.GCP_PROJECT }}"
+          docker build --tag "$IMAGE" .
+          docker push "$IMAGE"
           echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
 
       - name: Deploy to Cloud Run

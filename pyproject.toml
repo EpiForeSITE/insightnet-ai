@@ -17,7 +17,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-  "pytest>=8,<9",
+  "pytest>=9.0.3",
   "ruff>=0.6,<1",
 ]
 # Only the retrieval index needs these. The tests inject a stub embedder instead, so

@@ -395,7 +395,7 @@ def test_retrieval_finds_the_planted_expert(tmp_path: Path) -> None:
     # The stub embedder's cosines are not on the same scale as real ones, so the
     # confidence gate is exercised separately below; this test is about ranking.
     vector = rag.embed_query(StubEmbedder(), "which researcher can help me with ERGM?")
-    result = rag.search(index, "which researcher can help me with ERGM?", vector, min_cosine=0.0)
+    result = rag.search(index, "which researcher can help me with ERGM?", vector)
     assert result.confident
     assert result.researchers[0]["id"] == "rita-graph"
     assert result.citations
@@ -443,7 +443,7 @@ def test_a_prolific_author_does_not_win_on_volume(tmp_path: Path) -> None:
     ]
     index = _loaded(profiles, _works(*records), tmp_path=tmp_path)
 
-    result = rag.search(index, "exponential random graph models", min_cosine=0.0)
+    result = rag.search(index, "exponential random graph models")
     assert result.confident
     assert result.researchers[0]["id"] == "rita-graph"
 
@@ -457,19 +457,31 @@ def test_an_unrelated_question_is_refused(tmp_path: Path) -> None:
     assert result.reason == "no_match"
 
 
-def test_a_weak_semantic_match_is_refused(tmp_path: Path) -> None:
-    """Cosine, not the fused score, is what carries confidence.
+def test_retrieval_does_not_judge_relevance(tmp_path: Path) -> None:
+    """Retrieval returns candidates; the model decides whether they answer the question.
 
-    Reciprocal rank fusion discards magnitudes — its top score is the same whether the
-    best match is perfect or worthless — so the gate has to read the similarity itself.
+    Five scalar signals were measured against the real corpus with twelve on-topic and
+    twelve off-topic questions and none separated them — cosine, margin, z-score and
+    BM25 all overlap, and score deviation, which does separate full sentences, refuses
+    bare keywords like "dashboard" that retrieve perfectly. Shipping any of them as a
+    gate would refuse good questions and admit junk, so retrieval stays honest about
+    what it can and cannot tell.
     """
 
     index = _loaded(_profiles(), _works(_work("a1", "Contact network models")), tmp_path=tmp_path)
     unrelated = rag.embed_query(StubEmbedder(), "gearbox lubrication schedules")
 
-    assert not rag.search(index, "gearbox lubrication schedules", unrelated).confident
-    # The same retrieval is confident once the bar is lowered, proving the gate fired.
-    assert rag.search(index, "contact network models", unrelated, min_cosine=0.0).confident
+    result = rag.search(index, "gearbox lubrication schedules", unrelated)
+    assert result.confident, "retrieval must not pre-judge; that is the model's job"
+    assert result.spread >= 0.0
+
+
+def test_retrieval_reports_the_distribution_shape(tmp_path: Path) -> None:
+    """Logged so a future gate can be calibrated on real traffic, not invented questions."""
+
+    index = _loaded(_profiles(), _works(_work("a1", "Contact network models")), tmp_path=tmp_path)
+    vector = rag.embed_query(StubEmbedder(), "contact network models")
+    assert rag.search(index, "contact network models", vector).spread > 0
 
 
 def test_agreement_is_not_demanded_beyond_the_available_candidates(tmp_path: Path) -> None:
@@ -481,7 +493,7 @@ def test_agreement_is_not_demanded_beyond_the_available_candidates(tmp_path: Pat
 
     index = _loaded(_profiles(), _works(_work("a1", "Contact network models")), tmp_path=tmp_path)
     vector = rag.embed_query(StubEmbedder(), "contact network models")
-    assert rag.search(index, "contact network models", vector, min_cosine=0.0).confident
+    assert rag.search(index, "contact network models", vector).confident
 
 
 def test_a_plural_query_matches_the_singular_term(tmp_path: Path) -> None:
@@ -536,7 +548,7 @@ def test_a_matched_tool_resolves_to_the_center_that_builds_it(tmp_path: Path) ->
 
     works = _works(_work("a1", "Contact network models"))
     index = _loaded(_profiles(), works, tmp_path=tmp_path)
-    result = rag.search(index, "interactive dashboard", min_cosine=0.0)
+    result = rag.search(index, "interactive dashboard")
 
     assert result.confident
     assert [tool["id"] for tool in result.tools] == ["t:dashy"]

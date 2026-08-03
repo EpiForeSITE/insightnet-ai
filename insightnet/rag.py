@@ -71,15 +71,33 @@ TOP_ORGS = 3
 #: does: publication lists are broad and historical, shipping software is specific.
 TOOL_WEIGHT = 2.0
 
-#: Refusal gate. Below either bar the caller should decline rather than ask a model to
-#: invent a connection — this is both the hallucination guard and a cost control.
+#: There is deliberately **no score threshold** deciding whether a question is
+#: answerable. Five candidate signals were measured against this corpus with twelve
+#: on-topic and twelve off-topic questions, and none of them separates:
 #:
-#: The bar is cosine rather than the fused score because reciprocal rank fusion throws
-#: magnitudes away: its top score is ``1/(RRF_K + 1)`` whether the match is perfect or
-#: worthless, so it cannot express confidence. Cosine can, and is comparable across
-#: queries. ``MIN_COSINE`` wants tuning against real questions before launch.
-MIN_COSINE = 0.25
-MIN_OVERLAP = 3
+#: =================  ==================  ==================  =========
+#: signal             on-topic            off-topic           separates
+#: =================  ==================  ==================  =========
+#: top cosine         0.68 – 0.79         0.66 – 0.69         no
+#: top − mean         0.112 – 0.156       0.083 – 0.143       no
+#: z-score            3.27 – 4.44         3.45 – 5.07         no
+#: score deviation    0.0315 – 0.0397     0.0236 – 0.0282     sentences only
+#: top BM25           10.4 – 15.1         4.4 – 20.1          no
+#: =================  ==================  ==================  =========
+#:
+#: Score deviation looked like the answer until bare keywords were tried: "dashboard"
+#: gives 0.019 and "ERGM" 0.031 — below most off-topic questions — yet both retrieve
+#: exactly the right record. Deviation partly measures how *specific the phrasing* is,
+#: not how relevant the corpus is, so gating on it refuses the shortest, clearest
+#: queries. "who won the world cup in 1998?" tops BM25 at 20.1 because a corpus of 7,738
+#: documents contains "cup", "won" and "1998" somewhere.
+#:
+#: Relevance here is a semantic judgement, so it is left to the model, which sees both
+#: the question and the retrieved records and answers ``NO_CONFIDENT_MATCH`` when they do
+#: not support one. Retrieval refuses only when it structurally has nothing. Anyone
+#: tempted to re-add a threshold should re-run the calibration first — the numbers above
+#: are specific to gemini-embedding-001 at 256 dimensions.
+RELEVANCE_IS_THE_MODELS_JOB = True
 
 TOKEN_PATTERN = re.compile(r"[a-z0-9][a-z0-9-]*")
 CONTROL_CHARACTERS = {ord(c): " " for c in map(chr, range(32)) if c not in "\t\n\r"}
@@ -692,30 +710,64 @@ def bm25(index: Index, terms: Sequence[str], limit: int = CANDIDATES) -> list[tu
     return ranked[:limit]
 
 
-def dense(index: Index, query_vector: Sequence[float], limit: int = CANDIDATES) -> list[tuple[int, float]]:
+@dataclass
+class DenseRanking:
+    """Ranked chunks plus the shape of the whole score distribution.
+
+    The distribution is what carries confidence. Absolute cosine does not: measured
+    against this corpus, "best pizza in Chicago" scores 0.58 against an epidemiology
+    paper and a genuine question scores 0.68, so no fixed cut separates them. What does
+    separate them is whether the best match *stands out* — a real question produces an
+    outlier, an irrelevant one produces a flat distribution.
+    """
+
+    ranked: list[tuple[int, float]] = field(default_factory=list)
+    top: float = 0.0
+    mean: float = 0.0
+    deviation: float = 0.0
+
+    @property
+    def contrast(self) -> float:
+        """Standard deviations between the best match and the corpus baseline."""
+
+        return (self.top - self.mean) / self.deviation if self.deviation else 0.0
+
+
+def dense(index: Index, query_vector: Sequence[float], limit: int = CANDIDATES) -> DenseRanking:
     """Rank chunks by cosine similarity against the query embedding."""
 
     if not index.chunks:
-        return []
+        return DenseRanking()
     query = normalize(query_vector)
     matrix = index.matrix()
     if matrix is not None:
         import numpy
 
-        scores = matrix.astype(numpy.float32) @ numpy.asarray(query, dtype=numpy.float32)
-        scores = scores / 127.0
+        scores = (matrix.astype(numpy.float32) @ numpy.asarray(query, dtype=numpy.float32)) / 127.0
         order = numpy.argsort(-scores)[:limit]
-        return [(int(position), float(scores[position])) for position in order]
+        return DenseRanking(
+            ranked=[(int(position), float(scores[position])) for position in order],
+            top=float(scores.max()),
+            mean=float(scores.mean()),
+            deviation=float(scores.std()),
+        )
 
-    ranked: list[tuple[int, float]] = []
+    scored: list[tuple[int, float]] = []
     for position, chunk in enumerate(index.chunks):
         encoded = index.vectors.get(chunk["id"])
         if not encoded:
             continue
         vector = dequantize(encoded)
-        ranked.append((position, sum(a * b for a, b in zip(vector, query, strict=False))))
-    ranked.sort(key=lambda item: (-item[1], index.chunks[item[0]]["id"]))
-    return ranked[:limit]
+        scored.append((position, sum(a * b for a, b in zip(vector, query, strict=False))))
+    if not scored:
+        return DenseRanking()
+    values = [value for _position, value in scored]
+    mean = sum(values) / len(values)
+    deviation = math.sqrt(sum((v - mean) ** 2 for v in values) / len(values))
+    scored.sort(key=lambda item: (-item[1], index.chunks[item[0]]["id"]))
+    return DenseRanking(
+        ranked=scored[:limit], top=max(values), mean=mean, deviation=deviation
+    )
 
 
 def fuse(*rankings: Sequence[tuple[int, float]]) -> list[tuple[int, float]]:
@@ -741,6 +793,10 @@ class Retrieval:
     citations: list[dict[str, Any]] = field(default_factory=list)
     confident: bool = False
     reason: str = ""
+    #: Shape of the dense score distribution. Not a gate — see the note beside
+    #: ``RELEVANCE_IS_THE_MODELS_JOB`` — but worth logging so a future threshold can be
+    #: calibrated on real traffic rather than on invented questions.
+    spread: float = 0.0
 
 
 def roll_up(index: Index, fused: Sequence[tuple[int, float]]) -> list[dict[str, Any]]:
@@ -827,31 +883,22 @@ def search(
     index: Index,
     question: str,
     query_vector: Sequence[float] | None = None,
-    min_cosine: float = MIN_COSINE,
 ) -> Retrieval:
     """Run the hybrid retrieval and roll-up.
 
     ``query_vector`` may be omitted to run lexically only, which is what happens when
-    embeddings are unavailable — degraded, but still useful, and it keeps the CLI
-    usable before any cloud credentials exist.
+    embeddings are unavailable — degraded, but still useful, and it keeps the CLI usable
+    before any cloud credentials exist.
+
+    Retrieval returns its best candidates and reports how confident the *distribution*
+    looked; it does not decide whether the question is answerable. See the note beside
+    ``RELEVANCE_IS_THE_MODELS_JOB`` for the measurements behind that decision.
     """
 
     lexical = bm25(index, lexical_terms(question))
-    semantic = dense(index, query_vector) if query_vector else []
-    fused = fuse(lexical, semantic) if semantic else fuse(lexical)
+    semantic = dense(index, query_vector) if query_vector else DenseRanking()
+    fused = fuse(lexical, semantic.ranked) if semantic.ranked else fuse(lexical)
     if not fused:
-        return Retrieval(reason="no_match")
-
-    if semantic:
-        if semantic[0][1] < min_cosine:
-            return Retrieval(reason="no_match")
-        if lexical:
-            # Require the two rankings to agree, but never demand more agreement than
-            # there are candidates to agree on — a narrow corpus is not a weak match.
-            overlap = len({p for p, _ in lexical} & {p for p, _ in semantic})
-            if overlap < min(MIN_OVERLAP, len(lexical), len(semantic)):
-                return Retrieval(reason="no_match")
-    elif not lexical:
         return Retrieval(reason="no_match")
 
     people = roll_up(index, fused)[:TOP_RESEARCHERS]
@@ -935,6 +982,7 @@ def search(
         organizations=organizations,
         citations=citations,
         confident=True,
+        spread=round(semantic.deviation, 5),
     )
 
 
@@ -989,6 +1037,7 @@ def embed_query(embedder: Embedder, question: str) -> list[float]:
 __all__ = [
     "SCHEMA_VERSION",
     "BuildResult",
+    "DenseRanking",
     "Index",
     "Retrieval",
     "build_chunks",

@@ -26,6 +26,16 @@ rag = [
   "google-genai>=1.0,<2",
   "numpy>=1.26,<3",
 ]
+# The Cloud Run service. A superset of `rag`, listed explicitly so the lock file does
+# not depend on self-referencing extras.
+server = [
+  "google-genai>=1.0,<2",
+  "numpy>=1.26,<3",
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "google-cloud-firestore>=2.16,<3",
+  "httpx>=0.27,<1",
+]
 
 [project.scripts]
 insightnet-update = "insightnet.update:main"
@@ -33,7 +43,7 @@ insightnet-works = "insightnet.update:works_main"
 insightnet-rag = "insightnet.update:rag_main"
 
 [tool.setuptools.packages.find]
-include = ["insightnet*"]
+include = ["insightnet*", "server*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

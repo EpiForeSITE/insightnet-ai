@@ -21,10 +21,10 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v2
 
-      run: |
-        gcloud auth list
-        gcloud artifacts repositories describe insightnet \
-            --project="${{ vars.GCP_PROJECT }}" \
-            --location="${{ vars.GCP_REGION }}" \
-            --format="value(name)"
+      - run: |
+          gcloud auth list
+          gcloud artifacts repositories describe insightnet \
+              --project="${{ vars.GCP_PROJECT }}" \
+              --location="${{ vars.GCP_REGION }}" \
+              --format="value(name)"
 

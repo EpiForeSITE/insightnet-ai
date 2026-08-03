@@ -7,7 +7,9 @@
       name="description"
       content="An unofficial explorer for discovering scientific centers, researchers, and emerging work across InsightNet."
     />
-    <meta name="theme-color" content="#12343b" />
+    <meta name="theme-color" content="#a60f2d" />
+    <link rel="icon" type="image/png" href="./assets/foresite-mark.png" />
+    <link rel="apple-touch-icon" href="./assets/foresite-mark.png" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="InsightNet Explorer" />
     <meta
@@ -28,27 +30,38 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
+    <div class="brand-bar" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="brand" href="#overview" aria-label="InsightNet home">
-        <span class="brand-mark" aria-hidden="true">IN</span>
-        <span>
-          <strong>InsightNet</strong>
-          <small>Scientific endeavors</small>
-        </span>
-      </a>
-      <div class="header-actions">
-        <nav aria-label="Primary navigation">
-          <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
-          <button class="nav-link" type="button" data-view="tools">Tools</button>
-          <button class="nav-link" type="button" data-view="works">Publications</button>
-          <button class="nav-link" type="button" data-view="partners">Partners</button>
-          <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
-          <button class="nav-link" type="button" data-view="experts">Find experts</button>
-          <button class="nav-link" type="button" data-view="health">Data status</button>
-        </nav>
-        <a class="official-site-link" href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">
-          Visit insightnet.us <span aria-hidden="true">↗</span>
+      <div class="header-inner">
+        <a class="brand" href="#overview" aria-label="InsightNet Explorer home, a ForeSITE project">
+          <img
+            class="brand-logo"
+            src="./assets/foresite-logo.png"
+            alt="ForeSITE"
+            width="600"
+            height="400"
+          />
+          <span class="brand-rule" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>InsightNet</strong>
+            <small>Scientific endeavors</small>
+          </span>
         </a>
+        <div class="header-actions">
+          <nav aria-label="Primary navigation">
+            <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
+            <button class="nav-link" type="button" data-view="tools">Tools</button>
+            <button class="nav-link" type="button" data-view="works">Publications</button>
+            <button class="nav-link" type="button" data-view="partners">Partners</button>
+            <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
+            <button class="nav-link" type="button" data-view="experts">Find experts</button>
+            <button class="nav-link" type="button" data-view="health">Data status</button>
+          </nav>
+          <a class="official-site-link" href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">
+            Visit insightnet.us <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </header>
 
@@ -203,6 +216,21 @@
             </p>
           </div>
         </div>
+        <aside class="callout" aria-label="How to read this publication list">
+          <h3>How to read this list</h3>
+          <ul>
+            <li>
+              At most the <strong>100 most recent publications per researcher</strong> are
+              collected, so a prolific author's older work — and some papers overall — will be
+              missing.
+            </li>
+            <li>
+              Many of these papers <strong>predate InsightNet</strong>. Listing a publication
+              here records that a network member authored it; it is not a claim that the work was
+              funded or supported by InsightNet.
+            </li>
+          </ul>
+        </aside>
         <form id="works-filters" class="filter-bar" aria-label="Publication filters">
           <label>
             <span>Search publications</span>
@@ -339,21 +367,35 @@
       </section>
     </main>
 
-    <footer>
-      <div>
-        <strong>InsightNet</strong>
-        <p>
-          This is an unofficial InsightNet website. For the official InsightNet website, visit
-          <a href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">insightnet.us</a>.
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="./assets/foresite-logo-white.png"
+              alt="ForeSITE"
+              width="600"
+              height="400"
+            />
+            <p>
+              This is an unofficial InsightNet website. For the official InsightNet website, visit
+              <a href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">insightnet.us</a>.
+            </p>
+          </div>
+          <div class="footer-meta">
+            <span id="footer-generated">Awaiting data</span>
+            <span class="footer-data-links">
+              <a href="./data/profiles.json">Profiles</a>
+              <a href="./data/works.json">Publications</a>
+              <a href="./data/activity.json">Activity</a>
+            </span>
+          </div>
+        </div>
+        <p class="footer-colophon">
+          Site created by George G. Vega Yon with the help of AI (Codex, Copilot, and Claude).
+          Copyright &copy; <a href="https://epiforesite.github.io/ForeSITE_Website/" target="_blank" rel="noopener noreferrer">ForeSITE</a>.
         </p>
-      </div>
-      <div class="footer-meta">
-        <span id="footer-generated">Awaiting data</span>
-        <span class="footer-data-links">
-          <a href="./data/profiles.json">Profiles</a>
-          <a href="./data/works.json">Publications</a>
-          <a href="./data/activity.json">Activity</a>
-        </span>
       </div>
     </footer>
   </body>

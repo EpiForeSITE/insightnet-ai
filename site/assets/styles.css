@@ -1,18 +1,32 @@
+/* ForeSITE brand palette. The three official colors come straight from
+   "ForeSITE Logo Guidelines" (Pantone 201 C, 1235 C, and 7540 C); nothing else in this
+   file may introduce a competing hue. Everything named below is either one of those
+   three or a tint/shade derived from them. */
 :root {
   color-scheme: light;
-  --ink: #12343b;
-  --ink-soft: #36545a;
-  --teal: #16697a;
-  --teal-bright: #168a91;
-  --sage: #dcebe5;
-  --sage-deep: #b9d4c9;
-  --paper: #f7f8f3;
+
+  /* Official */
+  --crimson: #a60f2d;
+  --gold: #fdb921;
+  --gray: #4e4e4e;
+
+  /* Derived */
+  --crimson-deep: #7c0b22;
+  --crimson-soft: #c2405a;
+  --crimson-tint: #f7e7ea;
+  --gold-deep: #8a6413;
+  --gold-tint: #fdf1d6;
+
+  --ink: #2c2c2c;
+  --ink-soft: var(--gray);
+  --ink-muted: #6f6f6f;
+  --sand: #f2ede9;
+  --sand-deep: #dcd2cb;
+  --paper: #f8f6f4;
   --white: #fff;
-  --line: #d9e3de;
-  --coral: #d76d57;
-  --amber: #d69f42;
-  --red: #b8463f;
-  --shadow: 0 18px 55px rgb(18 52 59 / 8%);
+  --line: #e3ddd8;
+
+  --shadow: 0 18px 55px rgb(78 78 78 / 12%);
   --radius: 20px;
   --max-width: 1240px;
 }
@@ -29,8 +43,12 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
+  /* The logo is set in Proxima Nova Semibold. It is a licensed face that cannot be
+     shipped with a dependency-free static site, so the stack asks for it first and
+     falls back to the geometric humanist sans faces closest to it. */
   font-family:
-    Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    "Proxima Nova", "Avenir Next", Avenir, Montserrat, "Segoe UI", Inter, ui-sans-serif,
+    -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.55;
   text-rendering: optimizeLegibility;
 }
@@ -47,14 +65,14 @@ a {
 }
 
 a {
-  color: var(--teal);
+  color: var(--crimson);
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgb(22 105 122 / 30%);
+  outline: 3px solid rgb(166 15 45 / 35%);
   outline-offset: 3px;
 }
 
@@ -73,36 +91,50 @@ select:focus-visible {
   top: 1rem;
 }
 
+/* The brand bar carries the two official accent colors across the full width, so the
+   page reads as ForeSITE before the logo is even in view. */
+.brand-bar {
+  background: linear-gradient(90deg, var(--crimson) 0%, var(--crimson) 45%, var(--gold) 100%);
+  height: 5px;
+}
+
 .site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
   align-items: center;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
   margin: 0 auto;
   max-width: var(--max-width);
-  padding: 1.15rem 1.5rem;
+  padding: 0.9rem 1.5rem;
 }
 
 .brand {
   align-items: center;
   color: var(--ink);
   display: inline-flex;
-  gap: 0.75rem;
+  gap: 1rem;
   text-decoration: none;
 }
 
-.brand-mark {
-  align-items: center;
-  background: var(--ink);
-  border-radius: 50%;
-  color: var(--white);
-  display: inline-flex;
-  font-size: 0.72rem;
-  font-weight: 800;
-  height: 2.5rem;
-  justify-content: center;
-  letter-spacing: -0.04em;
-  width: 2.5rem;
+/* Logo clear space: the guidelines require at least 1X — the height of the mark's end
+   point — free on every side, which the padding here reserves. The logo is never
+   recolored, cropped, or redrawn; only scaled in proportion. */
+.brand-logo {
+  display: block;
+  height: auto;
+  padding: 0.35rem 0.5rem;
+  width: clamp(112px, 12vw, 148px);
+}
+
+.brand-rule {
+  background: var(--line);
+  height: 2.1rem;
+  width: 1px;
 }
 
 .brand strong,
@@ -116,7 +148,7 @@ select:focus-visible {
 }
 
 .brand small {
-  color: var(--ink-soft);
+  color: var(--ink-muted);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
 }
@@ -150,7 +182,7 @@ nav {
 
 .nav-link:hover,
 .nav-link.is-active {
-  background: var(--sage);
+  background: var(--sand);
   color: var(--ink);
 }
 
@@ -167,7 +199,7 @@ nav {
 
 .official-site-link:hover {
   background: var(--white);
-  border-color: var(--sage-deep);
+  border-color: var(--sand-deep);
 }
 
 main {
@@ -179,9 +211,9 @@ main {
 .hero {
   align-items: center;
   background:
-    radial-gradient(circle at 9% 0%, rgb(255 255 255 / 75%), transparent 28%),
-    linear-gradient(135deg, #e7f0eb 0%, #d7e8e1 55%, #c8e0da 100%);
-  border: 1px solid rgb(18 52 59 / 6%);
+    radial-gradient(circle at 9% 0%, rgb(255 255 255 / 78%), transparent 30%),
+    linear-gradient(115deg, var(--crimson-tint) 0%, #f6ece4 52%, var(--gold-tint) 100%);
+  border: 1px solid rgb(78 78 78 / 10%);
   border-radius: 24px;
   column-gap: 2rem;
   display: flex;
@@ -199,7 +231,7 @@ main {
 }
 
 .kicker {
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -253,21 +285,21 @@ h4 {
 }
 
 .status-dot {
-  background: var(--amber);
-  border: 4px solid rgb(214 159 66 / 18%);
+  background: var(--ink-muted);
+  border: 4px solid rgb(111 111 111 / 18%);
   border-radius: 50%;
   height: 0.8rem;
   width: 0.8rem;
 }
 
 .freshness.is-current .status-dot {
-  background: var(--teal-bright);
-  border-color: rgb(22 138 145 / 18%);
+  background: var(--gold);
+  border-color: rgb(253 185 33 / 26%);
 }
 
 .freshness.is-stale .status-dot {
-  background: var(--coral);
-  border-color: rgb(215 109 87 / 18%);
+  background: var(--crimson);
+  border-color: rgb(166 15 45 / 18%);
 }
 
 .metrics {
@@ -337,7 +369,7 @@ h4 {
   /* Rotation never starts under this preference, so the active dot stays a plain
      indicator rather than an empty countdown track. */
   .carousel-dots.is-rotating .carousel-dot.is-active {
-    background: var(--teal);
+    background: var(--crimson);
   }
 
   .carousel-dots.is-rotating .carousel-dot.is-active::after {
@@ -364,7 +396,7 @@ h4 {
 }
 
 .text-action {
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.86rem;
   font-weight: 720;
   padding: 0.4rem 0;
@@ -397,7 +429,7 @@ h4 {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgb(18 52 59 / 4%);
+  box-shadow: 0 8px 30px rgb(78 78 78 / 6%);
 }
 
 .card {
@@ -427,7 +459,7 @@ h4 {
 
 .carousel-track:focus-visible {
   border-radius: var(--radius);
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--crimson);
   outline-offset: 4px;
 }
 
@@ -456,8 +488,8 @@ h4 {
 }
 
 .carousel-button:hover:not(:disabled) {
-  background: var(--sage);
-  border-color: var(--sage-deep);
+  background: var(--sand);
+  border-color: var(--sand-deep);
 }
 
 .carousel-button:disabled {
@@ -487,7 +519,7 @@ h4 {
 }
 
 .carousel-dot.is-active {
-  background: var(--teal);
+  background: var(--crimson);
   width: 2.6rem;
 }
 
@@ -495,12 +527,12 @@ h4 {
    pale track and refills over exactly one interval, so the next move is visible before it
    happens; a bar frozen part-way is what a paused banner looks like. */
 .carousel-dots.is-rotating .carousel-dot.is-active {
-  background: var(--sage-deep);
+  background: var(--sand-deep);
 }
 
 .carousel-dots.is-rotating .carousel-dot.is-active::after {
   animation: carousel-countdown var(--carousel-delay, 6000ms) linear forwards;
-  background: var(--teal);
+  background: var(--crimson);
   border-radius: inherit;
   content: "";
   inset: 0;
@@ -543,7 +575,7 @@ h4 {
 }
 
 .partner-summary-chip:hover {
-  border-color: var(--sage-deep);
+  border-color: var(--sand-deep);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
   transition: 180ms ease;
@@ -578,8 +610,8 @@ h4 {
 }
 
 .partner-card:hover {
-  border-color: var(--sage-deep);
-  box-shadow: 0 8px 30px rgb(18 52 59 / 5%);
+  border-color: var(--sand-deep);
+  box-shadow: 0 8px 30px rgb(78 78 78 / 7%);
 }
 
 .partner-card h3 {
@@ -593,7 +625,7 @@ h4 {
 }
 
 .partner-card h3 a:hover {
-  color: var(--teal);
+  color: var(--crimson);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -606,9 +638,9 @@ h4 {
 
 .partner-type {
   align-self: flex-start;
-  background: var(--sage);
+  background: var(--sand);
   border-radius: 999px;
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -617,25 +649,25 @@ h4 {
 }
 
 .partner-type-healthcare {
-  background: #f3e6df;
-  color: #a4503c;
+  background: var(--gold-tint);
+  color: var(--gold-deep);
 }
 
 .partner-type-tribal,
 .partner-type-federal {
-  background: #e6eef1;
-  color: #2c5c6b;
+  background: #ebe7e3;
+  color: var(--gray);
 }
 
 .partner-centers {
-  color: #60777b;
+  color: var(--ink-muted);
   font-size: 0.76rem;
   margin-top: auto;
   padding-top: 0.4rem;
 }
 
 .card:hover {
-  border-color: var(--sage-deep);
+  border-color: var(--sand-deep);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
   transition: 180ms ease;
@@ -645,7 +677,7 @@ h4 {
 .record-meta,
 .result-count,
 .last-updated {
-  color: #60777b;
+  color: var(--ink-muted);
   font-size: 0.77rem;
 }
 
@@ -662,7 +694,7 @@ h4 {
 
 .card h3 a:hover,
 .activity-record h3 a:hover {
-  color: var(--teal);
+  color: var(--crimson);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -684,7 +716,7 @@ h4 {
 .card-footer button {
   background: transparent;
   border: 0;
-  color: var(--teal);
+  color: var(--crimson);
   cursor: pointer;
   font-size: 0.83rem;
   font-weight: 700;
@@ -699,16 +731,16 @@ h4 {
 }
 
 .tag {
-  background: var(--sage);
+  background: var(--sand);
   border-radius: 999px;
-  color: #285660;
+  color: var(--crimson);
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
 }
 
 .empty-state {
-  background: linear-gradient(145deg, #fff, #eff4f0);
-  border: 1px dashed #aac4ba;
+  background: linear-gradient(145deg, #fff, var(--sand));
+  border: 1px dashed var(--sand-deep);
   border-radius: var(--radius);
   max-width: 760px;
   padding: clamp(1.5rem, 5vw, 3.5rem);
@@ -720,7 +752,7 @@ h4 {
 }
 
 .empty-index {
-  color: var(--coral);
+  color: var(--crimson-soft);
   display: block;
   font-size: 0.74rem;
   font-weight: 800;
@@ -740,7 +772,7 @@ h4 {
 
 .filter-bar {
   align-items: end;
-  background: var(--sage);
+  background: var(--sand);
   border-radius: var(--radius);
   display: grid;
   gap: 0.85rem;
@@ -760,7 +792,7 @@ label > span:not(.tag) {
 input[type="search"],
 select {
   background: var(--white);
-  border: 1px solid #c8d7d1;
+  border: 1px solid var(--sand-deep);
   border-radius: 11px;
   color: var(--ink);
   min-height: 2.8rem;
@@ -811,9 +843,9 @@ select {
 }
 
 .tool-category {
-  background: var(--sage);
+  background: var(--sand);
   border-radius: 999px;
-  color: #285660;
+  color: var(--crimson);
   font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -822,9 +854,9 @@ select {
 }
 
 .tool-status {
-  background: #fbf0dc;
+  background: var(--gold-tint);
   border-radius: 999px;
-  color: #8a6413;
+  color: var(--gold-deep);
   font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -841,7 +873,7 @@ select {
 }
 
 .tool-repo {
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.78rem;
   font-weight: 700;
   text-decoration: none;
@@ -853,6 +885,41 @@ select {
   text-underline-offset: 3px;
 }
 
+/* Caveats a reader needs before they draw a conclusion from a list, set apart from the
+   list itself by the gold accent rather than by an alarm color. */
+.callout {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 14px;
+  margin-bottom: 1.4rem;
+  padding: 1.1rem 1.3rem;
+}
+
+.callout h3 {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.callout ul {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  margin: 0;
+  max-width: 860px;
+  padding-left: 1.1rem;
+}
+
+.callout li + li {
+  margin-top: 0.35rem;
+}
+
+.callout strong {
+  color: var(--ink);
+}
+
 .works-list {
   display: grid;
   gap: 0.8rem;
@@ -862,7 +929,7 @@ select {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgb(18 52 59 / 4%);
+  box-shadow: 0 8px 30px rgb(78 78 78 / 6%);
   padding: 1.35rem 1.5rem;
 }
 
@@ -877,7 +944,7 @@ select {
 }
 
 .work-record h3 a:hover {
-  color: var(--teal);
+  color: var(--crimson);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -900,13 +967,13 @@ select {
 }
 
 .work-type-article {
-  background: var(--sage);
-  color: #285660;
+  background: var(--sand);
+  color: var(--crimson);
 }
 
 .work-type-preprint {
-  background: #fbe9df;
-  color: #9c4a34;
+  background: var(--gold-tint);
+  color: var(--gold-deep);
 }
 
 .work-authors {
@@ -916,11 +983,11 @@ select {
 }
 
 .work-authors .network-author {
-  color: var(--teal);
+  color: var(--crimson);
 }
 
 .work-authors .muted {
-  color: #7d9095;
+  color: #8f8a86;
 }
 
 .work-abstract {
@@ -940,7 +1007,7 @@ select {
 }
 
 .work-abstract.is-missing {
-  color: #7d9095;
+  color: #8f8a86;
   font-style: italic;
 }
 
@@ -960,7 +1027,7 @@ select {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.22rem 0.65rem;
@@ -968,18 +1035,18 @@ select {
 }
 
 .work-ids a:hover {
-  border-color: var(--teal);
+  border-color: var(--crimson);
 }
 
 .match-reason {
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.76rem;
   font-weight: 600;
   margin: 0 0 0.5rem;
 }
 
 .work-people {
-  color: #60777b;
+  color: var(--ink-muted);
   font-size: 0.76rem;
   margin: 0.7rem 0 0;
 }
@@ -992,9 +1059,9 @@ select {
 
 .works-more button {
   background: var(--white);
-  border: 1px solid var(--sage-deep);
+  border: 1px solid var(--sand-deep);
   border-radius: 999px;
-  color: var(--teal);
+  color: var(--crimson);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
@@ -1002,7 +1069,7 @@ select {
 }
 
 .works-more button:hover {
-  background: var(--sage);
+  background: var(--sand);
 }
 
 .compact-select {
@@ -1011,7 +1078,7 @@ select {
 
 .center-hero {
   background:
-    linear-gradient(120deg, rgb(255 255 255 / 95%), rgb(235 243 239 / 94%)),
+    linear-gradient(120deg, rgb(255 255 255 / 96%), rgb(247 233 236 / 92%)),
     var(--white);
   padding: clamp(1.5rem, 5vw, 3rem);
 }
@@ -1037,7 +1104,7 @@ select {
 .profile-links a {
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.35rem 0.65rem;
@@ -1045,7 +1112,7 @@ select {
 }
 
 .profile-links a:hover {
-  background: var(--sage);
+  background: var(--sand);
 }
 
 .researcher-section {
@@ -1057,7 +1124,7 @@ select {
 }
 
 .researcher-role {
-  color: var(--coral);
+  color: var(--crimson);
   font-size: 0.72rem;
   font-weight: 750;
   letter-spacing: 0.06em;
@@ -1073,7 +1140,7 @@ select {
 }
 
 .expert-intro em {
-  color: var(--teal);
+  color: var(--crimson);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
 }
@@ -1085,7 +1152,7 @@ select {
 
 .search-shell {
   background: var(--white);
-  border: 1px solid var(--sage-deep);
+  border: 1px solid var(--sand-deep);
   border-radius: 16px;
   box-shadow: var(--shadow);
   display: flex;
@@ -1103,7 +1170,7 @@ select {
 }
 
 .search-shell button {
-  background: var(--ink);
+  background: var(--crimson);
   border: 0;
   border-radius: 11px;
   color: var(--white);
@@ -1114,15 +1181,15 @@ select {
 }
 
 .search-shell button:hover {
-  background: var(--teal);
+  background: var(--crimson-deep);
 }
 
 .inline-error,
 .app-message {
-  background: #f9e4df;
-  border: 1px solid #edb7ac;
+  background: var(--crimson-tint);
+  border: 1px solid #e3bcc4;
   border-radius: 12px;
-  color: #7a2d28;
+  color: var(--crimson-deep);
   margin: 1rem 0;
   padding: 0.8rem 1rem;
 }
@@ -1139,9 +1206,9 @@ select {
 }
 
 .count-pill {
-  background: var(--sage);
+  background: var(--sand);
   border-radius: 999px;
-  color: var(--teal);
+  color: var(--crimson);
   font-size: 0.72rem;
   padding: 0.3rem 0.65rem;
 }
@@ -1161,14 +1228,14 @@ table {
 
 th,
 td {
-  border-bottom: 1px solid #e8eeeb;
+  border-bottom: 1px solid #ece7e3;
   padding: 0.9rem 1rem;
   text-align: left;
   vertical-align: top;
 }
 
 th {
-  color: #5d7479;
+  color: var(--ink-muted);
   font-size: 0.69rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -1191,41 +1258,67 @@ tbody tr:last-child td {
   text-transform: uppercase;
 }
 
+/* Status stays inside the three official colors rather than reaching for a green: gold
+   reads as healthy here because the freshness dot already uses it that way, and crimson
+   is the only alarm color the brand has. */
 .status-ok {
-  background: #dff0e7;
-  color: #176142;
+  background: var(--gold-tint);
+  color: var(--gold-deep);
 }
 
 .status-skipped {
-  background: #edf0ea;
-  color: #5d685f;
+  background: var(--sand);
+  color: var(--gray);
 }
 
 .status-blocked,
 .status-error {
-  background: #f9e1dc;
-  color: #8e3830;
+  background: var(--crimson-tint);
+  color: var(--crimson-deep);
 }
 
-footer {
-  align-items: end;
-  border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
+/* The reverse logo needs a dark, quiet field behind it — the guidelines rule out busy or
+   low-contrast backgrounds — so the footer is a flat band in the official dark gray. */
+.site-footer {
+  background: var(--gray);
+  border-top: 5px solid var(--crimson);
+  color: #eae7e4;
+}
+
+.footer-inner {
   margin: 0 auto;
   max-width: var(--max-width);
-  padding: 2.2rem 1.5rem 3rem;
+  padding: 2.6rem 1.5rem 2.8rem;
 }
 
-footer p,
+.footer-top {
+  align-items: end;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  display: block;
+  height: auto;
+  margin-bottom: 0.9rem;
+  padding: 0.35rem 0.5rem 0.35rem 0;
+  width: 150px;
+}
+
+.site-footer p,
 .footer-meta {
-  color: var(--ink-soft);
+  color: #d6d1cd;
   font-size: 0.77rem;
   margin-bottom: 0;
 }
 
-footer p {
+.site-footer p {
   max-width: 540px;
+}
+
+.site-footer a {
+  color: var(--gold);
 }
 
 .footer-meta {
@@ -1238,6 +1331,13 @@ footer p {
 .footer-data-links {
   display: flex;
   gap: 0.75rem;
+}
+
+.site-footer .footer-colophon {
+  border-top: 1px solid rgb(255 255 255 / 15%);
+  margin-top: 2rem;
+  max-width: none;
+  padding-top: 1.2rem;
 }
 
 .sr-only {
@@ -1255,7 +1355,7 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  .site-header {
+  .header-inner {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.9rem;
@@ -1300,9 +1400,9 @@ footer p {
 }
 
 @media (max-width: 650px) {
-  .site-header,
+  .header-inner,
   main,
-  footer {
+  .footer-inner {
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -1371,7 +1471,7 @@ footer p {
     min-height: 2.8rem;
   }
 
-  footer {
+  .footer-top {
     align-items: start;
     flex-direction: column;
     gap: 1.5rem;

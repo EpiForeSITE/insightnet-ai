@@ -4,6 +4,8 @@ from pathlib import Path
 
 import pytest
 
+from insightnet.config import load_profiles
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -69,6 +71,55 @@ def test_static_site_identifies_itself_as_unofficial_and_links_to_insightnet() -
     assert "This is an unofficial InsightNet website." in html
     assert 'document.title = "InsightNet Explorer"' in javascript
     assert 'byId("network-title").textContent = "InsightNet Explorer"' in javascript
+
+
+def test_publications_declare_what_the_list_is_not() -> None:
+    """Two things a reader would otherwise get wrong: the list is capped, and predating
+    work is not InsightNet output."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    works_view = html.split('id="view-works"')[1].split("</section>")[0]
+
+    assert "100 most recent publications per researcher" in works_view
+    assert "predate InsightNet" in works_view
+    assert "not a claim that the work was" in works_view
+
+
+def test_the_advertised_cap_is_the_cap_collection_actually_applies() -> None:
+    """The note above the list is a claim about the data, so it has to track the
+    collector rather than drift into a comfortable round number."""
+
+    cap = load_profiles(ROOT / "config/network.toml", ROOT / "config/organizations")["network"][
+        "max_works_per_researcher"
+    ]
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+
+    assert f"{cap} most recent publications per researcher" in html
+
+
+def test_the_site_credits_its_author_and_the_center_that_owns_it() -> None:
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+
+    assert "Site created by George G. Vega Yon with the help of AI" in html
+    assert "Codex, Copilot, and Claude" in html
+    assert "Copyright &copy;" in html and "ForeSITE</a>" in html
+
+
+def test_the_site_carries_foresite_branding() -> None:
+    """The logo ships with the site — a hotlink would break the moment the source moved,
+    and the guidelines require the original artwork rather than a recreation."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    css = (ROOT / "site/assets/styles.css").read_text(encoding="utf-8")
+
+    for asset in ("foresite-logo.png", "foresite-logo-white.png", "foresite-mark.png"):
+        assert (ROOT / "site/assets" / asset).exists()
+        assert asset in html
+
+    # The three official colors, and nothing that competes with them.
+    assert "--crimson: #a60f2d;" in css
+    assert "--gold: #fdb921;" in css
+    assert "--gray: #4e4e4e;" in css
 
 
 @pytest.mark.parametrize("name", ["profiles.json", "activity.json", "works.json"])

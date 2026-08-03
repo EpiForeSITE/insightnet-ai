@@ -20,7 +20,8 @@ dashboard in `site/` runs directly on GitHub Pages.
   from the expertise finder
 - Keyword search across names, biographies, expertise, focus areas, health partners,
   publication titles and abstracts, and collected records
-- A standalone, responsive GitHub Pages dashboard with no runtime server or frontend dependencies
+- A standalone, responsive GitHub Pages dashboard with no runtime server or frontend
+  dependencies, styled to the ForeSITE brand
 - Tests and a frozen `uv` environment
 
 ## Run it locally
@@ -128,6 +129,13 @@ Publications merge the same way, bounded by `network.max_works_per_researcher` (
 work is capped per researcher rather than globally, a prolific author never crowds out a
 smaller center. Use `uv run insightnet-works --replace` to rebuild from scratch.
 
+The **Publications** view states both caveats a reader needs before drawing a conclusion
+from that list: it holds at most the 100 most recent papers per researcher, so some work
+is missing; and many of the papers predate InsightNet, so listing one is not a claim that
+InsightNet funded or supported it. `tests/test_static_site.py` ties the number in that
+note to `max_works_per_researcher`, so raising the cap fails the suite until the note
+agrees with it again.
+
 ## Source support
 
 | Source | Configuration | Credential | Behavior |
@@ -199,6 +207,36 @@ GitHub will publish the `site/` directory at
 `https://<owner>.github.io/<repository>/`. Every daily data refresh updates both JSON
 copies, commits them, and triggers another Pages deployment automatically. All
 filtering and keyword search run locally in the visitor's browser.
+
+## Branding and attribution
+
+The site follows the ForeSITE logo guidelines. Three official colors carry the whole
+design, and `site/assets/styles.css` defines them once at the top:
+
+| Color | Hex | Pantone | Used for |
+|---|---|---|---|
+| Crimson | `#a60f2d` | 201 C | Links, section kickers, accents, the footer rule |
+| Gold | `#fdb921` | 1235 C | Secondary accent, "current"/"ok" status, callout rule |
+| Dark gray | `#4e4e4e` | 7540 C | Body copy and the footer band |
+
+Nothing else in the stylesheet may introduce a competing hue; everything else is a tint
+or shade of those three. Note that the guideline PDF prints a hex value for dark gray
+(`9A5107`) that contradicts its own RGB, CMYK, and Pantone values for that swatch — the
+RGB build (78, 78, 78) and PMS 7540 C agree with each other and with the wordmark in the
+artwork, so `#4e4e4e` is what the site uses.
+
+The logo is shipped, never recreated: `site/assets/` holds proportionally scaled copies
+of the original primary and reverse artwork, plus a square version used as the favicon.
+The guidelines' clear-space rule is reserved in CSS as padding around each placement, and
+the reverse logo appears only on the flat dark-gray footer, which is the quiet,
+high-contrast field it requires.
+
+The logo is set in Proxima Nova Semibold. That face is licensed and cannot ship with a
+dependency-free static site, so the CSS asks for it first and falls back to the closest
+widely installed geometric humanist sans faces.
+
+The site is credited in the footer to George G. Vega Yon, written with AI assistance
+(Codex, Copilot, and Claude), copyright ForeSITE.
 
 ## Data contract
 

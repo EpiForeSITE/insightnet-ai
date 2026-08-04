@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-04T09:17:44.000941Z",
+  "generated_at": "2026-08-04T17:03:15.302092Z",
   "network": {
     "name": "InsightNet Scientific Endeavors",
     "description": "Discover centers, researchers, and the scientific work emerging across InsightNet.",
@@ -14,7 +14,7 @@
   "stats": {
     "organizations": 13,
     "researchers": 471,
-    "tools": 69,
+    "tools": 71,
     "partners": 69,
     "items": 0,
     "sources_ok": 0,
@@ -12898,7 +12898,7 @@
     },
     {
       "id": "foresite",
-      "name": "Forecasting and Surveillance of Infectious Threats and Epidemics",
+      "name": "Forecasting and Surveillance of Infectious Threats and Epidemics (ForeSITE)",
       "acronym": "ForeSITE",
       "summary": "ForeSITE is an InsightNet Integration Center that collaborates with health departments and healthcare organizations to implement and evaluate outbreak analytics and infectious disease modeling tools.",
       "website": "https://epiforesite.github.io/ForeSITE_Website/",
@@ -13060,6 +13060,7 @@
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/matt-samore.html",
           "google_scholar": "https://scholar.google.com/citations?user=QOM1UpUAAAAJ&hl=en",
           "orcid": "https://orcid.org/0000-0002-4862-9196",
+          "pubmed_query": "(Utah[Affiliation]) AND (Samore MH[Author])",
           "keywords": [
             "epidemiology",
             "electronic",
@@ -13087,7 +13088,6 @@
           "medrxiv": "",
           "europepmc": "https://europepmc.org/authors/0000-0002-4862-9196",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": "0000-0002-4862-9196"
@@ -13105,6 +13105,7 @@
           ],
           "website": "https://epiforesite.github.io/ForeSITE_Website/members/michael-rubin.html",
           "bluesky": "https://bsky.app/profile/slcrubes.bsky.social",
+          "pubmed_query": "(Rubin, MA[Author]) AND (Utah[Affiliation])",
           "keywords": [
             "infectious",
             "hospital",
@@ -13132,7 +13133,6 @@
           "medrxiv": "",
           "europepmc": "",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": ""
@@ -13253,6 +13253,7 @@
           "website": "https://medicine.utah.edu/faculty/damon-toth",
           "google_scholar": "https://scholar.google.com/citations?user=6XZi4fIAAAAJ&hl=en",
           "orcid": "https://orcid.org/0000-0001-7393-4814",
+          "pubmed_query": "(Toth, Damon[Author]) AND (Utah[Affiliation])",
           "keywords": [
             "modeling",
             "assistant",
@@ -13284,7 +13285,6 @@
           "medrxiv": "",
           "europepmc": "https://europepmc.org/authors/0000-0001-7393-4814",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": "0000-0001-7393-4814"
@@ -13447,6 +13447,7 @@
           "website": "https://medicine.utah.edu/faculty/karim-khader",
           "orcid": "https://orcid.org/0000-0002-7206-8077",
           "linkedin": "https://www.linkedin.com/in/karim-khader-02150a1b6/",
+          "pubmed_query": "(Khader, K[Author]) AND (University of Utah[Affiliation])",
           "keywords": [
             "statistical",
             "methodology",
@@ -13478,7 +13479,6 @@
           "medrxiv": "",
           "europepmc": "https://europepmc.org/authors/0000-0002-7206-8077",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": "0000-0002-7206-8077"
@@ -13535,8 +13535,8 @@
           "orcid_id": "0009-0002-6253-2910"
         },
         {
-          "id": "yue-xhang",
-          "full_name": "Yue Xhang",
+          "id": "yue-zhang",
+          "full_name": "Yue Zhang",
           "role": "Analytical Modeling Team",
           "bio": "Professor of Biostatistics at the University of Utah who supports ForeSITE's modeling efforts.",
           "expertise": [
@@ -13871,6 +13871,7 @@
           "website": "https://medicine.utah.edu/faculty/richard-e-nelson",
           "google_scholar": "https://scholar.google.com/citations?user=GDEIDcgAAAAJ&hl=en",
           "orcid": "https://orcid.org/0000-0002-4441-7460",
+          "pubmed_query": "(Nelson, RE[Author]) AND (University of Utah[Affiliation])",
           "keywords": [
             "economic",
             "impact",
@@ -13888,7 +13889,6 @@
           "medrxiv": "",
           "europepmc": "https://europepmc.org/authors/0000-0002-4441-7460",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": "0000-0002-4441-7460"
@@ -14003,6 +14003,7 @@
           "website": "https://medicine.utah.edu/faculty/julia-e-szymczak",
           "google_scholar": "https://scholar.google.com/citations?user=JEgCsm8AAAAJ&hl=en",
           "linkedin": "https://www.linkedin.com/in/julie-szymczak-527a1919/",
+          "pubmed_query": "(Szymczak, J[Author]) AND (University of Utah[Affiliation])",
           "keywords": [
             "medical",
             "implementation",
@@ -14034,7 +14035,6 @@
           "medrxiv": "",
           "europepmc": "",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": ""
@@ -14095,6 +14095,7 @@
           "google_scholar": "https://scholar.google.com/citations?user=PEC0LDUAAAAJ&hl=en",
           "orcid": "https://orcid.org/0000-0001-6754-2216",
           "linkedin": "https://www.linkedin.com/in/kimberley-shoaf-28321017/",
+          "pubmed_query": "(Shoaf, K[Author]) AND (University of Utah[Affiliation])",
           "keywords": [
             "public",
             "health",
@@ -14125,7 +14126,6 @@
           "medrxiv": "",
           "europepmc": "https://europepmc.org/authors/0000-0001-6754-2216",
           "scholar_author_id": "",
-          "pubmed_query": "",
           "arxiv_query": "",
           "collect_works": true,
           "orcid_id": "0000-0001-6754-2216"
@@ -15181,6 +15181,36 @@
           "status": "available"
         },
         {
+          "name": "measles",
+          "summary": "Measles Epidemiological Models (R package)",
+          "url": "https://uofuepibio.github.io/measles",
+          "repository": "https://github.com/UofUEpiBio/measles",
+          "category": "application",
+          "keywords": [
+            "agent-based models",
+            "measles",
+            "schools",
+            "simulation"
+          ],
+          "id": "measles",
+          "status": "available"
+        },
+        {
+          "name": "multigroup.vaccine",
+          "summary": "Analyze Outbreak Models of Multi-Group Populations with Vaccination (R package)",
+          "url": "https://epiforesite.github.io/multigroup-vaccine",
+          "repository": "https://github.com/EpiForeSITE/multigroup-vaccine",
+          "category": "application",
+          "keywords": [
+            "compartmental models",
+            "measles",
+            "schools",
+            "simulation"
+          ],
+          "id": "multigroup-vaccine",
+          "status": "available"
+        },
+        {
           "name": "EPICC",
           "summary": "Epidemiological Cost Calculator for analyzing disease intervention expenses, applied to tuberculosis and measles.",
           "url": "https://github.com/EpiForeSITE/epicc",
@@ -15441,7 +15471,7 @@
       "sources": [],
       "collected_overview": "",
       "activity_count": 0,
-      "tool_count": 7,
+      "tool_count": 9,
       "partner_count": 17
     },
     {

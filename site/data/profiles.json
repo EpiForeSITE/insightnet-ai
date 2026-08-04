@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-08-03T22:58:23.658126Z",
+  "generated_at": "2026-08-04T09:17:44.000941Z",
   "network": {
     "name": "InsightNet Scientific Endeavors",
     "description": "Discover centers, researchers, and the scientific work emerging across InsightNet.",
@@ -15112,6 +15112,7 @@
           "website": "https://ggvy.cl",
           "orcid": "https://orcid.org/0000-0002-3171-0844",
           "bluesky": "https://bsky.app/profile/gvegayon.bsky.social",
+          "google_scholar": "https://scholar.google.com/citations?user=34E1yTAAAAAJ&hl=EN",
           "keywords": [
             "computing",
             "complex",
@@ -15137,7 +15138,6 @@
           "linkedin": "",
           "github": "",
           "twitter": "",
-          "google_scholar": "",
           "pubmed": "https://pubmed.ncbi.nlm.nih.gov/?term=0000-0002-3171-0844%5Bauid%5D",
           "arxiv": "https://arxiv.org/search/?searchtype=orcid&query=0000-0002-3171-0844",
           "medrxiv": "",

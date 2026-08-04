@@ -33,6 +33,17 @@ orcid = "https://orcid.org/0000-0002-8526-3007"
 linkedin = "https://www.linkedin.com/in/lindsaytkeegan/"
 
 [[organization.researchers]]
+id = "olivia-banks"
+bio = "I work in public health, writing HPC C/C++ with data analysis in R and Python. In my current role, I help maintain software behind ForeSITE and UT-NEDSS (EpiTrax), and work in network-driven speculative outbreak analysis and prediction."
+full_name = "Olivia Banks"
+role = "Research Assistant"
+expertise = ["programming", "data analysis"]
+website = "https://oliviactl.net/"
+google_scholar = "https://scholar.google.com/citations?user=jg7b6koAAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/olivia-banks-04981532a/"
+
+
+[[organization.researchers]]
 id = "makoto-jones"
 full_name = "Makoto Jones"
 role = "Principal Investigator"
@@ -294,6 +305,7 @@ expertise = ["pediatric infectious diseases", "pandemic preparedness", "hospital
 website = "https://healthcare.utah.edu/find-a-doctor/andrew-t-pavia"
 google_scholar = "https://scholar.google.com/citations?user=8BXaUAEAAAAJ&hl=en"
 linkedin = "https://www.linkedin.com/in/andrew-pavia-816b5229/"
+pubmed_query = "(Utah[Affiliation]) AND (Pavia, A[Author])"
 
 [[organization.researchers]]
 id = "erin-landguth"
@@ -313,6 +325,7 @@ bio = "Infectious disease specialist supporting the ForeSITE program."
 expertise = ["infectious diseases"]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/Jeannie_Mayer.html"
 orcid = "https://orcid.org/0000-0002-7699-4414"
+pubmed_query = "(Mayer, JeanMarie[Author]) AND (Utah[Affiliation])"
 
 [[organization.researchers]]
 id = "leisha-nolen"
@@ -322,6 +335,7 @@ bio = "Utah State Epidemiologist with the Utah Department of Health and Human Se
 expertise = ["public health epidemiology", "state health trends", "public health practice"]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/Leisha.html"
 orcid = "https://orcid.org/0000-0002-7885-9347"
+pubmed_query = "(Utah[Affiliation]) AND (Nolen, L[Author])"
 
 [[organization.researchers]]
 id = "per-gesteland"
@@ -330,6 +344,7 @@ role = "Subject Matter Expert Responding to Disease Emergencies"
 bio = "Associate Professor of Pediatrics and Adjunct Associate Professor of Biomedical Informatics at the University of Utah; serves as a healthcare-system and forecasting subject-matter expert for ForeSITE."
 expertise = ["pediatrics", "biomedical informatics", "healthcare systems", "forecasting"]
 website = "https://epiforesite.github.io/ForeSITE_Website/members/Per_Gesteland.html"
+pubmed_query = "(University of Utah[Affiliation]) AND (Gesteland, P[Author])"
 
 [[organization.researchers]]
 id = "stephanie-seifert"
@@ -349,6 +364,7 @@ expertise = ["zoonotic diseases", "One Health", "disease ecology", "spatial mode
 website = "https://mpilarfernandez.com/"
 google_scholar = "https://scholar.google.com/citations?user=dLx_A-MAAAAJ&hl=en"
 twitter = "https://x.com/piliffq"
+pubmed_query = "(Washington State[Affiliation]) AND (Fernandez, P[Author])"
 
 [[organization.researchers]]
 id = "delaney-thornton"
@@ -465,6 +481,7 @@ website = "https://ggvy.cl"
 orcid = "https://orcid.org/0000-0002-3171-0844"
 bluesky = "https://bsky.app/profile/gvegayon.bsky.social"
 google_scholar = "https://scholar.google.com/citations?user=34E1yTAAAAAJ&hl=EN"
+linkedin = "https://www.linkedin.com/in/georgevegayon/"
 
 # Tools and products, transcribed from the ForeSITE projects page and github.com/EpiForeSITE
 [[organization.tools]]

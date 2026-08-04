@@ -1,0 +1,19 @@
+# cp terraform.tfvars.example terraform.tfvars, then fill in the two required values.
+# terraform.tfvars is gitignored — never commit real values here.
+
+project_id         = "ask-insightnet"
+billing_account_id = "XXXXXX-XXXXXX-XXXXXX" # gcloud billing accounts list
+
+# Everything below already matches what's live; only override what you're changing.
+# region              = "us-central1"
+# github_owner        = "EpiForeSITE"
+# github_repo         = "insightnet-explorer"
+# allowed_origins     = "https://epiforesite.github.io"
+# daily_query_cap     = 400
+# monthly_budget_micros = 5000000
+# budget_amount_usd   = 10
+# manage_org_policy   = true
+
+# ip_salt is a secret and deliberately absent from this file. Pass it out of band:
+#   TF_VAR_ip_salt=$(openssl rand -hex 32) terraform apply
+# and keep it identical to the IP_SALT GitHub Actions secret.

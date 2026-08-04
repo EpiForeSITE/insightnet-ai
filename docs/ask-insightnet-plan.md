@@ -442,12 +442,18 @@ way: **two** service accounts rather than one.
 | Account | Used by | Roles |
 | --- | --- | --- |
 | `insightnet-ask@` | Cloud Run runtime | `aiplatform.user`, `datastore.user` |
-| `insightnet-deploy@` | GitHub Actions | `run.admin`, `cloudbuild.builds.editor`, `artifactregistry.writer`, `iam.serviceAccountUser` on the runtime account, `aiplatform.user` for the index build |
+| `insightnet-deploy@` | GitHub Actions | `run.admin`, `artifactregistry.writer`, `iam.serviceAccountUser` on the runtime account, `aiplatform.user` for the index build |
 
 The deploy identity can therefore never be used by the running service, and a compromised
 workflow cannot read Firestore. The WIF provider is pinned with
 `--attribute-condition="assertion.repository == '<owner>/<repo>'"`, so only this repository can
-impersonate it. Full commands are in [`server/README.md`](../server/README.md).
+impersonate it. `cloudbuild.builds.editor` was dropped after the first deploy failed —
+`gcloud builds submit` needs storage and serviceusage permissions on top, which would have
+widened the deploy identity for no reason; the image is built on the runner instead.
+
+This setup was run entirely by hand, once, and never committed. [`infra/terraform/`](../infra/terraform)
+is that same setup as re-applyable Terraform, with `terraform import` commands to adopt the
+live resources rather than recreate them — start there before typing any of this out again.
 
 ---
 

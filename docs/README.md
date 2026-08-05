@@ -1009,7 +1009,92 @@ Firestore records include an `expires_at` field, but the Terraform in this repos
 configure a Firestore TTL policy. The production cache reader also does not reject an expired
 timestamp itself, so configure the policy separately for expiry and automatic cleanup.
 
-## 6. Running and inspecting the system
+## 6. Security model
+
+This section describes security properties visible in the repository; it is not a penetration
+test, compliance assessment, or guarantee about the live deployment. GitHub branch protection,
+environment approvals, secret rotation, the actual Firestore TTL policy, Cloud Logging retention,
+and Vertex AI data-governance settings live outside this code and must be verified separately.
+
+The intended threat model is a **public directory backed by public scholarly data and a public,
+unauthenticated question endpoint**. The main assets are the integrity of the corpus and answers,
+GCP deployment credentials, the service's cost and availability, visitor browser safety, and
+limited privacy for questions and network addresses. Do not submit confidential, regulated, or
+otherwise sensitive text: the question leaves the browser and is processed by Vertex AI.
+
+### Controls and trust boundaries
+
+| Boundary | Controls implemented here | What those controls do not guarantee |
+| --- | --- | --- |
+| Browser or direct client → Cloud Run | Cloud Run terminates HTTPS; CORS uses an exact browser-origin allowlist; the `/ask` application route is `POST`-only while middleware handles CORS `OPTIONS`; declared and actual bodies are limited to 2 KiB; questions are limited to 3–300 characters; Gemini generation defaults to at most 512 output tokens; Firestore-backed IP/global/spend guards run before model work; Cloud Run is capped at 3 instances, concurrency 8, and 60 seconds. | There is no user authentication. CORS constrains cooperating browsers, not curl, bots, forged `Origin` headers, or denial-of-service traffic. The application buffers the request body before checking its actual size, and its cost/rate ceilings are approximate. |
+| Public corpus → index and prompt | [`sanitize()`](../insightnet/rag.py) normalizes text, strips tag-shaped markup and angle brackets, and removes ASCII control and Unicode format characters; its call sites apply field/chunk length limits. Prompt rendering sanitizes again, wraps records in explicit delimiters, uses a constant system instruction, and tells Gemini that document text is data rather than instruction. Regression tests cover forged document boundaries. | Natural-language prompt injection remains natural language after tag removal. There is no injection classifier, structured-output schema, or deterministic grounding verifier, and automatically collected metadata can be poisoned at its public source. |
+| Gemini → visitor's DOM | SSE payloads are JSON encoded and marked `no-store`. The browser HTML-escapes the entire answer, activates only exact citation IDs offered by the server, strips unknown well-formed markers, permits only HTTP(S) links, and uses `noopener noreferrer` on external links; malformed markers remain inert escaped text. | Citation allowlisting prevents active-link injection; it does not prove that prose is correct, that a citation supports a claim, or even require a positive answer to contain a valid citation. The static site does not declare a Content Security Policy (CSP). |
+| GitHub Actions → Google Cloud | GHA exchanges OIDC assertions through WIF, so these workflows require and store no long-lived service-account JSON key. Workflow token permissions are explicit. Runtime and deployment identities are separated, Artifact Registry write access is repository-scoped, and the public runtime cannot deploy revisions or push images. | WIF currently trusts the name-based owner/repository claim only—not immutable owner/repository IDs, a branch, environment, or approved workflow. The weekly index job uses the deployment identity even though it only needs Vertex access, and several IAM roles are project-wide. |
+| Cloud Run → Vertex and Firestore | Cloud Run uses Application Default Credentials from `insightnet-ask`, which has Vertex AI and Datastore/Firestore roles but no deployment role. The service performs no user-selected or arbitrary URL fetch, shell command, SQL query, or hosted vector-database query from the question. | A runtime compromise receives the runtime account's project-level Vertex and Firestore access. The Domain Restricted Sharing exception allows any resource in the dedicated project to be made public later, so project isolation remains an important boundary. |
+| Application → persistent state | Application code deliberately persists no raw IP or raw-question field. It stores salted IP hashes, counters, and estimated spend; for a successful answer, it also stores a deterministic question hash as the cache document ID plus `{meta, answer}`. Retrieved records are versioned in Git and baked into the image. | A cached generated answer can quote or reveal the question. The default salt is public, likely questions can be guessed from deterministic hashes, and `IP_SALT` is present in Cloud Run revision configuration and Terraform state. Production cache reads do not enforce `expires_at`; time-bucketed counters stop affecting admission on schedule, but without TTL the old ledger documents remain stored. Vertex and platform telemetry have separate retention rules. |
+| Source and build supply chain | Python dependencies are resolved through `uv.lock` with `uv sync --locked`; `setup-uv` is pinned to a commit; images are tagged with the Git commit; and the Dockerfile copies only named application/index paths into the final image. | Most Actions and both container bases use mutable tags. There is no `.dockerignore`, SBOM, image signature/attestation, vulnerability-gated deployment, or repository-defined dependency updater. The container has no non-root `USER`, and index artifacts are not signed or checksum-verified at startup. |
+
+The prompt and browser controls are complementary. Delimiters and sanitization make it harder for
+an abstract to alter the model's task; output escaping and citation allowlisting prevent a model
+response from becoming executable HTML or an invented active link. Neither layer makes generated
+prose factually trustworthy. Users should treat citations as evidence to inspect, not as a security
+or correctness proof.
+
+### Highest-value hardening work
+
+1. **Make abuse controls independent of caller-controlled headers.**
+   [`_client_address()`](../server/main.py) trusts the leftmost `X-Forwarded-For` value. Verify the
+   exact Cloud Run/proxy rewriting behavior and derive identity only from a trusted edge; otherwise
+   a direct client may be able to rotate the apparent address. For stronger public abuse resistance,
+   put the service behind a managed gateway or load balancer/WAF that overwrites forwarding headers
+   and enforces quotas or a challenge. Keep Vertex quotas and the application's approximate global
+   request/spend guards as the final layer.
+   A strict request model, required JSON content type, and streaming body-limit middleware would
+   also close the current coercion and buffering edge cases.
+
+2. **Narrow CI-to-cloud trust.** Tighten the WIF attribute condition to immutable repository/owner
+   IDs plus the approved branch, environment, or `job_workflow_ref`; protect the production GitHub
+   environment; and give weekly indexing a separate identity with only the Vertex permissions it
+   needs. Google documents branch/workflow conditions in its
+   [deployment-pipeline WIF guidance](https://docs.cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines),
+   and GitHub documents the available claims in its
+   [OIDC reference](https://docs.github.com/en/actions/reference/security/oidc). Branch protection,
+   required reviews, and CODEOWNERS for workflows, Terraform, and profile/source configuration
+   should be checked in the live repository settings.
+
+3. **Treat prompt injection and corpus poisoning as ongoing evaluation problems.** Require a valid
+   citation from the **rendered** prompt for every positive answer, reject unknown markers on the
+   server as well as the client, and add adversarial query/publication fixtures. Review generated
+   chunk diffs before deployment. Offline collectors accept version-controlled HTTP(S) source URLs
+   and follow redirects; if untrusted maintainers or sources enter the model, reject private and
+   link-local destinations after every redirect or use a source-host allowlist.
+
+4. **Finish the retention and secret story.** Set a cryptographically random `IP_SALT`, store it in
+   Secret Manager rather than a plain revision environment value, protect and encrypt Terraform
+   state, and rotate the salt if exposure is suspected. Configure Firestore TTL for counter/cache
+   documents **and** reject expired cache entries in application code; Firestore deletion is
+   asynchronous. An HMAC-based cache key would make guessing common questions harder for someone
+   who obtains database read access. Review Vertex AI and Cloud Logging retention/access settings
+   before accepting anything beyond public, low-sensitivity questions.
+
+5. **Harden artifacts, dependencies, and the browser.** Add a `.dockerignore` that excludes
+   `gha-creds-*.json`, `.git`, Terraform state, virtual environments, and caches: the Google auth
+   step currently precedes `docker build`, so its temporary credential file can enter the build
+   context even though the Dockerfile does not copy it into the final image. Pin every Action to a
+   full commit SHA—GitHub's
+   [secure-use guidance](https://docs.github.com/en/actions/reference/security/secure-use) calls
+   that the immutable form—and pin base images by digest. Then add index checksums and full vector
+   validation, a non-root container user, vulnerability scanning, an SBOM, provenance/signing, and
+   a deployment policy over the resulting digest. For the static site, add a CSP and related
+   browser headers where hosting permits, review the third-party analytics script, and restrict the
+   persistent Ask-endpoint override to the production host or exact loopback hosts in development.
+
+Operationally, alert on unexpected WIF token exchanges, IAM or Cloud Run changes, unusual Firestore
+write volume, rate-limit denials, model failures, and spend. This repository also has no
+`SECURITY.md`; adding a private vulnerability-reporting path and an incident/credential-rotation
+runbook would make the technical controls easier to operate safely.
+
+## 7. Running and inspecting the system
 
 Install the locked environment:
 
@@ -1084,7 +1169,7 @@ curl http://localhost:8080/readyz
 The tests inject fake embedders, a fake Gemini stream, and an in-memory ledger, so they require no
 network, Vertex credentials, or Firestore emulator.
 
-## 7. Code map
+## 8. Code map
 
 | Area | Primary implementation |
 | --- | --- |

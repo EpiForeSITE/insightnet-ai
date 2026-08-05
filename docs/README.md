@@ -287,7 +287,7 @@ abstract cannot create a fake `</document>` or `</documents>` boundary.
 For each composed chunk text `x`, the builder stores a 64-bit truncated content hash:
 
 $$
-h(x) = \operatorname{SHA256}(x)[0:16]
+h(x) = \mathrm{SHA256}(x)[0:16]
 $$
 
 where `[0:16]` means the first 16 hexadecimal characters. During a normal rebuild:
@@ -337,7 +337,7 @@ $$
 The zero vector is mapped to zeros. Each unit component is then quantized to a signed byte:
 
 $$
-q_i = \operatorname{clamp}\left(\operatorname{round}(127\hat v_i), -127, 127\right).
+q_i = \mathrm{clamp}\left(\mathrm{round}(127\hat v_i), -127, 127\right).
 $$
 
 The 256 bytes are base64-encoded in `vectors.jsonl`. At query time, dense similarity is:
@@ -434,16 +434,16 @@ common.
 For a term $t$, document $d$, and corpus of $N$ chunks:
 
 $$
-\operatorname{idf}(t)
+\mathrm{idf}(t)
 = \ln\left(1 + \frac{N-df_t+0.5}{df_t+0.5}\right)
 $$
 
 and:
 
 $$
-\operatorname{BM25}(d,Q)
-= \sum_{t\in\operatorname{unique}(Q)}
-\operatorname{idf}(t)
+\mathrm{BM25}(d,Q)
+= \sum_{t\in\mathrm{unique}(Q)}
+\mathrm{idf}(t)
 \frac{f_{t,d}(k_1+1)}
 {f_{t,d}+k_1\left(1-b+b\frac{|d|}{\overline{|d|}}\right)}
 $$
@@ -484,9 +484,9 @@ BM25 and cosine scores have different units and ranges. Rather than fit a weight
 unlabeled corpus, the system combines their rank positions:
 
 $$
-\operatorname{RRF}(d)
+\mathrm{RRF}(d)
 = \sum_{L\in\{\text{BM25},\text{dense}\}}
-\frac{1}{60+\operatorname{rank}_L(d)},
+\frac{1}{60+\mathrm{rank}_L(d)},
 $$
 
 where rank is one-based. Each branch contributes at most once per chunk. Up to 600 unique chunks
@@ -828,7 +828,7 @@ can overshoot a limit by a small number of requests.
 The answer-cache key is:
 
 $$
-\operatorname{SHA256}(\operatorname{normalize}(question)\;\Vert\;"|"\;\Vert\;
+\mathrm{SHA256}(\mathrm{normalize}(question)\;\Vert\;"|"\;\Vert\;
 manifest.generated\_at)[0:40].
 $$
 
@@ -966,7 +966,7 @@ microdollars per million tokens:
 
 $$
 \text{charge}_{\mu\$}
-= \operatorname{round}\left(
+= \mathrm{round}\left(
 \frac{T_{in}P_{in}}{10^6}
 + \frac{T_{out}P_{out}}{10^6}
 \right).

@@ -20,7 +20,7 @@ Google Cloud Messaging (GCM) component in this project.
 ## System overview
 
 ```mermaid
-flowchart LR
+flowchart TB
     Config["TOML profile configuration"]
     Providers["Public activity and scholarly APIs"]
 

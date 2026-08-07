@@ -438,7 +438,7 @@ def test_a_failed_stream_leaves_no_half_written_answer() -> None:
     """
 
     javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
-    branch = javascript.split("if (refused || !answer.trim())")[1].split("askFallback(")[0]
+    branch = javascript.split("if (refusal || !answer.trim())")[1].split("askFallback(")[0]
 
     assert 'byId("ask-answer").innerHTML = ""' in branch
     assert 'byId("ask-answer-sr").textContent = ""' in branch
@@ -545,3 +545,37 @@ def test_the_versioning_rules_reach_both_humans_and_agents() -> None:
     agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
     assert "Every change bumps the version." in agents
     assert "uv lock" in agents
+
+
+def test_the_assistant_answers_with_a_list_of_people_not_a_paragraph() -> None:
+    """ "Who can help with X" has a set of people as its answer, and ten names buried in
+    prose cannot be scanned or compared. A lead sentence plus one bullet each can.
+    """
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    css = (ROOT / "site/assets/styles.css").read_text(encoding="utf-8")
+    renderer = javascript.split("function answerHtml(")[1].split("\n  }")[0]
+
+    assert "answerHtml(html)" in javascript
+    assert "ask-people" in renderer
+    assert "<li>" in renderer and "<p>" in renderer
+    # It runs over text that is already escaped and already carries its citation links,
+    # so the only HTML it can introduce is the list scaffolding written right here.
+    assert "escapeHtml" not in renderer
+    assert ".ask-people" in css
+
+
+def test_a_question_that_matches_nothing_says_so_in_its_own_words() -> None:
+    """Finding nothing is a normal outcome, not a failure, and it used to borrow the
+    wording used when the service is unreachable."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+
+    assert "Couldn't find any researchers or publications relevant to your question." in javascript
+    # Retrieval that matched nothing answers with JSON rather than a stream. Reading it
+    # as SSE yields no events by accident, which makes a real no-match look identical to
+    # a stream that died halfway, so it is recognised by content type.
+    assert 'includes("text/event-stream")' in javascript
+    # A model refusal and a broken stream are different things and read differently.
+    assert 'refusal = "no_match"' in javascript
+    assert 'refusal = "error"' in javascript

@@ -21,6 +21,7 @@ pytest.importorskip("fastapi", reason="the server extra is not installed")
 from fastapi.testclient import TestClient
 
 from insightnet import rag
+from server import main, prompts
 from server.budget import Guard, MemoryLedger, hash_ip
 from server.config import Settings
 from server.main import Usage, create_app
@@ -184,7 +185,42 @@ def test_every_document_offered_to_the_model_is_citable_by_the_client(index, set
 
     assert in_prompt, "the prompt must offer at least one document"
     assert in_prompt <= offered, f"not citable by the client: {sorted(in_prompt - offered)}"
-    assert {kind for kind in (c.get("kind") for c in meta["citations"])} >= {"researcher", "tool"}
+    assert {kind for kind in (c.get("kind") for c in meta["citations"])} >= {"researcher", "work"}
+
+
+def test_tools_and_centers_stay_citable_for_the_day_they_are_switched_back_on() -> None:
+    """`TOP_TOOLS` and `TOP_ORGS` default to zero, so the tool and center branches of
+    `_citable` and `render_documents` no longer run in production.
+
+    They are a switch rather than a deletion, and an untested branch is not a switch you
+    can safely flip, so the invariant is pinned directly against a retrieval that carries
+    both kinds.
+    """
+
+    retrieval = rag.Retrieval(
+        researchers=[],
+        tools=[
+            {
+                "id": "t:dashy",
+                "title": "Dashy",
+                "snippet": "An outbreak dashboard.",
+                "url": "https://example.test/dashy",
+                "category": "dashboard",
+                "organization_ids": ["alpha"],
+                "organization_names": ["Alpha Center"],
+                "score": 1.0,
+            }
+        ],
+        organizations=[{"id": "alpha", "name": "Alpha Center", "url": "", "score": 1.0}],
+        citations=[],
+        confident=True,
+    )
+
+    offered = {document["id"] for document in main._citable(retrieval)}
+    in_prompt = set(re.findall(r'<document id="([^"]+)"', prompts.render_documents(retrieval)))
+
+    assert in_prompt == {"t:dashy", "o:alpha"}
+    assert in_prompt <= offered, f"not citable by the client: {sorted(in_prompt - offered)}"
 
 
 def test_a_foreign_origin_is_refused(index, settings) -> None:
@@ -199,14 +235,14 @@ def test_a_missing_origin_is_allowed(index, settings) -> None:
     """curl and uptime probes have no Origin; the rate limits are the real perimeter."""
 
     client, _, _ = _client(index, settings)
-    assert client.post("/ask", json={"question": "who works on contact networks?"}).status_code == 200
+    assert (
+        client.post("/ask", json={"question": "who works on contact networks?"}).status_code == 200
+    )
 
 
 def test_an_oversized_body_is_refused(index, settings) -> None:
     client, generator, _ = _client(index, settings)
-    response = client.post(
-        "/ask", json={"question": "x" * 4000}, headers={"origin": ORIGIN}
-    )
+    response = client.post("/ask", json={"question": "x" * 4000}, headers={"origin": ORIGIN})
     assert response.status_code == 413
     assert not generator.calls
 
@@ -311,7 +347,9 @@ def test_a_refusal_is_never_cached(index, settings) -> None:
 
 def test_spend_is_charged_from_reported_usage(index, settings) -> None:
     client, _, guard = _client(
-        index, settings, generator=StubGenerator(usage=Usage(input_tokens=1_000_000, output_tokens=1_000_000))
+        index,
+        settings,
+        generator=StubGenerator(usage=Usage(input_tokens=1_000_000, output_tokens=1_000_000)),
     )
     _ask(client)
     # 1M in at $0.10 plus 1M out at $0.40 = 500,000 micro-dollars.
@@ -322,7 +360,9 @@ def test_thinking_tokens_would_be_charged_as_output(index, settings) -> None:
     """Gemini bills thinking at the output rate; not charging it understates spend."""
 
     client, _, guard = _client(
-        index, settings, generator=StubGenerator(usage=Usage(input_tokens=0, output_tokens=2_000_000))
+        index,
+        settings,
+        generator=StubGenerator(usage=Usage(input_tokens=0, output_tokens=2_000_000)),
     )
     _ask(client)
     assert guard.ledger.read("spend_2026-08") == 800_000
@@ -428,3 +468,67 @@ def test_unset_repository_variables_fall_back_to_defaults(monkeypatch) -> None:
 def test_a_configured_origin_list_replaces_the_default(monkeypatch) -> None:
     monkeypatch.setenv("ALLOWED_ORIGINS", "https://a.example, https://b.example")
     assert Settings.from_env().allowed_origins == ("https://a.example", "https://b.example")
+
+
+def test_the_prompt_asks_for_a_scannable_list_rather_than_a_paragraph() -> None:
+    """Ten names buried in prose is a wall of text. The answer to "who can help with X"
+    is a set of people, so it is shaped like one: a lead sentence, then one bullet each.
+    """
+
+    assert 'with "- "' in SYSTEM_INSTRUCTION
+    assert "one bullet per researcher" in SYSTEM_INSTRUCTION
+    assert "up to ten researchers" in SYSTEM_INSTRUCTION
+    # Padding a list up to its cap is the failure mode this format invites, so it is
+    # ruled out in as many words.
+    assert "never stretch to fill the list" in SYSTEM_INSTRUCTION
+    # Bullets are the only markup allowed; everything else stays forbidden.
+    assert "no headings, tables, links, bold, or italics" in SYSTEM_INSTRUCTION
+    # Centers are off by default, so the model is told not to expect those documents.
+    assert "If, and only if," in SYSTEM_INSTRUCTION
+
+
+def test_the_context_cap_fits_a_whole_roll_up() -> None:
+    """`render_documents` stops adding when it runs out of room, and says nothing.
+
+    A cap smaller than a full roll-up means the last researchers are retrieved, ranked,
+    and then never shown to the model — the answer just quietly gets worse. This builds
+    the worst case the caps allow, with every field at its truncation limit.
+    """
+
+    filler = "x" * 3000
+    researchers, citations = [], []
+    for n in range(rag.TOP_RESEARCHERS):
+        evidence = [f"w:{n}-{e}" for e in range(rag.EVIDENCE_PER_RESEARCHER)]
+        researchers.append(
+            {
+                "id": f"p{n}",
+                "name": "A Researcher Name",
+                "role": "x" * 60,
+                "organization_ids": ["alpha"],
+                "snippet": filler,
+                "score": 1.0,
+                "evidence": evidence,
+            }
+        )
+        citations.extend(
+            {
+                "id": chunk_id,
+                "work_id": chunk_id,
+                "title": filler,
+                "year": 2020,
+                "venue": "x" * 80,
+                "url": "",
+                "doi": "",
+                "snippet": filler,
+                "researcher_ids": [f"p{n}"],
+            }
+            for chunk_id in evidence
+        )
+
+    retrieval = rag.Retrieval(researchers=researchers, citations=citations, confident=True)
+    rendered = prompts.render_documents(retrieval)
+
+    for n in range(rag.TOP_RESEARCHERS):
+        assert f'id="r:p{n}"' in rendered, f"researcher {n} was dropped from the prompt"
+    for citation in citations:
+        assert f'id="{citation["id"]}"' in rendered, f"{citation['id']} was dropped"

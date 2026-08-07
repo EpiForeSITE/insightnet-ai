@@ -544,11 +544,15 @@ def test_a_matched_tool_resolves_to_the_center_that_builds_it(tmp_path: Path) ->
 
     "Who can build dashboards?" has no single right person — the honest answer is the
     team. The tool is reported with its center, and the center is ranked alongside it.
+
+    Both are switched off by default now, so this asks for them explicitly: the caps are
+    a switch, and the behaviour behind the switch has to keep working for the day someone
+    flips it back.
     """
 
     works = _works(_work("a1", "Contact network models"))
     index = _loaded(_profiles(), works, tmp_path=tmp_path)
-    result = rag.search(index, "interactive dashboard")
+    result = rag.search(index, "interactive dashboard", top_tools=3, top_orgs=3)
 
     assert result.confident
     assert [tool["id"] for tool in result.tools] == ["t:dashy"]
@@ -556,6 +560,30 @@ def test_a_matched_tool_resolves_to_the_center_that_builds_it(tmp_path: Path) ->
     assert result.tools[0]["category"] == "dashboard"
     assert result.organizations[0]["id"] == "alpha"
     assert result.organizations[0]["name"] == "Alpha Center"
+
+
+def test_tools_and_centers_are_off_by_default(tmp_path: Path) -> None:
+    """The site is about researchers and their papers; insightnet.us covers the rest.
+
+    The chunks stay in the index — this is a retrieval setting, not a rebuild — so the
+    same question that resolves to a tool above returns none of it on the defaults.
+    """
+
+    works = _works(_work("a1", "Contact network models"))
+    index = _loaded(_profiles(), works, tmp_path=tmp_path)
+
+    assert rag.TOP_TOOLS == 0
+    assert rag.TOP_ORGS == 0
+    # The tool is still indexed and still retrievable; it is simply not reported.
+    assert "t:dashy" in index.by_id
+
+    result = rag.search(index, "interactive dashboard")
+    assert result.tools == []
+    assert result.organizations == []
+    # Nothing but researchers can carry the answer now, so a question that only a tool
+    # could satisfy refuses and the browser's keyword search takes over.
+    if not result.researchers:
+        assert result.reason == "no_match"
 
 
 def test_a_tool_match_outranks_a_paper_match_for_its_center(tmp_path: Path) -> None:

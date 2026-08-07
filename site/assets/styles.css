@@ -825,6 +825,25 @@ select {
   margin: 0 0 0.9rem;
 }
 
+/* The answer to "who can help with X" is a set of people, and a set is far easier to
+   compare down a column than inside a paragraph. The rule doubles as the bullet, so ten
+   names scan without ten disc markers competing with the citation superscripts. */
+.ask-people {
+  list-style: none;
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.ask-people li {
+  border-left: 2px solid var(--sand-deep);
+  margin-bottom: 0.75rem;
+  padding-left: 0.9rem;
+}
+
+.ask-people li:last-child {
+  margin-bottom: 0;
+}
+
 .ask-answer[aria-busy="true"]::after {
   animation: ask-caret 1s steps(2) infinite;
   background: var(--crimson);
@@ -868,6 +887,13 @@ select {
 .ask-citations-heading {
   font-size: 1rem;
   margin: 0;
+}
+
+/* A citation is a title and a line of detail, so it must not inherit the card grid's
+   220px floor — ten researchers can cite twenty documents, and twenty mostly-empty
+   boxes bury the answer they belong to. */
+.ask-citation {
+  min-height: 0;
 }
 
 .ask-citation h4 {

@@ -237,14 +237,17 @@ ranking from drifting away from production ranking.
 
 ### One flat corpus, four chunk kinds
 
-The committed manifest generated on 2026-08-04 reports 7,980 chunks and 7,980 vectors:
+The committed manifest generated on 2026-08-04 reports 8,115 chunks and 8,115 vectors:
 
-| Kind | Current count | Stable ID | Text used for embedding and BM25 |
-| --- | ---: | --- | --- |
-| Work | 7,425 | `w:<work-id>` | Title, venue/year, keywords, first 480 abstract characters, first 6 authors |
-| Researcher | 471 | `r:<researcher-id>` | Name, role/center, bio, expertise, 15 work-derived topics, 8 newest work titles |
-| Tool | 71 | `t:<tool-id>` | Name, category/status, center, summary, keywords |
-| Organization | 13 | `o:<organization-id>` | Name/acronym, summary, focus areas, keywords |
+| Kind | Current count | Reported? | Stable ID | Text used for embedding and BM25 |
+| --- | ---: | --- | --- | --- |
+| Work | 7,559 | yes | `w:<work-id>` | Title, venue/year, keywords, first 480 abstract characters, first 6 authors |
+| Researcher | 472 | yes | `r:<researcher-id>` | Name, role/center, bio, expertise, 15 work-derived topics, 8 newest work titles |
+| Tool | 71 | no | `t:<tool-id>` | Name, category/status, center, summary, keywords |
+| Organization | 13 | no | `o:<organization-id>` | Name/acronym, summary, focus areas, keywords |
+
+Every kind is embedded and retrievable; the last two are withheld from answers by default, as the
+scope note below explains.
 
 There is no fixed-token sliding window and no recursive splitting: one work is one chunk. Although
 the works pipeline may retain 1,500 abstract characters, the current work chunk embeds only the
@@ -252,8 +255,20 @@ the works pipeline may retain 1,500 abstract characters, the current work chunk 
 record, not an embedding-token target.
 
 Partners and activity records are not indexed. That is a scope decision: Ask InsightNet answers
-which researchers or centers can help with a topic. The deterministic browser search still covers
-partners and activity.
+which researchers can help with a topic.
+
+Tool and organization chunks **are** built and embedded, but they are not reported: `TOP_TOOLS` and
+`TOP_ORGS` default to `0`. The site is about researchers and their publications, and
+[insightnet.us](https://insightnet.us) already presents the network's centers and what they build.
+This is a retrieval setting rather than a corpus change, deliberately — the chunks stay in the
+index, so `rag.search(index, question, vector, top_tools=3, top_orgs=3)` restores the previous
+behavior with no rebuild and no re-embedding.
+
+Two consequences are worth knowing. Those 84 chunks still compete for the 60-slot fused pool that
+the researcher roll-up reads, so a tool-shaped question can crowd out works and leave no researchers
+at all. And with both caps at zero the refusal check reduces to *refuse unless a researcher
+matched*, which is intended: a question this corpus can only answer with a dashboard belongs in the
+browser's keyword search, and the site falls back to it automatically.
 
 ### Why researcher chunks include publication-derived text
 
@@ -546,14 +561,14 @@ re-ranked with this factor.
 | Fusion | RRF constant | 60 |
 | Roll-up | Fused pool | 60 chunks |
 | Roll-up | Evidence contributing per researcher/center | 3 |
-| Result | Researchers / evidence each | 5 / 2 |
-| Result | Tools / centers | 3 / 3 |
-| Prompt | Retrieved-document blocks | 14,000 characters, plus delimiters |
+| Result | Researchers / evidence each | 10 / 2 |
+| Result | Tools / centers | 0 / 0 — off by default, see below |
+| Prompt | Retrieved-document blocks | 28,000 characters, plus delimiters |
 | Generation | Model | `gemini-2.5-flash-lite` |
 | Generation | Temperature | 0.2 |
-| Generation | Maximum output | 512 tokens |
+| Generation | Maximum output | 900 tokens |
 | Generation | Thinking budget | 0 |
-| Generation | Prose limit in instruction | 180 words |
+| Generation | Answer limit in instruction | 320 words |
 
 The repository contains strong rationale and regression coverage for hybrid retrieval, the
 best-three cap, common-term filtering, RRF, tool weight, task types, normalization, researcher
@@ -889,14 +904,20 @@ The user content resembles:
 </documents>
 ```
 
-The sum of retrieved document blocks is capped at 14,000 characters; the `<documents>` wrapper and
+The sum of retrieved document blocks is capped at 28,000 characters; the `<documents>` wrapper and
 inter-block newlines are added afterward, so the rendered document section is slightly larger. The
-system instruction requires two to four researchers when people are the supported answer, allows
-a center/tool answer when no individual owns the capability, requires exact citation markers such
-as `[[w:work-id]]`, forbids unsupported names or affiliations, and limits prose to 180 words.
+cap is sized so that a worst-case roll-up — ten researchers with two pieces of evidence each, every
+field at its truncation limit — still fits whole, because `render_documents` drops silently when it
+runs out of room and a truncated roll-up has no symptom other than a worse answer.
+
+The system instruction asks for one lead sentence followed by one `- ` bullet per researcher, best
+fit first, up to ten and only as many as the documents genuinely support. It permits a center/tool
+answer only when a `kind="tool"` or `kind="center"` document is actually present, requires exact
+citation markers such as `[[w:work-id]]`, forbids unsupported names or affiliations, forbids every
+markdown construct except the bullets, and limits the answer to 320 words.
 
 [`server/main.py`](../server/main.py) calls `gemini-2.5-flash-lite` through Vertex AI with
-temperature 0.2, at most 512 output tokens, and `thinking_budget = 0`. Thinking is deliberately
+temperature 0.2, at most 900 output tokens, and `thinking_budget = 0`. Thinking is deliberately
 disabled for this short extraction-and-synthesis task. The model name and price assumptions can be
 changed with environment variables without rebuilding the image.
 
@@ -923,7 +944,7 @@ The response uses `Content-Type: text/event-stream`, `Cache-Control: no-store`, 
 
 `meta.citations` is assembled from the full retrieval—works, researchers, tools, and centers—so it
 contains every record Gemini can cite and may also contain records omitted when prompt rendering
-hits the 14,000-character block cap. Every valid marker is therefore resolvable without another
+hits the 28,000-character block cap. Every valid marker is therefore resolvable without another
 request, but metadata membership alone does not prove that a record reached Gemini. A cache hit
 replays one complete `token` event and reports `cached: true` with zero token usage.
 
@@ -1026,7 +1047,7 @@ otherwise sensitive text: the question leaves the browser and is processed by Ve
 
 | Boundary | Controls implemented here | What those controls do not guarantee |
 | --- | --- | --- |
-| Browser or direct client → Cloud Run | Cloud Run terminates HTTPS; CORS uses an exact browser-origin allowlist; the `/ask` application route is `POST`-only while middleware handles CORS `OPTIONS`; declared and actual bodies are limited to 2 KiB; questions are limited to 3–300 characters; Gemini generation defaults to at most 512 output tokens; Firestore-backed IP/global/spend guards run before model work; Cloud Run is capped at 3 instances, concurrency 8, and 60 seconds. | There is no user authentication. CORS constrains cooperating browsers, not curl, bots, forged `Origin` headers, or denial-of-service traffic. The application buffers the request body before checking its actual size, and its cost/rate ceilings are approximate. |
+| Browser or direct client → Cloud Run | Cloud Run terminates HTTPS; CORS uses an exact browser-origin allowlist; the `/ask` application route is `POST`-only while middleware handles CORS `OPTIONS`; declared and actual bodies are limited to 2 KiB; questions are limited to 3–300 characters; Gemini generation defaults to at most 900 output tokens; Firestore-backed IP/global/spend guards run before model work; Cloud Run is capped at 3 instances, concurrency 8, and 60 seconds. | There is no user authentication. CORS constrains cooperating browsers, not curl, bots, forged `Origin` headers, or denial-of-service traffic. The application buffers the request body before checking its actual size, and its cost/rate ceilings are approximate. |
 | Public corpus → index and prompt | [`sanitize()`](../insightnet/rag.py) normalizes text, strips tag-shaped markup and angle brackets, and removes ASCII control and Unicode format characters; its call sites apply field/chunk length limits. Prompt rendering sanitizes again, wraps records in explicit delimiters, uses a constant system instruction, and tells Gemini that document text is data rather than instruction. Regression tests cover forged document boundaries. | Natural-language prompt injection remains natural language after tag removal. There is no injection classifier, structured-output schema, or deterministic grounding verifier, and automatically collected metadata can be poisoned at its public source. |
 | Gemini → visitor's DOM | SSE payloads are JSON encoded and marked `no-store`. The browser HTML-escapes the entire answer, activates only exact citation IDs offered by the server, strips unknown well-formed markers, permits only HTTP(S) links, and uses `noopener noreferrer` on external links; malformed markers remain inert escaped text. | Citation allowlisting prevents active-link injection; it does not prove that prose is correct, that a citation supports a claim, or even require a positive answer to contain a valid citation. The static site does not declare a Content Security Policy (CSP). |
 | GitHub Actions → Google Cloud | GHA exchanges OIDC assertions through WIF, so these workflows require and store no long-lived service-account JSON key. Workflow token permissions are explicit. Runtime and deployment identities are separated, Artifact Registry write access is repository-scoped, and the public runtime cannot deploy revisions or push images. | WIF currently trusts the name-based owner/repository claim only—not immutable owner/repository IDs, a branch, environment, or approved workflow. The weekly index job uses the deployment identity even though it only needs Vertex access, and several IAM roles are project-wide. |

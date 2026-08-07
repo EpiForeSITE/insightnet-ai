@@ -62,13 +62,20 @@ FUSED_POOL = 60
 #: Each researcher is credited for at most this many matching works. The cap, not the
 #: decay, is what stops prolific authors winning every query on volume.
 WORKS_PER_RESEARCHER = 3
-TOP_RESEARCHERS = 5
+TOP_RESEARCHERS = 10
 EVIDENCE_PER_RESEARCHER = 2
-TOP_TOOLS = 3
-TOP_ORGS = 3
+
+#: Tools and centers are indexed and retrievable but **off by default**: this site is
+#: about researchers and their publications, and insightnet.us already presents the
+#: network's centers and what they build. Zero is a switch rather than a deletion — the
+#: chunks stay in the index and `search(..., top_tools=3, top_orgs=3)` restores the old
+#: behaviour without rebuilding anything.
+TOP_TOOLS = 0
+TOP_ORGS = 0
 
 #: A matching tool says more about a center's current capability than a matching paper
 #: does: publication lists are broad and historical, shipping software is specific.
+#: Only consulted when centers are switched back on.
 TOOL_WEIGHT = 2.0
 
 #: There is deliberately **no score threshold** deciding whether a question is
@@ -883,12 +890,21 @@ def search(
     index: Index,
     question: str,
     query_vector: Sequence[float] | None = None,
+    *,
+    top_researchers: int = TOP_RESEARCHERS,
+    top_tools: int = TOP_TOOLS,
+    top_orgs: int = TOP_ORGS,
 ) -> Retrieval:
     """Run the hybrid retrieval and roll-up.
 
     ``query_vector`` may be omitted to run lexically only, which is what happens when
     embeddings are unavailable — degraded, but still useful, and it keeps the CLI usable
     before any cloud credentials exist.
+
+    The three caps are arguments rather than constants read at call time so that turning
+    tools and centers back on is a keyword argument, not an edit: they default to zero
+    (see ``TOP_TOOLS``), and passing a positive value restores that half of the answer
+    from the index as it already stands.
 
     Retrieval returns its best candidates and reports how confident the *distribution*
     looked; it does not decide whether the question is answerable. See the note beside
@@ -901,7 +917,7 @@ def search(
     if not fused:
         return Retrieval(reason="no_match")
 
-    people = roll_up(index, fused)[:TOP_RESEARCHERS]
+    people = roll_up(index, fused)[:top_researchers]
 
     citation_ids: list[str] = []
     researchers: list[dict[str, Any]] = []
@@ -953,26 +969,34 @@ def search(
             names.append(index.chunks[position]["title"] if position is not None else organization_id)
         return names
 
-    tools = [
-        {
-            "id": index.chunks[position]["id"],
-            "title": index.chunks[position]["title"],
-            "snippet": index.chunks[position].get("snippet", ""),
-            "url": index.chunks[position].get("url", ""),
-            "category": index.chunks[position].get("category", ""),
-            "organization_ids": index.chunks[position].get("organization_ids", []),
-            "organization_names": _center_names(index.chunks[position]),
-            "score": round(score, 6),
-        }
-        for position, score in fused[:FUSED_POOL]
-        if index.chunks[position]["kind"] == "tool"
-    ][:TOP_TOOLS]
+    # Both roll-ups are skipped rather than computed and sliced away, so the default
+    # configuration does no work for the half of the answer it does not want.
+    tools = (
+        [
+            {
+                "id": index.chunks[position]["id"],
+                "title": index.chunks[position]["title"],
+                "snippet": index.chunks[position].get("snippet", ""),
+                "url": index.chunks[position].get("url", ""),
+                "category": index.chunks[position].get("category", ""),
+                "organization_ids": index.chunks[position].get("organization_ids", []),
+                "organization_names": _center_names(index.chunks[position]),
+                "score": round(score, 6),
+            }
+            for position, score in fused[:FUSED_POOL]
+            if index.chunks[position]["kind"] == "tool"
+        ][:top_tools]
+        if top_tools > 0
+        else []
+    )
 
-    organizations = roll_up_organizations(index, fused)[:TOP_ORGS]
+    organizations = roll_up_organizations(index, fused)[:top_orgs] if top_orgs > 0 else []
 
-    # A tool-shaped question can rank the right software and the right center without
-    # crediting a single person. That is still a useful answer, so refuse only when
-    # nothing at all came back.
+    # With tools and centers enabled, a tool-shaped question can rank the right software
+    # and the right center without crediting a single person, and that is still a useful
+    # answer — so refuse only when nothing at all came back. On the default settings this
+    # reduces to "refuse unless a researcher matched", which is the intended behaviour:
+    # a question this site cannot answer with a person belongs in the keyword search.
     if not researchers and not tools and not organizations:
         return Retrieval(reason="no_match")
 

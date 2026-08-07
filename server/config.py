@@ -57,7 +57,10 @@ class Settings:
     price_in_micros_per_mtok: int = 100_000
     price_out_micros_per_mtok: int = 400_000
 
-    max_output_tokens: int = 512
+    # A 320-word answer is roughly 430 tokens before its citation markers, and ten
+    # `[[w:abc123]]` markers cost another hundred. At 512 the last bullets were cut off
+    # mid-sentence, which reads as a broken answer rather than a short one.
+    max_output_tokens: int = 900
     temperature: float = 0.2
     cache_ttl_days: int = 7
     ip_salt: str = "insightnet"
@@ -84,7 +87,7 @@ class Settings:
             monthly_budget_micros=_int("MONTHLY_BUDGET_MICROS", 5_000_000),
             price_in_micros_per_mtok=_int("PRICE_IN_MICROS_PER_MTOK", 100_000),
             price_out_micros_per_mtok=_int("PRICE_OUT_MICROS_PER_MTOK", 400_000),
-            max_output_tokens=_int("MAX_OUTPUT_TOKENS", 512),
+            max_output_tokens=_int("MAX_OUTPUT_TOKENS", 900),
             cache_ttl_days=_int("CACHE_TTL_DAYS", 7),
             ip_salt=_text("IP_SALT", "insightnet"),
         )

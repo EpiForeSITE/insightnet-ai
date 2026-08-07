@@ -14,6 +14,10 @@
   const ASK_URL = "https://insightnet-ask-ckn3l2i5pq-uc.a.run.app/ask";
   const ASK_MARKER = /\[\[[^\]\s]{1,64}\]\]/g;
   const ASK_FRAME_MS = 80;
+  // Retrieval finding nothing is a normal outcome, not a failure, so it gets its own
+  // wording rather than the one used when the service is unreachable.
+  const ASK_NO_MATCH =
+    "Couldn't find any researchers or publications relevant to your question.";
   const WORKS_PAGE_SIZE = 40;
   const OFFICIAL_SITE = "https://insightnet.us";
   const PROFILE_LABELS = {
@@ -522,6 +526,42 @@
       .map((item) => item.entry);
   }
 
+  // The answer arrives as a lead sentence followed by one "- " bullet per researcher.
+  // Bullets are the only markup the model is allowed to emit, and this runs over text
+  // that is already escaped and already carries its citation links, so the only HTML it
+  // can produce is the list scaffolding written here.
+  function answerHtml(escaped) {
+    const blocks = [];
+    let items = null;
+    let paragraph = [];
+    const flushParagraph = () => {
+      if (paragraph.length) blocks.push(`<p>${paragraph.join(" ")}</p>`);
+      paragraph = [];
+    };
+    const flushItems = () => {
+      if (items) blocks.push(`<ul class="ask-people">${items.join("")}</ul>`);
+      items = null;
+    };
+    for (const line of escaped.split("\n")) {
+      const trimmed = line.trim();
+      const bullet = trimmed.match(/^[-*•]\s+(.+)$/);
+      if (bullet) {
+        flushParagraph();
+        items = items || [];
+        items.push(`<li>${bullet[1]}</li>`);
+      } else if (!trimmed) {
+        flushParagraph();
+        flushItems();
+      } else {
+        flushItems();
+        paragraph.push(trimmed);
+      }
+    }
+    flushParagraph();
+    flushItems();
+    return blocks.join("");
+  }
+
   function renderAskAnswer(text, citations) {
     const cited = citedInOrder(text, citations);
     let html = escapeHtml(text);
@@ -537,12 +577,7 @@
     });
     html = html.replace(ASK_MARKER, "");
     renderAskCitations(cited);
-    byId("ask-answer").innerHTML = html
-      .split(/\n{2,}/)
-      .map((paragraph) => paragraph.trim())
-      .filter(Boolean)
-      .map((paragraph) => `<p>${paragraph}</p>`)
-      .join("");
+    byId("ask-answer").innerHTML = answerHtml(html);
   }
 
   async function readAskStream(response, onEvent) {
@@ -601,7 +636,7 @@
     byId("ask-answer").setAttribute("aria-busy", "true");
     let citations = [];
     let answer = "";
-    let refused = false;
+    let refusal = "";
 
     const paint = () => {
       askFrame = 0;
@@ -633,6 +668,14 @@
         await askFallback(question, noticeFor(detail, response.status));
         return;
       }
+      // Retrieval that matched nothing answers with a plain JSON body rather than a
+      // stream. Feeding that to the SSE reader happens to produce no events, but then a
+      // real no-match is indistinguishable from a stream that died early, so it is
+      // recognised by content type instead of by the absence of output.
+      if (!(response.headers.get("content-type") || "").includes("text/event-stream")) {
+        await askFallback(question, ASK_NO_MATCH);
+        return;
+      }
       await readAskStream(response, (name, payload) => {
         if (name === "meta") {
           // Sources arrive before the prose and stay client-side, so a citation never
@@ -643,9 +686,9 @@
           answer += payload.t || "";
           schedule();
         } else if (name === "no_match") {
-          refused = true;
+          refusal = "no_match";
         } else if (name === "error") {
-          refused = true;
+          refusal = "error";
         }
       });
     } catch (error) {
@@ -658,7 +701,7 @@
       askFrame = 0;
     }
 
-    if (refused || !answer.trim()) {
+    if (refusal || !answer.trim()) {
       // A stream can fail after some prose has already painted — an upstream quota being
       // exhausted mid-answer does exactly that. Half a sentence above "showing keyword
       // matches instead" reads like a broken page, so it is cleared rather than left.
@@ -667,7 +710,9 @@
       byId("ask-citations").innerHTML = "";
       await askFallback(
         question,
-        "That question could not be answered from this network's publications and profiles.",
+        refusal === "error"
+          ? "The assisted answer stopped before it could finish."
+          : ASK_NO_MATCH,
       );
       return;
     }

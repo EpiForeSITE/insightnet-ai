@@ -180,6 +180,11 @@ nav {
   padding: 0.55rem 0.78rem;
 }
 
+a.nav-link {
+  text-decoration: none;
+  white-space: nowrap;
+}
+
 .nav-link:hover,
 .nav-link.is-active {
   background: var(--sand);
@@ -205,7 +210,7 @@ nav {
 main {
   margin: 0 auto;
   max-width: var(--max-width);
-  padding: 0 1.5rem 5rem;
+  padding: 2rem 1.5rem 5rem;
 }
 
 .hero {
@@ -269,11 +274,13 @@ h4 {
   line-height: 1.15;
 }
 
-.hero-lede {
+/* The site's own description is a footnote, not a pitch: it states whose profiles are
+   here and points at the official network site for everything else. */
+.hero-note {
   color: var(--ink-soft);
-  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  font-size: 0.86rem;
   margin-bottom: 0;
-  max-width: 720px;
+  max-width: 760px;
 }
 
 .freshness {
@@ -302,37 +309,6 @@ h4 {
   border-color: rgb(166 15 45 / 18%);
 }
 
-.metrics {
-  display: grid;
-  gap: 1px;
-  grid-template-columns: repeat(5, 1fr);
-  margin: 1.4rem 0 3.5rem;
-  overflow: hidden;
-}
-
-.metric {
-  align-items: baseline;
-  border-left: 1px solid var(--line);
-  display: flex;
-  gap: 0.7rem;
-  padding: 1.5rem clamp(1rem, 3vw, 2.2rem);
-}
-
-.metric:first-child {
-  border-left: 0;
-}
-
-.metric-value {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 730;
-  letter-spacing: -0.055em;
-}
-
-.metric-label {
-  color: var(--ink-soft);
-  font-size: 0.78rem;
-}
-
 .view {
   animation: reveal 280ms ease both;
 }
@@ -357,26 +333,11 @@ h4 {
     animation: none;
   }
 
-  html,
-  .carousel-track {
+  html {
     scroll-behavior: auto;
   }
 
   .view {
-    animation: none;
-  }
-
-  .carousel-dot {
-    transition: none;
-  }
-
-  /* Rotation never starts under this preference, so the active dot stays a plain
-     indicator rather than an empty countdown track. */
-  .carousel-dots.is-rotating .carousel-dot.is-active {
-    background: var(--crimson);
-  }
-
-  .carousel-dots.is-rotating .carousel-dot.is-active::after {
     animation: none;
   }
 }
@@ -389,8 +350,7 @@ h4 {
   margin-bottom: 2rem;
 }
 
-.section-heading p:not(.kicker),
-.expert-intro > p:last-child {
+.section-heading p:not(.kicker) {
   color: var(--ink-soft);
   max-width: 700px;
 }
@@ -407,28 +367,13 @@ h4 {
   white-space: nowrap;
 }
 
-.latest-grid,
-.center-grid,
 .researcher-grid {
   display: grid;
   gap: 1rem;
-}
-
-.latest-grid {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.center-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.researcher-grid {
   grid-template-columns: repeat(2, 1fr);
 }
 
 .card,
-.activity-record,
-.center-hero,
 .expert-group {
   background: var(--white);
   border: 1px solid var(--line);
@@ -441,233 +386,6 @@ h4 {
   flex-direction: column;
   min-height: 220px;
   padding: 1.4rem;
-}
-
-/* Centers carousel -------------------------------------------------------- */
-
-.carousel {
-  position: relative;
-}
-
-.carousel-track {
-  display: grid;
-  gap: 1rem;
-  grid-auto-columns: calc((100% - 2rem) / 3);
-  grid-auto-flow: column;
-  overflow-x: auto;
-  padding: 0.4rem 0.3rem 1.1rem;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-}
-
-.carousel-track:focus-visible {
-  border-radius: var(--radius);
-  outline: 2px solid var(--crimson);
-  outline-offset: 4px;
-}
-
-.carousel-slide {
-  scroll-snap-align: start;
-}
-
-.carousel-controls {
-  display: flex;
-  flex-shrink: 0;
-  gap: 0.5rem;
-}
-
-.carousel-button {
-  align-items: center;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  color: var(--ink);
-  cursor: pointer;
-  display: flex;
-  font-size: 1rem;
-  height: 2.4rem;
-  justify-content: center;
-  width: 2.4rem;
-}
-
-.carousel-button:hover:not(:disabled) {
-  background: var(--sand);
-  border-color: var(--sand-deep);
-}
-
-.carousel-button:disabled {
-  cursor: default;
-  opacity: 0.35;
-}
-
-.carousel-dots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  justify-content: center;
-  margin-top: 0.4rem;
-}
-
-.carousel-dot {
-  background: var(--line);
-  border: 0;
-  border-radius: 999px;
-  cursor: pointer;
-  height: 0.5rem;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  transition: background 180ms ease, width 180ms ease;
-  width: 0.5rem;
-}
-
-.carousel-dot.is-active {
-  background: var(--crimson);
-  width: 2.6rem;
-}
-
-/* The active dot doubles as a countdown. While the banner is rotating it drops back to a
-   pale track and refills over exactly one interval, so the next move is visible before it
-   happens; a bar frozen part-way is what a paused banner looks like. */
-.carousel-dots.is-rotating .carousel-dot.is-active {
-  background: var(--sand-deep);
-}
-
-.carousel-dots.is-rotating .carousel-dot.is-active::after {
-  animation: carousel-countdown var(--carousel-delay, 6000ms) linear forwards;
-  background: var(--crimson);
-  border-radius: inherit;
-  content: "";
-  inset: 0;
-  position: absolute;
-  transform-origin: left center;
-}
-
-.carousel-dots.is-rotating.is-paused .carousel-dot.is-active::after {
-  animation-play-state: paused;
-}
-
-@keyframes carousel-countdown {
-  from {
-    transform: scaleX(0);
-  }
-
-  to {
-    transform: scaleX(1);
-  }
-}
-
-/* Health partners --------------------------------------------------------- */
-
-.partner-summary {
-  display: grid;
-  gap: 0.8rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
-.partner-summary-chip {
-  align-items: baseline;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  cursor: pointer;
-  display: flex;
-  gap: 0.6rem;
-  padding: 1.1rem 1.2rem;
-  text-align: left;
-}
-
-.partner-summary-chip:hover {
-  border-color: var(--sand-deep);
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
-  transition: 180ms ease;
-}
-
-.partner-summary-count {
-  color: var(--ink);
-  font-size: 1.9rem;
-  font-weight: 730;
-  letter-spacing: -0.05em;
-}
-
-.partner-summary-label {
-  color: var(--ink-soft);
-  font-size: 0.82rem;
-}
-
-.partner-grid {
-  display: grid;
-  gap: 0.8rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.partner-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 1rem 1.1rem;
-}
-
-.partner-card:hover {
-  border-color: var(--sand-deep);
-  box-shadow: 0 8px 30px rgb(78 78 78 / 7%);
-}
-
-.partner-card h3 {
-  font-size: 0.98rem;
-  margin: 0;
-}
-
-.partner-card h3 a {
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.partner-card h3 a:hover {
-  color: var(--crimson);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.partner-card p {
-  color: var(--ink-soft);
-  font-size: 0.83rem;
-  margin: 0;
-}
-
-.partner-type {
-  align-self: flex-start;
-  background: var(--sand);
-  border-radius: 999px;
-  color: var(--crimson);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.22rem 0.6rem;
-  text-transform: uppercase;
-}
-
-.partner-type-healthcare {
-  background: var(--gold-tint);
-  color: var(--gold-deep);
-}
-
-.partner-type-tribal,
-.partner-type-federal {
-  background: #ebe7e3;
-  color: var(--gray);
-}
-
-.partner-centers {
-  color: var(--ink-muted);
-  font-size: 0.76rem;
-  margin-top: auto;
-  padding-top: 0.4rem;
 }
 
 .card:hover {
@@ -690,14 +408,12 @@ h4 {
   margin: 0.65rem 0 0.6rem;
 }
 
-.card h3 a,
-.activity-record h3 a {
+.card h3 a {
   color: var(--ink);
   text-decoration: none;
 }
 
-.card h3 a:hover,
-.activity-record h3 a:hover {
+.card h3 a:hover {
   color: var(--crimson);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -707,24 +423,6 @@ h4 {
 .card p {
   color: var(--ink-soft);
   font-size: 0.9rem;
-}
-
-.card-footer {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 1rem;
-}
-
-.card-footer button {
-  background: transparent;
-  border: 0;
-  color: var(--crimson);
-  cursor: pointer;
-  font-size: 0.83rem;
-  font-weight: 700;
-  padding: 0;
 }
 
 .tag-list {
@@ -753,15 +451,6 @@ h4 {
 .empty-state.compact {
   margin-top: 1rem;
   padding: 1.5rem;
-}
-
-.empty-index {
-  color: var(--crimson-soft);
-  display: block;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.5rem;
 }
 
 .empty-state h3 {
@@ -804,89 +493,8 @@ select {
   width: 100%;
 }
 
-.activity-list {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.activity-record {
-  padding: 1.35rem 1.5rem;
-}
-
-.activity-record h3 {
-  font-size: 1.18rem;
-  margin: 0.4rem 0;
-}
-
-.activity-record p {
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  margin-bottom: 0;
-  max-width: 860px;
-}
-
 #works-filters {
   grid-template-columns: 2fr repeat(4, 1fr);
-}
-
-.tools-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.tool-card {
-  min-height: 0;
-}
-
-.tool-meta {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.tool-category {
-  background: var(--sand);
-  border-radius: 999px;
-  color: var(--crimson);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.18rem 0.55rem;
-  text-transform: uppercase;
-}
-
-.tool-status {
-  background: var(--gold-tint);
-  border-radius: 999px;
-  color: var(--gold-deep);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  padding: 0.18rem 0.55rem;
-  text-transform: uppercase;
-}
-
-.tool-card h3 {
-  font-size: 1.12rem;
-}
-
-.tool-footer {
-  gap: 0.75rem;
-}
-
-.tool-repo {
-  color: var(--crimson);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.tool-repo:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 /* Caveats a reader needs before they draw a conclusion from a list, set apart from the
@@ -1076,28 +684,6 @@ select {
   background: var(--sand);
 }
 
-.compact-select {
-  min-width: 260px;
-}
-
-.center-hero {
-  background:
-    linear-gradient(120deg, rgb(255 255 255 / 96%), rgb(247 233 236 / 92%)),
-    var(--white);
-  padding: clamp(1.5rem, 5vw, 3rem);
-}
-
-.center-hero h3 {
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
-  margin: 0.4rem 0 0.8rem;
-}
-
-.center-summary {
-  color: var(--ink-soft);
-  font-size: 1rem;
-  max-width: 840px;
-}
-
 .profile-links {
   display: flex;
   flex-wrap: wrap;
@@ -1119,10 +705,6 @@ select {
   background: var(--sand);
 }
 
-.researcher-section {
-  margin-top: 3rem;
-}
-
 .researcher-card {
   min-height: 245px;
 }
@@ -1135,22 +717,8 @@ select {
   text-transform: uppercase;
 }
 
-.expert-intro {
-  max-width: 860px;
-}
-
-.expert-intro h2 {
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-}
-
-.expert-intro em {
-  color: var(--crimson);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-}
-
 .expert-form {
-  margin: 2rem 0 1rem;
+  margin: 0 0 1rem;
   max-width: 840px;
 }
 
@@ -1215,6 +783,24 @@ select {
   font-size: 0.9rem;
   gap: 0.5rem;
   margin: 0.6rem 0 0;
+}
+
+/* What the assistant is and where the question goes, next to the box it goes into. */
+.ask-disclosure {
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  margin: 0.9rem 0 0;
+  max-width: 760px;
+}
+
+.ask-results {
+  margin-top: 1.8rem;
+}
+
+/* The status and echo lines are empty until a question is asked, and an empty paragraph
+   still reserves a line; collapsing them keeps the two searches close together. */
+.ask-results p:empty {
+  display: none;
 }
 
 /* A budget or rate-limit message is information, not failure, so it reads gold rather
@@ -1428,6 +1014,16 @@ tbody tr:last-child td {
   gap: 0.75rem;
 }
 
+.footer-version a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-version a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .site-footer .footer-colophon {
   border-top: 1px solid rgb(255 255 255 / 15%);
   margin-top: 2rem;
@@ -1470,23 +1066,8 @@ tbody tr:last-child td {
     white-space: nowrap;
   }
 
-  .latest-grid,
-  .researcher-grid,
-  .tools-grid,
-  .partner-grid {
+  .researcher-grid {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .carousel-track {
-    grid-auto-columns: calc((100% - 1rem) / 2);
-  }
-
-  .metrics {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .metric:nth-child(odd) {
-    border-left: 0;
   }
 
   #works-filters {
@@ -1516,45 +1097,16 @@ tbody tr:last-child td {
     font-size: clamp(1.7rem, 7vw, 2.2rem);
   }
 
-  .metrics,
-  .latest-grid,
-  .center-grid,
   .researcher-grid,
-  .tools-grid,
-  .partner-grid,
   .filter-bar,
   #works-filters {
     grid-template-columns: 1fr;
-  }
-
-  .carousel-track {
-    grid-auto-columns: 100%;
-  }
-
-  .metrics {
-    margin-bottom: 4rem;
-  }
-
-  .metric,
-  .metric:nth-child(odd) {
-    border-left: 0;
-    border-top: 1px solid var(--line);
-    padding: 0.8rem;
-  }
-
-  .metric:first-child {
-    border-top: 0;
   }
 
   .section-heading {
     align-items: start;
     flex-direction: column;
     gap: 0.7rem;
-  }
-
-  .compact-select {
-    min-width: 0;
-    width: 100%;
   }
 
   .search-shell {

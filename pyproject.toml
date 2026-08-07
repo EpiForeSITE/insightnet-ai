@@ -4,7 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "insightnet-dashboard"
-version = "0.1.0"
+# Read from `insightnet.__version__` so the package, the site footer, and the release
+# tag can never disagree about which version this is.
+dynamic = ["version"]
 description = "Daily-updated dashboard of scientific activity across InsightNet"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -41,6 +43,9 @@ server = [
 insightnet-update = "insightnet.update:main"
 insightnet-works = "insightnet.update:works_main"
 insightnet-rag = "insightnet.update:rag_main"
+
+[tool.setuptools.dynamic]
+version = { attr = "insightnet.__version__" }
 
 [tool.setuptools.packages.find]
 include = ["insightnet*", "server*"]

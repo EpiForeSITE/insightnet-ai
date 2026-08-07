@@ -5,6 +5,9 @@ on:
     branches: [main, master]
     paths:
       - "site/**"
+      # The footer carries the version, so a bump has to reach Pages on its own rather
+      # than waiting for the next data refresh to trigger a deployment.
+      - "insightnet/__init__.py"
       - ".github/workflows/deploy-pages.yml"
   workflow_run:
     workflows: ["Refresh scientific activity", "Refresh scholarly works"]
@@ -43,8 +46,18 @@ jobs:
         env:
           SITE_BASE_URL: ${{ steps.pages.outputs.base_url }}
         run: |
+          # insightnet/__init__.py has no imports, so reading the version needs no
+          # install and no dependencies.
+          APP_VERSION="$(python -c 'import insightnet; print(insightnet.__version__)')"
+          echo "Deploying version ${APP_VERSION}"
           cp -R site _site
           sed -i "s|__SITE_BASE_URL__|${SITE_BASE_URL}|g" _site/index.html
+          sed -i "s|__APP_VERSION__|${APP_VERSION}|g" _site/index.html
+          # Shipping a visible placeholder to readers is worse than failing the deploy.
+          if grep -q "__APP_VERSION__\|__SITE_BASE_URL__" _site/index.html; then
+            echo "::error::a build placeholder survived substitution"
+            exit 1
+          fi
 
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4

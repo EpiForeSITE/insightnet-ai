@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="An unofficial explorer for discovering scientific centers, researchers, and emerging work across InsightNet."
+      content="Academic profiles and publications for the researchers affiliated with InsightNet's centers, searchable by question or by keyword."
     />
     <meta name="theme-color" content="#a60f2d" />
     <link rel="icon" type="image/png" href="./assets/foresite-mark.png" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="InsightNet Explorer" />
     <meta
       property="og:description"
-      content="An unofficial explorer of scientific work, people, and expertise across InsightNet."
+      content="Search the researchers affiliated with InsightNet's centers and the publications they have authored."
     />
     <meta property="og:url" content="__SITE_BASE_URL__/" />
     <meta property="og:image" content="__SITE_BASE_URL__/og.png" />
@@ -55,18 +55,19 @@
           <span class="brand-rule" aria-hidden="true"></span>
           <span class="brand-text">
             <strong>InsightNet</strong>
-            <small>Scientific endeavors</small>
+            <small>Researchers &amp; publications</small>
           </span>
         </a>
         <div class="header-actions">
           <nav aria-label="Primary navigation">
-            <button class="nav-link is-active" type="button" data-view="overview">Overview</button>
-            <button class="nav-link" type="button" data-view="ask">Ask</button>
-            <button class="nav-link" type="button" data-view="tools">Tools</button>
             <button class="nav-link" type="button" data-view="works">Publications</button>
-            <button class="nav-link" type="button" data-view="partners">Partners</button>
-            <button class="nav-link" type="button" data-view="centers">Centers &amp; people</button>
-            <button class="nav-link" type="button" data-view="experts">Find experts</button>
+            <a
+              class="nav-link"
+              href="https://insightnet.us/network/#centers"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Centers &amp; people <span aria-hidden="true">↗</span></a
+            >
             <button class="nav-link" type="button" data-view="health">Data status</button>
           </nav>
           <a class="official-site-link" href="https://insightnet.us/" target="_blank" rel="noopener noreferrer">
@@ -77,172 +78,88 @@
     </header>
 
     <main id="main-content">
-      <section class="hero" aria-labelledby="network-title">
-        <div class="hero-copy">
-          <p class="kicker">Living map of scientific work</p>
-          <h1 id="network-title">InsightNet Explorer</h1>
-          <p id="network-description" class="hero-lede">
-            Discover centers, researchers, and the scientific work emerging across InsightNet.
-          </p>
-        </div>
-        <div class="freshness" id="freshness" role="status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Loading the latest network snapshot…</span>
-        </div>
-        <form id="ask-form" class="ask-form" role="search" aria-label="Ask about InsightNet expertise">
-          <label class="search-shell ask-shell">
-            <span class="sr-only">Ask which researchers can help with a topic</span>
-            <input
-              id="ask-query"
-              type="search"
-              maxlength="300"
-              autocomplete="off"
-              placeholder="Which researchers can help me with ERGMs?"
-            />
-            <button type="submit">Ask</button>
-          </label>
-          <p class="ask-examples">
-            Try
-            <button class="text-action" type="button" data-ask="who can build dashboards?">
-              who can build dashboards?
-            </button>
-            <button class="text-action" type="button" data-ask="which researchers have worked with Ebola?">
-              …worked with Ebola?
-            </button>
-          </p>
-        </form>
-      </section>
-
-      <section class="metrics" aria-label="Network summary">
-        <article class="metric">
-          <span class="metric-value" id="metric-centers">—</span>
-          <span class="metric-label">Centers</span>
-        </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-researchers">—</span>
-          <span class="metric-label">Researchers</span>
-        </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-partners">—</span>
-          <span class="metric-label">Health partners</span>
-        </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-tools">—</span>
-          <span class="metric-label">Tools</span>
-        </article>
-        <article class="metric">
-          <span class="metric-value" id="metric-works">—</span>
-          <span class="metric-label">Publications</span>
-        </article>
-      </section>
-
       <div id="app-message" class="app-message" role="alert" hidden></div>
 
+      <!-- The home page is the only place the assistant appears, so its search bar lives
+           inside this panel rather than above the router. -->
       <section class="view is-active" id="view-overview" data-view-panel="overview">
-        <div class="section-heading">
-          <div>
-            <p class="kicker">Directory</p>
-            <h2>Centers in InsightNet</h2>
+        <section class="hero" aria-labelledby="network-title">
+          <div class="hero-copy">
+            <p class="kicker">Academic profiles</p>
+            <h1 id="network-title">InsightNet Explorer</h1>
+            <p id="network-description" class="hero-note">Loading the latest snapshot…</p>
           </div>
-          <div class="carousel-controls">
-            <button
-              class="carousel-button"
-              type="button"
-              id="carousel-toggle"
-              aria-controls="center-carousel"
-              aria-label="Pause the centers carousel"
-            >
-              <span aria-hidden="true" id="carousel-toggle-icon">❙❙</span>
-            </button>
-            <button
-              class="carousel-button"
-              type="button"
-              id="carousel-previous"
-              aria-controls="center-carousel"
-              aria-label="Show previous centers"
-            >
-              <span aria-hidden="true">←</span>
-            </button>
-            <button
-              class="carousel-button"
-              type="button"
-              id="carousel-next"
-              aria-controls="center-carousel"
-              aria-label="Show next centers"
-            >
-              <span aria-hidden="true">→</span>
-            </button>
+          <div class="freshness" id="freshness" role="status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Loading the latest network snapshot…</span>
           </div>
-        </div>
-        <div
-          class="carousel"
-          id="center-carousel-region"
-          role="group"
-          aria-roledescription="carousel"
-          aria-label="Centers in InsightNet"
-          aria-live="off"
-        >
-          <div class="carousel-track" id="center-carousel" tabindex="0"></div>
-          <div class="carousel-dots" id="carousel-dots"></div>
-        </div>
+          <form id="ask-form" class="ask-form" role="search" aria-label="Ask about InsightNet expertise">
+            <label class="search-shell ask-shell">
+              <span class="sr-only">Ask which researchers can help with a topic</span>
+              <input
+                id="ask-query"
+                type="search"
+                maxlength="300"
+                autocomplete="off"
+                placeholder="Which researchers can help me with ERGMs?"
+              />
+              <button type="submit">Ask</button>
+            </label>
+            <p class="ask-examples">
+              Try
+              <button class="text-action" type="button" data-ask="who can build dashboards?">
+                who can build dashboards?
+              </button>
+              <button class="text-action" type="button" data-ask="which researchers have worked with Ebola?">
+                …worked with Ebola?
+              </button>
+            </p>
+            <p class="ask-disclosure">
+              An AI model reads the publication abstracts and profiles in this site's own
+              snapshot and names researchers, citing the specific record behind each
+              suggestion. It can be wrong, and every citation links to the real record so you
+              can check. Your question is sent to Google Cloud to be answered.
+            </p>
+          </form>
+        </section>
 
-        <div id="overview-empty" class="empty-state" hidden>
-          <span class="empty-index">01</span>
-          <h3>Your network is ready to map.</h3>
-          <p>
-            Add center profiles to the repository and the daily update will populate this site
-            automatically—no website edits needed.
-          </p>
+        <div class="ask-results">
+          <p id="ask-echo" class="result-count"></p>
+          <p id="ask-status" class="result-count" role="status" aria-live="polite"></p>
+          <div id="ask-notice" class="inline-notice" hidden></div>
+          <div id="ask-error" class="inline-error" role="alert" hidden></div>
+          <div id="ask-answer" class="ask-answer" aria-live="off"></div>
+          <p id="ask-answer-sr" class="sr-only" aria-live="polite"></p>
+          <div id="ask-citations" class="ask-citations"></div>
         </div>
 
         <div class="section-heading section-heading-spaced">
           <div>
-            <p class="kicker">Public health in practice</p>
-            <h2>Health partners</h2>
+            <p class="kicker">Keyword search</p>
+            <h2>Search researchers and publications</h2>
             <p>
-              Every center works with the health departments, agencies, and health systems in
-              its own region. Pick a kind of partner to browse them.
-            </p>
-          </div>
-          <button class="text-action" type="button" data-go-to="partners">See all partners →</button>
-        </div>
-        <div id="partner-summary" class="partner-summary"></div>
-      </section>
-
-      <section class="view" id="view-tools" data-view-panel="tools" hidden>
-        <div class="section-heading">
-          <div>
-            <p class="kicker">Built by the network</p>
-            <h2>Tools &amp; products</h2>
-            <p>
-              Dashboards, software packages, platforms, and datasets developed by
-              InsightNet centers, transcribed from each center's public pages.
+              Search names, biographies, expertise, and publication titles and abstracts by
+              keyword — no AI involved. Your query stays in this browser.
             </p>
           </div>
         </div>
-        <form id="tools-filters" class="filter-bar" aria-label="Tool filters">
-          <label>
-            <span>Search tools</span>
-            <input id="tools-query" type="search" placeholder="Forecasting, wastewater, R package…" />
-          </label>
-          <label>
-            <span>Center</span>
-            <select id="tools-center"><option value="">All centers</option></select>
-          </label>
-          <label>
-            <span>Category</span>
-            <select id="tools-category"><option value="">All categories</option></select>
+        <form id="expert-form" class="expert-form">
+          <label class="search-shell">
+            <span class="sr-only">Expertise topic or pattern</span>
+            <input id="expert-query" type="search" placeholder="Try “network science”" />
+            <button type="submit">Search</button>
           </label>
         </form>
-        <p id="tools-count" class="result-count" aria-live="polite"></p>
-        <div id="tools-list" class="tools-grid"></div>
+        <div id="expert-error" class="inline-error" role="alert" hidden></div>
+        <p id="expert-summary" class="result-count" aria-live="polite"></p>
+        <div id="expert-results"></div>
       </section>
 
       <section class="view" id="view-works" data-view-panel="works" hidden>
         <div class="section-heading">
           <div>
             <p class="kicker">Peer-reviewed &amp; preprints</p>
-            <h2>Publications</h2>
+            <h1>Publications</h1>
             <p>
               Papers and preprints collected from ORCID, PubMed, Europe PMC, arXiv, and
               medRxiv/bioRxiv for the researchers in this network.
@@ -301,115 +218,11 @@
         </div>
       </section>
 
-      <section class="view" id="view-partners" data-view-panel="partners" hidden>
-        <div class="section-heading">
-          <div>
-            <p class="kicker">Public health in practice</p>
-            <h2>Health partners</h2>
-            <p>
-              The health departments, agencies, and health systems InsightNet centers build
-              with, transcribed from each center's public pages.
-            </p>
-          </div>
-        </div>
-        <form id="partners-filters" class="filter-bar" aria-label="Health partner filters">
-          <label>
-            <span>Search partners</span>
-            <input id="partners-query" type="search" placeholder="Utah, county health, Kaiser…" />
-          </label>
-          <label>
-            <span>Type</span>
-            <select id="partners-type"><option value="">All partner types</option></select>
-          </label>
-          <label>
-            <span>Center</span>
-            <select id="partners-center"><option value="">All centers</option></select>
-          </label>
-        </form>
-        <p id="partners-count" class="result-count" aria-live="polite"></p>
-        <div id="partners-list" class="partner-grid"></div>
-      </section>
-
-      <section class="view" id="view-centers" data-view-panel="centers" hidden>
-        <div class="section-heading">
-          <div>
-            <p class="kicker">People &amp; places</p>
-            <h2>Center profiles</h2>
-            <p>Explore each center’s mission, focus areas, researchers, and public profiles.</p>
-          </div>
-          <label class="compact-select">
-            <span>Choose a center</span>
-            <select id="center-select"></select>
-          </label>
-        </div>
-        <div id="center-detail"></div>
-      </section>
-
-      <section class="view" id="view-ask" data-view-panel="ask" hidden>
-        <div class="expert-intro">
-          <p class="kicker">Assisted answer</p>
-          <h2>Who can help with <em>this?</em></h2>
-          <p>
-            An AI model reads publication abstracts, profiles, and tools from this site's own
-            snapshot and names researchers or centers, citing the specific record behind each
-            suggestion. It can be wrong, and it only answers questions about finding expertise
-            in this network — every citation links to the real record so you can check.
-            Your question is sent to Google Cloud to be answered.
-          </p>
-        </div>
-        <form id="ask-form-view" class="expert-form">
-          <label class="search-shell">
-            <span class="sr-only">Ask which researchers can help with a topic</span>
-            <input id="ask-query-view" type="search" maxlength="300" autocomplete="off"
-              placeholder="Try “who can help with Bayesian forecasting?”" />
-            <button type="submit">Ask</button>
-          </label>
-        </form>
-        <p id="ask-echo" class="result-count"></p>
-        <p id="ask-status" class="result-count" role="status" aria-live="polite"></p>
-        <div id="ask-notice" class="inline-notice" hidden></div>
-        <div id="ask-error" class="inline-error" role="alert" hidden></div>
-        <div id="ask-answer" class="ask-answer" aria-live="off"></div>
-        <p id="ask-answer-sr" class="sr-only" aria-live="polite"></p>
-        <div id="ask-citations" class="ask-citations"></div>
-        <section class="expert-group" id="ask-fallback" hidden>
-          <h3>Keyword matches <span class="count-pill" id="ask-fallback-count">0</span></h3>
-          <div id="ask-fallback-results"></div>
-          <p class="result-count">
-            <button class="text-action" type="button" data-view="experts">
-              Open the full keyword search →
-            </button>
-          </p>
-        </section>
-      </section>
-
-      <section class="view" id="view-experts" data-view-panel="experts" hidden>
-        <div class="expert-intro">
-          <p class="kicker">Expertise finder</p>
-          <h2>Who knows about <em>your question?</em></h2>
-          <p>
-            Search names, biographies, expertise, center focus areas, tools and products,
-            health partners, publication titles and abstracts, and collected activity by
-            keyword. Your query stays in this browser.
-          </p>
-        </div>
-        <form id="expert-form" class="expert-form">
-          <label class="search-shell">
-            <span class="sr-only">Expertise topic or pattern</span>
-            <input id="expert-query" type="search" placeholder="Try “network science”" />
-            <button type="submit">Search</button>
-          </label>
-        </form>
-        <div id="expert-error" class="inline-error" role="alert" hidden></div>
-        <p id="expert-summary" class="result-count" aria-live="polite"></p>
-        <div id="expert-results"></div>
-      </section>
-
       <section class="view" id="view-health" data-view-panel="health" hidden>
         <div class="section-heading">
           <div>
             <p class="kicker">Transparent provenance</p>
-            <h2>Collection status</h2>
+            <h1>Collection status</h1>
             <p>
               Every source is checked independently, so one unavailable service never stops the
               rest of the network from updating.
@@ -456,6 +269,21 @@
           </div>
           <div class="footer-meta">
             <span id="footer-generated">Awaiting data</span>
+            <!-- __APP_VERSION__ is replaced with insightnet.__version__ when GitHub Pages
+                 builds the deployment artifact, so the footer can never claim a version
+                 the deployed code is not. A checkout served straight from disk keeps the
+                 placeholder, and app.js relabels it "dev build". -->
+            <span class="footer-version">
+              Version
+              <a
+                id="app-version"
+                href="https://github.com/EpiForeSITE/insightnet-explorer/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Release notes on GitHub"
+                >v__APP_VERSION__</a
+              >
+            </span>
             <span class="footer-data-links">
               <a href="./data/profiles.json">Profiles</a>
               <a href="./data/works.json">Publications</a>

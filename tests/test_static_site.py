@@ -1,9 +1,11 @@
 import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
 
+import insightnet
 from insightnet.config import load_profiles
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,20 +22,14 @@ class IdCollector(HTMLParser):
             self.ids.add(attributes["id"])
 
 
+RETIRED_VIEWS = ("ask", "tools", "partners", "centers", "experts")
+
+
 def test_static_site_has_every_dashboard_view() -> None:
     parser = IdCollector()
     parser.feed((ROOT / "site/index.html").read_text(encoding="utf-8"))
 
-    assert {
-        "view-overview",
-        "view-ask",
-        "view-tools",
-        "view-works",
-        "view-partners",
-        "view-centers",
-        "view-experts",
-        "view-health",
-    } <= parser.ids
+    assert {"view-overview", "view-works", "view-health"} <= parser.ids
 
 
 def test_static_site_uses_local_assets_and_snapshot() -> None:
@@ -44,7 +40,6 @@ def test_static_site_uses_local_assets_and_snapshot() -> None:
     assert 'src="./assets/app.js"' in html
     assert 'content="__SITE_BASE_URL__/og.png"' in html
     assert 'const PROFILES_URL = "./data/profiles.json"' in javascript
-    assert 'const ACTIVITY_URL = "./data/activity.json"' in javascript
     assert 'const WORKS_URL = "./data/works.json"' in javascript
     assert "https://cdn" not in html.lower()
     assert "regular expression" not in html.lower()
@@ -207,112 +202,105 @@ def test_works_details_document_covers_every_abstract_in_the_index() -> None:
     assert set(details) <= {work["id"] for work in works}
 
 
-def test_overview_features_the_centers_carousel_and_health_partners() -> None:
-    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
-    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
-
-    parser = IdCollector()
-    parser.feed(html)
-    assert {
-        "center-carousel",
-        "carousel-dots",
-        "carousel-previous",
-        "carousel-next",
-        "carousel-toggle",
-        "partners-list",
-        "partners-query",
-        "partners-type",
-        "partners-center",
-    } <= parser.ids
-    assert 'aria-roledescription="carousel"' in html
-    assert "renderCarousel();" in javascript
-    assert "renderPartners();" in javascript
-
-
-def test_the_carousel_rotates_but_can_always_be_stopped() -> None:
-    """An automatically moving banner needs an off switch and a reduced-motion opt-out."""
+def test_the_top_menu_is_publications_the_official_centers_page_and_data_status() -> None:
+    """The network's own site already lists its centers and their people, so this menu
+    carries what only this site has and links out for the rest."""
 
     html = (ROOT / "site/index.html").read_text(encoding="utf-8")
-    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    nav = html.split('<nav aria-label="Primary navigation">')[1].split("</nav>")[0]
 
-    assert "CAROUSEL_DELAY" in javascript
-    assert "setInterval" in javascript
-    # Rotation stops for an explicit pause, a hover or focus, a hidden tab, another view,
-    # and for anyone who asked their system to reduce motion.
-    assert "setCarouselStopped" in javascript
-    assert "holdCarousel" in javascript
-    assert "document.hidden" in javascript
-    assert '"(prefers-reduced-motion: reduce)"' in javascript
-    assert 'id="carousel-toggle"' in html
-    assert 'aria-label="Pause the centers carousel"' in html
+    assert 'data-view="works"' in nav and "Publications" in nav
+    assert 'data-view="health"' in nav and "Data status" in nav
+    assert 'href="https://insightnet.us/network/#centers"' in nav
+    # Nothing else, and in particular not a second route to the home page.
+    for removed in ("overview", *RETIRED_VIEWS):
+        assert f'data-view="{removed}"' not in nav
 
 
-def test_health_partners_can_be_searched_and_filtered() -> None:
-    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
-    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
-
-    assert 'id="partners-filters"' in html
-    assert 'byId("partners-query")' in javascript
-    assert 'byId("partners-center")' in javascript
-    # Partners are part of the expertise search too, not only their own section.
-    assert "partnerText(partner)" in javascript
-    assert "results.partners" in javascript
-
-
-def test_partners_replaced_activity_as_a_dashboard_view() -> None:
-    """Health partners earned a view of their own; the activity feed gave up its slot."""
+def test_the_retired_views_left_no_markup_or_dead_code_behind() -> None:
+    """Tools, health partners, center profiles and the activity feed moved off the site.
+    Their data is still published; their pages, renderers and styles are not."""
 
     html = (ROOT / "site/index.html").read_text(encoding="utf-8")
-    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
-
-    assert 'data-view="partners"' in html
-    assert 'data-view-panel="partners"' in html
-    assert '"partners"' in javascript.split("const VIEWS =")[1].split("]")[0]
-
-    assert 'data-view="activity"' not in html
-    assert 'data-view-panel="activity"' not in html
-    for removed in ("activity-filters", "activity-list", "activity-count", "latest-activity"):
-        assert removed not in html
-    # The view and its feed are gone, but collected activity is still searchable from the
-    # expertise finder, where each record links straight out to its source.
-    assert "renderActivity" not in javascript
-    assert 'byId("activity-' not in javascript
-    assert "results.items" in javascript
-
-    # The overview sends readers into the new view instead of listing partners twice.
-    parser = IdCollector()
-    parser.feed(html)
-    assert "partner-summary" in parser.ids
-    assert 'data-go-to="partners"' in html
-
-
-def test_the_carousel_shows_its_countdown() -> None:
-    """A banner that moves on its own has to show the move coming."""
-
     javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
     css = (ROOT / "site/assets/styles.css").read_text(encoding="utf-8")
 
-    # The fill is driven by one animation whose duration comes from the rotation delay,
-    # so the bar can never disagree with the timer that moves the slides.
-    assert "@keyframes carousel-countdown" in css
-    assert "var(--carousel-delay" in css
-    assert '"--carousel-delay", `${CAROUSEL_DELAY}ms`' in javascript
-    assert "setCarouselProgress" in javascript
-    # A held or paused banner freezes the bar rather than resetting it.
-    assert "animation-play-state: paused" in css
-    assert 'setCarouselProgress("paused")' in javascript
-    assert 'setCarouselProgress("running")' in javascript
+    views = javascript.split("const VIEWS =")[1].split("]")[0]
+    for view in RETIRED_VIEWS:
+        assert f'id="view-{view}"' not in html
+        assert f'data-view-panel="{view}"' not in html
+        assert f'"{view}"' not in views
+
+    for renderer in (
+        "renderCarousel",
+        "renderPartners",
+        "renderTools",
+        "renderCenter",
+        "activityCard",
+        "allPartners",
+        "allTools",
+        "CAROUSEL_DELAY",
+    ):
+        assert renderer not in javascript
+
+    for selector in (".carousel", ".partner-card", ".tools-grid", ".metrics {", ".metric-value"):
+        assert selector not in css
 
 
-def test_overview_metrics_drop_activity_records_and_source_health() -> None:
-    """Those two counts confused readers, so the summary row no longer carries them."""
+def test_the_home_page_says_what_it_holds_instead_of_a_wall_of_counters() -> None:
+    """Five oversized counters were the loudest thing on the page. One quiet sentence
+    carries the two numbers that matter and hands everything else to insightnet.us."""
 
     html = (ROOT / "site/index.html").read_text(encoding="utf-8")
     javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
 
-    for removed in ("metric-items", "metric-sources", "Activity records", "Healthy sources"):
+    for removed in (
+        'class="metrics"',
+        "metric-centers",
+        "metric-researchers",
+        "metric-partners",
+        "metric-tools",
+        "metric-works",
+    ):
         assert removed not in html
         assert removed not in javascript
+
+    summary = javascript.split("function renderSummary()")[1].split("\n  }")[0]
+    assert "This site contains academic profiles for the" in summary
+    assert "affiliated members" in summary
+    assert "The latest version includes" in summary
+    assert "publications" in summary
+    assert "insightnet.us" in summary
+    # The counts are read off the snapshot, so the sentence cannot drift from the data.
+    assert "snapshot?.stats" in summary
+    assert "works.stats?.works" in summary
+    # The publication count arrives with the second fetch, so the line is written again
+    # once it lands rather than being held back until then.
+    assert "renderSummary();" in javascript.split("function loadWorks()")[1]
+
+
+def test_the_keyword_search_answers_with_researchers_and_publications() -> None:
+    """People and their papers are the whole site now, so the search returns those two
+    and does not rebuild the directories the network's own site owns."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    search = javascript.split("function searchExperts(")[1].split("function renderExpertResults")[0]
+    renderer = javascript.split("function renderExpertResults(")[1].split(
+        "async function runKeywordSearch"
+    )[0]
+
+    assert "researchers.push(" in search
+    assert "matchedWorks.push(" in search
+    # A center's name and focus areas still count toward its members' scores, which is how
+    # a center-shaped query reaches people.
+    assert "org.focus_areas," in search
+    for gone in ("organizations.push(", "tools.push(", "partners.push(", "items.push("):
+        assert gone not in search
+
+    assert "results.researchers" in renderer
+    assert "results.works" in renderer
+    for gone in ("results.tools", "results.partners", "results.organizations", "results.items"):
+        assert gone not in renderer
 
 
 def test_profiles_snapshot_carries_center_health_partners() -> None:
@@ -330,32 +318,70 @@ def test_profiles_snapshot_carries_center_health_partners() -> None:
     assert all(partner["name"] and partner["type"] for partner in partners)
 
 
-def test_the_ask_bar_lives_in_the_hero_and_routes_to_its_own_view() -> None:
-    """The assistant is the first thing on the page, per the brief."""
+def test_the_assistant_appears_on_the_home_page_and_nowhere_else() -> None:
+    """The ask bar used to sit above the router, so it followed a reader onto every view.
+    It now lives inside the home panel, which is the only page it belongs on."""
 
     html = (ROOT / "site/index.html").read_text(encoding="utf-8")
     javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
 
-    hero = html.split('<section class="hero"')[1].split("</section>")[0]
-    assert 'id="ask-form"' in hero
-    assert 'id="ask-query"' in hero
-    assert '"ask"' in javascript.split("const VIEWS =")[1].split("]")[0]
-    assert 'data-view="ask"' in html
-    assert 'data-view-panel="ask"' in html
+    home = html.split('id="view-overview"')[1].split('id="view-works"')[0]
+    assert 'class="hero"' in home
+    assert 'id="ask-form"' in home
+    assert 'id="ask-query"' in home
+    assert 'id="ask-answer"' in home
+    # One ask box in the whole document: the duplicate that lived in the old Ask view is
+    # gone rather than merely hidden.
+    assert html.count('id="ask-query"') == 1
+    assert 'id="ask-query-view"' not in html
+    assert 'showView("overview")' in javascript.split("async function askQuestion")[1]
 
 
-def test_the_ask_view_degrades_to_keyword_search() -> None:
+def test_the_keyword_search_shares_the_home_page_but_not_the_assistant() -> None:
+    """The two searches sit one above the other; only the top one talks to a model."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    home = html.split('id="view-overview"')[1].split('id="view-works"')[0]
+
+    assert 'id="expert-form"' in home
+    assert 'id="expert-query"' in home
+    assert 'id="expert-results"' in home
+    # The keyword section says plainly that it is the one that does not use a model.
+    assert "no AI involved" in home
+    assert home.index('id="ask-form"') < home.index('id="expert-form"')
+
+
+def test_the_assistant_degrades_to_the_keyword_search_below_it() -> None:
     """Every failure path ends in results rather than a dead end."""
 
     javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
     fallback = javascript.split("async function askFallback")[1].split("\n  }")[0]
 
-    assert "searchExperts(" in fallback
-    assert "ask-fallback-results" in fallback
+    assert "runKeywordSearch(" in fallback
+    # The keyword box is filled in with the question, so the fallback shows its work
+    # instead of producing results from nowhere.
+    assert 'byId("expert-query").value = query' in fallback
     # Rate limiting, budget exhaustion, a network failure and an unconfigured endpoint
     # all have to reach it, or the page can strand a visitor.
-    for trigger in ("rate_limited", "budget_exhausted", "not configured yet", "could not be reached"):
+    for trigger in (
+        "rate_limited",
+        "budget_exhausted",
+        "not configured yet",
+        "could not be reached",
+    ):
         assert trigger in javascript
+
+
+def test_a_question_too_long_for_the_keyword_index_reports_instead_of_throwing() -> None:
+    """The ask bar accepts 300 characters and the keyword index reads 120, so a long
+    question arriving by fallback has to land on a message rather than an exception."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    runner = javascript.split("async function runKeywordSearch")[1].split("\n  }")[0]
+
+    assert "try {" in runner and "catch (error)" in runner
+    assert "errorBox.textContent = error.message" in runner
+    assert "errorBox.hidden = false" in runner
 
 
 def test_the_answer_stream_is_announced_without_spamming_the_screen_reader() -> None:
@@ -436,3 +462,86 @@ def test_a_deep_link_to_a_view_that_wants_abstracts_does_not_crash() -> None:
     )
     loader = javascript.split("function loadWorkDetails()")[1].split("\n  }")[0]
     assert "if (!worksPromise) return Promise.resolve();" in loader
+
+
+# ----------------------------------------------------------------------------------
+# Versioning
+# ----------------------------------------------------------------------------------
+
+
+def test_the_version_has_exactly_one_source_of_truth() -> None:
+    """`insightnet.__version__` is the only place a version number is written down.
+
+    pyproject reads it, the deployment stamps it into the footer, and releases are tagged
+    from it. A literal typed anywhere else is a number that will silently go stale.
+    """
+
+    assert re.fullmatch(r"\d+\.\d+\.\d+", insightnet.__version__), insightnet.__version__
+
+    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    assert 'dynamic = ["version"]' in pyproject
+    assert 'version = { attr = "insightnet.__version__" }' in pyproject
+    # A static `version = "x.y.z"` under [project] would shadow the dynamic one.
+    assert not re.search(r'^version = "\d', pyproject, re.MULTILINE)
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    assert insightnet.__version__ not in html
+    assert insightnet.__version__ not in javascript
+
+
+def test_the_footer_shows_the_version_and_links_to_the_latest_release() -> None:
+    """A reader who wants to know what changed needs one click from the page they are on."""
+
+    html = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    footer = html.split('<footer class="site-footer">')[1]
+
+    assert "Version" in footer
+    assert 'id="app-version"' in footer
+    # The placeholder, not a number: the deployment fills it from the package metadata.
+    assert "v__APP_VERSION__" in footer
+    assert 'href="https://github.com/EpiForeSITE/insightnet-explorer/releases/latest"' in footer
+    assert 'rel="noopener noreferrer"' in footer
+
+
+def test_the_deployment_substitutes_the_version_and_refuses_to_ship_a_placeholder() -> None:
+    """The footer is only honest if the build always fills it in, so the workflow reads
+    the version from the package and fails rather than publishing the raw placeholder."""
+
+    workflow = (ROOT / ".github/workflows/deploy-pages.yml").read_text(encoding="utf-8")
+
+    assert "import insightnet; print(insightnet.__version__)" in workflow
+    assert "s|__APP_VERSION__|${APP_VERSION}|g" in workflow
+    assert 'grep -q "__APP_VERSION__\\|__SITE_BASE_URL__"' in workflow
+    assert "exit 1" in workflow
+    # A bump touches no file under site/, so it needs its own trigger to reach Pages.
+    assert '- "insightnet/__init__.py"' in workflow
+
+
+def test_an_unsubstituted_version_reads_as_a_dev_build() -> None:
+    """Serving the checkout directly leaves the placeholder in place; showing it raw
+    would look broken, so the page says what it actually is."""
+
+    javascript = (ROOT / "site/assets/app.js").read_text(encoding="utf-8")
+    renderer = javascript.split("function renderVersion()")[1].split("\n  }")[0]
+
+    assert '"dev build"' in renderer
+    assert r"^v\d+\.\d+\.\d+$" in renderer
+    # It describes the code rather than the data, so it must not wait on the snapshot.
+    initialize = javascript.split("async function initialize()")[1]
+    assert initialize.index("renderVersion();") < initialize.index("try {")
+
+
+def test_the_versioning_rules_reach_both_humans_and_agents() -> None:
+    """The scheme only holds if every contributor meets it, and agents read AGENTS.md."""
+
+    for path in ("README.md", "AGENTS.md"):
+        document = (ROOT / path).read_text(encoding="utf-8")
+        assert "major.minor.patch" in document, path
+        assert "insightnet/__init__.py" in document, path
+        for part in ("**major**", "**minor**", "**patch**"):
+            assert part in document, f"{path} does not say when to bump {part}"
+
+    agents = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
+    assert "Every change bumps the version." in agents
+    assert "uv lock" in agents

@@ -1,26 +1,29 @@
 # InsightNet Scientific Endeavors
 
-A lightweight, version-controlled intelligence dashboard for centers and researchers
-across InsightNet. A scheduled GitHub Action collects public information once a day,
-normalizes it into JSON, and commits that snapshot. The standalone HTML/CSS/JavaScript
-dashboard in `site/` runs directly on GitHub Pages.
+Academic profiles and publications for the researchers affiliated with InsightNet's
+centers. A scheduled GitHub Action collects public information once a day, normalizes it
+into JSON, and commits that snapshot. The standalone HTML/CSS/JavaScript website in
+`site/` runs directly on GitHub Pages.
+
+The website deliberately does not duplicate [insightnet.us](https://insightnet.us): it is
+about people and the papers they wrote, and it links out for the network's centers,
+partners, and programs. The collection pipeline still gathers tools, health partners, and
+activity records, and they are still published under `data/` and `site/data/` — they are
+simply not pages on this site.
 
 ## What is included
 
 - Center and researcher profiles managed in TOML
-- A catalog of the tools and products each center has built — dashboards, software
-  packages, platforms, models, and datasets — with links to each one
-- A directory of the health partners behind the network — the state, local, tribal, and
-  federal health agencies and the health systems each center works with
-- Daily collection from public web pages, RSS/Atom, Bluesky, GitHub, and optionally
-  Google Scholar through SerpAPI
 - Weekly collection of papers and preprints from ORCID, Europe PMC, PubMed, arXiv,
   medRxiv/bioRxiv, and Crossref, including abstracts, keywords, and full coauthor lists
-- Collected activity records with provenance and per-source health information, searchable
-  from the expertise finder
-- Keyword search across names, biographies, expertise, focus areas, health partners,
-  publication titles and abstracts, and collected records
-- A standalone, responsive GitHub Pages dashboard with no runtime server or frontend
+- Daily collection from public web pages, RSS/Atom, Bluesky, GitHub, and optionally
+  Google Scholar through SerpAPI, with provenance and per-source health information
+- An AI-assisted search that answers expert-finding questions from the publications and
+  profiles in the snapshot, citing the record behind each suggestion
+- A keyword search across names, biographies, expertise, and publication titles and
+  abstracts, which runs entirely in the reader's browser
+- A browsable, filterable publication list
+- A standalone, responsive GitHub Pages site with no runtime server or frontend
   dependencies, styled to the ForeSITE brand
 - Tests and a frozen `uv` environment
 
@@ -39,7 +42,7 @@ Open `http://localhost:8000`. Each command writes to `data/` and mirrors the res
 `site/data/` for the static site. The website never contacts collection services itself.
 
 `insightnet-works` takes several minutes because it paces requests to stay inside each
-provider's courtesy limits; the dashboard works without it, showing an empty
+provider's courtesy limits; the website works without it, showing an empty
 **Publications** view until the first run completes.
 
 ## Add centers and researchers
@@ -208,6 +211,55 @@ GitHub will publish the `site/` directory at
 copies, commits them, and triggers another Pages deployment automatically. All
 filtering and keyword search run locally in the visitor's browser.
 
+The deployment step rewrites two placeholders in `site/index.html` — `__SITE_BASE_URL__`
+and `__APP_VERSION__` — and fails if either survives. Nothing else is built, minified, or
+transformed.
+
+## Versioning
+
+The version lives in exactly one place:
+
+```python
+# insightnet/__init__.py
+__version__ = "1.0.0"
+```
+
+`pyproject.toml` reads it through `[tool.setuptools.dynamic]`, the Pages deployment
+stamps it into the site footer, and each release is tagged `v<version>`. Never write a
+version number anywhere else — the footer carries a `__APP_VERSION__` placeholder, not a
+literal, and `tests/test_static_site.py` fails if a hardcoded one appears.
+
+The footer links to
+[the latest release](https://github.com/EpiForeSITE/insightnet-explorer/releases/latest),
+which is where features and fixes are described. A local checkout served with
+`python -m http.server` shows **dev build** instead of a number, because the placeholder
+is only substituted at deploy time — that is expected, not a bug.
+
+### What to bump
+
+The scheme is `major.minor.patch`.
+
+| Part | Bump it when | Examples |
+|---|---|---|
+| **major** | A change breaks something people depend on, or the site's purpose or shape changes | Removing a view or a published JSON field; renaming a data file; changing what a URL means |
+| **minor** | Something new arrives and everything that worked still works | A new view, a new filter, a new collection source, a new field added to a snapshot |
+| **patch** | A defect is corrected, or something is tidied with no change in behavior | A search that returned wrong results; a broken link; wording, styling, comments, refactors, and test-only changes |
+
+Bump only the highest part that applies, and reset the parts to its right: a new feature
+on `1.4.2` gives `1.5.0`, not `1.5.2`. Bump once per change, not once per commit within
+it.
+
+### Cutting a release
+
+1. Bump `__version__` in `insightnet/__init__.py`.
+2. Run `uv lock` so the lock file follows, and `uv run pytest`.
+3. Merge to `main` — Pages redeploys and the footer shows the new number.
+4. Tag and publish the release, so the footer's link lands on the right notes:
+
+```bash
+gh release create "v$(python -c 'import insightnet; print(insightnet.__version__)')" --generate-notes
+```
+
 ## Branding and attribution
 
 The site follows the ForeSITE logo guidelines. Three official colors carry the whole
@@ -278,10 +330,10 @@ and so the browser only downloads the large publication corpus when it is needed
 
 Abstracts and coauthor lists are roughly three quarters of the corpus by size, and they
 matter only once a reader is looking at publications, so they are published separately.
-The dashboard fetches `profiles.json` and `activity.json` before the first paint,
-`works.json` immediately afterward, and `works-details.json` once the browser is idle or
-as soon as the reader opens **Publications** or **Find experts** — whichever comes first.
-The expertise finder waits for it, so a search never returns a partial answer.
+The website fetches `profiles.json` before the first paint, `works.json` immediately
+afterward, and `works-details.json` once the browser is idle or as soon as the reader
+opens **Publications** or the home page's searches — whichever comes first. Both searches
+wait for it, so a query never returns a partial answer.
 
 Splitting by field rather than by center is deliberate: a work co-authored across centers
 carries several `organization_ids`, so per-center files would duplicate the heaviest
